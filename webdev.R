@@ -8,6 +8,11 @@
     <meta name="description" content="Official website of Mudasir Mohammed Ibrahim - Registered General Nurse, Healthcare Researcher & R Shiny Developer at Tamale Teaching Hospital, Ghana">
 <meta name="theme-color" content="#1a56db">
 
+<!-- Add these meta tags for cache control -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
 <!-- Add these to your head section after the viewport meta tag -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -50,6 +55,9 @@
       crossorigin=""/>
     
     
+    <!-- Add this line right before </head> -->
+<script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -62,7 +70,7 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
- :root {
+:root {
     --primary: #6366f1;
     --primary-light: #818cf8;
     --secondary: #f59e0b;
@@ -74,7 +82,7 @@
     --border: rgba(0, 0, 0, 0.1); /* CHANGE: Darker border for light mode */
     --shadow: rgba(0, 0, 0, 0.1);
     --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --glass: rgba(255, 255, 255, 0.25);
+    --glass: rgba(255, 255, 255, 0.95); /* CHANGED: More opaque for light mode */
     
     /* Add fixed button colors that won't change with theme */
     --btn-primary: #6366f1;
@@ -84,9 +92,138 @@
     --btn-text: #ffffff;
     --btn-shadow: rgba(99, 102, 241, 0.3);
     
+    /* Make views more prominent on cards */
+.meta-item.views-item {
+    background: rgba(59, 130, 246, 0.15);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.meta-item.views-item i {
+    color: #3b82f6 !important;
+    animation: pulse 2s infinite;
+}
+
+/* Ensure view counters are visible */
+.views-count {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.1rem;
+    opacity: 1 !important;
+    transition: opacity 0.3s ease;
+}
+
+/* Footer brand statement styling */
+.footer-brand-statement {
+    padding-right: 2rem;
+    border-right: 1px solid var(--border);
+    margin-right: 2rem;
+}
+
+.footer-brand-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    line-height: 1;
+}
+
+.footer-brand-text {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 992px) {
+    .footer-content.footer-horizontal-layout {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footer-brand-statement {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-right: 0;
+        padding-bottom: 2rem;
+        margin-right: 0;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-brand-title {
+        font-size: 1.3rem;
+    }
+    
+    .footer-brand-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Loading state */
+.views-count.loading {
+    opacity: 0.7;
+    color: var(--text-light);
+}
+
+/* Error state */
+.views-count.error {
+    color: #ef4444;
+}
+
+/* Source indicator */
+.views-source {
+    color: #10b981 !important;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* View counter badge */
+.view-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 5;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.view-badge i {
+    color: #fbbf24;
+}
+    
     /* ADD THESE TWO LINES - NEW VARIABLES */
     --logo-text: #111827; /* CHANGE: Darker black for light mode */
     --heading-text: #111827; /* CHANGE: Darker black for light mode */
+    
+    /* ADD NAVBAR SPECIFIC VARIABLES */
+    --navbar-bg: rgba(255, 255, 255, 0.95); /* White header */
+    --navbar-border: rgba(0, 0, 0, 0.08); /* Light border */
 }
 
 .dark-mode {
@@ -149,6 +286,63 @@
     min-width: 100%;
 }
 
+/* Improve scrolling performance */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Match navbar height */
+}
+
+/* Hardware acceleration for smoother animations */
+* {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Optimize for scrolling performance */
+body {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Section transitions */
+.section {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Optimize fadeIn animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Publisher card floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Publisher card hover effects */
+.publisher-card {
+    transition: all 0.3s ease;
+}
+
+.publisher-card:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+    z-index: 10;
+}
+
 /* Pause on hover for better readability */
 .competencies-scroll-track:hover {
     animation-play-state: paused;
@@ -164,16 +358,16 @@
     }
 }
 
-/* Ensure all competency cards have EXACT same size */
+/* Compact competency cards */
 .competency-card {
     flex: 0 0 auto;
-    width: 320px; /* Fixed width */
-    height: 380px; /* Fixed height */
+    width: 280px; /* Slightly narrower */
+    height: 300px; /* Reduced from 380px */
     background: var(--bg-card);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border);
     border-radius: 15px;
-    padding: 2rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     transition: all 0.3s;
@@ -181,20 +375,19 @@
     overflow: hidden;
 }
 
-/* Ensure card content doesn't overflow */
 .competency-card .card-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
-    margin-bottom: 1.5rem;
-    min-height: 80px; /* Fixed header height */
+    margin-bottom: 1rem;
+    min-height: 60px; /* Reduced from 80px */
 }
 
 .competency-card .card-icon {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    border-radius: 12px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -202,39 +395,57 @@
 }
 
 .competency-card .card-icon i {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: white;
 }
 
 .competency-card .card-header h4 {
     color: var(--text);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.3;
     flex: 1;
-    min-height: 56px; /* Fixed title height */
-    display: flex;
-    align-items: center;
 }
 
-/* Competency list fixed height */
+/* Compact competency list */
 .competency-list {
     list-style: none;
     padding: 0;
     margin: 0;
     flex-grow: 1;
     overflow: hidden;
+    max-height: 180px; /* Limit list height */
 }
 
 .competency-list li {
-    padding: 0.7rem 0;
+    padding: 0.5rem 0;
     border-bottom: 1px solid var(--border);
     display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    min-height: 48px; /* Fixed list item height */
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
 }
 
+.competency-list li:last-child {
+    border-bottom: none;
+}
+
+.competency-list i {
+    color: var(--primary);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.competency-list li span {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.3;
+}
+
+/* Reduce spacing between list items */
+.competency-list li:not(:last-child) {
+    margin-bottom: 0.25rem;
+}
 .competency-list li:last-child {
     border-bottom: none;
 }
@@ -286,9 +497,9 @@
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .competency-card {
-        width: 280px;
-        height: 360px;
-        padding: 1.5rem;
+        width: 260px;
+        height: 280px; /* Reduced from 360px */
+        padding: 1.25rem;
     }
     
     .competencies-scroll-track {
@@ -297,26 +508,37 @@
     }
     
     .competency-card .card-header h4 {
-        font-size: 1.1rem;
-        min-height: 50px;
-    }
-    
-    .competency-list li {
-        min-height: 44px;
-        padding: 0.6rem 0;
+        font-size: 1rem;
+        min-height: auto;
     }
     
     .competency-card .card-header {
-        min-height: 70px;
+        min-height: 50px;
+        gap: 0.75rem;
+    }
+    
+    .competency-card .card-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .competency-list li {
+        min-height: auto;
+        padding: 0.4rem 0;
+        font-size: 0.85rem;
+    }
+    
+    .competency-list li span {
+        font-size: 0.85rem;
     }
 }
 
 /* Touch device adjustments */
 @media (max-width: 480px) {
     .competency-card {
-        width: 260px;
-        height: 340px;
-        padding: 1.25rem;
+        width: 240px;
+        height: 260px; /* Reduced from 340px */
+        padding: 1rem;
     }
     
     .competencies-scroll-track {
@@ -325,24 +547,24 @@
     }
     
     .competency-card .card-header {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        text-align: left;
         gap: 0.75rem;
     }
     
     .competency-card .card-header h4 {
-        min-height: auto;
+        font-size: 0.95rem;
     }
     
     .competency-card .card-icon {
-        width: 40px;
-        height: 40px;
-        margin: 0 auto;
+        width: 35px;
+        height: 35px;
+        margin: 0;
     }
     
     .competency-list li {
-        min-height: 40px;
-        padding: 0.5rem 0;
+        padding: 0.35rem 0;
+        font-size: 0.8rem;
     }
 }
 
@@ -1257,6 +1479,7 @@
         white-space: nowrap;
     }
 }
+
 
 /* SPECIFIC FIX FOR DEVELOPER CODE ON SMALL PHONES */
 @media (max-width: 360px) {
@@ -3092,6 +3315,9 @@ body {
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.3s;
+    height: 650px; /* Add fixed height */
+    display: flex;
+    flex-direction: column;
 }
 
 .shiny-app-card:hover {
@@ -4853,57 +5079,89 @@ body {
     color: var(--logo-text); /* CHANGE THIS LINE - from 'transparent' to 'var(--logo-text)' */
 }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
+     .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding: 0.5rem 0;
-        }
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
 
-        .nav-links a.active {
-            color: var(--primary);
-        }
+.nav-links a:hover {
+    color: var(--primary);
+}
 
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--primary);
-        }
+.nav-links a.active {
+    color: var(--primary);
+}
 
-        .theme-toggle {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            color: var(--text);
-            font-size: 1.2rem;
-        }
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+}
 
-        .theme-toggle:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
+.theme-toggle {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text);
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+
+.theme-toggle:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Support link styling */
+.support-link {
+    color: var(--primary) !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    text-decoration: underline !important;
+    text-decoration-color: var(--primary) !important;
+    text-underline-offset: 3px !important;
+    transition: all 0.3s ease !important;
+    position: relative;
+}
+
+.support-link:hover {
+    color: var(--primary-light) !important;
+    text-decoration-color: var(--primary-light) !important;
+    transform: translateY(-1px);
+}
+
+.support-link:active {
+    transform: translateY(0);
+}
+     
+     
         /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
@@ -6256,6 +6514,20 @@ function handleNavbarScroll() {
     }
 }
 
+// Add this function to handle clicking the name in footer
+function scrollToTopOfActiveSection() {
+    const activeSection = document.querySelector('.section.active');
+    if (activeSection) {
+        const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
+        const elementPosition = activeSection.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navbarHeight;
+        
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
 
 // Update the initNavbarScroll function
 function initNavbarScroll() {
@@ -6285,15 +6557,21 @@ function initNavbarScroll() {
 
 const { useState, useEffect } = React;
 
+// Update total views
+const totalViewsElement = document.getElementById('total-views');
+if (totalViewsElement && appViewsData.apps) {
+    const totalViews = appViewsData.apps.reduce((sum, app) => sum + app.views, 0);
+    totalViewsElement.textContent = formatViews(totalViews);
+}
+
 // Add this component after your useState, useEffect import
 function RotatingText() {
     const [currentIndex, setCurrentIndex] = useState(0);
     
     const texts = [
-        "Registered Nurse",
-        "Health Researcher",
-        "Data Enthusiast",
-        "Data Analyst"
+        "Research. Data. Innovation.",
+        "Building Insightful Applications",
+        "Simplifying Data Analytics",
     ];
     
     useEffect(() => {
@@ -6332,6 +6610,149 @@ function App() {
     // ADD THIS LINE - Mobile menu state
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     
+ // ============================================
+// MANUAL VIEWS TRACKING SYSTEM
+// ============================================
+
+// MANUAL VIEWS DATA - Enter your view counts here for each app
+const manualViewsData = {
+    lastUpdated: new Date().toISOString().split('T')[0],
+    source: "From Shiny App Store",
+    apps: [
+        { id: 1, name: "CalcuStats", views: 16629 },
+        { id: 2, name: "CATrend Analyzer", views: 7553 },
+        { id: 3, name: "ROC Curve Builder", views: 15973 },
+        { id: 4, name: "Data2SPSS", views: 12800 },
+        { id: 5, name: "MedModr", views: 15999 },
+        { id: 6, name: "EpiDem Suite", views: 17052 },
+        { id: 7, name: "ggPubPlot", views: 14517 },
+        { id: 8, name: "APA Table Generator", views: 3283 },
+        { id: 9, name: "SysSampler", views: 3578 },
+        { id: 10, name: "CMH Analyzer", views: 6822 },
+        { id: 11, name: "TNMTC DataLab", views: 14348 },
+        { id: 12, name: "PharmaCalc Pro", views: 15441 },
+        { id: 13, name: "RegEffect Xplorer", views: 15344 },
+        { id: 14, name: "Data TransformR", views: 16828 },
+        { id: 15, name: "CleanMyData", views: 14636 },
+        { id: 16, name: "KMPlot Genie", views: 16829 },
+        { id: 17, name: "QuickStatsGen", views: 15061 },
+        { id: 18, name: "Robust Regressor", views: 15527 },
+        { id: 19, name: "TagSelect", views: 16679 },
+        { id: 20, name: "FAnalyzr", views: 16840 }
+    ]
+};
+
+// Format number to k notation (e.g., 2.45k)
+function formatViews(views) {
+    if (typeof views !== 'number') return '0';
+    if (views >= 1000) {
+        return (views / 1000).toFixed(2) + 'k';
+    }
+    return views.toString();
+}
+
+// Calculate total views from all apps
+function calculateTotalViews() {
+    return manualViewsData.apps.reduce((sum, app) => sum + (app.views || 0), 0);
+}
+
+// Update view display
+function updateViewsDisplay() {
+    // Update total views
+    const totalViews = calculateTotalViews();
+    const totalViewsElement = document.getElementById('total-views');
+    if (totalViewsElement) {
+        totalViewsElement.textContent = `${formatViews(totalViews)} views`;
+        totalViewsElement.style.opacity = '1';
+    }
+
+    // Update individual app views
+    manualViewsData.apps.forEach(app => {
+        const viewsElement = document.getElementById(`views-${app.id}`);
+        if (viewsElement) {
+            viewsElement.textContent = `${formatViews(app.views)} views`;
+            viewsElement.style.opacity = '1';
+        }
+    });
+
+    // Update source display
+    const sourceElement = document.querySelector('.views-source');
+    if (sourceElement) {
+        sourceElement.textContent = manualViewsData.source;
+        sourceElement.style.color = '#10b981';
+        sourceElement.style.fontWeight = '600';
+    }
+
+    // Update last updated time
+    const lastUpdatedElement = document.getElementById('last-updated');
+    if (lastUpdatedElement) {
+        lastUpdatedElement.textContent = `Last updated: ${manualViewsData.lastUpdated}`;
+        lastUpdatedElement.style.fontStyle = 'italic';
+        lastUpdatedElement.style.color = 'var(--text-light)';
+    }
+}
+
+// Function to manually update view counts
+function updateAppViews(appId, newViews) {
+    const appIndex = manualViewsData.apps.findIndex(app => app.id === appId);
+    if (appIndex !== -1) {
+        manualViewsData.apps[appIndex].views = parseInt(newViews) || 0;
+        manualViewsData.lastUpdated = new Date().toISOString().split('T')[0];
+        updateViewsDisplay();
+        
+        // Optional: Save to localStorage
+        try {
+            localStorage.setItem('appViewsData', JSON.stringify(manualViewsData));
+        } catch (error) {
+            console.log('Could not save to localStorage:', error);
+        }
+    }
+}
+
+// Load saved views from localStorage
+function loadSavedViews() {
+    try {
+        const savedData = localStorage.getItem('appViewsData');
+        if (savedData) {
+            const parsedData = JSON.parse(savedData);
+            // Update each app's views from saved data
+            parsedData.apps.forEach(savedApp => {
+                const app = manualViewsData.apps.find(a => a.id === savedApp.id);
+                if (app) {
+                    app.views = savedApp.views || 0;
+                }
+            });
+            if (parsedData.lastUpdated) {
+                manualViewsData.lastUpdated = parsedData.lastUpdated;
+            }
+        }
+    } catch (error) {
+        console.log('Could not load from localStorage:', error);
+    }
+}
+
+// Initialize views system
+useEffect(() => {
+    // Load any saved view counts
+    loadSavedViews();
+    
+    // Wait for DOM to render, then update displays
+    setTimeout(() => {
+        updateViewsDisplay();
+    }, 500);
+    
+    // Optional: Set up periodic auto-save
+    const autoSaveInterval = setInterval(() => {
+        try {
+            localStorage.setItem('appViewsData', JSON.stringify(manualViewsData));
+        } catch (error) {
+            // Ignore storage errors
+        }
+    }, 30000); // Save every 30 seconds
+    
+    return () => clearInterval(autoSaveInterval);
+}, []);
+ 
     // Simple mobile menu toggle - ADD THIS
     const toggleMobileMenu = (e) => {
         if (e) e.stopPropagation();
@@ -6344,20 +6765,29 @@ function App() {
         document.body.style.overflow = 'auto';
     };
     
-    // Handle section change with scroll
-    const handleSectionChange = (section) => {
-        setActiveSection(section);
-        closeMobileMenu();
-        
-        // Scroll to section after a small delay
-        setTimeout(() => {
-            const element = document.getElementById(section);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }, 50);
-    };
+ // Handle section change with scroll
+const handleSectionChange = (section) => {
+    setActiveSection(section);
+    closeMobileMenu();
     
+    // Use requestAnimationFrame for smoother scrolling
+    requestAnimationFrame(() => {
+        const element = document.getElementById(section);
+        if (element) {
+            // Calculate the exact position considering navbar height
+            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - navbarHeight;
+            
+            // Use window.scrollTo for better performance
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+};
+ 
     // Add this useEffect to handle body overflow:
     useEffect(() => {
         if (isMobileMenuOpen) {
@@ -6748,45 +7178,48 @@ function App() {
 
     return (
         <div className="app">
-            <nav className="navbar">
-                <div className="container nav-content">
-                    <div 
-                        className="logo" 
-                        onClick={() => handleSectionChange('home')} 
-                        style={{cursor: 'pointer'}}
-                        title="Click to go to Home - Mudasir Mohammed Ibrahim"
-                    >
-                        Mudasir
-                    </div>
+<nav className="navbar">
+    <div className="container nav-content">
+        <div 
+            className="logo" 
+            onClick={() => handleSectionChange('home')} 
+            style={{cursor: 'pointer'}}
+            title="Click to go to Home - Mudasir Mohammed Ibrahim"
+        >
+            MMI.
+        </div>
 
-                    <div className="nav-links">
-                        {sections.map(section => (
-                            <a
-                                key={section}
-                                href="#"
-                                className={activeSection === section ? 'active' : ''}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    handleSectionChange(section);
-                                }}
-                            >
-                                {section.charAt(0).toUpperCase() + section.slice(1)}
-                            </a>
-                        ))}
-                        <button 
-                            className="theme-toggle"
-                            onClick={() => setDarkMode(!darkMode)}
-                        >
-                            {darkMode ? <i className="fas fa-sun"></i> : <i className="fas fa-moon"></i>}
-                        </button>
-                    </div>
-                    
-                    {/* Add mobile menu button */}
-                    <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
-                        <i className="fas fa-bars"></i>
-                    </button>
-                </div>
-            </nav>
+        <div className="nav-right">
+            <div className="nav-links">
+                {sections.map(section => (
+                    <a
+                        key={section}
+                        href="#"
+                        className={activeSection === section ? 'active' : ''}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleSectionChange(section);
+                        }}
+                    >
+                        {section.charAt(0).toUpperCase() + section.slice(1)}
+                    </a>
+                ))}
+                <button 
+                    className="theme-toggle"
+                    onClick={() => setDarkMode(!darkMode)}
+                >
+                    {darkMode ? <i className="fas fa-sun"></i> : <i className="fas fa-moon"></i>}
+                </button>
+            </div>
+            
+            {/* Add mobile menu button */}
+            <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
+                <i className="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
             
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
@@ -6825,103 +7258,227 @@ function App() {
 
             <main className="main-content">
                 
-                {/* Home Section */}
-                <section id="home" className={`section ${activeSection === 'home' ? 'active' : ''}`}>
-                    <div className="container">
-                        <div className="hero">
-                            <div className="hero-content">
-                                <h1><span className="highlight">Hi, I'm Mudasir Mohammed Ibrahim</span></h1>
-                                <h2> <RotatingText />  </h2>
-                                
-                                <p>
-I have expertise in patient care and clinical nursing, health and clinical research, advanced statistical analysis, and R Shiny development (AI-assisted coding). I am a published researcher with contributions to top-tier journals, including Springer Nature, Wiley, and Elsevier, and I also serve as a peer reviewer for journals within these publishers. I am passionate about creating technology that makes a difference and develop R Shiny web applications that simplify complex data analysis for healthcare professionals, students, and researchers.
-                                </p>
-                                
-                                <div className="academic-links">
-                                    <button
-                                        className="academic-link"
-                                        onClick={() => window.open('https://github.com/mudassiribrahim30', '_blank', 'noopener,noreferrer')}
-                                    >
-                                        <i className="fab fa-github"></i>
-                                        <span>GitHub</span>
-                                    </button>
+          <section id="home" className={`section ${activeSection === 'home' ? 'active' : ''}`}>
+    <div className="container">
+        <div className="hero">
+            <div className="hero-content">
+                <h1><span className="highlight">Hi, I'm Mudasir</span></h1>
+                <h2> <RotatingText />  </h2>
+                
+                <p>
+I am a registered nurse and I love research, and data analytics! I am passionate about creating technology that makes a difference. I develop R Shiny web applications that simplify complex data analysis for healthcare professionals, students, and researchers. Thank you for visiting, and I hope you enjoy exploring my projects.
+                </p>
+                
+                <div className="academic-links" style={{ marginTop: '2rem', justifyContent: 'flex-start' }}>
+                    <button
+                        className="academic-link"
+                        onClick={() => handleSectionChange('projects')}
+                        style={{ 
+                            background: 'linear-gradient(135deg, var(--btn-primary), var(--btn-primary-hover))',
+                            color: 'var(--btn-text)',
+                            border: 'none',
+                            padding: '0.9rem 1.8rem',
+                            fontSize: '1rem'
+                        }}
+                    >
+                        <i className="fas fa-project-diagram"></i>
+                        <span>View My Work</span>
+                    </button>
 
-                                    <a href="https://orcid.org/0000-0002-9049-8222" target="_blank" rel="noopener noreferrer" className="academic-link">
-                                        <i className="fas fa-id-card"></i>
-                                        <span>ORCID</span>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0" target="_blank" rel="noopener noreferrer" className="academic-link">
-                                        <i className="fab fa-linkedin"></i>
-                                        <span>LinkedIn</span>
-                                    </a>
-                                    <a href="https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="academic-link">
-                                        <i className="fas fa-graduation-cap"></i>
-                                        <span>Google Scholar</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="hero-image">
-                                <div className="profile-image-container">
-                                    <div className="profile-image">
-                                        {/* Replace with your actual image */}
-                                        <img src="https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg" 
-                                             alt="Your Profile" 
-                                             onError={(e) => {
-                                                 e.target.onerror = null;
-                                                 e.target.style.display = 'none';
-                                                 e.target.parentElement.innerHTML = '<i class="fas fa-user-graduate"></i>';
-                                             }}
-                                        />
-                                    </div>
-                                    <div className="profile-badge">
-                                        <i className="fas fa-award"></i>
-                                        <span>BSc Nursing</span>
-                                    </div>
-                                    <div className="current-affiliation">
-                                        <i className="fas fa-university"></i>
-                                        <span>University of Cape Coast</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <button
+                        className="academic-link"
+                        onClick={() => handleSectionChange('about')}
+                        style={{ 
+                            background: 'transparent',
+                            color: 'var(--btn-primary)',
+                            border: '2px solid var(--btn-primary)',
+                            padding: '0.9rem 1.8rem',
+                            fontSize: '1rem'
+                        }}
+                    >
+                        <i className="fas fa-user"></i>
+                        <span>Learn More About Me</span>
+                    </button>
+                </div>
+            </div>
+            <div className="hero-image">
+                <div className="profile-image-container">
+                    <div className="profile-image">
+                        <img src="https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg" 
+                             alt="Your Profile" 
+                             onError={(e) => {
+                                 e.target.onerror = null;
+                                 e.target.style.display = 'none';
+                                 e.target.parentElement.innerHTML = '<i class="fas fa-user-graduate"></i>';
+                             }}
+                        />
                     </div>
-                </section>
+                    <div className="profile-badge">
+                        <i className="fas fa-award"></i>
+                        <span>BSc Nursing</span>
+                    </div>
+                    <div className="current-affiliation">
+                        <i className="fas fa-university"></i>
+                        <span>University of Cape Coast</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
                 
                 {/* Projects Section */}
                 <section id="projects" className={`section ${activeSection === 'projects' ? 'active' : ''}`}>
                     <div className="container">
                         <h2 className="section-title">R Shiny Applications</h2>
                         
-                        <div className="projects-intro">
-                            <p>
-                                A complete collection of 20 interactive statistical and healthcare analysis tools built with R Shiny. 
-                                All applications are designed to simplify complex statistical analyses for researchers and healthcare professionals.
-                            </p>
-                           
-                            <div className="projects-stats">
-                                <div className="project-stat">
-                                    <i className="fas fa-calculator"></i>
-                                    <div>
-                                        <span className="stat-number">20</span>
-                                        <span className="stat-label">Total Apps</span>
-                                    </div>
-                                </div>
-                                <div className="project-stat">
-                                    <i className="fas fa-chart-line"></i>
-                                    <div>
-                                        <span className="stat-number">20</span>
-                                        <span className="stat-label">Displayed</span>
-                                    </div>
-                                </div>
-                                <div className="project-stat">
-                                    <i className="fas fa-code"></i>
-                                    <div>
-                                        <span className="stat-number">Open</span>
-                                        <span className="stat-label">Source</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div className="projects-intro">
+    <p>
+        The open-source R Shiny projects featured here were originally developed to address my own practical challenges and have gradually evolved into tools used by a broad community of researchers, students, and healthcare professionals. To support their ongoing development, please consider donating by clicking <span 
+            className="support-link" 
+            onClick={() => handleSectionChange('support')}
+            style={{
+                color: 'var(--primary)',
+                fontWeight: '700',
+                cursor: 'pointer',
+                textDecoration: 'underline',
+                textDecorationColor: 'var(--primary)',
+                textUnderlineOffset: '3px'
+            }}
+        >
+            Support
+        </span> 
+    </p>
+   
+<div className="projects-stats">
+    <div className="project-stat">
+        <i className="fas fa-calculator"></i>
+        <div>
+            <span className="stat-number">20</span>
+            <span className="stat-label">Total Apps</span>
+        </div>
+    </div>
+    <div className="project-stat">
+        <i className="fas fa-eye"></i>
+        <div>
+            <span className="stat-number" id="total-views">Loading...</span>
+            <span className="stat-label">Total Views</span>
+        </div>
+    </div>
+    <div className="project-stat">
+        <i className="fas fa-code"></i>
+        <div>
+            <span className="stat-number">Open</span>
+            <span className="stat-label">Source</span>
+        </div>
+    </div>
+</div>
+
+{/* Add source attribution */}
+<div style={{
+    textAlign: 'center',
+    marginTop: '1rem',
+    padding: '0.5rem',
+    color: 'var(--text-light)',
+    fontSize: '0.9rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.5rem'
+}}>
+
+</div>
+<div style={{
+    textAlign: 'center',
+    marginTop: '1.5rem',
+    padding: '1rem',
+    background: 'rgba(99, 102, 241, 0.08)',
+    borderRadius: '10px',
+    border: '1px solid rgba(99, 102, 241, 0.2)'
+}}>
+    <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '1rem',
+        flexWrap: 'wrap',
+        marginBottom: '0.5rem'
+    }}>
+        <i className="fas fa-server" style={{color: 'var(--primary)'}}></i>
+        <span style={{color: 'var(--text-light)'}}>Apps hosted on:</span>
+        <a 
+            href="https://www.shinyapps.io/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+                color: 'var(--primary)', 
+                fontWeight: '700',
+                textDecoration: 'none',
+                padding: '0.5rem 1rem',
+                borderRadius: '6px',
+                background: 'rgba(99, 102, 241, 0.1)',
+                border: '1px solid rgba(99, 102, 241, 0.3)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+                e.target.style.background = 'rgba(99, 102, 241, 0.2)';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 4px 12px rgba(99, 102, 241, 0.15)';
+            }}
+            onMouseOut={(e) => {
+                e.target.style.background = 'rgba(99, 102, 241, 0.1)';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+            }}
+        >
+            <i className="fas fa-external-link-alt" style={{fontSize: '0.85rem'}}></i>
+            ShinyApps.io Platform
+        </a>
+    </div>
+    <div style={{
+        fontSize: '0.85rem',
+        color: 'var(--text-light)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '0.5rem',
+        flexWrap: 'wrap'
+    }}>
+        <span>View counts sourced from:</span>
+        <a 
+            href="https://shinyappstore.com/search/user/1732" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+                color: 'var(--primary)', 
+                fontWeight: '600',
+                textDecoration: 'none',
+                borderBottom: '1px dotted var(--primary)',
+                padding: '2px 4px',
+                borderRadius: '3px',
+                transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+                e.target.style.background = 'rgba(99, 102, 241, 0.1)';
+                e.target.style.borderBottom = '1px solid var(--primary)';
+            }}
+            onMouseOut={(e) => {
+                e.target.style.background = 'transparent';
+                e.target.style.borderBottom = '1px dotted var(--primary)';
+            }}
+        >
+            <i className="fas fa-chart-line" style={{marginRight: '4px', fontSize: '0.8rem'}}></i>
+            Shiny App Store 
+        </a>
+        <span style={{opacity: 0.7}}>•</span>
+        <span id="last-updated">Last updated: {new Date().toLocaleDateString()}</span>
+    </div>
+</div>
+</div>
+            
 
                         {/* Display ALL 20 Apps */}
                         <div className="shiny-apps-grid">
@@ -6946,17 +7503,22 @@ I have expertise in patient care and clinical nursing, health and clinical resea
                                         <h3 className="app-title">{app.name}</h3>
                                         <p className="app-description">{app.description}</p>
                                         
-                                        <div className="app-meta">
-                                            <div className="meta-item">
-                                                <i className="fas fa-calculator"></i>
-                                                <span>Statistical Tool</span>
-                                            </div>
-                                            <div className="meta-item">
-                                                <i className="fas fa-heartbeat"></i>
-                                                <span>Healthcare Analytics</span>
-                                            </div>
-                                        </div>
-                                   
+                           <div className="app-meta">
+    <div className="meta-item views-item">
+        <i className="fas fa-eye"></i>
+        <span className="views-count" id={`views-${app.id}`}>Loading...</span>
+    </div>
+    <div className="meta-item">
+        <i className="fas fa-calculator"></i>
+        <span>Statistical Tool</span>
+    </div>
+    <div className="meta-item">
+        <i className="fas fa-heartbeat"></i>
+        <span>Healthcare Analytics</span>
+    </div>
+</div>
+                           
+                                
                                         <div className="app-actions">
                                             <a 
                                                 href={app.runUrl} 
@@ -7047,17 +7609,22 @@ I have expertise in patient care and clinical nursing, health and clinical resea
                                                         <h3 className="app-title">{app.name}</h3>
                                                         <p className="app-description">{app.description}</p>
                                                         
-                                                        <div className="app-meta">
-                                                            <div className="meta-item">
-                                                                <i className="fas fa-calculator"></i>
-                                                                <span>Statistical Tool</span>
-                                                            </div>
-                                                            <div className="meta-item">
-                                                                <i className="fas fa-heartbeat"></i>
-                                                                <span>Healthcare Analytics</span>
-                                                            </div>
-                                                        </div>
-                                                        
+                                     <div className="app-meta">
+    <div className="meta-item views-item">
+        <i className="fas fa-eye"></i>
+        <span className="views-count" id={`views-${app.id}`}>Loading...</span>
+    </div>
+    <div className="meta-item">
+        <i className="fas fa-calculator"></i>
+        <span>Statistical Tool</span>
+    </div>
+    <div className="meta-item">
+        <i className="fas fa-heartbeat"></i>
+        <span>Healthcare Analytics</span>
+    </div>
+</div>
+                                     
+                                              
                                                         <div className="app-actions">
                                                             <a 
                                                                 href={app.runUrl} 
@@ -7266,49 +7833,8 @@ I have expertise in patient care and clinical nursing, health and clinical resea
                                 </div>
                             </div>
                         </div>
-
-                        {/* View All Blogs Section */}
-                        <div className="blog-footer" style={{marginTop: '3rem'}}>
-                            <div className="view-all-blog glass-card" style={{textAlign: 'center'}}>
-                                <div className="card-content" style={{justifyContent: 'center', flexDirection: 'column'}}>
-                                    <div className="icon-container" style={{margin: '0 auto 1.5rem'}}>
-                                        <i className="fas fa-book-open"></i>
-                                    </div>
-                                    <div>
-                                        <h3 style={{marginBottom: '1rem'}}>Read All My Articles on Blogger</h3>
-                                        <p style={{
-                                            fontSize: '1.05rem', 
-                                            lineHeight: '1.7',
-                                            maxWidth: '600px',
-                                            margin: '0 auto 1.5rem',
-                                            color: 'var(--text-light)'
-                                        }}>
-                                            All my blog posts are published on my Google Blogger platform. 
-                                            Visit to read, comment, and subscribe for regular updates.
-                                        </p>
-                                    </div>
-                                </div>
-                               
-                                <a 
-                                    href="https://mudasir-ibrahim.blogspot.com" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="btn-blogger"
-                                    style={{
-                                        padding: '1rem 3rem',
-                                        fontSize: '1.1rem',
-                                        display: 'inline-flex',
-                                        alignItems: 'center',
-                                        gap: '1rem',
-                                        marginTop: '1rem'
-                                    }}
-                                >
-                                    <i className="fab fa-blogger-b" style={{fontSize: '1.3rem'}}></i>
-                                    <span>Visit My Blogger Site →</span>
-                                </a>
-                            </div>
                         </div>
-                    </div>
+
                 </section>
                 
                 {/* About Me Section */}
@@ -7319,7 +7845,7 @@ I have expertise in patient care and clinical nursing, health and clinical resea
                             
                             <div className="professional-intro">
                                 <p style={{fontSize: '1.1rem', marginBottom: '2rem', lineHeight: '1.8'}}>
-                                    Hey there! I'm Mohammed Mudasir Ibrahim, professionally known as Mudasir Mohammed Ibrahim, and currently working at Tamale Teaching Hospital. I am a registered nurse with expertise in advanced data analysis and in developing R Shiny web applications that make complex data analysis simpler, more intuitive, and accessible for healthcare professionals, students, and researchers. My journey began after several years of clinical practice and health research experience and has evolved through diverse and challenging roles at the intersection of healthcare and technology. I am passionate about building impactful, web-based statistical applications that drive meaningful change in health research and practice.
+                                    Greetings! I'm Mohammed Mudasir Ibrahim, professionally known as Mudasir Mohammed Ibrahim, and currently working at Tamale Teaching Hospital. I am a registered nurse with expertise in advanced data analysis and in developing R Shiny web applications that make complex data analysis simpler, more intuitive, and accessible for healthcare professionals, students, and researchers. My journey began after several years of clinical practice and health research experience and has evolved through diverse and challenging roles at the intersection of healthcare and technology. I am passionate about building impactful, web-based statistical applications that drive meaningful change in health research and practice.
                                 </p>
                             </div>
 
@@ -7590,7 +8116,7 @@ I have expertise in patient care and clinical nursing, health and clinical resea
                                 </div>
                             </div>
 
-                            {/* Professional Credentials Card */}
+                                                 {/* Professional Credentials Card */}
                             <div className="credentials-section">
                                 <div className="section-header">
                                     <h3>Professional Credentials</h3>
@@ -7641,6 +8167,164 @@ I have expertise in patient care and clinical nursing, health and clinical resea
                                 </p>
                             </div>
 
+                            {/* Peer Reviewer Section - NEW */}
+                            <div className="credentials-section" style={{marginTop: '3rem'}}>
+                                <div className="section-header">
+                                    <h3>Peer Reviewer</h3>
+                                    <p>Certified reviewer for top academic publishers</p>
+                                </div>
+                                
+                                <div className="publishers-grid" style={{
+                                    display: 'grid',
+                                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                                    gap: '2rem',
+                                    margin: '2rem 0'
+                                }}>
+                                    {/* Springer Nature */}
+                                    <div className="publisher-card" style={{
+                                        background: 'linear-gradient(135deg, #008cff, #0066cc)',
+                                        borderRadius: '15px',
+                                        padding: '2rem',
+                                        textAlign: 'center',
+                                        color: 'white',
+                                        position: 'relative',
+                                        overflow: 'hidden',
+                                        animation: 'float 6s ease-in-out infinite',
+                                        animationDelay: '0s'
+                                    }}>
+                                        <div style={{
+                                            fontSize: '3rem',
+                                            marginBottom: '1rem',
+                                            filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
+                                        }}>
+                                            <i className="fas fa-book"></i>
+                                        </div>
+                                        <h4 style={{marginBottom: '0.5rem', fontSize: '1.3rem'}}>Springer Nature</h4>
+                                        <p style={{opacity: '0.9', fontSize: '0.9rem'}}>Nature Portfolio Journals</p>
+                                        <div style={{
+                                            position: 'absolute',
+                                            top: '-50px',
+                                            right: '-50px',
+                                            width: '100px',
+                                            height: '100px',
+                                            background: 'rgba(255,255,255,0.1)',
+                                            borderRadius: '50%'
+                                        }}></div>
+                                    </div>
+                                    
+                                    {/* Wiley */}
+                                    <div className="publisher-card" style={{
+                                        background: 'linear-gradient(135deg, #0c7cba, #095a8a)',
+                                        borderRadius: '15px',
+                                        padding: '2rem',
+                                        textAlign: 'center',
+                                        color: 'white',
+                                        position: 'relative',
+                                        overflow: 'hidden',
+                                        animation: 'float 6s ease-in-out infinite',
+                                        animationDelay: '2s'
+                                    }}>
+                                        <div style={{
+                                            fontSize: '3rem',
+                                            marginBottom: '1rem',
+                                            filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
+                                        }}>
+                                            <i className="fas fa-newspaper"></i>
+                                        </div>
+                                        <h4 style={{marginBottom: '0.5rem', fontSize: '1.3rem'}}>Wiley</h4>
+                                        <p style={{opacity: '0.9', fontSize: '0.9rem'}}>Wiley Online Library</p>
+                                        <div style={{
+                                            position: 'absolute',
+                                            bottom: '-50px',
+                                            left: '-50px',
+                                            width: '100px',
+                                            height: '100px',
+                                            background: 'rgba(255,255,255,0.1)',
+                                            borderRadius: '50%'
+                                        }}></div>
+                                    </div>
+                                    
+                                    {/* Elsevier */}
+                                    <div className="publisher-card" style={{
+                                        background: 'linear-gradient(135deg, #ff6b6b, #ff4757)',
+                                        borderRadius: '15px',
+                                        padding: '2rem',
+                                        textAlign: 'center',
+                                        color: 'white',
+                                        position: 'relative',
+                                        overflow: 'hidden',
+                                        animation: 'float 6s ease-in-out infinite',
+                                        animationDelay: '4s'
+                                    }}>
+                                        <div style={{
+                                            fontSize: '3rem',
+                                            marginBottom: '1rem',
+                                            filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
+                                        }}>
+                                            <i className="fas fa-file-alt"></i>
+                                        </div>
+                                        <h4 style={{marginBottom: '0.5rem', fontSize: '1.3rem'}}>Elsevier</h4>
+                                        <p style={{opacity: '0.9', fontSize: '0.9rem'}}>ScienceDirect Journals</p>
+                                        <div style={{
+                                            position: 'absolute',
+                                            top: '-30px',
+                                            left: '50%',
+                                            transform: 'translateX(-50%)',
+                                            width: '80px',
+                                            height: '80px',
+                                            background: 'rgba(255,255,255,0.1)',
+                                            borderRadius: '50%'
+                                        }}></div>
+                                    </div>
+                                </div>
+                                
+                                <div style={{
+                                    textAlign: 'center',
+                                    marginTop: '2.5rem',
+                                    paddingTop: '1.5rem',
+                                    borderTop: '1px solid var(--border)'
+                                }}>
+                                    <a 
+                                        href="https://1drv.ms/f/c/3ce355b70d76f4f7/Ejkh6TgFPhtNkgsfwRv6_OgBpu9S58AyaqHR_AMPJsR4Rg?e=jU8KMP" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            display: 'inline-flex',
+                                            alignItems: 'center',
+                                            gap: '0.75rem',
+                                            padding: '0.9rem 2rem',
+                                            background: 'var(--primary)',
+                                            color: 'white',
+                                            borderRadius: '10px',
+                                            textDecoration: 'none',
+                                            fontWeight: '600',
+                                            fontSize: '1rem',
+                                            transition: 'all 0.3s'
+                                        }}
+                                        onMouseOver={(e) => {
+                                            e.target.style.background = 'var(--primary-light)';
+                                            e.target.style.transform = 'translateY(-3px)';
+                                            e.target.style.boxShadow = '0 10px 25px var(--btn-shadow)';
+                                        }}
+                                        onMouseOut={(e) => {
+                                            e.target.style.background = 'var(--primary)';
+                                            e.target.style.transform = 'translateY(0)';
+                                            e.target.style.boxShadow = 'none';
+                                        }}
+                                    >
+                                        <i className="fas fa-certificate"></i>
+                                        View My Reviewer Certificates
+                                    </a>
+                                    <p style={{
+                                        marginTop: '1rem',
+                                        color: 'var(--text-light)',
+                                        fontSize: '0.9rem'
+                                    }}>
+                                        Access verification certificates 
+                                    </p>
+                                </div>
+                            </div>
+                     
                  {/* Core Competencies Cards */}
 <div className="core-competencies">
     <div className="section-header">
@@ -8383,11 +9067,37 @@ I have expertise in patient care and clinical nursing, health and clinical resea
           
             </main>
 
-    <footer className="footer">
+   <footer className="footer">
     <div className="container">
         <div className="footer-content footer-horizontal-layout">
-            {/* Left Column - Quick Links */}
-            <div className="footer-column">
+            {/* Left Column - Brand Statement */}
+            <div className="footer-column" style={{ flex: '1.5' }}>
+                <div style={{ 
+                    paddingRight: '2rem',
+                    borderRight: '1px solid var(--border)',
+                    marginRight: '2rem'
+                }}>
+                    <div style={{ 
+                        fontSize: '1.5rem', 
+                        fontWeight: '700', 
+                        color: 'var(--primary)',
+                        marginBottom: '0.75rem'
+                    }}>
+                        MMI.
+                    </div>
+                    <p style={{ 
+                        fontSize: '0.9rem', 
+                        color: 'var(--text-light)',
+                        lineHeight: '1.5',
+                        margin: 0
+                    }}>
+                        Passionate about creating R Shiny web-based statistical applications that make a difference.
+                    </p>
+                </div>
+            </div>
+
+            {/* Middle Column - Quick Links */}
+            <div className="footer-column" style={{ flex: '2' }}>
                 <h3>Quick Navigation</h3>
                 <div className="footer-tabs-grid">
                     <ul className="footer-links-vertical">
@@ -8408,7 +9118,7 @@ I have expertise in patient care and clinical nursing, health and clinical resea
             </div>
 
             {/* Right Column - Social Media Icons */}
-            <div className="footer-column social-column">
+            <div className="footer-column social-column" style={{ flex: '1' }}>
                 <h3>Connect</h3>
                 <div className="social-icons-grid">
                     <a href="https://github.com/mudassiribrahim30" target="_blank" rel="noopener noreferrer" className="social-icon-item github" title="GitHub">
@@ -8436,7 +9146,23 @@ I have expertise in patient care and clinical nursing, health and clinical resea
         {/* Footer Bottom - Single line */}
         <div className="footer-bottom">
             <p>© {new Date().getFullYear()} All rights reserved.</p>
-            <p>Built with <i className="fas fa-heart footer-heart"></i> in Ghana. Powered by Mudasir Mohammed Ibrahim</p>
+            <p>Built with <i className="fas fa-heart footer-heart"></i> in Ghana. Powered by 
+                <span 
+                    onClick={() => scrollToTopOfActiveSection()}
+                    style={{
+                        cursor: 'pointer',
+                        color: 'var(--primary)',
+                        fontWeight: '600',
+                        marginLeft: '0.3rem',
+                        textDecoration: 'underline',
+                        textDecorationColor: 'var(--primary)',
+                        textUnderlineOffset: '2px'
+                    }}
+                    title="Click to scroll to top of current section"
+                >
+                    Mudasir Mohammed Ibrahim
+                </span>
+            </p>
         </div>
     </div>
 </footer>
