@@ -3,19 +3,15 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <title>Mudasir Mohammed Ibrahim </title>
+    <title>Mudasir Mohammed Ibrahim</title>
         <meta name="title" content="Mudasir Mohammed Ibrahim">
-    <meta name="description" content="Official website of Mudasir Mohammed Ibrahim - Registered General Nurse, Healthcare Researcher & R Shiny Developer at Tamale Teaching Hospital, Ghana">
+    <meta name="description" content="Official portfolio website of Mudasir Mohammed Ibrahim – Registered General Nurse, Healthcare Researcher, and R Shiny Developer in Tamale, Ghana">
 <meta name="theme-color" content="#1a56db">
 
 <!-- Add these meta tags for cache control -->
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-
-<!-- Add these to your head section after the viewport meta tag -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -42,21 +38,24 @@
 <!-- App Icon (Round) -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%232563eb'/%3E%3Ctext x='50' y='50' text-anchor='middle' dy='0.35em' font-family='Arial, sans-serif' font-weight='bold' font-size='45' fill='white'%3EMMI%3C/text%3E%3C/svg%3E">
 
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://mudasiribrahim.com/apple-touch-icon.png">
+
+
+<!-- Web Manifest -->
+<link rel="manifest" href="https://mudasiribrahim.com/site.webmanifest">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Add this to your <head> section -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""/>
-    
-    
-    <!-- Add this line right before </head> -->
-<script src="https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -74,12 +73,12 @@
     --primary: #6366f1;
     --primary-light: #818cf8;
     --secondary: #f59e0b;
-    --text: #111827; /* CHANGE: Darker black for better contrast in light mode */
-    --text-light: #4b5563; /* CHANGE: Darker gray for better readability */
-    --bg: #f8fafc;
+--text: #000000;          /* PURE BLACK - not faded */
+--text-light: #000000;    /* Also pure black for all text */
+--bg: #ffffff;            /* PURE WHITE background */
     --bg-light: #ffffff;
-    --bg-card: rgba(255, 255, 255, 0.9); /* CHANGE: Less transparency for better contrast */
-    --border: rgba(0, 0, 0, 0.1); /* CHANGE: Darker border for light mode */
+--bg-card: #ffffff;       /* Solid white cards too */
+--border: rgba(0, 0, 0, 0.2);  /* Darker borders for better contrast */
     --shadow: rgba(0, 0, 0, 0.1);
     --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --glass: rgba(255, 255, 255, 0.95); /* CHANGED: More opaque for light mode */
@@ -109,6 +108,1250 @@
     animation: pulse 2s infinite;
 }
 
+
+/* About Section Styles */
+.about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Profile Summary Card */
+.profile-summary-card {
+    margin-bottom: 3rem;
+}
+
+.profile-summary-content {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .profile-summary-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+.profile-image-container {
+    width: 280px;
+    height: 280px;
+    border-radius: 15px; /* Changed from 50% */
+    overflow: hidden;
+    border: 4px solid var(--primary);
+    box-shadow: 0 20px 60px var(--shadow);
+    margin: 0 auto;
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-summary-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.professional-title {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.profile-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(99, 102, 241, 0.08);
+    border-radius: 10px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.highlight-item i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    background: rgba(99, 102, 241, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.highlight-item strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+}
+
+.highlight-item p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.profile-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 1.5rem 0;
+}
+
+.profile-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Professional Journey */
+.professional-journey {
+    margin: 3rem 0;
+    padding: 2.5rem;
+}
+
+.about-content-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-content-title i {
+    color: var(--primary);
+}
+
+.journey-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 2.5rem;
+}
+
+.journey-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.journey-phase {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.phase-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.phase-icon i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.phase-content h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+}
+
+.phase-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Expertise Grid */
+.expertise-grid-section {
+    margin: 3rem 0;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.expertise-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: transform 0.3s;
+}
+
+.expertise-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.expertise-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.expertise-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expertise-icon i {
+    font-size: 1.3rem;
+    color: white;
+}
+
+.expertise-header h4 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--text);
+}
+
+.expertise-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.expertise-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text);
+}
+
+.expertise-list li:last-child {
+    border-bottom: none;
+}
+
+.expertise-list i {
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+
+/* Hover effect */
+.logo-elegant-signature:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    color: #0d47a1;
+}
+
+/* Dark mode */
+.dark-mode .logo-elegant-signature {
+    color: #64b5f6;
+    text-shadow: 
+        1px 1px 2px rgba(100, 181, 246, 0.3),
+        0 0 1px rgba(100, 181, 246, 0.2);
+}
+
+
+/* Detailed Skills Section */
+.detailed-skills-section {
+    margin: 3rem 0;
+    padding: 2.5rem;
+}
+
+.skills-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.skills-category h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.software-proficiency {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.software-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.software-name {
+    flex: 1;
+    font-weight: 500;
+    color: var(--text);
+    min-width: 140px;
+}
+
+.proficiency-bar {
+    flex: 2;
+    height: 8px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.proficiency-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border-radius: 4px;
+    transition: width 1s ease-out;
+}
+
+.proficiency-percent {
+    font-weight: 600;
+    color: var(--primary);
+    min-width: 40px;
+    text-align: right;
+}
+
+/* Education & Credentials */
+.education-credentials-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+@media (max-width: 992px) {
+    .education-credentials-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.education-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.education-card {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.education-card:hover {
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.education-degree {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.education-degree i {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.education-degree h4 {
+    margin: 0;
+    color: var(--text);
+}
+
+.education-institution {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0.25rem 0 0 0;
+}
+
+.education-details {
+    padding-left: 3rem;
+}
+
+.education-period {
+    display: inline-block;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.education-description {
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.credentials-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.credential-item:hover {
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.credential-badge {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.credential-badge i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.credential-info h4 {
+    margin: 0 0 0.25rem 0;
+    color: var(--text);
+}
+
+.credential-info p {
+    color: var(--text-light);
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.credential-status {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.credential-status.active {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+}
+
+/* Research Interests */
+.research-interests-section {
+    margin: 3rem 0;
+    padding: 2.5rem;
+}
+
+.interests-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.interest-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 50px;
+    color: var(--text);
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.interest-tag:hover {
+    background: rgba(99, 102, 241, 0.2);
+    transform: translateY(-2px);
+}
+
+.interest-tag i {
+    color: var(--primary);
+}
+
+/* Add this to your CSS section */
+#animated-code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    position: relative;
+    min-height: 180px;
+}
+
+/* Typewriter cursor */
+.typewriter-cursor {
+    display: inline-block;
+    font-weight: bold;
+    color: var(--primary);
+    animation: blink 0.8s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Syntax highlighting to match your original website */
+.code-line {
+    font-family: 'Courier New', monospace;
+    margin-bottom: 0.25rem;
+    transition: none;
+}
+
+.code-line .keyword {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.code-line .string {
+    color: #1dd1a1;
+}
+
+.code-line .function {
+    color: #54a0ff;
+}
+
+.code-line .comment {
+    color: #8395a7;
+    font-style: italic;
+}
+
+.code-line .operator {
+    color: #4ecdc4;
+}
+
+.code-line .bracket {
+    color: #4ecdc4;
+    font-weight: bold;
+}
+
+.code-line .tag {
+    color: #ff6b6b;
+}
+
+/* Character typing animation */
+.code-line span {
+    display: inline-block;
+    animation: characterAppear 0.1s ease-out;
+}
+
+@keyframes characterAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-1px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Make sure the code container has proper spacing */
+#animated-code {
+    padding: 1.5rem;
+    white-space: pre;
+    overflow: hidden;
+}
+
+/* Keep the window styling from your original */
+.code-window {
+    position: relative;
+    width: 90%;
+    height: 80%;
+    background: var(--bg-surface);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    z-index: 2;
+}
+
+/* Ensure the original colors work in both themes */
+:root {
+    --text-secondary: #000000; /* Black for light mode */
+}
+
+.dark-mode {
+    --text-secondary: #a1a1a1; /* Light gray for dark mode */
+}
+
+.dark-mode .code-line .keyword {
+    color: #ff6b6b; /* Same red for both modes */
+}
+
+.dark-mode .code-line .string {
+    color: #f1fa8c; /* Yellow for dark mode strings */
+}
+
+.dark-mode .code-line .function {
+    color: #54a0ff; /* Same blue for both modes */
+}
+
+.dark-mode .code-line .comment {
+    color: #707070; /* Dark gray for dark mode */
+}
+
+/* ===== DIFFERENT COLOR FOR "Hi! I'm Mudasir" ===== */
+.colorful-greeting {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 2rem 0 1.5rem 0;
+    color: #ec4899; /* Different pink color */
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 2px 4px rgba(236, 72, 153, 0.2);
+}
+
+/* Optional: Add a subtle underline */
+.colorful-greeting::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        rgba(236, 72, 153, 0.6), 
+        rgba(245, 158, 11, 0.6));
+    border-radius: 2px;
+}
+
+/* Dark mode adjustment */
+.dark-mode .colorful-greeting {
+    color: #f472b6; /* Brighter pink for dark mode */
+    text-shadow: 0 2px 8px rgba(244, 114, 182, 0.3);
+}
+
+.dark-mode .colorful-greeting::after {
+    background: linear-gradient(90deg, 
+        rgba(244, 114, 182, 0.6), 
+        rgba(252, 211, 77, 0.6));
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .colorful-greeting {
+        font-size: 2.2rem;
+        text-align: center;
+        margin: 1.5rem auto;
+        display: block;
+    }
+    
+    .colorful-greeting::after {
+        width: 60%;
+        left: 20%;
+    }
+}
+
+@media (max-width: 480px) {
+    .colorful-greeting {
+        font-size: 1.8rem;
+    }
+}
+
+/* Call to Action */
+.about-cta-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(168, 85, 247, 0.08));
+    border-radius: 20px;
+    margin: 3rem 0;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.cta-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-highlights {
+        grid-template-columns: 1fr;
+    }
+    
+    .journey-timeline {
+        grid-template-columns: 1fr;
+    }
+    
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .education-details {
+        padding-left: 0;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+}
+
+/* Technical Proficiency Cards Styles */
+.technical-proficiency-section {
+    margin: 3rem 0;
+    padding: 2.5rem;
+}
+
+.proficiency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.proficiency-category-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.proficiency-category-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.category-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.category-header h4 {
+    font-size: 1.3rem;
+    color: var(--text);
+    margin: 0;
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s;
+}
+
+.skill-item:last-child {
+    border-bottom: none;
+}
+
+.skill-item:hover {
+    transform: translateX(5px);
+}
+
+.skill-name {
+    flex: 1;
+    font-weight: 500;
+    color: var(--text);
+    font-size: 0.95rem;
+    min-width: 160px;
+}
+
+.skill-bar {
+    flex: 2;
+    height: 8px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border-radius: 4px;
+    transition: width 1.5s ease-out;
+    position: relative;
+}
+
+.skill-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+    animation: shimmer 3s infinite;
+}
+
+.skill-percent {
+    font-weight: 600;
+    color: var(--primary);
+    min-width: 40px;
+    text-align: right;
+    font-size: 0.95rem;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .proficiency-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .skill-name {
+        min-width: 100%;
+    }
+    
+    .skill-bar {
+        width: 100%;
+    }
+    
+    .skill-percent {
+        text-align: left;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .technical-proficiency-section {
+        padding: 1.5rem;
+    }
+    
+    .proficiency-category-card {
+        padding: 1.25rem;
+    }
+    
+    .category-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .category-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--bg-secondary);
+    padding: 3rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+/* Light mode footer - SOLID WHITE */
+:root .footer,
+body:not(.dark-mode) .footer {
+    background-color: #ffffff !important; /* Pure white */
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Light border */
+}
+
+/* Dark mode footer - keep dark */
+.dark-mode .footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+}
+
+/* Social Icons in Footer */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    width: 44px;
+    height: 44px;
+    background-color: var(--bg-surface);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+    font-size: 1.1rem;
+}
+
+.social-icon:hover {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* Platform-specific colors on hover */
+.social-icon.github:hover { background: #333; }
+.social-icon.linkedin:hover { background: #0a66c2; }
+.social-icon.youtube:hover { background: #ff0000; }
+.social-icon.scholar:hover { background: #4285f4; }
+.social-icon.orcid:hover { background: #a6ce39; }
+.social-icon.blogger:hover { background: #FF5722; }
+
+/* Footer Bottom Text */
+.footer-bottom {
+    color: var(--text-tertiary);
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-heart {
+    color: #e53e3e;
+    margin: 0 0.2rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+.author-name {
+    cursor: pointer;
+    color: var(--primary);
+    font-weight: 600;
+    margin-left: 0.3rem;
+    text-decoration: underline;
+    text-decoration-color: var(--primary);
+    text-underline-offset: 2px;
+}
+
+.author-name:hover {
+    color: var(--primary-light);
+    text-decoration-color: var(--primary-light);
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .social-icons {
+        gap: 0.75rem;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .footer-bottom {
+        font-size: 0.8rem;
+        padding: 0 1rem;
+    }
+}
+
+.profile-hero {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.profile-image-large {
+    position: relative;
+    width: auto;
+    max-width: 265px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.profile-image-large img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* Changed from 50% to 15px */
+    object-fit: contain;
+}
+
+.profile-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.profile-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.profile-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 2rem;
+}
+
+.profile-quick-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Fix for Code Window Container */
+.hero-visual {
+    position: relative;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Add padding */
+}
+
+.code-window {
+    position: relative;
+    width: 100%; /* Change from 90% to 100% */
+    height: 100%; /* Change from 80% to 100% */
+    background: var(--bg-surface);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.window-header {
+    height: 40px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 0.5rem;
+    flex-shrink: 0; /* Prevent stretching */
+}
+
+.window-content {
+    padding: 1.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    overflow-y: auto; /* Add scroll if needed */
+    flex-grow: 1; /* Take remaining space */
+    white-space: pre-wrap; /* Allow wrapping */
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Fix code line wrapping */
+.code-line {
+    display: block;
+    margin-bottom: 0.25rem;
+    position: relative;
+    padding-left: 1.5rem;
+    white-space: pre-wrap; /* Allow wrapping */
+    word-break: break-all; /* Break long words */
+    overflow-wrap: break-word;
+}
+
+.line-number {
+    position: absolute;
+    left: 0;
+    color: var(--text-light);
+    opacity: 0.6;
+    font-size: 0.9rem;
+    min-width: 1.5rem;
+    text-align: right;
+    user-select: none;
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 768px) {
+    .hero-visual {
+        height: 350px;
+        padding: 15px;
+    }
+    
+    .window-content {
+        padding: 1rem;
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+    
+    .code-line {
+        padding-left: 1.25rem;
+        font-size: 0.85rem;
+    }
+    
+    .line-number {
+        min-width: 1.25rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-visual {
+        height: 300px;
+        padding: 10px;
+    }
+    
+    .window-content {
+        padding: 0.75rem;
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+    
+    .code-line {
+        padding-left: 1rem;
+        font-size: 0.75rem;
+    }
+    
+    .line-number {
+        min-width: 1rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .profile-image-large {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Dark mode adjustment */
+.dark-mode .social-link {
+    background-color: var(--bg-surface);
+    border-color: var(--border);
+}
+
+.dark-mode .social-link:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
 /* Ensure view counters are visible */
 .views-count {
     font-weight: 700;
@@ -116,6 +1359,84 @@
     font-size: 1.1rem;
     opacity: 1 !important;
     transition: opacity 0.3s ease;
+}
+
+/* All buttons have the same primary style */
+.btn-primary {
+    background: linear-gradient(90deg, var(--btn-primary), var(--btn-primary-hover));
+    color: var(--btn-text);
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+
+/* Button Colors - Fixed for both themes */
+:root {
+    /* Light theme */
+    --btn-primary: #6366f1;
+    --btn-primary-hover: #818cf8;
+    --btn-text: #ffffff;
+    --btn-shadow: rgba(99, 102, 241, 0.3);
+}
+
+.dark-mode {
+    /* Dark theme - SAME button colors for consistency */
+    --btn-primary: #6366f1;      /* Keep same purple in dark mode */
+    --btn-primary-hover: #818cf8; /* Keep same hover color */
+    --btn-text: #ffffff;
+    --btn-shadow: rgba(99, 102, 241, 0.3);
+}
+
+/* Button hover effects - make sure they're visible */
+.btn-primary:hover {
+    background: var(--btn-primary-hover);
+    color: var(--btn-text);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn-secondary:hover {
+    background: var(--btn-secondary-hover);
+    color: var(--btn-text);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+}
+
+.btn-outline:hover {
+    background: var(--btn-primary);
+    color: var(--btn-text);
+    border-color: var(--btn-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+/* Hero buttons layout */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* Footer brand statement styling */
@@ -216,6 +1537,726 @@
 .view-badge i {
     color: #fbbf24;
 }
+
+/* ========== NEXT.JS STYLE HERO SECTION ========== */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 6rem 0 4rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-content h2 {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 540px;
+    min-height: 60px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+/* Smooth Button Animation - No Flicker */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+    background: var(--btn-primary);
+    color: var(--btn-text);
+    border: none;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth cubic-bezier timing */
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transform: translateZ(0); /* Hardware acceleration */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Add a pseudo-element for smooth hover effect */
+.btn::before,
+.btn-primary::before,
+.btn-secondary::before,
+.btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--btn-primary-hover);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth hover animation */
+.btn:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-outline:hover {
+    color: var(--btn-text);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--btn-shadow);
+}
+
+/* Animate the pseudo-element on hover */
+.btn:hover::before,
+.btn-primary:hover::before,
+.btn-secondary:hover::before,
+.btn-outline:hover::before {
+    transform: scaleX(1);
+}
+
+/* Active/click state */
+.btn:active,
+.btn-primary:active,
+.btn-secondary:active,
+.btn-outline:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+}
+
+/* Hero buttons layout */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+}
+
+/* Ensure consistent colors */
+:root, .dark-mode {
+    --btn-primary: #6366f1;
+    --btn-primary-hover: #818cf8;
+    --btn-text: #ffffff;
+    --btn-shadow: rgba(99, 102, 241, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+.window-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot-red { background: #ff5f57; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #28ca42; }
+
+
+/* Code window colors that work in both themes */
+.code-line { color: var(--text-secondary); }
+.code-keyword { color: var(--primary-light); }
+.code-function { color: #ff6b6b; } /* Red color works in both themes */
+.code-string { 
+    color: #d35400; /* Dark orange for light mode */
+}
+.code-comment { color: var(--text-tertiary); }
+
+/* Dark mode specific adjustments */
+.dark-mode .code-string {
+    color: #f1fa8c; /* Yellow for dark mode */
+}
+
+/* Better contrast for light mode */
+:root .code-string {
+    color: #d35400; /* Dark orange - good contrast on light background */
+}
+
+/* Updated rotating text animation - FIXED */
+@keyframes textInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    10% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    40% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.rotating-text-container {
+    position: relative;
+    height: 60px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+    margin-left: 10px; /* Add some spacing */
+}
+
+.rotating-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* Different animation delays for each text */
+.rotating-text:nth-child(1) {
+    animation: textInOut 12s infinite;
+    animation-delay: 0s;
+}
+
+.rotating-text:nth-child(2) {
+    animation: textInOut 12s infinite;
+    animation-delay: 4s;
+}
+
+.rotating-text:nth-child(3) {
+    animation: textInOut 12s infinite;
+    animation-delay: 8s;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.75rem;
+    }
+    
+    .hero-visual {
+        height: 350px;
+        order: -1;
+    }
+    
+    .hero-social {
+        justify-content: center;
+    }
+    
+    .rotating-text-container {
+        width: auto;
+        text-align: center;
+    }
+    
+    .rotating-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.25rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hero-visual {
+        height: 300px;
+    }
+}
+
+/* University-style Current Project Banner */
+.current-project-banner {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, 
+        rgba(99, 102, 241, 0.08) 0%, 
+        rgba(59, 130, 246, 0.08) 100%);
+    border-radius: 12px;
+    padding: 1.25rem 0;
+    margin: 2rem 0 3rem;
+    border-left: 4px solid var(--primary);
+    border-right: 4px solid var(--primary);
+}
+
+.current-project-scroll {
+    display: flex;
+    animation: scrollMarquee 45s linear infinite;
+    width: max-content;
+    padding: 0 1rem;
+}
+
+.current-project-item {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.5rem;
+    margin: 0 2rem;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 8px;
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+}
+
+.project-badge {
+    background: var(--primary);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.project-text {
+    font-size: 1rem;
+    color: var(--text);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.project-text .highlight {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+@keyframes scrollMarquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 1rem));
+    }
+}
+
+/* Pause on hover */
+.current-project-scroll:hover {
+    animation-play-state: paused;
+}
+
+/* Fade edges */
+.current-project-banner::before,
+.current-project-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.current-project-banner::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--bg), transparent);
+}
+
+.current-project-banner::after {
+    right: 0;
+    background: linear-gradient(90deg, transparent, var(--bg));
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .current-project-banner {
+        padding: 1rem 0;
+        margin: 1.5rem 0 2.5rem;
+    }
+    
+    .current-project-scroll {
+        animation: scrollMarquee 35s linear infinite;
+    }
+    
+    .current-project-item {
+        padding: 0.6rem 1.25rem;
+        margin: 0 1.5rem;
+        gap: 0.75rem;
+    }
+    
+    .project-badge {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .project-text {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .current-project-scroll {
+        animation: scrollMarquee 30s linear infinite;
+    }
+    
+    .current-project-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        margin: 0 1rem;
+        gap: 0.5rem;
+    }
+    
+    .current-project-banner::before,
+    .current-project-banner::after {
+        width: 40px;
+    }
+}
+
+/* Current Project Typewriter - FAST */
+.current-project-typewriter {
+    margin: 3rem 0 0 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, 
+        rgba(99, 102, 241, 0.08) 0%, 
+        rgba(59, 130, 246, 0.08) 100%);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+    border-right: 4px solid var(--primary);
+    text-align: center;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.current-project-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.current-project-badge {
+    background: var(--primary);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.typewriter-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    line-height: 1.4;
+    padding: 0 1rem;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: bold;
+    animation: blink 0.8s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.project-status {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.project-status i {
+    color: var(--secondary);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .current-project-typewriter {
+        padding: 1.5rem;
+        margin: 2rem 0 0 0;
+        min-height: 130px;
+    }
+    
+    .typewriter-text {
+        font-size: 1.2rem;
+        min-height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .typewriter-text {
+        font-size: 1.1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .current-project-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* FLOATING CURRENT PROJECT BANNER */
+.floating-project-banner {
+    position: fixed;
+    top: 80px; /* Below navbar */
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: linear-gradient(90deg, 
+        rgba(99, 102, 241, 0.9) 0%, 
+        rgba(168, 85, 247, 0.9) 50%, 
+        rgba(99, 102, 241, 0.9) 100%);
+    color: white;
+    padding: 0.75rem 0;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    animation: slideInOut 15s infinite ease-in-out;
+}
+
+.floating-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    white-space: nowrap;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.floating-banner-icon {
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.floating-banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.floating-banner-title {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.floating-banner-description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    max-width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.floating-banner-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.floating-banner-status i {
+    animation: pulse 2s infinite;
+}
+
+@keyframes slideInOut {
+    0%, 100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    10%, 90% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 1;
+    }
+    50% { 
+        transform: scale(1.1); 
+        opacity: 0.8;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .floating-project-banner {
+        top: 70px;
+        padding: 0.6rem 0;
+    }
+    
+    .floating-banner-content {
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+    
+    .floating-banner-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .floating-banner-title {
+        font-size: 0.9rem;
+    }
+    
+    .floating-banner-description {
+        font-size: 0.8rem;
+        max-width: 300px;
+    }
+    
+    .floating-banner-status {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.75rem;
+    }
+    
+    @keyframes slideInOut {
+        0%, 100% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        15%, 85% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
+/* Small devices */
+@media (max-width: 480px) {
+    .floating-project-banner {
+        top: 65px;
+    }
+    
+    .floating-banner-content {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 0.75rem;
+    }
+    
+    .floating-banner-description {
+        white-space: normal;
+        max-width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    
+    .floating-banner-status {
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+}
     
     /* ADD THESE TWO LINES - NEW VARIABLES */
     --logo-text: #111827; /* CHANGE: Darker black for light mode */
@@ -227,41 +2268,178 @@
 }
 
 .dark-mode {
-    --primary: #818cf8;
-    --primary-light: #a5b4fc;
-    --secondary: #fbbf24;
-    --text: #f3f4f6; /* CHANGE: Brighter white for better contrast */
-    --text-light: #d1d5db;
-    --bg: #0f172a;
-    --bg-light: #1e293b;
-    --bg-card: rgba(30, 41, 59, 0.9); /* CHANGE: Less transparency for better contrast */
-    --border: rgba(255, 255, 255, 0.15); /* CHANGE: Brighter border for dark mode */
-    --shadow: rgba(0, 0, 0, 0.3);
-    --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --glass: rgba(255, 255, 255, 0.1);
+    /* Next.js true black theme */
+    --primary: #0070f3;
+    --primary-light: #3291ff;
+    --secondary: #f59e0b;
     
-    /* Keep button colors the same in dark mode */
+    /* Text colors - Next.js uses bright white for high contrast */
+    --text: #ffffff;
+    --text-light: #a1a1a1;
+    
+    /* Backgrounds - True black with subtle blue tint */
+    --bg: #000000;
+    --bg-light: #111111;
+    --bg-card: #0a0a0a;
+    
+    /* Borders and shadows */
+    --border: #333333;
+    --border-light: #444444;
+    --shadow: rgba(0, 0, 0, 0.4);
+    --shadow-light: rgba(0, 112, 243, 0.15);
+    
+    /* Gradients - Next.js blue gradients */
+    --gradient: linear-gradient(90deg, #0070f3, #3291ff);
+    --gradient-subtle: linear-gradient(180deg, rgba(0, 112, 243, 0.1), transparent);
+    
+    /* Glass effect - subtle transparency */
+    --glass: rgba(255, 255, 255, 0.08);
+    
+    /* Button colors - keep your existing for consistency */
+    --btn-primary: #0070f3;
+    --btn-primary-hover: #0051b3;
+    --btn-secondary: #f59e0b;
+    --btn-secondary-hover: #fbbf24;
+    --btn-text: #ffffff;
+    --btn-shadow: rgba(0, 112, 243, 0.3);
+    
+    /* Text specific */
+    --logo-text: #ffffff;
+    --heading-text: #ffffff;
+    
+    /* Additional Next.js specific */
+    --accent: #0070f3;
+    --accent-hover: #0051b3;
+    --accent-light: #3291ff;
+    --bg-surface: #1a1a1a;
+    --text-tertiary: #707070;
+}
+
+/* ========== BACKGROUND PATTERNS ========== */
+/* Light Mode: Colored background with faded grid */
+:root, body:not(.dark-mode) {
+    background-image: 
+        linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: -1px -1px;
+    background-attachment: fixed;
+    background-color: #f8fafc; /* Very light blue tint instead of pure white */
+    color: var(--text);
+}
+
+/* Dark Mode: Keep existing Next.js style background */
+body.dark-mode {
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(0, 112, 243, 0.05) 0%, transparent 55%),
+        radial-gradient(circle at 85% 30%, rgba(50, 145, 255, 0.05) 0%, transparent 55%);
+    background-attachment: fixed;
+    background-color: var(--bg);
+}
+
+/* Next.js-style glass effect for navbar */
+.dark-mode .navbar {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Next.js-style cards */
+.dark-mode .glass-card,
+.dark-mode .shiny-app-card,
+.dark-mode .blog-card,
+.dark-mode .publication-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 30px var(--shadow);
+}
+
+/* Next.js-style buttons */
+.dark-mode .btn-run-app,
+.dark-mode .btn-view-code,
+.dark-mode .btn-resume {
+    background: var(--gradient);
+    color: white;
+    border: none;
+}
+
+.dark-mode .btn-run-app:hover,
+.dark-mode .btn-view-code:hover,
+.dark-mode .btn-resume:hover {
+    background: var(--primary-hover);
+}
+
+/* Next.js-style text gradients */
+.dark-mode .highlight {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Next.js-style code block */
+.dark-mode .developer-code-container {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+}
+
+/* Grid pattern overlay (optional Next.js detail) */
+.dark-mode .container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(to right, var(--border) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Update your light theme to match your current setup */
+:root {
+    /* Keep your existing light theme exactly as is */
+    --primary: #6366f1;
+    --primary-light: #818cf8;
+    --secondary: #f59e0b;
+    --text: #000000;
+    --text-light: #000000;
+    --bg: #ffffff;
+    --bg-light: #ffffff;
+    --bg-card: #ffffff;
+    --border: rgba(0, 0, 0, 0.2);
+    --shadow: rgba(0, 0, 0, 0.1);
+    --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --glass: rgba(255, 255, 255, 0.95);
     --btn-primary: #6366f1;
     --btn-primary-hover: #818cf8;
     --btn-secondary: #f59e0b;
     --btn-secondary-hover: #fbbf24;
     --btn-text: #ffffff;
     --btn-shadow: rgba(99, 102, 241, 0.3);
-    
-    /* ADD THESE TWO LINES - NEW VARIABLES */
-    --logo-text: #f3f4f6; /* CHANGE: Brighter white for dark mode */
-    --heading-text: #f3f4f6; /* CHANGE: Brighter white for dark mode */
+    --logo-text: #111827;
+    --heading-text: #111827;
+    --navbar-bg: rgba(255, 255, 255, 0.95);
+    --navbar-border: rgba(0, 0, 0, 0.08);
 }
-      
-     body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+
+    body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
-    color: var(--text); /* Make sure this says --text, not --text-light */
+    color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
-    font-weight: 400; /* ADD: Slightly bolder text */
+    font-size: 15px; /* Slightly smaller base font */
+    font-weight: 400;
 }
+    
      
         .container {
             max-width: 1200px;
@@ -967,39 +3145,17 @@ body {
     word-wrap: break-word;
 }
 
-.code-line {
-    display: flex;
-    margin-bottom: 0.25rem;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.line-number {
-    position: absolute;
-    left: 0;
-    color: var(--text-light);
-    opacity: 0.6;
-    font-size: 0.9rem;
-    min-width: 1.5rem;
-    text-align: right;
-    user-select: none;
-}
-
 .code-keyword {
     color: #ff6b6b;
     font-weight: bold;
-}
-
-.code-operator {
-    color: #4ecdc4;
 }
 
 .code-string {
     color: #1dd1a1;
 }
 
-.code-number {
-    color: #ff9ff3;
+.code-function {
+    color: #54a0ff;
 }
 
 .code-comment {
@@ -1007,60 +3163,17 @@ body {
     font-style: italic;
 }
 
-.code-function {
-    color: #54a0ff;
+.code-bracket {
+    color: #4ecdc4;
+    font-weight: bold;
+}
+
+.code-tag {
+    color: #ff6b6b;
 }
 
 .code-object {
     color: #5f27cd;
-}
-
-.code-property {
-    color: #feca57;
-}
-
-.code-boolean {
-    color: #ff9f43;
-}
-
-.code-array {
-    color: #00d2d3;
-}
-
-.code-output {
-    background: rgba(99, 102, 241, 0.05);
-    border-left: 4px solid var(--primary);
-    padding: 1rem;
-    margin-top: 1.5rem;
-    border-radius: 0 8px 8px 0;
-    font-family: 'Inter', sans-serif;
-}
-
-.code-output h4 {
-    color: var(--text);
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.code-output h4 i {
-    color: var(--primary);
-}
-
-.code-output pre {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 1rem;
-    border-radius: 8px;
-    font-family: 'Courier New', monospace;
-    color: var(--text);
-    overflow-x: auto;
-    font-size: 0.9rem;
-}
-
-.code-output .output-value {
-    color: #10b981;
-    font-weight: 600;
 }
 
 /* Terminal-like blinking cursor */
@@ -1497,26 +3610,65 @@ body {
     }
 }
 
-/* Add to your existing CSS, preferably in the Navigation section */
 .logo {
     position: relative;
-    padding-left: 25px; /* Space for the dot */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Space between dot and text */
+    font-size: 0.5rem;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--logo-text);
 }
 
 .logo::before {
     content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
-    background-color: #10b981; /* Green color */
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
     border-radius: 50%;
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
     animation: pulse 2s infinite;
-    z-index: 1;
+    flex-shrink: 0;
 }
+
+/* Remove the padding-left since we're using flex gap */
+.logo {
+    padding-left: 0;
+}
+
+/* Adjust for scrolled navbar */
+.navbar.scrolled .logo {
+    font-size: 1.5rem;
+    gap: 6px;
+}
+
+.navbar.scrolled .logo::before {
+    width: 10px;
+    height: 10px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.6rem;
+        gap: 6px;
+    }
+    
+    .logo::before {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .navbar.scrolled .logo {
+        font-size: 1.4rem;
+        gap: 5px;
+    }
+}
+
 
 /* Pulsing animation for the online dot */
 @keyframes pulse {
@@ -1634,32 +3786,57 @@ body {
     flex-direction: column;
 }
 
+/* Next.js style social icons */
 .social-icons-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
 }
 
-.social-icon-item {
+.social-icon {
+    width: 44px;
+    height: 44px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 50%;
+    color: var(--text-secondary);
     text-decoration: none;
-    color: var(--text);
     transition: all 0.3s;
     font-size: 1.1rem;
 }
 
-.social-icon-item:hover {
-    background: var(--primary);
+.social-icon:hover {
+    background-color: var(--primary);
     color: white;
     transform: translateY(-3px);
     border-color: var(--primary);
+}
+
+/* Platform-specific colors on hover */
+.social-icon.github:hover { background: #333; }
+.social-icon.linkedin:hover { background: #0a66c2; }
+.social-icon.youtube:hover { background: #ff0000; }
+.social-icon.scholar:hover { background: #4285f4; }
+.social-icon.orcid:hover { background: #a6ce39; }
+.social-icon.blogger:hover { background: #FF5722; }
+
+@media (max-width: 768px) {
+    .social-icons-grid {
+        grid-template-columns: repeat(6, 1fr);
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        max-width: 200px;
+    }
 }
 
 /* Platform-specific colors on hover */
@@ -2487,28 +4664,44 @@ body {
 .profile-image {
     width: 320px;
     height: 320px;
-    border-radius: 50%;
+    border-radius: 15px; /* Changed from 50% */
     overflow: hidden;
     margin: 0 auto;
     border: 4px solid var(--primary);
     box-shadow: 0 20px 60px var(--shadow);
     position: relative;
     background: var(--bg);
-    transform: translateY(-30px); /* Move the image itself up */
+    transform: translateY(-30px);
 }
 
 .profile-image img {
     width: 100%;
-    height: 120%; /* Make the image taller to show when moved up */
+    height: 120%;
     object-fit: cover;
     transition: transform 0.5s;
-    object-position: center 30%; /* Adjust which part of the image is visible */
+    object-position: center 30%;
 }
 
 /* When hovering, show more of the image */
 .profile-image:hover img {
     transform: scale(1.05);
     object-position: center 40%;
+}
+
+/* Add a subtle vignette effect to make the partial image look intentional */
+.profile-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, 
+        transparent 30%, 
+        rgba(0, 0, 0, 0.2) 70%, 
+        rgba(0, 0, 0, 0.4) 100%);
+    border-radius: 15px; /* Changed from 50% */
+    pointer-events: none;
 }
 
 /* Adjust the badges to stay in place */
@@ -2554,11 +4747,10 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at center, 
-        transparent 30%, 
-        rgba(0, 0, 0, 0.2) 70%, 
-        rgba(0, 0, 0, 0.4) 100%);
-    border-radius: 50%;
+    background: linear-gradient(to bottom, 
+        transparent 20%, 
+        rgba(0, 0, 0, 0.2) 80%);
+    border-radius: 15px; /* Match the image border-radius */
     pointer-events: none;
 }
 
@@ -2571,7 +4763,7 @@ body {
     transform: translateX(-50%);
     width: 340px;
     height: 340px;
-    border-radius: 50%;
+    border-radius: 20px; /* Changed from 50% to 20px */
     background: linear-gradient(45deg, var(--primary), var(--primary-light));
     opacity: 0.1;
     z-index: -1;
@@ -3897,6 +6089,7 @@ body {
 .profile-image-container .profile-image {
     border: 4px solid var(--primary) !important;
     box-shadow: 0 20px 60px var(--shadow) !important;
+    border-radius: 15px !important; /* Changed from 50% */
 }
 
 /* Remove dangling from modal and special cards */
@@ -4290,6 +6483,382 @@ body {
     font-size: 0.95rem;
     line-height: 1.6;
     max-width: 600px;
+}
+
+/* ========== FONT SIZE OPTIMIZATION ========== */
+/* Base font sizes for better readability */
+.section-title {
+    font-size: 2rem !important; /* Reduced from 2.5rem */
+}
+
+.hero-content h1 {
+    font-size: 2.8rem !important; /* Reduced from 3.5rem */
+}
+
+.hero-content h2 {
+    font-size: 1.2rem !important; /* Reduced from 1.2rem */
+}
+
+.hero-content p {
+    font-size: 1rem !important; /* Reduced from 1.2rem */
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Card text sizes */
+.glass-card,
+.shiny-app-card,
+.project-card,
+.blog-card,
+.publication-card,
+.support-card,
+.credential-card,
+.competency-card,
+.resume-card,
+.contact-form-container,
+.contact-info-container {
+    font-size: 0.95rem !important;
+}
+
+/* Button text */
+.btn,
+.btn-run-app,
+.btn-view-code,
+.btn-resume,
+.btn-support,
+.btn-submit,
+.btn-read-more,
+.btn-read,
+.btn-pdf {
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+}
+
+/* Navigation font */
+.nav-links a,
+.mobile-nav-links a {
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+}
+
+/* Form labels and inputs */
+.form-group label {
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+}
+
+.form-group input,
+.form-group textarea {
+    font-size: 0.95rem !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Footer text */
+.footer {
+    font-size: 0.85rem !important;
+}
+
+.footer-links-vertical a {
+    font-size: 0.85rem !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px !important;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.6rem !important;
+    }
+    
+    .hero-content p {
+        font-size: 0.95rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 13px !important;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.4rem !important;
+    }
+}
+
+/* ========== SCROLL NAVIGATION INDICATOR ========== */
+.scroll-navigation {
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.scroll-indicator {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+    border: 2px solid white;
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-indicator.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.scroll-indicator:hover {
+    background: var(--primary-light);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+.scroll-indicator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+    transform: translateX(-100%);
+}
+
+.scroll-indicator:hover::before {
+    animation: shine 1s ease-out;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Next section indicator */
+.scroll-indicator.next-section i {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+/* Previous section indicator (for scrolling up) */
+.scroll-indicator.prev-section {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    background: rgba(99, 102, 241, 0.9);
+}
+
+.scroll-indicator.prev-section i {
+    animation: bounceUp 2s infinite;
+}
+
+@keyframes bounceUp {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Section progress indicator */
+.section-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.section-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px;
+    background: var(--bg-card); /* Changed from fixed white */
+    border-radius: 25px;
+    border: 1px solid var(--border);
+    box-shadow: 0 5px 15px var(--shadow); /* Changed to use theme variable */
+    backdrop-filter: blur(10px);
+}
+
+.section-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border); /* Changed to use theme variable */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.section-dot:hover {
+    transform: scale(1.3);
+    background: var(--primary-light); /* Changed to use theme variable */
+}
+
+.section-dot.active {
+    background: var(--primary); /* Changed to use theme variable */
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+.section-dot.active::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    border: 1px solid var(--primary); /* Changed to use theme variable */
+    animation: pulse 2s infinite;
+}
+
+.section-dot.completed {
+    background: #10b981; /* Keep this green color as it works in both themes */
+}
+
+/* Tooltip for section names */
+.section-dot::before {
+    content: attr(data-section);
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-card); /* Changed to use theme variable */
+    color: var(--text); /* Changed to use theme variable */
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border); /* Changed to use theme variable */
+    box-shadow: 0 3px 10px var(--shadow); /* Changed to use theme variable */
+    pointer-events: none;
+}
+
+.section-dot:hover::before {
+    opacity: 1;
+    visibility: visible;
+    right: 30px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+}
+
+.section-dot.completed {
+    background: #10b981;
+}
+
+/* Tooltip for section names */
+.section-dot::before {
+    content: attr(data-section);
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-card);
+    color: var(--text);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+
+.section-dot:hover::before {
+    opacity: 1;
+    visibility: visible;
+    right: 30px;
+}
+
+/* Hide on mobile initially */
+@media (max-width: 768px) {
+    .scroll-navigation {
+        right: 15px;
+        bottom: 20px;
+    }
+    
+    .scroll-indicator {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    
+    .scroll-indicator.prev-section {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1rem;
+    }
+    
+    .section-dots {
+        display: none;
+    }
+}
+
+/* Show section dots on desktop hover */
+@media (min-width: 769px) {
+    .scroll-navigation:hover .section-dots {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* GitHub button - keeps black/gray theme */
@@ -5070,13 +7639,15 @@ body {
             align-items: center;
         }
 
+/* LOGO FONT SIZE */
+
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 700;
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
-    color: var(--logo-text); /* CHANGE THIS LINE - from 'transparent' to 'var(--logo-text)' */
+    color: var(--logo-text); 
 }
 
      .nav-right {
@@ -5120,23 +7691,24 @@ body {
 }
 
 .theme-toggle {
-    background: var(--glass);
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    background: transparent; /* Changed from var(--glass) */
+    border: none; /* Removed border */
+    border-radius: 0; /* Changed from 50% */
+    width: auto; /* Changed from 40px */
+    height: auto; /* Changed from 40px */
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     color: var(--text);
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Keep this or adjust as needed */
     margin-left: 0.5rem;
+    padding: 0.5rem; /* Add some padding for better click area */
 }
 
 .theme-toggle:hover {
-    background: var(--primary);
-    color: white;
+    background: transparent; /* Remove hover background */
+    color: var(--primary); /* Keep hover color change */
 }
 
 /* Support link styling */
@@ -5927,33 +8499,7 @@ body {
             border-radius: 20px;
         }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            background: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text);
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
+  
         /* Academic Profile Styles */
 .academic-links {
     display: flex;
@@ -6514,6 +9060,339 @@ function handleNavbarScroll() {
     }
 }
 
+
+function CurrentProjectTypewriter() {
+    const [displayText, setDisplayText] = useState('');
+    const [isTyping, setIsTyping] = useState(true);
+    const [isVisible, setIsVisible] = useState(true);
+    
+    const fullText = "Developing an R Shiny Application that automatically checks parametric test assumptions when users import their data";
+    
+    useEffect(() => {
+        let timeoutId;
+        
+        const typeWriter = () => {
+            if (isTyping) {
+                // FAST TYPING: Type 2-3 characters at once for speed
+                const charsPerTick = 3;
+                const newLength = Math.min(displayText.length + charsPerTick, fullText.length);
+                
+                if (newLength < fullText.length) {
+                    setDisplayText(fullText.slice(0, newLength));
+                    timeoutId = setTimeout(typeWriter, 50); // VERY FAST typing
+                } else {
+                    // Finished typing - set full text
+                    setDisplayText(fullText);
+                    setIsTyping(false);
+                    
+                    // Show for 5 seconds
+                    timeoutId = setTimeout(() => {
+                        setIsVisible(false);
+                        
+                        // Clear text after fade out
+                        setTimeout(() => {
+                            setDisplayText('');
+                            setIsTyping(true);
+                            setIsVisible(true);
+                        }, 300);
+                        
+                    }, 5000); // Display for 5 seconds
+                }
+            }
+        };
+        
+        // Start typing immediately
+        timeoutId = setTimeout(typeWriter, 300);
+        
+        return () => clearTimeout(timeoutId);
+    }, [displayText, isTyping, fullText]);
+    
+    return (
+        <div className="current-project-typewriter">
+            <div className="current-project-header">
+                <div className="current-project-badge">
+                    <i className="fas fa-code-branch"></i>
+                    CURRENT PROJECT
+                </div>
+            </div>
+            
+            <div 
+                className="typewriter-text" 
+                style={{
+                    opacity: isVisible ? 1 : 0,
+                    transition: 'opacity 0.3s ease'
+                }}
+            >
+                {displayText}
+                {(isTyping || displayText.length === fullText.length) && (
+                    <span className="typewriter-cursor">|</span>
+                )}
+            </div>
+            
+            <div className="project-status">
+                <i className="fas fa-circle"></i>
+                Active Development
+            </div>
+        </div>
+    );
+}
+
+// ========== SCROLL NAVIGATION FUNCTIONALITY ==========
+function initScrollNavigation() {
+    const scrollNavigation = document.getElementById('scrollNavigation');
+    if (!scrollNavigation) return;
+    
+const sections = ['home', 'about', 'projects', 'blog', 'publications', 'support', 'contact'];
+    
+    // Update navigation visibility based on scroll position
+    function updateNavigationVisibility() {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        
+        // Show/hide next/prev buttons based on position
+        const nextBtn = scrollNavigation.querySelector('.next-section');
+        const prevBtn = scrollNavigation.querySelector('.prev-section');
+        
+        // Calculate if we're at bottom
+        const atBottom = scrollPosition + windowHeight >= documentHeight - 100;
+        
+        if (nextBtn) {
+            if (atBottom) {
+                nextBtn.classList.remove('visible');
+            } else {
+                nextBtn.classList.add('visible');
+            }
+        }
+        
+        // Show prev button when not at top
+        if (prevBtn) {
+            if (scrollPosition > 300) {
+                prevBtn.classList.add('visible');
+            } else {
+                prevBtn.classList.remove('visible');
+            }
+        }
+        
+        // Update section dots
+        updateSectionDots();
+    }
+    
+    // Update active section dot
+    function updateSectionDots() {
+        const dots = scrollNavigation.querySelectorAll('.section-dot');
+        const sections = document.querySelectorAll('.section');
+        
+        // Find which section is most visible
+        let mostVisibleSection = null;
+        let maxVisibility = 0;
+        
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+            const visibility = visibleHeight / window.innerHeight;
+            
+            if (visibility > maxVisibility && visibility > 0.3) {
+                maxVisibility = visibility;
+                mostVisibleSection = section.id;
+            }
+        });
+        
+        // Update dots
+        dots.forEach(dot => {
+            dot.classList.remove('active', 'completed');
+            
+            const sectionName = dot.getAttribute('data-section').toLowerCase();
+            
+            if (sectionName === mostVisibleSection) {
+                dot.classList.add('active');
+            } else if (sections.indexOf(mostVisibleSection) > sections.indexOf(sectionName)) {
+                dot.classList.add('completed');
+            }
+        });
+    }
+    
+    // Keyboard navigation
+    function handleKeyboardNavigation(e) {
+        // Only handle arrow keys when not focused in form
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        
+        const currentIndex = sections.indexOf(window.currentActiveSection || 'home');
+        
+        switch(e.key) {
+            case 'ArrowDown':
+            case 'PageDown':
+                e.preventDefault();
+                if (currentIndex < sections.length - 1) {
+                    handleSectionChange(sections[currentIndex + 1]);
+                }
+                break;
+                
+            case 'ArrowUp':
+            case 'PageUp':
+                e.preventDefault();
+                if (currentIndex > 0) {
+                    handleSectionChange(sections[currentIndex - 1]);
+                }
+                break;
+                
+            case 'Home':
+                e.preventDefault();
+                handleSectionChange('home');
+                break;
+                
+            case 'End':
+                e.preventDefault();
+                handleSectionChange('contact');
+                break;
+        }
+    }
+    
+    // Add hover effect to show section names
+    function initTooltips() {
+        const dots = scrollNavigation.querySelectorAll('.section-dot');
+        
+        dots.forEach(dot => {
+            dot.addEventListener('mouseenter', () => {
+                dot.style.zIndex = '1001';
+            });
+            
+            dot.addEventListener('mouseleave', () => {
+                dot.style.zIndex = '';
+            });
+        });
+    }
+    
+    // Initialize
+    updateNavigationVisibility();
+    initTooltips();
+    
+    // Add event listeners
+    window.addEventListener('scroll', updateNavigationVisibility);
+    window.addEventListener('resize', updateNavigationVisibility);
+    window.addEventListener('keydown', handleKeyboardNavigation);
+    
+    // Update on section change
+    const sectionObserver = new MutationObserver(() => {
+        setTimeout(updateNavigationVisibility, 100);
+    });
+    
+    const sectionsContainer = document.querySelector('.main-content');
+    if (sectionsContainer) {
+        sectionObserver.observe(sectionsContainer, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['class']
+        });
+    }
+}
+
+
+// Add smooth scrolling to sections
+function smoothScrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    
+    const navbar = document.querySelector('.navbar');
+    const navbarHeight = navbar ? navbar.offsetHeight : 80;
+    
+    const targetPosition = section.offsetTop - navbarHeight;
+    
+    window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+    });
+}
+
+// Add this after the ReactDOM.render() call
+function startTypewriterAnimation() {
+    const fullCode = [
+        '<span class="code-keyword">import</span> { <span class="code-function">Shiny</span> } <span class="code-keyword">from</span> <span class="code-string">\'@r/apps\'</span>',
+        '<span class="code-keyword">import</span> { <span class="code-function">Healthcare</span>, <span class="code-function">Analytics</span> } <span class="code-keyword">from</span> <span class="code-string">\'@research/tools\'</span>',
+        '',
+        '<span class="code-keyword">export default function</span> <span class="code-function">Portfolio</span>() {',
+        '  <span class="code-keyword">return</span> (',
+        '    <span class="code-tag">&lt;Shiny</span> <span class="code-keyword">apps</span>=<span class="code-string">"Healthcare Analytics"</span><span class="code-tag">&gt;</span>',
+        '      <span class="code-comment">// Interactive data tools</span>',
+        '    <span class="code-tag">&lt;/Shiny&gt;</span>',
+        '  )',
+        '}'
+    ];
+    
+    const codeContainer = document.getElementById('animated-code');
+    let currentLine = 0;
+    let currentChar = 0;
+    let isTyping = true;
+    let lines = [];
+    
+    function typeNext() {
+        if (currentLine < fullCode.length) {
+            if (currentChar < fullCode[currentLine].length) {
+                if (lines.length <= currentLine) {
+                    lines.push(fullCode[currentLine].slice(0, currentChar + 1));
+                } else {
+                    lines[currentLine] = fullCode[currentLine].slice(0, currentChar + 1);
+                }
+                currentChar++;
+                renderCode();
+                setTimeout(typeNext, 20 + Math.random() * 20);
+            } else {
+                currentLine++;
+                currentChar = 0;
+                setTimeout(typeNext, 20);
+            }
+        } else {
+            // Finished typing, wait 10 seconds then erase
+            setTimeout(() => {
+                isTyping = false;
+                eraseNext();
+            }, 10000);
+        }
+    }
+    
+    function eraseNext() {
+        if (lines.length > 0) {
+            const lastLineIndex = lines.length - 1;
+            if (lines[lastLineIndex].length > 0) {
+                lines[lastLineIndex] = lines[lastLineIndex].slice(0, -1);
+            } else {
+                lines.pop();
+            }
+            renderCode();
+            
+            if (lines.length === 0) {
+                // All erased, restart typing
+                currentLine = 0;
+                currentChar = 0;
+                isTyping = true;
+                setTimeout(typeNext, 500);
+            } else {
+                setTimeout(eraseNext, 30);
+            }
+        }
+    }
+    
+    function renderCode() {
+        const html = lines.map((line, index) => 
+            `<div class="code-line">${line}</div>`
+        ).join('');
+        
+        // Add cursor if typing
+        if (isTyping) {
+            codeContainer.innerHTML = html + '<div class="typewriter-cursor">▋</div>';
+        } else {
+            codeContainer.innerHTML = html;
+        }
+    }
+    
+    // Start the animation
+    typeNext();
+}
+
+// Start when page loads
+setTimeout(startTypewriterAnimation, 1000);
+
 // Add this function to handle clicking the name in footer
 function scrollToTopOfActiveSection() {
     const activeSection = document.querySelector('.section.active');
@@ -6564,40 +9443,8 @@ if (totalViewsElement && appViewsData.apps) {
     totalViewsElement.textContent = formatViews(totalViews);
 }
 
-// Add this component after your useState, useEffect import
-function RotatingText() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    
-    const texts = [
-        "Research. Data. Innovation.",
-        "Building Insightful Applications",
-        "Simplifying Data Analytics",
-    ];
-    
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
-        }, 4000); // Change text every 4 seconds
-        
-        return () => clearInterval(interval);
-    }, [texts.length]);
-    
-    return (
-        <div className="rotating-text-container">
-            {texts.map((text, index) => (
-                <div 
-                    key={index}
-                    className={`rotating-text ${index === currentIndex ? 'active' : ''}`}
-                >
-                    {text}
-                </div>
-            ))}
-        </div>
-    );
-}
-
 function App() {
-    const [darkMode, setDarkMode] = useState(true);
+    const [darkMode, setDarkMode] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
     const [formData, setFormData] = useState({
         name: '',
@@ -6606,8 +9453,6 @@ function App() {
         message: ''
     });
     const [showAllApps, setShowAllApps] = useState(false);
-    
-    // ADD THIS LINE - Mobile menu state
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     
  // ============================================
@@ -6765,27 +9610,31 @@ useEffect(() => {
         document.body.style.overflow = 'auto';
     };
     
- // Handle section change with scroll
+// Handle section change with scroll - OPTIMIZED VERSION
 const handleSectionChange = (section) => {
+    // Cancel any previous scroll animations
+    if (window.activeScrollAnimation) {
+        cancelAnimationFrame(window.activeScrollAnimation);
+    }
+    
     setActiveSection(section);
     closeMobileMenu();
     
-    // Use requestAnimationFrame for smoother scrolling
-    requestAnimationFrame(() => {
+    // Debounce to prevent multiple rapid calls
+    clearTimeout(handleSectionChange.debounceTimer);
+    
+    handleSectionChange.debounceTimer = setTimeout(() => {
         const element = document.getElementById(section);
         if (element) {
-            // Calculate the exact position considering navbar height
             const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - navbarHeight;
+            const offsetPosition = element.offsetTop - navbarHeight;
             
-            // Use window.scrollTo for better performance
             window.scrollTo({
                 top: offsetPosition,
                 behavior: 'smooth'
             });
         }
-    });
+    }, 50); // 50ms debounce
 };
  
     // Add this useEffect to handle body overflow:
@@ -6832,16 +9681,16 @@ const handleSectionChange = (section) => {
     }, [activeSection]); // This effect runs when activeSection changes
 
     // Your existing useEffect for dark mode
-    useEffect(() => {
-        if (darkMode) {
-            document.body.classList.add('dark-mode');
-        } else {
-            document.body.classList.remove('dark-mode');
-        }
-        
-        // Save the user's preference to browser memory
-        localStorage.setItem('darkMode', JSON.stringify(darkMode));
-    }, [darkMode]);
+useEffect(() => {
+    if (darkMode) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+    
+    // Save the user's preference to browser memory
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+}, [darkMode]);
 
     // ADD THIS NEW useEffect FOR SCROLL EFFECT
     useEffect(() => {
@@ -7174,43 +10023,95 @@ const handleSectionChange = (section) => {
     };
 
     // Update it to include 'resume':
-    const sections = ['home', 'projects', 'blog', 'about', 'education', 'publications', 'resume', 'support', 'contact'];
+const sections = ['home', 'about', 'projects', 'blog', 'publications', 'support', 'contact'];
 
     return (
         <div className="app">
 <nav className="navbar">
     <div className="container nav-content">
-        <div 
-            className="logo" 
-            onClick={() => handleSectionChange('home')} 
-            style={{cursor: 'pointer'}}
-            title="Click to go to Home - Mudasir Mohammed Ibrahim"
-        >
-            MMI.
-        </div>
+<div className="logo" onClick={() => handleSectionChange('home')} style={{cursor: 'pointer'}}>
+    <span className="logo-elegant-signature">Ibrahim M. M.</span>
+</div>
 
         <div className="nav-right">
-            <div className="nav-links">
-                {sections.map(section => (
-                    <a
-                        key={section}
-                        href="#"
-                        className={activeSection === section ? 'active' : ''}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            handleSectionChange(section);
-                        }}
-                    >
-                        {section.charAt(0).toUpperCase() + section.slice(1)}
-                    </a>
-                ))}
-                <button 
-                    className="theme-toggle"
-                    onClick={() => setDarkMode(!darkMode)}
-                >
-                    {darkMode ? <i className="fas fa-sun"></i> : <i className="fas fa-moon"></i>}
-                </button>
-            </div>
+ <div className="nav-links">
+    <a
+        href="#"
+        className={activeSection === 'home' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('home');
+        }}
+    >
+        Home
+    </a>
+    <a
+        href="#"
+        className={activeSection === 'about' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('about');
+        }}
+    >
+        About
+    </a>
+    <a
+        href="#"
+        className={activeSection === 'projects' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('projects');
+        }}
+    >
+        Projects
+    </a>
+    <a
+        href="#"
+        className={activeSection === 'blog' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('blog');
+        }}
+    >
+        Blog
+    </a>
+    <a
+        href="#"
+        className={activeSection === 'publications' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('publications');
+        }}
+    >
+        Publications
+    </a>
+    <a
+        href="#"
+        className={activeSection === 'support' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('support');
+        }}
+    >
+        Support
+    </a>
+    <a
+        href="#"
+        className={activeSection === 'contact' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('contact');
+        }}
+    >
+        Contact
+    </a>
+    <button 
+        className="theme-toggle"
+        onClick={() => setDarkMode(!darkMode)}
+    >
+        {darkMode ? <i className="fas fa-sun"></i> : <i className="fas fa-moon"></i>}
+    </button>
+</div>
             
             {/* Add mobile menu button */}
             <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
@@ -7220,106 +10121,137 @@ const handleSectionChange = (section) => {
     </div>
 </nav>
 
-            
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
                 <div className="mobile-menu-overlay active" onClick={closeMobileMenu}>
                     <div className="mobile-menu-content active" onClick={(e) => e.stopPropagation()}>
-                        <div className="mobile-nav-links">
-                            {sections.map(section => (
-                                <a
-                                    key={section}
-                                    href="#"
-                                    className={activeSection === section ? 'active' : ''}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        handleSectionChange(section);
-                                    }}
-                                >
-                                    {section.charAt(0).toUpperCase() + section.slice(1)}
-                                </a>
-                            ))}
-                            <button 
-                                className="theme-toggle"
-                                onClick={() => {
-                                    setDarkMode(!darkMode);
-                                    closeMobileMenu();
-                                }}
-                            >
-                                {darkMode ? <i className="fas fa-sun"></i> : <i className="fas fa-moon"></i>}
-                                <span>
-                                    {darkMode ? 'Light Mode' : 'Dark Mode'}
-                                </span>
-                            </button>
-                        </div>
-                    </div>
+          <div className="mobile-nav-links">
+    <a
+        href="#"
+        className={activeSection === 'home' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('home');
+        }}
+    >
+        Home
+    </a>
+    <a
+        href="#"
+        className={activeSection === 'about' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('about');
+        }}
+    >
+        About
+    </a>
+    <a
+        href="#"
+        className={activeSection === 'projects' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('projects');
+        }}
+    >
+        Projects
+    </a>
+    <a
+        href="#"
+        className={activeSection === 'blog' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('blog');
+        }}
+    >
+        Blog
+    </a>
+        <a
+        href="#"
+        className={activeSection === 'publications' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('publications');
+        }}
+    >
+        Publications
+    </a>
+    <a
+        href="#"
+        className={activeSection === 'support' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('support');
+        }}
+    >
+        Support
+    </a>
+    <a
+        href="#"
+        className={activeSection === 'contact' ? 'active' : ''}
+        onClick={(e) => {
+            e.preventDefault();
+            handleSectionChange('contact');
+        }}
+    >
+        Contact
+    </a>
+    <button 
+        className="theme-toggle"
+        onClick={() => {
+            setDarkMode(!darkMode);
+            closeMobileMenu();
+        }}
+    >
+        {darkMode ? <i className="fas fa-sun"></i> : <i className="fas fa-moon"></i>}
+        <span>
+            {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </span>
+    </button>
+</div>
+                              </div>
                 </div>
             )}
 
             <main className="main-content">
                 
-          <section id="home" className={`section ${activeSection === 'home' ? 'active' : ''}`}>
+<section id="home" className={`section ${activeSection === 'home' ? 'active' : ''}`}>
     <div className="container">
         <div className="hero">
-            <div className="hero-content">
-                <h1><span className="highlight">Hi, I'm Mudasir</span></h1>
-                <h2> <RotatingText />  </h2>
-                
-                <p>
-I am a registered nurse and I love research, and data analytics! I am passionate about creating technology that makes a difference. I develop R Shiny web applications that simplify complex data analysis for healthcare professionals, students, and researchers. Thank you for visiting, and I hope you enjoy exploring my projects.
-                </p>
-                
-                <div className="academic-links" style={{ marginTop: '2rem', justifyContent: 'flex-start' }}>
-                    <button
-                        className="academic-link"
-                        onClick={() => handleSectionChange('projects')}
-                        style={{ 
-                            background: 'linear-gradient(135deg, var(--btn-primary), var(--btn-primary-hover))',
-                            color: 'var(--btn-text)',
-                            border: 'none',
-                            padding: '0.9rem 1.8rem',
-                            fontSize: '1rem'
-                        }}
-                    >
-                        <i className="fas fa-project-diagram"></i>
-                        <span>View My Work</span>
-                    </button>
-
-                    <button
-                        className="academic-link"
-                        onClick={() => handleSectionChange('about')}
-                        style={{ 
-                            background: 'transparent',
-                            color: 'var(--btn-primary)',
-                            border: '2px solid var(--btn-primary)',
-                            padding: '0.9rem 1.8rem',
-                            fontSize: '1rem'
-                        }}
-                    >
-                        <i className="fas fa-user"></i>
-                        <span>Learn More About Me</span>
-                    </button>
-                </div>
-            </div>
-            <div className="hero-image">
-                <div className="profile-image-container">
-                    <div className="profile-image">
-                        <img src="https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg" 
-                             alt="Your Profile" 
-                             onError={(e) => {
-                                 e.target.onerror = null;
-                                 e.target.style.display = 'none';
-                                 e.target.parentElement.innerHTML = '<i class="fas fa-user-graduate"></i>';
-                             }}
-                        />
+           <div className="hero-content">
+    <h1>Building intuitive health analytics tools with <span className="gradient-text">R Shiny</span></h1>
+    <h2>
+        <div className="rotating-text-container">
+            <div className="rotating-text">Healthcare Analytics</div>
+        </div>
+    </h2>
+    
+    <h2 className="colorful-greeting">
+        Hi! I'm Mudasir Mohammed Ibrahim 
+    </h2>
+    <p>I am a registered nurse and I love research, and data analytics! I am passionate about creating technology that makes a difference. I develop R Shiny web applications that simplify complex data analysis for healthcare professionals, students, and researchers. Thank you for visiting, and I hope you enjoy exploring and benefiting from my projects.</p>
+    
+    <div className="hero-buttons">
+        <a href="#" className="btn btn-primary" onClick={(e) => { e.preventDefault(); handleSectionChange('about'); }}>
+            <i className="fas fa-user"></i> Learn More About Me
+        </a>
+        <a href="#" className="btn btn-primary" onClick={(e) => { e.preventDefault(); handleSectionChange('projects'); }}>
+            <i className="fas fa-project-diagram"></i> View My Projects
+        </a>
+        <a href="#" className="btn btn-primary" onClick={(e) => { e.preventDefault(); handleSectionChange('contact'); }}>
+            <i className="fas fa-paper-plane"></i> Contact Me
+        </a>
+    </div>
+</div>
+           
+            <div className="hero-visual">
+                <div className="code-window">
+                    <div className="window-header">
+                        <div className="window-dot dot-red"></div>
+                        <div className="window-dot dot-yellow"></div>
+                        <div className="window-dot dot-green"></div>
                     </div>
-                    <div className="profile-badge">
-                        <i className="fas fa-award"></i>
-                        <span>BSc Nursing</span>
-                    </div>
-                    <div className="current-affiliation">
-                        <i className="fas fa-university"></i>
-                        <span>University of Cape Coast</span>
+                    <div className="window-content" id="animated-code">
                     </div>
                 </div>
             </div>
@@ -7836,671 +10768,913 @@ I am a registered nurse and I love research, and data analytics! I am passionate
                         </div>
 
                 </section>
+
+ {/* About Section */}
+<section id="about" className={`section ${activeSection === 'about' ? 'active' : ''}`}>
+    <div className="container">
+        <div className="about-header">
+            <h2 className="section-title">About Me</h2>
+        </div>
+
+        {/* Profile Summary Card */}
+       <div className="profile-image-centered-container glass-card" style={{textAlign: 'center', marginBottom: '3rem', padding: '2rem'}}>
+    <div className="profile-image-large">
+        <div style={{
+            width: '100%',
+            height: '100%',
+            borderRadius: '15px', /* Changed from '50%' */
+            overflow: 'hidden',
+            transition: 'transform 0.5s ease, box-shadow 0.5s ease'
+        }} 
+        className="profile-image-zoom"
+        onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.05)';
+            e.currentTarget.style.boxShadow = '0 30px 80px rgba(99, 102, 241, 0.4)';
+        }}
+        onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.boxShadow = '0 20px 60px var(--shadow)';
+        }}
+        >
+            <img src="https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg" 
+                alt="Mudasir Mohammed Ibrahim"
+                onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--gradient); color: white; font-size: 3rem;"><i class="fas fa-user-graduate"></i></div>';
+                }}
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    objectPosition: 'center center',
+                    transition: 'transform 0.5s ease'
+                }}
+                className="profile-image-inner"
+            />
+        </div>
+    </div>
+    <h1 style={{marginBottom: '0.5rem', fontSize: '2.5rem'}}>Mudasir Mohammed Ibrahim</h1>
+    <h2 className="professional-title" style={{
+        color: 'var(--primary)', 
+        fontSize: '1.4rem', 
+        fontWeight: '600',
+        marginBottom: '0.5rem'  /* Reduced margin */
+    }}>
+        Registered Nurse
+    </h2>
+    
+    {/* ADDED LOCATION SECTION HERE */}
+    <div className="location-info" style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '0.5rem',
+        marginTop: '0.75rem',
+        marginBottom: '1.5rem',
+        color: 'var(--text-light)',
+        fontSize: '1.1rem'
+    }}>
+        <i className="fas fa-map-marker-alt" style={{
+            color: 'var(--primary)',
+            fontSize: '1.1rem'
+        }}></i>
+        <span>Tamale, Ghana</span>
+    </div>
+</div>
+
+        {/* Professional Journey */}
+        <div className="professional-journey glass-card">
+            <h3 className="about-content-title">
+                <i className="fas fa-road"></i>
+                My Professional Journey
+            </h3>
+            <p className="journey-description">
+                Greetings! I am Mohammed Mudasir Ibrahim, professionally known as Mudasir Mohammed Ibrahim. You may call me Mudasir Ibrahim for short. I currently work as a Registered Nurse at Tamale Teaching Hospital. I bring several years of experience in advanced data analysis and specialize in developing R Shiny web applications that simplify complex analytical processes and enhance accessibility for healthcare professionals, students, and researchers. My professional journey is rooted in extensive clinical practice and clinical/health research and has evolved through diverse and challenging roles at the intersection of healthcare and technology. I am deeply passionate about building impactful, web-based statistical tools that contribute meaningfully to public health research and evidence-based practice.
+            </p>
+            
+            <div className="journey-timeline">
+                <div className="journey-phase">
+                    <div className="phase-icon">
+                        <i className="fas fa-user-md"></i>
+                    </div>
+                    <div className="phase-content">
+                        <h4>Clinical Foundation</h4>
+                        <p>Started as a student nurse and gained extensive clinical experience across various healthcare departments in both primary and tertiary care settings.</p>
+                    </div>
+                </div>
                 
-                {/* About Me Section */}
-                <section id="about" className={`section ${activeSection === 'about' ? 'active' : ''}`}>
-                    <div className="container">
-                        <div className="glass-card">
-                            <h2 className="section-title">About Me</h2>
-                            
-                            <div className="professional-intro">
-                                <p style={{fontSize: '1.1rem', marginBottom: '2rem', lineHeight: '1.8'}}>
-                                    Greetings! I'm Mohammed Mudasir Ibrahim, professionally known as Mudasir Mohammed Ibrahim, and currently working at Tamale Teaching Hospital. I am a registered nurse with expertise in advanced data analysis and in developing R Shiny web applications that make complex data analysis simpler, more intuitive, and accessible for healthcare professionals, students, and researchers. My journey began after several years of clinical practice and health research experience and has evolved through diverse and challenging roles at the intersection of healthcare and technology. I am passionate about building impactful, web-based statistical applications that drive meaningful change in health research and practice.
-                                </p>
+                <div className="journey-phase">
+                    <div className="phase-icon">
+                        <i className="fas fa-chart-line"></i>
+                    </div>
+                    <div className="phase-content">
+                        <h4>Research & Data Analysis</h4>
+                        <p>Developed expertise in advanced statistical analysis and research methodologies through conducting studies and publishing findings in peer-reviewed healthcare journals.</p>
+                    </div>
+                </div>
+                
+                <div className="journey-phase">
+                    <div className="phase-icon">
+                        <i className="fas fa-laptop-code"></i>
+                    </div>
+                    <div className="phase-content">
+                        <h4>Technology Integration</h4>
+                        <p>Began creating R Shiny web applications to simplify complex data analysis for healthcare professionals, students and researchers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {/* Skills & Expertise Grid */}
+        <div className="expertise-grid-section">
+            <h3 className="about-content-title">
+                <i className="fas fa-cogs"></i>
+                Areas of Expertise
+            </h3>
+            
+            <div className="expertise-grid">
+                {/* Clinical Skills */}
+                <div className="expertise-card">
+                    <div className="expertise-header">
+                        <div className="expertise-icon">
+                            <i className="fas fa-hand-holding-medical"></i>
+                        </div>
+                        <h4>Clinical Nursing</h4>
+                    </div>
+                    <ul className="expertise-list">
+                        <li><i className="fas fa-check"></i> Patient Care & Assessment</li>
+                        <li><i className="fas fa-check"></i> Medication Administration</li>
+                        <li><i className="fas fa-check"></i> Emergency Response</li>
+                        <li><i className="fas fa-check"></i> Holistic Healthcare</li>
+                    </ul>
+                </div>
+                
+                {/* Research Skills */}
+                <div className="expertise-card">
+                    <div className="expertise-header">
+                        <div className="expertise-icon">
+                            <i className="fas fa-flask"></i>
+                        </div>
+                        <h4>Research & Analysis</h4>
+                    </div>
+                    <ul className="expertise-list">
+                        <li><i className="fas fa-check"></i> Study Design & Methodology</li>
+                        <li><i className="fas fa-check"></i> Statistical Analysis</li>
+                        <li><i className="fas fa-check"></i> Data Collection & Management</li>
+                        <li><i className="fas fa-check"></i> Publication & Dissemination</li>
+                    </ul>
+                </div>
+                
+                {/* Technical Skills */}
+                <div className="expertise-card">
+                    <div className="expertise-header">
+                        <div className="expertise-icon">
+                            <i className="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Technical Development</h4>
+                    </div>
+                    <ul className="expertise-list">
+                        <li><i className="fas fa-check"></i> R Shiny Applications</li>
+                        <li><i className="fas fa-check"></i> Healthcare Analytics</li>
+                        <li><i className="fas fa-check"></i> Data Visualization</li>
+                        <li><i className="fas fa-check"></i> Interactive Dashboards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+  {/* Detailed Skills Section */}
+ <div className="technical-proficiency-section glass-card">
+            <h3 className="about-content-title">
+                <i className="fas fa-chart-bar"></i>
+                Technical Proficiency
+            </h3>
+            
+            <div className="proficiency-grid">
+                {/* Quantitative Analysis Card */}
+<div className="proficiency-category-card">
+    <div className="category-header">
+        <div className="category-icon" style={{background: 'linear-gradient(135deg, #3B82F6, #60A5FA)'}}>
+            <i className="fas fa-chart-line" style={{color: 'white'}}></i>
+        </div>
+        <h4>Quantitative Analysis Software</h4>
+    </div>
+                    <div className="skills-list">
+                        <div className="skill-item">
+                            <span className="skill-name">SPSS Statistics</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '95%'}}></div>
                             </div>
+                            <span className="skill-percent">95%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">Stata</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '80%'}}></div>
+                            </div>
+                            <span className="skill-percent">80%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">SPSS AMOS</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '85%'}}></div>
+                            </div>
+                            <span className="skill-percent">85%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">SmartPLS</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '80%'}}></div>
+                            </div>
+                            <span className="skill-percent">80%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">Jamovi</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '90%'}}></div>
+                            </div>
+                            <span className="skill-percent">90%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">JASP</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '90%'}}></div>
+                            </div>
+                            <span className="skill-percent">90%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">Minitab</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '90%'}}></div>
+                            </div>
+                            <span className="skill-percent">90%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">R Programming</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '80%'}}></div>
+                            </div>
+                            <span className="skill-percent">80%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">SAS JMP</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '95%'}}></div>
+                            </div>
+                            <span className="skill-percent">95%</span>
+                        </div>
+                    </div>
+                </div>
 
-        <div className="skills-grid">
-    {/* Quantitative Analysis Section */}
-    <div className="skill-category">
-        <div className="category-header">
-            <i className="fas fa-chart-line"></i>
-            <h3>Quantitative Analysis</h3>
+                {/* Qualitative Analysis Card */}
+<div className="proficiency-category-card">
+    <div className="category-header">
+        <div className="category-icon" style={{background: 'linear-gradient(135deg, #10B981, #34D399)'}}>
+            <i className="fas fa-comment-dots" style={{color: 'white'}}></i>
         </div>
-        <div className="software-list">
-            <div className="software-with-level">
-                <span className="software-name">SPSS Statistics</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-95"></div>
-                    </div>
-                    <span className="level-percentage">95%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">Stata</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-90"></div>
-                    </div>
-                    <span className="level-percentage">80%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">SPSS AMOS</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-85"></div>
-                    </div>
-                    <span className="level-percentage">85%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">SmartPLS</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-80"></div>
-                    </div>
-                    <span className="level-percentage">80%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">Jamovi</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-88"></div>
-                    </div>
-                    <span className="level-percentage">90%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">JASP</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-82"></div>
-                    </div>
-                    <span className="level-percentage">90%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">Minitab</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-75"></div>
-                    </div>
-                    <span className="level-percentage">90%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">R Programming</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-92"></div>
-                    </div>
-                    <span className="level-percentage">80%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">SAS JMP</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-72"></div>
-                    </div>
-                    <span className="level-percentage">95%</span>
-                </div>
-            </div>
-        </div>
-        <p className="skill-description">
-            Skilled in advanced statistical analysis, SEM, regression modeling, and data visualization
-        </p>
+        <h4>Qualitative Analysis Software</h4>
     </div>
+                    <div className="skills-list">
+                        <div className="skill-item">
+                            <span className="skill-name">ATLAS.ti</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '98%'}}></div>
+                            </div>
+                            <span className="skill-percent">98%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">NVivo</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '85%'}}></div>
+                            </div>
+                            <span className="skill-percent">85%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">QDA Miner</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '95%'}}></div>
+                            </div>
+                            <span className="skill-percent">95%</span>
+                        </div>
+                    </div>
+                </div>
 
-    {/* Qualitative Analysis Section */}
-    <div className="skill-category">
-        <div className="category-header">
-            <i className="fas fa-comments"></i>
-            <h3>Qualitative Analysis</h3>
+                {/* R Shiny Development Card */}
+<div className="proficiency-category-card">
+    <div className="category-header">
+        <div className="category-icon" style={{background: 'linear-gradient(135deg, #8B5CF6, #A78BFA)'}}>
+            <i className="fab fa-r-project" style={{color: 'white'}}></i>
         </div>
-        <div className="software-list">
-            <div className="software-with-level">
-                <span className="software-name">ATLAS.ti</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-88"></div>
-                    </div>
-                    <span className="level-percentage">98%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">NVivo</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-85"></div>
-                    </div>
-                    <span className="level-percentage">85%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">QDA Miner</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-80"></div>
-                    </div>
-                    <span className="level-percentage">95%</span>
-                </div>
-            </div>
-        </div>
-        <p className="skill-description">
-            Proficient in thematic analysis, coding, and qualitative data management
-        </p>
+        <h4>R Shiny Development</h4>
     </div>
+                    <div className="skills-list">
+                        <div className="skill-item">
+                            <span className="skill-name">Interactive Dashboards</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '95%'}}></div>
+                            </div>
+                            <span className="skill-percent">95%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">Data Visualization</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '92%'}}></div>
+                            </div>
+                            <span className="skill-percent">92%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">Healthcare Analytics Apps</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '96%'}}></div>
+                            </div>
+                            <span className="skill-percent">96%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">Statistical Calculators</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '98%'}}></div>
+                            </div>
+                            <span className="skill-percent">98%</span>
+                        </div>
+                    </div>
+                </div>
 
-    {/* R Shiny Development Section */}
-    <div className="skill-category">
-        <div className="category-header">
-            <i className="fas fa-laptop-code"></i>
-            <h3>R Shiny Development</h3>
+                {/* Research Tools Card */}
+ <div className="proficiency-category-card">
+    <div className="category-header">
+        <div className="category-icon" style={{background: 'linear-gradient(135deg, #F59E0B, #FBBF24)'}}>
+            <i className="fas fa-tools" style={{color: 'white'}}></i>
         </div>
-        <div className="software-list">
-            <div className="software-with-level">
-                <span className="software-name">Interactive Dashboards</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-95"></div>
-                    </div>
-                    <span className="level-percentage">95%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">Data Visualization</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-92"></div>
-                    </div>
-                    <span className="level-percentage">92%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">Healthcare Analytics Apps</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-96"></div>
-                    </div>
-                    <span className="level-percentage">96%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">Statistical Calculators</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-98"></div>
-                    </div>
-                    <span className="level-percentage">98%</span>
-                </div>
-            </div>
-        </div>
-        <p className="skill-description">
-            Expert in developing interactive web applications for healthcare analytics and statistical analysis
-        </p>
+        <h4>Research Tools</h4>
     </div>
+                    <div className="skills-list">
+                        <div className="skill-item">
+                            <span className="skill-name">Zotero</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '100%'}}></div>
+                            </div>
+                            <span className="skill-percent">100%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">Mendeley</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '100%'}}></div>
+                            </div>
+                            <span className="skill-percent">100%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">Microsoft Office</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '100%'}}></div>
+                            </div>
+                            <span className="skill-percent">100%</span>
+                        </div>
+                        <div className="skill-item">
+                            <span className="skill-name">ConceptDraw DIAGRAM</span>
+                            <div className="skill-bar">
+                                <div className="skill-fill" style={{width: '60%'}}></div>
+                            </div>
+                            <span className="skill-percent">60%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        {/* Education & Credentials */}
+        <div className="education-credentials-section">
+            <div className="education-section glass-card">
+                <h3 className="about-content-title">
+                    <i className="fas fa-graduation-cap"></i>
+                    Education
+                </h3>
+                
+                <div className="education-cards">
+                    <div className="education-card">
+                        <div className="education-degree">
+                            <i className="fas fa-university"></i>
+                            <div>
+                                <h4>Bachelor of Science in Nursing</h4>
+                                <p className="education-institution">University of Cape Coast</p>
+                            </div>
+                        </div>
+                        <div className="education-details">
+                            <span className="education-period">2022 - 2024</span>
+                            <p className="education-description">
+                                Comprehensive nursing education with focus on evidence-based practice and healthcare research.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div className="education-card">
+                        <div className="education-degree">
+                            <i className="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Diploma in General Nursing</h4>
+                                <p className="education-institution">Nurses' and Midwives' Training College, Tamale</p>
+                            </div>
+                        </div>
+                        <div className="education-details">
+                            <span className="education-period">2017 - 2020</span>
+                            <p className="education-description">
+                                Foundational nursing education with clinical training in various healthcare settings.
+                            </p>
+                        </div>
+                    </div>
+                    {/* ADDED: Senior High School */}
+            <div className="education-card">
+                <div className="education-degree">
+                    <i className="fas fa-school"></i> {/* School icon for SHS */}
+                    <div>
+                        <h4>Senior High School - Business (Cost Accounting)</h4>
+                        <p className="education-institution">Northern School of Business (NOBISCO), Tamale</p>
+                    </div>
+                </div>
+                <div className="education-details">
+                    <span className="education-period">2013 - 2016</span>
+                    <p className="education-description">
+                        Completed Business program with focus in Cost Accounting, 
+                        developing foundational skills in business management, accounting principles, 
+                        and financial analysis.
+                  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+            <div className="credentials-section glass-card">
+                <h3 className="about-content-title">
+                    <i className="fas fa-certificate"></i>
+                    Professional History
+                </h3>
+                
+                <div className="credentials-list">
+                    <div className="credential-item">
+                        <div className="credential-badge">
+                            <i className="fas fa-shield-alt"></i>
+                        </div>
+                        <div className="credential-info">
+                            <h4>Registered General Nurse (RGN)</h4>
+                            <p>Nursing and Midwifery Council of Ghana (NMC)</p>
+                            <span className="credential-status active">Licensed</span>
+                        </div>
+                    </div>
+                    
+                    <div className="credential-item">
+                        <div className="credential-badge">
+                            <i className="fas fa-users"></i>
+                        </div>
+                        <div className="credential-info">
+                            <h4>Active Member</h4>
+                            <p>Ghana Registered Nurses and Midwives Association (GRNMA)</p>
+                            <span className="credential-status active">Active</span>
+                        </div>
+                    </div>
+        {/* Current Employment */}
+        <div className="credential-item">
+            <div className="credential-badge" style={{background: 'linear-gradient(135deg, #F59E0B, #FBBF24)'}}>
+                <i className="fas fa-hospital"></i>
+            </div>
+            <div className="credential-info">
+                <h4>Staff Nurse</h4>
+                <p>Tamale Teaching Hospital</p>
+                <div style={{marginTop: '0.5rem'}}>
+                    <span className="credential-status" style={{
+                        background: 'rgba(245, 158, 11, 0.2)',
+                        color: '#F59E0B',
+                        display: 'inline-block',
+                        marginBottom: '0.5rem'
+                    }}>
+                        2025 - Present
+                    </span>
+                    <div style={{
+                        fontSize: '0.95rem',
+                        color: 'var(--text)',
+                        lineHeight: '1.5',
+                        marginTop: '0.5rem',
+                        padding: '0.75rem',
+                        background: 'rgba(245, 158, 11, 0.08)',
+                        borderRadius: '8px',
+                        borderLeft: '3px solid #F59E0B'
+                    }}>
+                        <strong>Responsibilities:</strong> Providing comprehensive nursing care for patients with acute and chronic conditions, including cancer, hypertension, congestive cardiac failure, chronic liver disease, and chronic kidney disease.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
-    {/* Research Tools Section */}
-    <div className="skill-category">
-        <div className="category-header">
-            <i className="fas fa-code"></i>
-            <h3>Research Tools</h3>
-        </div>
-        <div className="software-list">
-            <div className="software-with-level">
-                <span className="software-name">Zotero</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-90"></div>
-                    </div>
-                    <span className="level-percentage">100%</span>
-                </div>
-            </div>
+        {/* Research Interests */}
+        <div className="research-interests-section glass-card">
+            <h3 className="about-content-title">
+                <i className="fas fa-search"></i>
+                Research Interests
+            </h3>
             
-            <div className="software-with-level">
-                <span className="software-name">Mendeley</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-95"></div>
-                    </div>
-                    <span className="level-percentage">100%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">Microsoft Office</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-96"></div>
-                    </div>
-                    <span className="level-percentage">100%</span>
-                </div>
-            </div>
-            
-            <div className="software-with-level">
-                <span className="software-name">ConceptDraw DIAGRAM</span>
-                <div className="competency-level">
-                    <div className="level-bar">
-                        <div className="level-fill level-94"></div>
-                    </div>
-                    <span className="level-percentage">60%</span>
-                </div>
+            <div className="interests-tags">
+                <span className="interest-tag">
+                    <i className="fas fa-heartbeat"></i> Cancer Epidemiology
+                </span>
+                <span className="interest-tag">
+                    <i className="fas fa-baby"></i> Maternal and Child Health
+                </span>
+                <span className="interest-tag">
+                    <i className="fas fa-hospital-user"></i> Public Health
+                </span>
+                <span className="interest-tag">
+                    <i className="fas fa-briefcase-medical"></i> Workplace Issues
+                </span>
+                <span className="interest-tag">
+                    <i className="fas fa-chart-bar"></i> Healthcare Data Analytics
+                </span>
+                <span className="interest-tag">
+                    <i className="fas fa-laptop-medical"></i> Nursing Informatics
+                </span>
             </div>
         </div>
-        <p className="skill-description">
-            Proficient in documentation, and productivity tools for research workflows
-        </p>
-    </div>
+ {/* Academic Reviewer - ENHANCED VERSION */}
+<div className="reviewer-section glass-card" style={{
+    marginTop: '3rem',
+    padding: '2.5rem',
+    background: 'var(--bg-card)',
+    border: '1px solid var(--border)',
+    borderRadius: '15px',
+    boxShadow: '0 10px 30px var(--shadow)',
+    position: 'relative',
+    overflow: 'hidden'
+}}>
+{/* Decorative corner accent */}
+    <div style={{
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        width: '150px',
+        height: '150px',
+        background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.05) 100%)',
+        borderBottomLeftRadius: '100%',
+        zIndex: 1
+    }}></div>
+    
+    <h3 className="about-content-title" style={{
+        fontSize: '1.8rem',
+        marginBottom: '2rem',
+        color: 'var(--text)',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '1rem',
+        position: 'relative',
+        zIndex: 2
+    }}>
+        <div style={{
+            width: '60px',
+            height: '60px',
+            borderRadius: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.8rem',
+            color: 'white',
+            boxShadow: '0 5px 15px rgba(59, 130, 246, 0.3)'
+        }}>
+            <i className="fas fa-clipboard-check"></i>
+        </div>
+        <span>Academic Reviewer</span>
+    </h3>
+    
+    <p style={{
+        fontSize: '1.1rem',
+        lineHeight: '1.7',
+        color: 'var(--text-light)',
+        marginBottom: '2.5rem',
+        position: 'relative',
+        zIndex: 2
+    }}>
+        I serve as an active peer reviewer for leading scientific journals, contributing to the advancement of 
+        healthcare research and nursing science. My reviewing expertise spans healthcare research, nursing science, 
+        public health, and statistical methodology.
+    </p>
+    
+    {/* Reviewing Stats Grid */}
+    <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: '1.5rem',
+        marginBottom: '2.5rem',
+        position: 'relative',
+        zIndex: 2
+    }}>
+        <div style={{
+            textAlign: 'center',
+            padding: '1.5rem 1rem',
+            background: 'rgba(99, 102, 241, 0.08)',
+            border: '1px solid rgba(99, 102, 241, 0.15)',
+            borderRadius: '12px',
+            transition: 'transform 0.3s ease, border-color 0.3s ease'
+        }} className="reviewer-stat-card">
+            <div style={{
+                fontSize: '2.2rem',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #3B82F6, #8B5CF6)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                marginBottom: '0.5rem'
+            }}>
+                10+
+            </div>
+            <div style={{
+                fontSize: '0.95rem',
+                color: 'var(--text-light)',
+                fontWeight: '500'
+            }}>
+                Journals Reviewed For
+            </div>
+        </div>
         
-                                {/* Research Interests */}
-                                <div className="research-interests">
-                                    <div className="category-header">
-                                        <i className="fas fa-search"></i>
-                                        <h3>Research Interests</h3>
-                                    </div>
-                                    <div className="interests-grid">
-                                        {['Cancer Epidemiology', 'Maternal and Child Health', 'Public Health', 
-                                          'Workplace Issues', 'Healthcare Data Analytics', 'Nursing Informatics'].map(interest => (
-                                            <div key={interest} className="interest-item">
-                                                <i className="fas fa-heartbeat"></i>
-                                                <span>{interest}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-
-                                                 {/* Professional Credentials Card */}
-                            <div className="credentials-section">
-                                <div className="section-header">
-                                    <h3>Professional Credentials</h3>
-                                </div>
-          
-          <div className="credentials-cards">
-    <div className="credential-card">
-        <div className="credential-icon">
-            <i className="fas fa-shield-alt"></i>
-            {/* Star rays */}
-            {[...Array(8)].map((_, i) => (
-                <div key={i} className="star-ray"></div>
-            ))}
+        <div style={{
+            textAlign: 'center',
+            padding: '1.5rem 1rem',
+            background: 'rgba(99, 102, 241, 0.08)',
+            border: '1px solid rgba(99, 102, 241, 0.15)',
+            borderRadius: '12px',
+            transition: 'transform 0.3s ease, border-color 0.3s ease'
+        }} className="reviewer-stat-card">
+            <div style={{
+                fontSize: '2.2rem',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #10B981, #34D399)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                marginBottom: '0.5rem'
+            }}>
+                15+
+            </div>
+            <div style={{
+                fontSize: '0.95rem',
+                color: 'var(--text-light)',
+                fontWeight: '500'
+            }}>
+                Manuscripts Reviewed
+            </div>
         </div>
-        <h4>Registered General Nurse (RGN)</h4>
-        <p>Nursing and Midwifery Council of Ghana (NMC)</p>
-        <span className="credential-status">Licensed</span>
+        
+        <div style={{
+            textAlign: 'center',
+            padding: '1.5rem 1rem',
+            background: 'rgba(99, 102, 241, 0.08)',
+            border: '1px solid rgba(99, 102, 241, 0.15)',
+            borderRadius: '12px',
+            transition: 'transform 0.3s ease, border-color 0.3s ease'
+        }} className="reviewer-stat-card">
+            <div style={{
+                fontSize: '2.2rem',
+                fontWeight: '700',
+                background: 'linear-gradient(135deg, #F59E0B, #FBBF24)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                marginBottom: '0.5rem'
+            }}>
+                2025
+            </div>
+            <div style={{
+                fontSize: '0.95rem',
+                color: 'var(--text-light)',
+                fontWeight: '500'
+            }}>
+                Started Reviewing
+            </div>
+        </div>
     </div>
     
-    <div className="credential-card">
-        <div className="credential-icon">
-            <i className="fas fa-users"></i>
-            {/* Star rays */}
-            {[...Array(8)].map((_, i) => (
-                <div key={i} className="star-ray"></div>
-            ))}
-        </div>
-        <h4>Active Member</h4>
-        <p>Ghana Registered Nurses and Midwives Association (GRNMA)</p>
-        <span className="credential-status">Active</span>
-    </div>
-    
-    <div className="credential-card">
-        <div className="credential-icon">
-            <i className="fas fa-hospital"></i>
-            {/* Star rays */}
-            {[...Array(8)].map((_, i) => (
-                <div key={i} className="star-ray"></div>
-            ))}
-        </div>
-        <h4>Current Practice</h4>
-        <p>Tamale Teaching Hospital</p>
-        <span className="credential-status">Practicing</span>
-    </div>
-</div>
-                                          <p className="practice-note">
-                                    Maintaining professional standards and continuous development in nursing practice
-                                </p>
-                            </div>
+    {/* Hover effects for stat cards */}
+    <style jsx>{`
+        .reviewer-stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+        }
+    `}</style>
 
-                            {/* Peer Reviewer Section - NEW */}
-                            <div className="credentials-section" style={{marginTop: '3rem'}}>
-                                <div className="section-header">
-                                    <h3>Peer Reviewer</h3>
-                                    <p>Certified reviewer for top academic publishers</p>
-                                </div>
-                                
-                                <div className="publishers-grid" style={{
-                                    display: 'grid',
-                                    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                                    gap: '2rem',
-                                    margin: '2rem 0'
-                                }}>
-                                    {/* Springer Nature */}
-                                    <div className="publisher-card" style={{
-                                        background: 'linear-gradient(135deg, #008cff, #0066cc)',
-                                        borderRadius: '15px',
-                                        padding: '2rem',
-                                        textAlign: 'center',
-                                        color: 'white',
-                                        position: 'relative',
-                                        overflow: 'hidden',
-                                        animation: 'float 6s ease-in-out infinite',
-                                        animationDelay: '0s'
-                                    }}>
-                                        <div style={{
-                                            fontSize: '3rem',
-                                            marginBottom: '1rem',
-                                            filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
-                                        }}>
-                                            <i className="fas fa-book"></i>
-                                        </div>
-                                        <h4 style={{marginBottom: '0.5rem', fontSize: '1.3rem'}}>Springer Nature</h4>
-                                        <p style={{opacity: '0.9', fontSize: '0.9rem'}}>Nature Portfolio Journals</p>
-                                        <div style={{
-                                            position: 'absolute',
-                                            top: '-50px',
-                                            right: '-50px',
-                                            width: '100px',
-                                            height: '100px',
-                                            background: 'rgba(255,255,255,0.1)',
-                                            borderRadius: '50%'
-                                        }}></div>
-                                    </div>
-                                    
-                                    {/* Wiley */}
-                                    <div className="publisher-card" style={{
-                                        background: 'linear-gradient(135deg, #0c7cba, #095a8a)',
-                                        borderRadius: '15px',
-                                        padding: '2rem',
-                                        textAlign: 'center',
-                                        color: 'white',
-                                        position: 'relative',
-                                        overflow: 'hidden',
-                                        animation: 'float 6s ease-in-out infinite',
-                                        animationDelay: '2s'
-                                    }}>
-                                        <div style={{
-                                            fontSize: '3rem',
-                                            marginBottom: '1rem',
-                                            filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
-                                        }}>
-                                            <i className="fas fa-newspaper"></i>
-                                        </div>
-                                        <h4 style={{marginBottom: '0.5rem', fontSize: '1.3rem'}}>Wiley</h4>
-                                        <p style={{opacity: '0.9', fontSize: '0.9rem'}}>Wiley Online Library</p>
-                                        <div style={{
-                                            position: 'absolute',
-                                            bottom: '-50px',
-                                            left: '-50px',
-                                            width: '100px',
-                                            height: '100px',
-                                            background: 'rgba(255,255,255,0.1)',
-                                            borderRadius: '50%'
-                                        }}></div>
-                                    </div>
-                                    
-                                    {/* Elsevier */}
-                                    <div className="publisher-card" style={{
-                                        background: 'linear-gradient(135deg, #ff6b6b, #ff4757)',
-                                        borderRadius: '15px',
-                                        padding: '2rem',
-                                        textAlign: 'center',
-                                        color: 'white',
-                                        position: 'relative',
-                                        overflow: 'hidden',
-                                        animation: 'float 6s ease-in-out infinite',
-                                        animationDelay: '4s'
-                                    }}>
-                                        <div style={{
-                                            fontSize: '3rem',
-                                            marginBottom: '1rem',
-                                            filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.2))'
-                                        }}>
-                                            <i className="fas fa-file-alt"></i>
-                                        </div>
-                                        <h4 style={{marginBottom: '0.5rem', fontSize: '1.3rem'}}>Elsevier</h4>
-                                        <p style={{opacity: '0.9', fontSize: '0.9rem'}}>ScienceDirect Journals</p>
-                                        <div style={{
-                                            position: 'absolute',
-                                            top: '-30px',
-                                            left: '50%',
-                                            transform: 'translateX(-50%)',
-                                            width: '80px',
-                                            height: '80px',
-                                            background: 'rgba(255,255,255,0.1)',
-                                            borderRadius: '50%'
-                                        }}></div>
-                                    </div>
-                                </div>
-                                
-                                <div style={{
-                                    textAlign: 'center',
-                                    marginTop: '2.5rem',
-                                    paddingTop: '1.5rem',
-                                    borderTop: '1px solid var(--border)'
-                                }}>
-                                    <a 
-                                        href="https://1drv.ms/f/c/3ce355b70d76f4f7/Ejkh6TgFPhtNkgsfwRv6_OgBpu9S58AyaqHR_AMPJsR4Rg?e=jU8KMP" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        style={{
-                                            display: 'inline-flex',
-                                            alignItems: 'center',
-                                            gap: '0.75rem',
-                                            padding: '0.9rem 2rem',
-                                            background: 'var(--primary)',
-                                            color: 'white',
-                                            borderRadius: '10px',
-                                            textDecoration: 'none',
-                                            fontWeight: '600',
-                                            fontSize: '1rem',
-                                            transition: 'all 0.3s'
-                                        }}
-                                        onMouseOver={(e) => {
-                                            e.target.style.background = 'var(--primary-light)';
-                                            e.target.style.transform = 'translateY(-3px)';
-                                            e.target.style.boxShadow = '0 10px 25px var(--btn-shadow)';
-                                        }}
-                                        onMouseOut={(e) => {
-                                            e.target.style.background = 'var(--primary)';
-                                            e.target.style.transform = 'translateY(0)';
-                                            e.target.style.boxShadow = 'none';
-                                        }}
-                                    >
-                                        <i className="fas fa-certificate"></i>
-                                        View My Reviewer Certificates
-                                    </a>
-                                    <p style={{
-                                        marginTop: '1rem',
-                                        color: 'var(--text-light)',
-                                        fontSize: '0.9rem'
-                                    }}>
-                                        Access verification certificates 
-                                    </p>
-                                </div>
-                            </div>
-                     
-                 {/* Core Competencies Cards */}
-<div className="core-competencies">
-    <div className="section-header">
-        <h3>Core Competencies</h3>
-        <p>Key areas of expertise and professional capabilities</p>
-    </div>
-    
-    <div className="competencies-scroll-container">
-        <div className="competencies-scroll-track">
-            {[...Array(3)].map((_, setIndex) => (
-                <React.Fragment key={setIndex}>
-                    {/* Card 1 */}
-                    <div className="competency-card">
-                        <div className="card-header">
-                            <div className="card-icon">
-                                <i className="fas fa-hand-holding-medical"></i>
-                            </div>
-                            <h4>Patient Care & Clinical Nursing</h4>
-                        </div>
-                        <ul className="competency-list">
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Comprehensive nursing care</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Patient assessment & diagnosis</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Medication administration</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Holistic healthcare delivery</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Emergency response & care</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    {/* Card 2 */}
-                    <div className="competency-card">
-                        <div className="card-header">
-                            <div className="card-icon">
-                                <i className="fas fa-flask"></i>
-                            </div>
-                            <h4>Health/Clinical Research</h4>
-                        </div>
-                        <ul className="competency-list">
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Research design & methodology</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Data collection & management</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Ethical considerations & IRB</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Evidence-based practice</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Publication & dissemination</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    {/* Card 3 */}
-                    <div className="competency-card">
-                        <div className="card-header">
-                            <div className="card-icon">
-                                <i className="fas fa-chart-bar"></i>
-                            </div>
-                            <h4>Advanced Statistical Analysis</h4>
-                        </div>
-                        <ul className="competency-list">
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Structural Equation Modeling (SEM)</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Factor & regression analysis</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Complex statistical methods</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Healthcare data analytics</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Data visualization & reporting</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    {/* Card 4 */}
-                    <div className="competency-card">
-                        <div className="card-header">
-                            <div className="card-icon">
-                                <i className="fas fa-laptop-code"></i>
-                            </div>
-                            <h4>R Shiny Development</h4>
-                        </div>
-                        <ul className="competency-list">
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Interactive web applications</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Healthcare data visualization</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>AI-assisted coding</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>Data analysis tools & dashboards</span>
-                            </li>
-                            <li>
-                                <i className="fas fa-check-circle"></i>
-                                <span>User interface design</span>
-                            </li>
-                        </ul>
-                    </div>
-                </React.Fragment>
+    {/* Featured Journals */}
+    <div style={{
+        marginBottom: '2.5rem',
+        position: 'relative',
+        zIndex: 2
+    }}>
+        <h4 style={{
+            fontSize: '1.3rem',
+            marginBottom: '1.5rem',
+            color: 'var(--text)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.75rem'
+        }}>
+            <i className="fas fa-star" style={{color: '#F59E0B'}}></i>
+            Featured Journals I Review For
+        </h4>
+        
+        <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0.75rem',
+            justifyContent: 'center'
+        }}>
+            {[
+                'BMC Health Services Research',
+                'BMC Nursing', 
+                'Scientific Reports',
+                'Discover Public Health',
+                'SSM – Health Systems',
+                'Discover Health Systems',
+                'BMC Medical Education',
+                'BMC Pregnancy and Childbirth'
+            ].map((journal, index) => (
+                <span key={index} style={{
+                    padding: '0.6rem 1.25rem',
+                    background: 'rgba(99, 102, 241, 0.1)',
+                    border: '1px solid rgba(99, 102, 241, 0.2)',
+                    borderRadius: '50px',
+                    fontSize: '0.9rem',
+                    color: 'var(--text)',
+                    fontWeight: '500',
+                    transition: 'all 0.3s ease',
+                    cursor: 'default',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem'
+                }} className="journal-badge">
+                    <i className="fas fa-book" style={{
+                        fontSize: '0.85rem',
+                        color: 'var(--primary)'
+                    }}></i>
+                    {journal}
+                </span>
             ))}
+        </div>
+        
+        <style jsx>{`
+            .journal-badge:hover {
+                background: rgba(99, 102, 241, 0.2);
+                transform: translateY(-2px);
+                border-color: var(--primary);
+            }
+        `}</style>
+    </div>
+
+    {/* Reviewer Certificates */}
+    <div style={{
+        background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%)',
+        border: '1px solid rgba(99, 102, 241, 0.2)',
+        borderRadius: '12px',
+        padding: '2rem',
+        marginBottom: '2rem',
+        position: 'relative',
+        zIndex: 2
+    }}>
+        <h4 style={{
+            fontSize: '1.3rem',
+            marginBottom: '1rem',
+            color: 'var(--text)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.75rem'
+        }}>
+            <i className="fas fa-award" style={{color: '#8B5CF6'}}></i>
+            Reviewer Certificates
+        </h4>
+        
+        <p style={{
+            color: 'var(--text-light)',
+            marginBottom: '1.5rem',
+            fontSize: '1rem',
+            lineHeight: '1.6'
+        }}>
+            View my collection of official reviewer certificates and recognition letters from leading scientific journals.
+        </p>
+        
+        <div style={{
+            display: 'flex',
+            gap: '1rem',
+            flexWrap: 'wrap',
+            justifyContent: 'center'
+        }}>
+            <a 
+                href="https://1drv.ms/f/c/3ce355b70d76f4f7/Ejkh6TgFPhtNkgsfwRv6_OgBpu9S58AyaqHR_AMPJsR4Rg?e=jU8KMP" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    padding: '0.9rem 1.75rem',
+                    background: 'linear-gradient(135deg, var(--primary), var(--primary-light))',
+                    color: 'white',
+                    borderRadius: '10px',
+                    fontWeight: '600',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 5px 15px rgba(99, 102, 241, 0.3)'
+                }}
+                className="certificate-btn"
+            >
+                <i className="fas fa-folder-open"></i>
+                View All Certificates
+            </a>
+            
+            <a 
+                href="https://www.webofscience.com/wos/author/record/HPC-2085-2023" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    padding: '0.9rem 1.75rem',
+                    background: 'transparent',
+                    color: 'var(--primary)',
+                    border: '2px solid var(--primary)',
+                    borderRadius: '10px',
+                    fontWeight: '600',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s ease'
+                }}
+                className="certificate-btn secondary"
+            >
+                <i className="fas fa-external-link-alt"></i>
+                Web of Science Profile
+            </a>
+        </div>
+        
+        <style jsx>{`
+            .certificate-btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+            }
+            .certificate-btn.secondary:hover {
+                background: var(--primary);
+                color: white;
+                box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+            }
+        `}</style>
+    </div>
+
+    {/* Reviewer Ethos */}
+    <div style={{
+        padding: '1.5rem',
+        background: 'rgba(245, 158, 11, 0.1)',
+        borderLeft: '4px solid var(--secondary)',
+        borderRadius: '8px',
+        fontSize: '1rem',
+        color: 'var(--text)',
+        position: 'relative',
+        zIndex: 2
+    }}>
+        <div style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '1rem'
+        }}>
+            <i className="fas fa-info-circle" style={{
+                color: 'var(--secondary)',
+                fontSize: '1.2rem',
+                marginTop: '0.2rem'
+            }}></i>
+            <div>
+                <strong style={{display: 'block', marginBottom: '0.5rem', fontSize: '1.05rem'}}>
+                    Reviewer Ethos
+                </strong>
+                <p style={{margin: 0, lineHeight: '1.6'}}>
+                    I maintain the highest ethical standards in peer-review, ensuring constructive feedback, 
+                    methodological rigor, and confidentiality while contributing to the advancement of scientific 
+                    knowledge in healthcare and nursing research.
+                </p>
+            </div>
         </div>
     </div>
 </div>
-</div>
-</div>
-                 
-                </section>
+ 
+        {/* Call to Action */}
+        <div className="about-cta-section">
+            <div className="cta-content">
+                <h3>Interested in Collaboration?</h3>
+                <p>I'm always open to discussing healthcare research, data analysis projects, or potential collaborations.</p>
+                <div className="cta-buttons">
+                    <a href="#" className="btn btn-primary" onClick={(e) => { e.preventDefault(); handleSectionChange('contact'); }}>
+                        <i className="fas fa-envelope"></i> Contact Me
+                    </a>
+                    <a href="#" className="btn btn-outline" onClick={(e) => { e.preventDefault(); handleSectionChange('publications'); }}>
+                        <i className="fas fa-book"></i> View Publications
+                    </a>
+                </div>
+            </div>
+        </div>
 
-                {/* Education & Experience Section */}
-                <section id="education" className={`section ${activeSection === 'education' ? 'active' : ''}`}>
-                    <div className="container">
-                        <h2 className="section-title">Education & Experience</h2>
-                        <div className="timeline">
-                            <h3 style={{textAlign: 'center', marginBottom: '3rem', color: 'var(--primary)'}}>Education</h3>
-                            {education.map((item, index) => (
-                                <div key={index} className="timeline-item glass-card">
-                                    <h3>{item.title}</h3>
-                                    <h4 style={{color: 'var(--primary-light)', margin: '0.5rem 0'}}>{item.institution}</h4>
-                                    <div style={{color: 'var(--text-light)', marginBottom: '0.5rem'}}>{item.period}</div>
-                                </div>
-                            ))}
-                            
-                            <h3 style={{textAlign: 'center', margin: '4rem 0 3rem', color: 'var(--primary)'}}>Experience</h3>
-                            {experience.map((item, index) => (
-                                <div key={index} className="timeline-item glass-card">
-                                    <h3>{item.title}</h3>
-                                    <h4 style={{color: 'var(--primary-light)', margin: '0.5rem 0'}}>{item.company}</h4>
-                                    <div style={{color: 'var(--text-light)', marginBottom: '0.5rem'}}>{item.period}</div>
-                                    <p>{item.description}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
+    </div>
+</section>
 
-                {/* Publications Section */}
+{/* Publications Section */}
                 <section id="publications" className={`section ${activeSection === 'publications' ? 'active' : ''}`}>
                     <div className="container">
                         <h2 className="section-title">Publications</h2>
@@ -8635,105 +11809,6 @@ I am a registered nurse and I love research, and data analytics! I am passionate
                     </div>
                 </section>
 
-                {/* Resume Section */}
-                <section id="resume" className={`section ${activeSection === 'resume' ? 'active' : ''}`}>
-                    <div className="container">
-                        <h2 className="section-title">My Resume</h2>
-                        
-                        <div className="resume-intro">
-                            <p>
-                                View my complete resume online. It includes my professional experience, 
-                                education, skills, publications, and accomplishments - all in one convenient location.
-                            </p>
-                            <div className="resume-stats">
-                                <div className="resume-stat">
-                                    <i className="fas fa-clock"></i>
-                                    <div className="stat-content">
-                                        <span className="stat-value">Always Updated</span>
-                                        <span className="stat-label">Live version</span>
-                                    </div>
-                                </div>
-                                <div className="resume-stat">
-                                    <i className="fas fa-mobile-alt"></i>
-                                    <div className="stat-content">
-                                        <span className="stat-value">Responsive</span>
-                                        <span className="stat-label">All devices</span>
-                                    </div>
-                                </div>
-                                <div className="resume-stat">
-                                    <i className="fas fa-sync-alt"></i>
-                                    <div className="stat-content">
-                                        <span className="stat-value">Real-time</span>
-                                        <span className="stat-label">Updates</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="resume-single-option">
-                            <div className="single-resume-card glass-card">
-                                <div className="resume-header">
-                                    <div className="resume-icon">
-                                        <i className="fas fa-globe"></i>
-                                    </div>
-                                    <div className="resume-title">
-                                        <h3>Online Resume</h3>
-                                        <p className="resume-subtitle">View in your browser</p>
-                                    </div>
-                                </div>
-                                <div className="resume-body">
-                                    <div className="resume-features">
-                                        <div className="feature-item">
-                                            <i className="fas fa-check-circle"></i>
-                                            <span className="feature-text">No download required - view instantly</span>
-                                        </div>
-                                        <div className="feature-item">
-                                            <i className="fas fa-check-circle"></i>
-                                            <span className="feature-text">Optimized for mobile and desktop</span>
-                                        </div>
-                                        <div className="feature-item">
-                                            <i className="fas fa-check-circle"></i>
-                                            <span className="feature-text">Always up-to-date version</span>
-                                        </div>
-                                        <div className="feature-item">
-                                            <i className="fas fa-check-circle"></i>
-                                            <span className="feature-text">Interactive and easy to navigate</span>
-                                        </div>
-                                    </div>
-                                    <p className="resume-note">
-                                        <i className="fas fa-info-circle"></i> The online version is always current and accessible from any device
-                                    </p>
-                                    <div className="resume-actions">
-                                        <a 
-                                            href="https://1drv.ms/f/c/3ce355b70d76f4f7/EvOg3kpoGi1JlFokbzBzEIgBDYXASGIRoLVHrXceFZDrJg?e=tF8arF" 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            className="btn-resume secondary"
-                                        >
-                                            <i className="fas fa-eye"></i>
-                                            View Resume Online
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="resume-footer">
-                            <div className="resume-note-card glass-card">
-                                <i className="fas fa-info-circle"></i>
-                                <div>
-                                    <h3>Resume Information</h3>
-                                    <p>
-                                        My resume includes complete details about my education, professional experience, 
-                                        technical skills, publications, and accomplishments. For the most 
-                                        up-to-date information, you can also view my LinkedIn profile for additional context 
-                                        and professional endorsements.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
                 {/* Support Section */}
                 <section id="support" className={`section ${activeSection === 'support' ? 'active' : ''}`}>
@@ -9066,98 +12141,137 @@ I am a registered nurse and I love research, and data analytics! I am passionate
 </section>
           
             </main>
-
-   <footer className="footer">
-    <div className="container">
-        <div className="footer-content footer-horizontal-layout">
-            {/* Left Column - Brand Statement */}
-            <div className="footer-column" style={{ flex: '1.5' }}>
-                <div style={{ 
-                    paddingRight: '2rem',
-                    borderRight: '1px solid var(--border)',
-                    marginRight: '2rem'
-                }}>
-                    <div style={{ 
-                        fontSize: '1.5rem', 
-                        fontWeight: '700', 
-                        color: 'var(--primary)',
-                        marginBottom: '0.75rem'
-                    }}>
-                        MMI.
+            
+                         {/* SCROLL NAVIGATION - Consistent with header order */}
+                <div className="scroll-navigation" id="scrollNavigation">
+                    {/* Section progress dots - IN CORRECT ORDER */}
+                    <div className="section-progress">
+    <div className="section-dots">
+    {/* Home */}
+    <div
+        key="home"
+        className={`section-dot ${activeSection === 'home' ? 'active' : ''} ${['about', 'projects', 'blog', 'publications', 'support', 'contact'].includes(activeSection) ? 'completed' : ''}`}
+        data-section="Home"
+        onClick={() => handleSectionChange('home')}
+        title="Go to Home"
+    />
+    
+    {/* About */}
+    <div
+        key="about"
+        className={`section-dot ${activeSection === 'about' ? 'active' : ''} ${['projects', 'blog', 'publications', 'support', 'contact'].includes(activeSection) ? 'completed' : ''}`}
+        data-section="About"
+        onClick={() => handleSectionChange('about')}
+        title="Go to About"
+    />
+    
+    {/* Projects */}
+    <div
+        key="projects"
+        className={`section-dot ${activeSection === 'projects' ? 'active' : ''} ${['blog', 'publications', 'support', 'contact'].includes(activeSection) ? 'completed' : ''}`}
+        data-section="Projects"
+        onClick={() => handleSectionChange('projects')}
+        title="Go to Projects"
+    />
+    
+    {/* Blog */}
+    <div
+        key="blog"
+        className={`section-dot ${activeSection === 'blog' ? 'active' : ''} ${['publications', 'support', 'contact'].includes(activeSection) ? 'completed' : ''}`}
+        data-section="Blog"
+        onClick={() => handleSectionChange('blog')}
+        title="Go to Blog"
+    />
+    
+    {/* Publications */}
+    <div
+        key="publications"
+        className={`section-dot ${activeSection === 'publications' ? 'active' : ''} ${['support', 'contact'].includes(activeSection) ? 'completed' : ''}`}
+        data-section="Publications"
+        onClick={() => handleSectionChange('publications')}
+        title="Go to Publications"
+    />
+    
+    {/* Support */}
+    <div
+        key="support"
+        className={`section-dot ${activeSection === 'support' ? 'active' : ''} ${['contact'].includes(activeSection) ? 'completed' : ''}`}
+        data-section="Support"
+        onClick={() => handleSectionChange('support')}
+        title="Go to Support"
+    />
+    
+    {/* Contact */}
+    <div
+        key="contact"
+        className={`section-dot ${activeSection === 'contact' ? 'active' : ''}`}
+        data-section="Contact"
+        onClick={() => handleSectionChange('contact')}
+        title="Go to Contact"
+    />
+</div>
                     </div>
-                    <p style={{ 
-                        fontSize: '0.9rem', 
-                        color: 'var(--text-light)',
-                        lineHeight: '1.5',
-                        margin: 0
-                    }}>
-                        Passionate about creating R Shiny web-based statistical applications that make a difference.
-                    </p>
-                </div>
-            </div>
-
-            {/* Middle Column - Quick Links */}
-            <div className="footer-column" style={{ flex: '2' }}>
-                <h3>Quick Navigation</h3>
-                <div className="footer-tabs-grid">
-                    <ul className="footer-links-vertical">
-                        <li><a href="#" onClick={(e) => { e.preventDefault(); handleSectionChange('home'); }}><i className="fas fa-home"></i>Home</a></li>
-                        <li><a href="#" onClick={(e) => { e.preventDefault(); handleSectionChange('projects'); }}><i className="fas fa-project-diagram"></i>Projects</a></li>
-                        <li><a href="#" onClick={(e) => { e.preventDefault(); handleSectionChange('blog'); }}><i className="fas fa-blog"></i>Blog</a></li>
-                        <li><a href="#" onClick={(e) => { e.preventDefault(); handleSectionChange('about'); }}><i className="fas fa-user"></i>About</a></li>
-                        <li><a href="#" onClick={(e) => { e.preventDefault(); handleSectionChange('education'); }}><i className="fas fa-graduation-cap"></i>Education</a></li>
-                    </ul>
                     
-                    <ul className="footer-links-vertical">
-                        <li><a href="#" onClick={(e) => { e.preventDefault(); handleSectionChange('publications'); }}><i className="fas fa-file-alt"></i>Publications</a></li>
-                        <li><a href="#" onClick={(e) => { e.preventDefault(); handleSectionChange('resume'); }}><i className="fas fa-file-pdf"></i>Resume</a></li>
-                        <li><a href="#" onClick={(e) => { e.preventDefault(); handleSectionChange('support'); }}><i className="fas fa-hands-helping"></i>Support</a></li>
-                        <li><a href="#" onClick={(e) => { e.preventDefault(); handleSectionChange('contact'); }}><i className="fas fa-envelope"></i>Contact</a></li>
-                    </ul>
+                    {/* Previous section button */}
+                    <div 
+                        className={`scroll-indicator prev-section ${activeSection !== 'home' ? 'visible' : ''}`}
+                        onClick={() => {
+    const sectionsOrder = ['home', 'about', 'projects', 'blog', 'publications', 'support', 'contact'];
+                            const currentIndex = sectionsOrder.indexOf(activeSection);
+                            if (currentIndex > 0) {
+                                handleSectionChange(sectionsOrder[currentIndex - 1]);
+                            }
+                        }}
+                        title="Previous section"
+                    >
+                        <i className="fas fa-chevron-up"></i>
+                    </div>
+                    
+                    {/* Next section button */}
+                    <div 
+                        className={`scroll-indicator next-section ${activeSection !== 'contact' ? 'visible' : ''}`}
+                        onClick={() => {
+                            const sectionsOrder = ['home', 'about', 'projects', 'blog', 'publications', 'support', 'contact'];
+                            const currentIndex = sectionsOrder.indexOf(activeSection);
+                            if (currentIndex < sectionsOrder.length - 1) {
+                                handleSectionChange(sectionsOrder[currentIndex + 1]);
+                            }
+                        }}
+                        title="Next section"
+                    >
+                        <i className="fas fa-chevron-down"></i>
+                    </div>
                 </div>
-            </div>
 
-            {/* Right Column - Social Media Icons */}
-            <div className="footer-column social-column" style={{ flex: '1' }}>
-                <h3>Connect</h3>
-                <div className="social-icons-grid">
-                    <a href="https://github.com/mudassiribrahim30" target="_blank" rel="noopener noreferrer" className="social-icon-item github" title="GitHub">
-                        <i className="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0" target="_blank" rel="noopener noreferrer" className="social-icon-item linkedin" title="LinkedIn">
-                        <i className="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@mudasirmohammedibrahim1026" target="_blank" rel="noopener noreferrer" className="social-icon-item youtube" title="YouTube">
-                        <i className="fab fa-youtube"></i>
-                    </a>
-                    <a href="https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="social-icon-item scholar" title="Google Scholar">
-                        <i className="fas fa-graduation-cap"></i>
-                    </a>
-                    <a href="https://orcid.org/0000-0002-9049-8222" target="_blank" rel="noopener noreferrer" className="social-icon-item orcid" title="ORCID">
-                        <i className="fab fa-orcid"></i>
-                    </a>
-                    <a href="https://mudasir-ibrahim.blogspot.com" target="_blank" rel="noopener noreferrer" className="social-icon-item blogger" title="Blogger">
-                        <i className="fab fa-blogger-b"></i>
-                    </a>
-                </div>
-            </div>
+ <footer className="footer">
+    <div className="container">
+        <div className="social-icons">
+            <a href="https://github.com/mudassiribrahim30" target="_blank" rel="noopener noreferrer" className="social-icon" title="GitHub">
+                <i className="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0" target="_blank" rel="noopener noreferrer" className="social-icon" title="LinkedIn">
+                <i className="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.youtube.com/@mudasirmohammedibrahim1026" target="_blank" rel="noopener noreferrer" className="social-icon" title="YouTube">
+                <i className="fab fa-youtube"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="social-icon" title="Google Scholar">
+                <i className="fas fa-graduation-cap"></i>
+            </a>
+            <a href="https://orcid.org/0000-0002-9049-8222" target="_blank" rel="noopener noreferrer" className="social-icon" title="ORCID">
+                <i className="fab fa-orcid"></i>
+            </a>
+            <a href="https://mudasir-ibrahim.blogspot.com" target="_blank" rel="noopener noreferrer" className="social-icon" title="Blogger">
+                <i className="fab fa-blogger-b"></i>
+            </a>
         </div>
-
-        {/* Footer Bottom - Single line */}
-        <div className="footer-bottom">
-            <p>© {new Date().getFullYear()} All rights reserved.</p>
-            <p>Built with <i className="fas fa-heart footer-heart"></i> in Ghana. Powered by 
+        
+    <div className="footer-bottom">
+            <p>
+                © {new Date().getFullYear()} All rights reserved. Built with <i className="fas fa-heart footer-heart"></i> in Ghana. Powered by
                 <span 
+                    className="author-name"
                     onClick={() => scrollToTopOfActiveSection()}
-                    style={{
-                        cursor: 'pointer',
-                        color: 'var(--primary)',
-                        fontWeight: '600',
-                        marginLeft: '0.3rem',
-                        textDecoration: 'underline',
-                        textDecorationColor: 'var(--primary)',
-                        textUnderlineOffset: '2px'
-                    }}
                     title="Click to scroll to top of current section"
                 >
                     Mudasir Mohammed Ibrahim
@@ -9166,7 +12280,7 @@ I am a registered nurse and I love research, and data analytics! I am passionate
         </div>
     </div>
 </footer>
-    
+  
             </div>
     );
 }
