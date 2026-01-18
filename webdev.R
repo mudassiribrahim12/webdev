@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <title>Mudasir Mohammed Ibrahim - Home</title>
+    <title>Mudasir Mohammed Ibrahim - Official Website</title>
         <meta name="title" content="Mudasir Mohammed Ibrahim">
     <meta name="description" content="Official Portfolio Website of Mudasir Mohammed Ibrahim – Registered Nurse in Tamale, Ghana">
 <meta name="theme-color" content="#1a56db">
@@ -46,7 +46,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
    
    <style>
         * {
@@ -54,42 +54,15 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
+        /* Import the font used on Trojan Brands */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-   :root {
-    --text-color: #111; /* Darker - was #222 */
-    --header-color: #000; /* Pure black */
-    --border-color: #ccc; /* Darker border */
-    --light-bg: #f5f5f5;
-    --card-bg: #fff;
-    --skill-bg: #e8e8e8;
-    --position-color: #444; /* Darker - was #555 */
-    --nav-bg: #2c3e50;
-    --nav-text: #fff; /* White for better contrast */
-    --nav-hover: #3498db;
-    --nav-border: #34495e;
-}
-
-body.dark-mode {
-    --bg-color: #121212; /* Darker background */
-    --text-color: #f0f0f0; /* Brighter text - was #e0e0e0 */
-    --header-color: #ffffff;
-    --border-color: #444;
-    --light-bg: #2a2a2a;
-    --card-bg: #1e1e1e; /* Darker cards */
-    --section-bg: #1e1e1e;
-    --skill-bg: #2a2a2a;
-    --nav-hover: #ff6b6b; /* Lighter red for hover */
-    --position-color: #cccccc; /* Brighter - was #a0a0a0 */
-    --nav-bg: #b33939; /* Nice red color for header */
-    --nav-text: #ffffff; 
-    --nav-border: #8b2e2e; /* Darker red for border */
-}
-
-        /* Make body text more contrasty */
+/* Update body font */
 body {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    line-height: 1.7;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
     padding: 0;
@@ -98,8 +71,798 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-size: 16px; /* Similar to Trojan Brands */
 }
 
+/* Heading updates */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--header-color);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.3em;
+    margin-top: 1.8em;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+h4 {
+    font-size: 1.1rem;
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+}
+
+/* Paragraph text */
+p {
+    margin-bottom: 1.2em;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Position text */
+.position {
+    font-size: 1.1rem;
+    color: var(--position-color);
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* List items */
+li {
+    margin-bottom: 0.6em;
+    line-height: 1.6;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+/* ========== GALLERY SECTION STYLES ========== */
+
+/* Gallery Container */
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Gallery Grid - IMPROVED for better image fitting */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+/* Gallery Item Card - IMPROVED for perfect image fit */
+.gallery-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--nav-hover);
+}
+
+/* ========== UPDATED GALLERY STYLES FOR LONG IMAGES ========== */
+
+/* Gallery Image Container - FIXED for better image handling */
+.gallery-image-container {
+    width: 100%;
+    height: 250px; /* Fixed height for consistent display */
+    overflow: hidden;
+    position: relative;
+    background-color: var(--light-bg);
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start; /* Changed from center to top */
+    justify-content: center;
+    min-height: 250px;
+}
+
+/* FIX: Gallery Image - Smart fit for different aspect ratios */
+.gallery-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* Changed from cover to contain for long images */
+    object-position: top !important; /* Show top of long images */
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    transition: transform 0.5s ease;
+}
+
+/* Special handling for long images */
+.gallery-item.long-image .gallery-image {
+    object-fit: contain !important;
+    object-position: top !important;
+}
+
+.gallery-item.long-image .gallery-image-container {
+    background-color: var(--light-bg);
+}
+
+/* Hover effect for long images */
+.gallery-item.long-image:hover .gallery-image {
+    transform: scale(1.02) translateY(-10px); /* Slight upward movement on hover */
+}
+
+/* Modal image for long images */
+.gallery-item.long-image .gallery-overlay i {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Gallery Image Overlay */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay i {
+    color: white;
+    font-size: 2.5rem;
+    background: rgba(52, 152, 219, 0.8);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Gallery Content - Better spacing */
+.gallery-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--header-color);
+    margin-bottom: 10px;
+    line-height: 1.4;
+    min-height: 2.8em;
+}
+
+.gallery-description {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex: 1;
+    opacity: 0.9;
+}
+
+.gallery-date {
+    font-size: 0.85rem;
+    color: var(--position-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: auto;
+}
+
+/* Gallery Modal */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.gallery-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    animation: scaleUp 0.3s ease;
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+    padding: 20px;
+    background-color: var(--light-bg);
+}
+
+.modal-info {
+    padding: 25px;
+    background-color: var(--card-bg);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--header-color);
+    margin-bottom: 15px;
+}
+
+.modal-description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: rgba(231, 76, 60, 0.9);
+    transform: rotate(90deg);
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.modal-nav:hover {
+    background: rgba(52, 152, 219, 0.9);
+}
+
+.modal-prev {
+    left: 20px;
+}
+
+.modal-next {
+    right: 20px;
+}
+
+/* Gallery Controls - FIXED to prevent shaking */
+.gallery-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery-search {
+    flex: 1;
+    min-width: 250px;
+}
+
+.gallery-search input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    min-width: 250px;
+}
+
+.gallery-search input:focus {
+    outline: none;
+    border-color: var(--nav-hover);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.gallery-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.filter-btn:hover {
+    background-color: var(--skill-bg);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    border-color: var(--nav-border);
+    font-weight: 600;
+}
+
+.gallery-stats {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Gallery Pagination */
+.gallery-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover {
+    background-color: var(--light-bg);
+    border-color: var(--nav-hover);
+}
+
+.page-btn.active {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    border-color: var(--nav-border);
+}
+
+/* Gallery Empty State */
+.gallery-empty {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin: 40px 0;
+}
+
+.gallery-empty i {
+    font-size: 4rem;
+    color: var(--position-color);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.gallery-empty h3 {
+    color: var(--header-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.gallery-empty p {
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Gallery Loading */
+.gallery-loading {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.gallery-loading i {
+    font-size: 2rem;
+    color: var(--nav-hover);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Gallery Button Style */
+.gallery-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.gallery-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--nav-hover);
+}
+
+/* Responsive Gallery */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    .gallery-controls {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+    
+    .gallery-search {
+        max-width: 100%;
+        min-width: auto;
+    }
+    
+    .gallery-search input {
+        min-width: auto;
+    }
+    
+    .gallery-filters {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .gallery-stats {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .gallery-image-container {
+        height: 200px;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+        max-height: 95%;
+    }
+    
+    .modal-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .gallery-title {
+        font-size: 1.1rem;
+        min-height: 2.4em;
+    }
+    
+    .gallery-description {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-image-container {
+        height: 220px;
+    }
+    
+    .gallery-filters {
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        min-width: 80px;
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Make text colors darker for better readability like Trojan Brands */
+:root {
+    --text-color: #333333; /* Darker gray */
+    --header-color: #222222; /* Almost black */
+    --position-color: #555555; /* Medium gray */
+}
+
+body.dark-mode {
+    --text-color: #f0f0f0; /* Light gray for dark mode */
+    --header-color: #ffffff;
+    --position-color: #cccccc;
+}
+
+/* Navigation font */
+.nav-item a {
+    text-decoration: none;
+    color: var(--nav-text);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    position: relative;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    line-height: 70px;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+/* Profile intro */
+.profile-intro {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+/* Shiny description */
+.shiny-description {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+/* Blog post excerpt */
+.blog-post-excerpt {
+    color: #111; /* Darker */
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: 500; /* Increased from 400 */
+}
+
+/* Publication details */
+.publication-authors {
+    color: #000; /* Pure black */
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-weight: 600; /* Increased from 500 */
+}
+
+.publication-journal {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.publication-details {
+    color: #222; /* Darker */
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    font-weight: 500; /* Increased from 400 */
+}
+
+/* Education and professional text */
+.edu-institution, .professional-org {
+    color: #000; /* Pure black */
+    font-style: italic;
+    margin-bottom: 0.3em;
+    font-weight: 600; /* Increased from 400 */
+}
+
+.edu-period, .professional-period {
+    color: #222; /* Darker */
+    font-size: 0.9rem;
+    margin-bottom: 0.5em;
+    font-weight: 600; /* Increased from 500 */
+}
+
+/* Blog post title */
+.blog-post-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Publication title */
+.publication-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Profile name */
+.profile-name {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    .profile-name {
+        font-size: 1.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .profile-name {
+        font-size: 1.7rem;
+    }
+}
+
+:root {
+    --text-color: #000000; /* Changed to pure black */
+    --header-color: #000000; /* Pure black */
+    --border-color: #aaa; /* Darker border */
+    --light-bg: #f5f5f5;
+    --card-bg: #fff;
+    --skill-bg: #e8e8e8;
+    --position-color: #333; /* Much darker - was #444 */
+    --nav-bg: #2c3e50;
+    --nav-text: #fff; /* White for better contrast */
+    --nav-hover: #3498db;
+    --nav-border: #34495e;
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --header-color: #ffffff;
+    --border-color: #444;
+    --light-bg: #2a2a2a;
+    --card-bg: #1e1e1e;
+    --section-bg: #1e1e1e;
+    --skill-bg: #2a2a2a;
+    --nav-hover: #4dabf7;    /* CHANGED: Active tab underline (blue) */
+    --position-color: #cccccc;
+    --nav-bg: #b33939;       /* UNCHANGED: Keep red header */
+    --nav-text: #ffffff;     /* CHANGED: Solid white text */
+    --nav-border: #8b2e2e;   /* UNCHANGED: Keep red border */
+}
 
         #root {
             flex: 1;
@@ -107,69 +870,11 @@ body {
             flex-direction: column;
         }
 
-/* Make headings pure black and bolder */
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    color: var(--header-color);
-    text-shadow: none;
-}
-
-h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    color: var(--header-color);
-}
-
-h2 {
-    font-size: 1.8rem;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.3em;
-    margin-top: 2em;
-    color: var(--header-color);
-}
-
-h3 {
-    font-size: 1.4rem;
-    color: var(--header-color);
-    margin-top: 1.5em;
-    margin-bottom: 0.8em;
-}
-
-/* Make paragraph text darker and more readable */
-p {
-    margin-bottom: 1.2em;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-color);
-    font-weight: 400;
-}
-
-/* Make position text darker */
-.position {
-    font-size: 1.3rem;
-    color: var(--position-color);
-    margin-bottom: 2rem;
-    font-style: italic;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-}
-
 
         ul {
             margin-left: 1.5em;
             margin-bottom: 1.5em;
         }
-
-li {
-    margin-bottom: 0.7em;
-    line-height: 1.6;
-    color: var(--text-color);
-}
 
         .content-container {
             max-width: 820px;
@@ -200,6 +905,7 @@ li {
             height: 70px; /* Exact same as parent */
             gap: 40px; /* Space between logo and tabs */
         }
+        
 
         /* Logo - FORCE CENTER ALIGNMENT */
         .logo {
@@ -253,25 +959,7 @@ li {
             padding: 0;
         }
 
-        /* Tabs - FORCE EXACT SAME HEIGHT AND POSITION AS LOGO */
-        .nav-item a {
-            text-decoration: none;
-            color: var(--nav-text);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.0rem;
-            font-weight: 400;
-            transition: all 0.2s;
-            position: relative;
-            white-space: nowrap;
-            display: flex;
-            align-items: center; /* Force vertical center */
-            height: 70px; /* Exact same as logo */
-            line-height: 70px; /* Exact same as logo */
-            padding: 0;
-            margin: 0;
-            vertical-align: middle;
-        }
-
+   
         .nav-item a:hover {
             color: var(--nav-hover);
         }
@@ -307,22 +995,361 @@ li {
             height: 70px; /* Same as header */
         }
 
-        .social-icon {
-            color: var(--nav-text);
-            font-size: 1.3rem;
-            transition: all 0.2s;
-            text-decoration: none;
-            display: flex;
-            align-items: center; /* Force vertical center */
-            height: 70px; /* Same as header */
-            line-height: 70px; /* Same as logo */
-            padding: 0 5px;
-        }
+.social-icon {
+    color: var(--nav-text);
+    font-size: 1.3rem;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Force vertical center */
+    height: 70px; /* Same as header */
+    line-height: 70px; /* Same as logo */
+    padding: 0 5px;
+}
 
-        .social-icon:hover {
-            color: var(--nav-hover);
-            transform: translateY(-2px);
-        }
+.social-icon:hover {
+    transform: translateY(-2px);
+}
+
+/* ORCID - Green */
+.social-icon[title="ORCID"]:hover {
+    color: #a6ce39 !important;
+}
+
+/* Google Scholar - Blue */
+.social-icon[title="Google Scholar"]:hover {
+    color: #4285f4 !important;
+}
+
+/* GitHub - White (or purple for dark mode) */
+.social-icon[title="GitHub"]:hover {
+    color: #f0f6fc !important;
+}
+body.dark-mode .social-icon[title="GitHub"]:hover {
+    color: #6e40c9 !important;
+}
+
+/* LinkedIn - Blue */
+.social-icon[title="LinkedIn"]:hover {
+    color: #0077b5 !important;
+}
+
+/* YouTube - Red */
+.social-icon[title="YouTube"]:hover {
+    color: #ff0000 !important;
+}
+
+/* ========== ABOUT PAGE ICON HOVER COLORS ========== */
+.profile-social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+    justify-content: flex-start;
+}
+
+.profile-social-icon {
+    color: var(--position-color);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-bg);
+    position: relative;
+}
+
+.profile-social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ORCID - Green */
+.profile-social-icon[title="ORCID"]:hover {
+    color: #a6ce39 !important;
+    background-color: rgba(166, 206, 57, 0.1);
+    border-color: #a6ce39;
+}
+
+/* Google Scholar - Blue */
+.profile-social-icon[title="Google Scholar"]:hover {
+    color: #4285f4 !important;
+    background-color: rgba(66, 133, 244, 0.1);
+    border-color: #4285f4;
+}
+
+/* GitHub - Purple/White */
+.profile-social-icon[title="GitHub"]:hover {
+    color: #6e40c9 !important;
+    background-color: rgba(110, 64, 201, 0.1);
+    border-color: #6e40c9;
+}
+
+body.dark-mode .profile-social-icon[title="GitHub"]:hover {
+    color: #f0f6fc !important;
+    background-color: rgba(240, 246, 252, 0.1);
+    border-color: #f0f6fc;
+}
+
+/* LinkedIn - Blue */
+.profile-social-icon[title="LinkedIn"]:hover {
+    color: #0077b5 !important;
+    background-color: rgba(0, 119, 181, 0.1);
+    border-color: #0077b5;
+}
+
+/* Download CV - Red/Orange */
+.profile-social-icon[title="Download CV"]:hover {
+    color: #e74c3c !important;
+    background-color: rgba(231, 76, 60, 0.1);
+    border-color: #e74c3c;
+}
+
+/* YouTube - Red (if you add it later) */
+.profile-social-icon[title="YouTube"]:hover {
+    color: #ff0000 !important;
+    background-color: rgba(255, 0, 0, 0.1);
+    border-color: #ff0000;
+}
+
+/* Add tooltip styling */
+.profile-social-icon::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.profile-social-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: -35px;
+}
+
+/* Icon border on hover */
+.profile-social-icon {
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.profile-social-icon:hover {
+    border-width: 1px;
+    border-style: solid;
+}
+
+/* ========== TEACHING PORTFOLIO SECTION ========== */
+.teaching-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 35px 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.teaching-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2c3e50);
+}
+
+.teaching-header {
+    margin-bottom: 25px;
+}
+
+.teaching-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.teaching-title {
+    font-size: 1.8rem;
+    color: var(--header-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.teaching-subtitle {
+    color: var(--nav-hover);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+}
+
+.coming-soon-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 15px auto 25px;
+    box-shadow: 0 3px 10px rgba(255, 126, 95, 0.2);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.teaching-content {
+    margin-top: 20px;
+}
+
+.teaching-description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.teaching-contact-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 25px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.contact-icon {
+    color: #3498db;
+    font-size: 1.5rem;
+    background: rgba(52, 152, 219, 0.1);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-details {
+    flex: 1;
+}
+
+.contact-text {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.contact-text strong {
+    color: var(--header-color);
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 6px 15px;
+    border-radius: 20px;
+    background-color: rgba(52, 152, 219, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: rgba(52, 152, 219, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(52, 152, 219, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .teaching-container {
+        padding: 25px 20px;
+        margin: 0 15px;
+    }
+    
+    .teaching-title {
+        font-size: 1.6rem;
+    }
+    
+    .teaching-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .teaching-contact-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contact-details {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .teaching-container {
+        padding: 20px 15px;
+    }
+    
+    .teaching-title {
+        font-size: 1.4rem;
+    }
+    
+    .teaching-description {
+        font-size: 0.95rem;
+    }
+    
+    .coming-soon-badge {
+        font-size: 0.85rem;
+        padding: 6px 16px;
+    }
+}
 
         .dark-mode-toggle {
             background: none;
@@ -429,14 +1456,33 @@ li {
             line-height: 1.4;
         }
 
+/* Theme Options Dropdown Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(-10px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+.theme-option:hover {
+    background-color: var(--light-bg) !important;
+}
+
+/* Responsive adjustments for theme dropdown */
+@media (max-width: 768px) {
+    .theme-options-dropdown {
+        min-width: 160px !important;
+        font-size: 0.9rem;
+    }
+    
+    .footer-theme-toggle .theme-options-dropdown {
+        bottom: 50px !important;
+        left: 0 !important;
+        transform: none !important;
     }
 }
 
@@ -595,6 +1641,252 @@ li {
     .archive-section {
         position: static;
     }
+}
+
+/* Publications Sidebar */
+.publications-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.year-map-sidebar {
+    flex: 0 0 200px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.year-map-container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.year-map-title {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--nav-hover);
+    color: var(--header-color);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.year-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.year-button {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--skill-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.year-button:hover {
+    background-color: var(--light-bg);
+    border-color: var(--nav-hover);
+}
+
+.year-button.active {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    border-color: var(--nav-border);
+    font-weight: 600;
+}
+
+.year-count {
+    background-color: var(--nav-hover);
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    min-width: 30px;
+}
+
+.year-button.active .year-count {
+    background-color: var(--nav-text);
+    color: var(--nav-bg);
+}
+
+.year-summary {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--position-color);
+}
+
+.publications-content {
+    flex: 1;
+}
+
+.publication-year-section {
+    scroll-margin-top: 100px;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .publications-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .year-map-sidebar {
+        position: static;
+        max-height: none;
+        width: 100%;
+        flex: 0 0 auto;
+    }
+    
+    .year-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .year-button {
+        flex: 1;
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .year-button {
+        min-width: 100px;
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .year-count {
+        font-size: 0.7rem;
+        padding: 1px 6px;
+        min-width: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .year-list {
+        flex-direction: column;
+    }
+    
+    .year-button {
+        min-width: 100%;
+    }
+}
+
+/* ========== FOOTER SOCIAL ICON HOVER COLORS ========== */
+.footer-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.footer-social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ORCID - Green */
+.footer-social-icon[title="ORCID"]:hover {
+    color: #a6ce39 !important;
+    background-color: rgba(166, 206, 57, 0.2);
+}
+
+/* Google Scholar - Blue */
+.footer-social-icon[title="Google Scholar"]:hover {
+    color: #4285f4 !important;
+    background-color: rgba(66, 133, 244, 0.2);
+}
+
+/* GitHub - Purple/White */
+.footer-social-icon[title="GitHub"]:hover {
+    color: #6e40c9 !important;
+    background-color: rgba(110, 64, 201, 0.2);
+}
+
+body.dark-mode .footer-social-icon[title="GitHub"]:hover {
+    color: #f0f6fc !important;
+    background-color: rgba(240, 246, 252, 0.2);
+}
+
+/* LinkedIn - Blue */
+.footer-social-icon[title="LinkedIn"]:hover {
+    color: #0077b5 !important;
+    background-color: rgba(0, 119, 181, 0.2);
+}
+
+/* YouTube - Red */
+.footer-social-icon[title="YouTube"]:hover {
+    color: #ff0000 !important;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+/* Optional: Add subtle pulse animation on hover */
+@keyframes subtlePulse {
+    0% { transform: translateY(-3px) scale(1); }
+    50% { transform: translateY(-3px) scale(1.05); }
+    100% { transform: translateY(-3px) scale(1); }
+}
+
+.footer-social-icon:hover {
+    animation: subtlePulse 1s ease-in-out infinite;
+}
+
+/* Tooltips for footer icons */
+.footer-social-icon {
+    position: relative;
+}
+
+.footer-social-icon::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+    pointer-events: none;
+    border: 1px solid var(--nav-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.footer-social-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: -35px;
 }
 
     /* Make publication text darker */
@@ -805,6 +2097,227 @@ body.dark-mode .nav-item a.active::before {
             background-color: var(--light-bg);
         }
         
+        /* ========== VIEWS COUNTER STYLES ========== */
+.views-counter-container {
+    position: relative;
+    margin: 2em 0;
+    text-align: center;
+}
+
+.views-counter-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.views-counter-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.views-icon {
+    font-size: 1.8rem;
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-views-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.total-views-label {
+    font-size: 0.95rem;
+    color: var(--position-color);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.total-views-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--header-color);
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin: 5px 0;
+}
+
+.total-views-update {
+    font-size: 0.85rem;
+    color: var(--position-color);
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.views-source {
+    font-size: 0.85rem;
+    color: var(--position-color);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.shiny-app-store-link {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.shiny-app-store-link:hover {
+    color: #2E7D32;
+    text-decoration: underline;
+}
+
+.individual-views-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.individual-views-title {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.views-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.view-item {
+    text-align: center;
+    padding: 8px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.view-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    border-color: #4CAF50;
+}
+
+.app-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--header-color);
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.app-view-count {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #4CAF50;
+}
+
+.views-refresh-btn {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.views-refresh-btn:hover {
+    background-color: var(--light-bg);
+    border-color: #4CAF50;
+    color: #4CAF50;
+}
+
+.views-loading {
+    text-align: center;
+    padding: 20px;
+    color: var(--position-color);
+}
+
+.views-loading i {
+    animation: spin 1s linear infinite;
+}
+
+/* Responsive styles for views counter */
+@media (max-width: 768px) {
+    .views-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    
+    .total-views-number {
+        font-size: 2rem;
+    }
+    
+    .views-counter-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .views-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 8px;
+    }
+    
+    .total-views-number {
+        font-size: 1.8rem;
+    }
+    
+    .views-counter-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .views-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+}
+        
         /* Shiny Apps Section - Essential Styles */
 .shiny-intro {
     text-align: center;
@@ -815,12 +2328,109 @@ body.dark-mode .nav-item a.active::before {
     border: 1px solid var(--border-color);
 }
 
-.shiny-description {
+
+.testimonial-button-container {
+    margin: 3em 0;
+    text-align: center;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-button-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #4CAF50, #2196F3, #9C27B0);
+}
+
+.testimonial-icon {
+    font-size: 3rem;
+    color: #4CAF50;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.testimonial-title {
+    font-size: 1.8rem;
+    color: var(--header-color);
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.testimonial-description {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 25px;
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.7;
     color: var(--text-color);
+    font-weight: 400;
+}
+
+.testimonial-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.testimonial-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    background: linear-gradient(135deg, #45a049, #1B5E20);
+}
+
+.testimonial-button i {
+    font-size: 1.2rem;
+}
+
+.testimonial-subtext {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--position-color);
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .testimonial-button-container {
+        padding: 20px;
+        margin: 2em 0;
+    }
+    
+    .testimonial-title {
+        font-size: 1.5rem;
+    }
+    
+    .testimonial-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
 }
 
 /* Apps Statistics */
@@ -1233,14 +2843,6 @@ body.dark-mode .design-attribution a:hover {
             transform: translateY(-3px);
         }
 
-.profile-intro {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #333; /* Darker - was var(--position-color) */
-    font-weight: 400;
-}
 
         .expertise-section {
             background-color: var(--section-bg);
@@ -1502,38 +3104,937 @@ body.dark-mode .certificate-link {
 body.dark-mode .certificate-link:hover {
     background-color: #2980b9;
 }
-        
-        
-        /* Add this to your CSS section */
-.publication-list a.doi-link {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    border-bottom: 1px solid transparent;
+
+/* ========== COMPACT TESTIMONIAL SECTION ========== */
+.testimonial-container {
+    margin: 2em 0;
+    text-align: center;
+    padding: 25px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.publication-list a.doi-link:hover {
-    color: #2980b9;
-    border-bottom: 1px solid #2980b9;
+.testimonial-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #2196F3);
 }
 
-.publication-list li {
-    margin-bottom: 1em;
-    line-height: 1.6;
-    text-align: justify;
+.testimonial-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 5px;
+}
+
+.testimonial-icon {
+    font-size: 1.8rem;
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-title {
+    font-size: 1.4rem;
+    color: var(--header-color);
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.testimonial-description {
+    font-size: 1rem;
+    line-height: 1.5;
     color: var(--text-color);
+    margin: 0;
+    max-width: 500px;
     font-weight: 400;
 }
 
-.publication-year-header {
-    font-size: 1.2rem;
+.testimonial-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
     font-weight: 600;
-    color: var(--header-color);
-    margin-top: 1.5em;
-    margin-bottom: 0.8em;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.2);
     font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
 }
+
+.testimonial-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    background: linear-gradient(135deg, #45a049, #1B5E20);
+}
+
+/* Responsive design for testimonial section */
+@media (max-width: 768px) {
+    .testimonial-container {
+        padding: 20px 15px;
+        margin: 1.5em 0;
+    }
+    
+    .testimonial-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .testimonial-icon {
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .testimonial-title {
+        font-size: 1.2rem;
+    }
+    
+    .testimonial-description {
+        font-size: 0.95rem;
+    }
+    
+    .testimonial-button {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-container {
+        padding: 15px;
+    }
+    
+    .testimonial-title {
+        font-size: 1.1rem;
+    }
+    
+    .testimonial-description {
+        font-size: 0.9rem;
+    }
+}
+        
+      /* ========== GALLERY SECTION STYLES - UPDATED & FIXED ========== */
+
+/* Gallery Container */
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Gallery Grid - FIXED for perfect image fitting */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+/* Gallery Item Card - FIXED for perfect image fit */
+.gallery-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--nav-hover);
+}
+
+/* Gallery Image Container - FIXED for perfect fit */
+.gallery-image-container {
+    width: 100%;
+    height: 250px; /* Fixed height for consistent display */
+    overflow: hidden;
+    position: relative;
+    background-color: var(--light-bg);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px; /* Ensures minimum height */
+}
+
+/* FIX: Gallery Image - Perfect fit to container - UPDATED */
+.gallery-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* Fallback for broken images */
+.gallery-image-container img:not([src]),
+.gallery-image[src=""],
+.gallery-image[src*="undefined"],
+.gallery-image[src*="null"] {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f5f5f5'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='16' text-anchor='middle' fill='%23666'%3EImage not available%3C/text%3E%3C/svg%3E");
+    object-fit: contain !important;
+    padding: 20px;
+}
+
+/* Gallery Image Overlay */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay i {
+    color: white;
+    font-size: 2.5rem;
+    background: rgba(52, 152, 219, 0.8);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* For mobile: ensure dropdown appears properly */
+@media (max-width: 1024px) {
+    .dropdown-menu {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        border: none;
+        box-shadow: none;
+        margin-top: 0;
+        padding: 0;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block !important;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Gallery Content - Better spacing */
+.gallery-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-date {
+    font-size: 0.85rem;
+    color: var(--position-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: auto;
+}
+
+/* Gallery Modal - FIXED */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.gallery-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    animation: scaleUp 0.3s ease;
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* FIXED: Modal Image - Perfect fit */
+.modal-image {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 70vh !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+    margin: 0 auto !important;
+    background-color: var(--light-bg);
+}
+
+/* Modal Info */
+.modal-info {
+    padding: 25px;
+    background-color: var(--card-bg);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    background: rgba(231, 76, 60, 0.9);
+    transform: rotate(90deg);
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.modal-nav:hover {
+    background: rgba(52, 152, 219, 0.9);
+}
+
+.modal-prev {
+    left: 20px;
+}
+
+.modal-next {
+    right: 20px;
+}
+
+/* Gallery Controls - FIXED */
+.gallery-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery-search {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+}
+
+.gallery-search input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    min-width: 250px;
+}
+
+.gallery-search input:focus {
+    outline: none;
+    border-color: var(--nav-hover);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.gallery-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background-color: var(--light-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.filter-btn:hover {
+    background-color: var(--skill-bg);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    border-color: var(--nav-border);
+    font-weight: 600;
+}
+
+.gallery-stats {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Search Suggestions */
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0 0 8px 8px;
+    margin-top: -1px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.search-suggestions div {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+}
+
+.search-suggestions div:hover {
+    background-color: var(--light-bg);
+}
+
+.search-suggestions div:last-child {
+    border-bottom: none;
+}
+
+/* Gallery Empty State */
+.gallery-empty {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin: 40px 0;
+}
+
+.gallery-empty i {
+    font-size: 4rem;
+    color: var(--position-color);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.gallery-empty h3 {
+    color: var(--header-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.gallery-empty p {
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Gallery Loading */
+.gallery-loading {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.gallery-loading i {
+    font-size: 2rem;
+    color: var(--nav-hover);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Gallery Button */
+.gallery-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.gallery-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--nav-hover);
+}
+
+/* Responsive Gallery - UPDATED */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    .gallery-controls {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+    
+    .gallery-search {
+        max-width: 100%;
+        min-width: auto;
+    }
+    
+    .gallery-search input {
+        min-width: auto;
+    }
+    
+    .gallery-filters {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .gallery-stats {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .gallery-image-container {
+        height: 200px;
+        min-height: 200px;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+        max-height: 95%;
+    }
+    
+    .modal-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-image-container {
+        height: 220px;
+        min-height: 220px;
+    }
+    
+    .gallery-filters {
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        min-width: 80px;
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Image Counter in Modal */
+.image-counter {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 10;
+}
+
+/* Category Badge */
+.category-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    z-index: 5;
+    text-transform: capitalize;
+}
+      
+    /* ========== DROPDOWN STYLES FOR MORE TAB - FIXED ========== */
+.dropdown {
+    position: relative;
+    height: 70px;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    line-height: 70px;
+    padding: 0;
+    margin: 0;
+    color: var(--nav-text);
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    position: relative;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.dropdown-toggle::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--nav-hover);
+    transition: width 0.3s ease;
+}
+
+.dropdown-toggle:hover::after,
+.dropdown-toggle.active::after {
+    width: 100%;
+}
+
+.dropdown-toggle i {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+    margin-left: 5px;
+}
+
+.dropdown-toggle.active i {
+    transform: rotate(180deg);
+}
+
+/* DESKTOP: Regular dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background-color: var(--nav-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: 8px;
+    min-width: 180px;
+    padding: 8px 0;
+    margin-top: 5px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1001;
+    overflow: visible !important;
+    pointer-events: none;
+}
+
+.dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: all;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--nav-text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+    line-height: 1.3;
+    white-space: nowrap;
+    gap: 10px;
+}
+
+.dropdown-item i {
+    font-size: 0.85rem;
+    width: 16px;
+    text-align: center;
+}
+
+.dropdown-item + .dropdown-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left-color: var(--nav-hover);
+    padding-left: 24px;
+}
+
+/* TABLET (iPad 768px and below): Make dropdown full width and reposition */
+@media (max-width: 1024px) {
+    .dropdown {
+        height: auto;
+        position: static;
+        width: 100%;
+    }
+    
+    .dropdown-toggle {
+        height: 60px;
+        line-height: 60px;
+        width: 100%;
+        padding: 0 20px;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .dropdown-toggle::after {
+        display: none;
+    }
+    
+    /* Hide desktop dropdown on tablet/mobile */
+    .dropdown-menu {
+        display: none !important;
+    }
+    
+    /* Show dropdown content as expandable section in mobile menu */
+    .dropdown-content {
+        display: none;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.15);
+        border-left: 4px solid var(--nav-hover);
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        animation: slideDown 0.3s ease;
+    }
+    
+    @keyframes slideDown {
+        from {
+            max-height: 0;
+            opacity: 0;
+        }
+        to {
+            max-height: 200px;
+            opacity: 1;
+        }
+    }
+    
+    .dropdown.active .dropdown-content {
+        display: block;
+        max-height: 200px;
+        opacity: 1;
+    }
+    
+    .dropdown-content .dropdown-item {
+        padding: 15px 20px 15px 35px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        font-size: 1rem;
+        width: 100%;
+        white-space: normal;
+        line-height: 1.4;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .dropdown-content .dropdown-item:last-child {
+        border-bottom: none;
+    }
+    
+    .dropdown-content .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        padding-left: 40px;
+    }
+    
+    .dropdown-content .dropdown-item i {
+        font-size: 0.9rem;
+        width: 18px;
+    }
+    
+    /* When mobile menu is open, show the dropdown properly */
+    .nav-container.mobile-open .dropdown {
+        display: block;
+    }
+}
+
+/* For small mobile screens */
+@media (max-width: 480px) {
+    .dropdown-toggle {
+        padding: 0 15px;
+        font-size: 1rem;
+    }
+    
+    .dropdown-content .dropdown-item {
+        padding: 12px 15px 12px 30px;
+        font-size: 0.95rem;
+    }
+    
+    .dropdown-content .dropdown-item:hover {
+        padding-left: 35px;
+    }
+}
+
+/* Ensure dropdown doesn't get cut off on any screen */
+.dropdown,
+.dropdown-menu,
+.dropdown-content {
+    overflow: visible !important;
+    max-height: none !important;
+}
+        
+        /* ========== PUBLICATION LIST STYLES ========== */
+        .publication-list a.doi-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .publication-list a.doi-link:hover {
+            color: #2980b9;
+            border-bottom: 1px solid #2980b9;
+        }
+
+        .publication-list li {
+            margin-bottom: 1em;
+            line-height: 1.6;
+            text-align: justify;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+
+        .publication-year-header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--header-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-family: 'Montserrat', sans-serif;
+        }        
+
 
 /* Mobile Hamburger Menu Styles */
 .mobile-menu-toggle {
@@ -1557,6 +4058,214 @@ body.dark-mode .certificate-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transform: scale(1.1);
 }
+
+ /* About Page Styles - Matching the example layout */
+    .page-title {
+        font-size: 36px;
+        font-weight: 300;
+        margin-bottom: 30px;
+        color: var(--header-color);
+    }
+    
+    .content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+    
+    .profile-section {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+ .profile-image {
+    width: 250px;
+    height: 300px;
+    border-radius: 8px; /* Square with slight rounded corners */
+    object-fit: fixed; /* ✅ FIXED: Shows entire image without cropping ✅ */
+    object-position: center; /* ✅ Added: Centers the image */
+    border: 4px solid var(--border-color);
+    margin: 0 auto;
+    background-color: var(--light-bg); /* Optional: add background */
+    padding: 5px; /* Optional: add padding */
+}
+    
+    .contact-info {
+        margin-top: 25px;
+    }
+    
+    .contact-item {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .contact-icon {
+        width: 20px;
+        margin-right: 12px;
+        color: var(--nav-hover);
+    }
+    
+    .bio-section {
+        flex: 2;
+        min-width: 300px;
+    }
+    
+    .bio-text {
+        margin-bottom: 25px;
+        font-size: 17px;
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+    
+    .section-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 30px 0 15px;
+        color: var(--header-color);
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 10px;
+    }
+    
+    /* Experience & Education */
+    .experience-list, .education-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .experience-item, .education-item {
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+    }
+    
+    .experience-item:last-child, .education-item:last-child {
+        border-bottom: none;
+    }
+    
+    .item-title {
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--header-color);
+        margin-bottom: 5px;
+    }
+    
+    .item-subtitle {
+        color: var(--nav-hover);
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+    
+    .item-period {
+        color: var(--position-color);
+        font-size: 14px;
+        margin-bottom: 10px;
+        font-style: italic;
+    }
+    
+    .item-description {
+        color: var(--text-color);
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+    
+    /* Skills Section */
+    .skills-section {
+        margin-top: 20px;
+    }
+    
+    .skill-category h3 {
+        font-size: 18px;
+        margin: 15px 0 10px;
+        color: var(--text-color);
+        font-weight: 600;
+    }
+    
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .skill-tag {
+        background-color: var(--skill-bg);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+    }
+    
+    /* Certificate Link */
+    .certificate-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 10px 20px;
+        background-color: #3498db;
+        border: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        cursor: pointer;
+        font-size: 0.95rem;
+    }
+    
+    .certificate-link:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Responsive Design for About Page */
+    @media (max-width: 768px) {
+        .page-title {
+            font-size: 30px;
+        }
+        
+        .content-wrapper {
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .profile-section, .bio-section {
+            width: 100%;
+        }
+        
+        .profile-image {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .section-title {
+            font-size: 22px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .page-title {
+            font-size: 26px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+        }
+        
+        .item-title {
+            font-size: 16px;
+        }
+        
+        .bio-text {
+            font-size: 16px;
+        }
+    }
 
 /* Mobile menu overlay and animation */
 .nav-container.mobile-open {
@@ -1870,6 +4579,69 @@ body.dark-mode .certificate-link:hover {
     }
 }
 
+/* Move theme toggle to footer on mobile and tablet */
+@media (max-width: 1024px) {
+    /* Hide theme toggle from header on mobile/tablet */
+    .header-right .dark-mode-toggle {
+        display: none;
+    }
+    
+    /* Show theme toggle in footer */
+    .footer-theme-toggle {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .footer-theme-toggle button {
+        background-color: var(--card-bg);
+        border: 2px solid var(--border-color);
+        color: var(--text-color);
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 50px;
+        padding: 0 25px;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer-theme-toggle button:hover {
+        background-color: var(--light-bg);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .footer-theme-toggle button i {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .footer-theme-toggle button:hover i {
+        transform: rotate(30deg);
+    }
+}
+
+/* For desktop (above 1024px), hide footer toggle */
+@media (min-width: 1025px) {
+    .footer-theme-toggle {
+        display: none !important;
+    }
+}
+
+/* Adjust footer for mobile */
+@media (max-width: 1024px) {
+    .footer {
+        padding-bottom: 25px;
+    }
+}
+
 /* Tablets - show hamburger only below 768px */
 @media (max-width: 767px) {
     .mobile-menu-toggle {
@@ -1881,7 +4653,7 @@ body.dark-mode .certificate-link:hover {
     }
 }
 
-      @media (max-width: 600px) {
+@media (max-width: 600px) {
     .full-width-header {
         height: auto;
         min-height: 100px;
@@ -1889,22 +4661,23 @@ body.dark-mode .certificate-link:hover {
     }
     
     .header-container {
-        flex-direction: column;
+        flex-direction: row; 
         padding: 5px 10px;
         height: auto;
         min-height: 100px;
         gap: 5px;
-        align-items: stretch;
+        align-items: center; 
+        justify-content: space-between; 
     }
     
     .logo {
         height: 40px !important;
         line-height: 40px !important;
         justify-content: center;
-        width: 100%;
+        width: auto; 
         font-size: 1.1rem;
-        text-align: center;
-        margin-bottom: 5px;
+        text-align: left; 
+        margin-bottom: 0; 
     }
     
     .nav-container {
@@ -2002,117 +4775,225 @@ body.dark-mode .certificate-link:hover {
             }
         }
         
-        /* ========== TABLET/IPAD: NO HAMBURGER, SHOW TABS DIRECTLY (768px - 1024px) ========== */
-@media (min-width: 768px) and (max-width: 1024px) {
+  /* ========== ALL MOBILE/TABLET DEVICES (below 1025px): SHOW ONLY LOGO + HAMBURGER ========== */
+@media (max-width: 1024px) {
     .full-width-header {
         height: 70px;
+        min-height: 70px;
+        padding: 0;
     }
     
     .header-container {
-        padding: 0 25px;
+        flex-direction: row;
+        padding: 0 20px;
         height: 70px;
-        gap: 20px;
+        min-height: 70px;
+        gap: 15px;
+        align-items: center;
         justify-content: space-between;
     }
     
     .logo {
         height: 70px !important;
         line-height: 70px !important;
-        font-size: 1.2rem;
-        flex: 0 0 auto;
-    }
-    
-    /* HIDE hamburger button on tablets */
-    .mobile-menu-toggle {
-        display: none !important;
-    }
-    
-    /* SHOW the nav-container on tablets */
-    .nav-container {
-        display: flex !important;
+        font-size: 1.1rem;
+        text-align: left;
+        margin-bottom: 0;
         flex: 1;
-        justify-content: space-between;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
-    /* SHOW tabs container */
-    .tabs-container {
+    /* SHOW hamburger button on all tablets and phones */
+    .mobile-menu-toggle {
         display: flex !important;
-        margin-left: 20px;
+        background: none;
+        border: none;
+        color: var(--nav-text);
+        font-size: 1.5rem;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        z-index: 1001;
     }
     
-    /* Adjust nav list for tablet */
-    .nav-list {
-        gap: 20px;
+    /* Hide regular nav on all tablets/phones when menu is closed */
+    .nav-container:not(.mobile-open) {
+        display: none;
     }
     
-    .nav-item a {
-        font-size: 1rem;
-    }
-    
-    /* HIDE social icons and dark mode toggle on tablets */
+    /* Hide header-right on all tablets/phones */
     .header-right {
         display: none !important;
     }
     
     /* Adjust content for tablet */
     .content-container {
-        padding: 40px 30px;
+        padding: 30px 25px;
     }
     
-    /* Tablet grid adjustments */
+    /* When menu is open, show it full screen */
+    .nav-container.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--nav-bg);
+        z-index: 1000;
+        padding: 20px;
+        overflow-y: auto;
+        animation: slideDown 0.3s ease-out;
+        border-top: 1px solid var(--nav-border);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Mobile menu specific styles */
+    .nav-container.mobile-open .tabs-container {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .nav-container.mobile-open .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+        height: auto;
+    }
+    
+    .nav-container.mobile-open .nav-item {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-container.mobile-open .nav-item a {
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        padding: 0 15px;
+        border-bottom: 1px solid var(--nav-border);
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+    
+    .nav-container.mobile-open .nav-item a::after {
+        display: none;
+    }
+    
+    .nav-container.mobile-open .nav-item a.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-left: 4px solid var(--nav-hover);
+    }
+    
+    .nav-container.mobile-open .nav-item a:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Mobile header right */
+    .nav-container.mobile-open .header-right {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid var(--nav-border);
+        display: flex !important;
+    }
+    
+    .nav-container.mobile-open .social-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        height: auto;
+    }
+    
+    .nav-container.mobile-open .social-icon {
+        font-size: 1.5rem;
+        height: 50px;
+        line-height: 50px;
+    }
+    
+    .nav-container.mobile-open .dark-mode-toggle {
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    /* Theme dropdown in mobile menu */
+    .nav-container.mobile-open .theme-toggle-container {
+        height: 50px !important;
+        justify-content: center;
+    }
+    
+    .nav-container.mobile-open .theme-options-dropdown {
+        position: absolute;
+        top: 50px !important;
+        right: 0 !important;
+        left: auto !important;
+        transform: none !important;
+    }
+    
+    /* Adjust blog sidebar for tablet */
+    .blog-sidebar {
+        max-width: 100%;
+        order: -1;
+        margin-bottom: 30px;
+    }
+    
+    .archive-section {
+        position: static;
+    }
+    
+    /* Adjust shiny apps grid for tablet */
     .shiny-apps-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
+}
+
+/* ========== LARGER TABLETS (800px - 1024px) ========== */
+@media (min-width: 800px) and (max-width: 1024px) {
+    .header-container {
+        padding: 0 30px;
+    }
     
-    /* Hide mobile menu if somehow shown */
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .content-container {
+        padding: 40px 35px;
+    }
+    
+    .shiny-apps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .nav-container.mobile-open {
-        display: flex !important;
-        position: static;
-        height: auto;
-        width: auto;
-        background-color: transparent;
-        border-top: none;
-        box-shadow: none;
-        animation: none;
-        flex-direction: row;
-        padding: 0;
-    }
-    
-    .nav-container.mobile-open .tabs-container {
-        margin-bottom: 0;
-    }
-    
-    .nav-container.mobile-open .nav-list {
-        flex-direction: row;
-        gap: 20px;
-        height: 70px;
-    }
-    
-    .nav-container.mobile-open .nav-item {
-        width: auto;
-        height: 70px;
+        padding: 30px;
     }
     
     .nav-container.mobile-open .nav-item a {
-        height: 70px;
-        line-height: 70px;
-        padding: 0;
-        border-bottom: none;
-        font-size: 1rem;
-        width: auto;
-    }
-    
-    .nav-container.mobile-open .nav-item a::after {
-        display: block;
-    }
-    
-    .nav-container.mobile-open .nav-item a.active {
-        background-color: transparent;
-        border-left: none;
+        font-size: 1.2rem;
+        height: 65px;
+        line-height: 65px;
     }
 }
-
+  
 /* ========== LARGER TABLETS (800px - 1024px) ========== */
 @media (min-width: 800px) and (max-width: 1024px) {
     .header-container {
@@ -2222,7 +5103,7 @@ body.dark-mode .certificate-link:hover {
     </style>
    
 </head>
-<body>
+<body style="background-color: var(--bg-color, #ffffff);">
     <div id="root"></div>
 
     <script type="text/babel">
@@ -2230,22 +5111,209 @@ body.dark-mode .certificate-link:hover {
 
         const AcademicPortfolio = () => {
             const [activeSection, setActiveSection] = useState('about');
-            const [darkMode, setDarkMode] = useState(false);
             const [blogPosts, setBlogPosts] = useState([]);
             const [loadingBlog, setLoadingBlog] = useState(true);
             const [blogError, setBlogError] = useState(false);
             const [visiblePosts, setVisiblePosts] = useState(50);
             const [showContactForm, setShowContactForm] = useState(false);
-            const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-            const [showBackToTop, setShowBackToTop] = useState(false);
             const [selectedMonth, setSelectedMonth] = useState(null);
             const [filteredPosts, setFilteredPosts] = useState([]);
-
-            const toggleDarkMode = () => {
-                setDarkMode(!darkMode);
-                document.body.classList.toggle('dark-mode');
-            };
+            const [activeDropdown, setActiveDropdown] = useState(null);
             
+            // view counts
+    const [appViews, setAppViews] = useState({});
+    const [totalViews, setTotalViews] = useState(0);
+    const [loadingViews, setLoadingViews] = useState(true);
+            
+         const [darkMode, setDarkMode] = useState(() => {
+    // Check localStorage first
+    const savedTheme = localStorage.getItem('theme-preference');
+    
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        return true;
+    }
+    
+    if (savedTheme === 'light') {
+        document.body.classList.remove('dark-mode');
+        return false;
+    }
+    
+    // Check system preference if no saved preference
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark-mode');
+        return true;
+    }
+    
+    // Default to light mode
+    document.body.classList.remove('dark-mode');
+    return false;
+});
+
+// Function to fetch app views from Shiny App Store
+const fetchAppViews = async () => {
+    try {
+        setLoadingViews(true);
+        
+        // Simulated view data - in production, you'd fetch from your API or Shiny App Store
+        // This is a mockup showing how it would work
+        const mockViews = {
+            "CalcuStats": 16660,
+            "CATrend Analyzer": 7582,
+            "ROC Curve Builder": 15996,
+            "Data2SPSS": 12834,
+            "MedModr": 16042,
+            "EpiDem Suite": 17080,
+            "ggPubPlot": 14541,
+            "APA Table Generator": 3317,
+            "SysSampler": 3594,
+            "CMH Analyzer": 6843,
+            "TNMTC DataLab": 14391,
+            "PharmaCalc Pro": 15481,
+            "RegEffect Xplorer": 15369,
+            "Data TransformR": 16847,
+            "CleanMyData": 14654,
+            "KMPlot Genie": 16863,
+            "QuickStatsGen": 15091,
+            "Robust Regressor": 15560,
+            "TagSelect": 16706,
+            "FAnalyzr": 16867
+        };
+        
+        // Calculate total views
+        const total = Object.values(mockViews).reduce((sum, views) => sum + views, 0);
+        
+        setAppViews(mockViews);
+        setTotalViews(total);
+        
+        // In production, you would fetch from your API:
+        // const response = await fetch('https://your-api-endpoint.com/app-views');
+        // const data = await response.json();
+        // setAppViews(data);
+        // setTotalViews(Object.values(data).reduce((sum, views) => sum + views, 0));
+        
+    } catch (error) {
+        console.error('Error fetching app views:', error);
+        // Fallback to zero views if API fails
+        setAppViews({});
+        setTotalViews(0);
+    } finally {
+        setLoadingViews(false);
+    }
+};
+
+// Fetch views when component mounts or when activeSection changes to shiny
+useEffect(() => {
+    if (activeSection === 'shiny') {
+        fetchAppViews();
+    }
+}, [activeSection]);
+
+// Add this useEffect inside your main AcademicPortfolio component, right after your other useEffects
+useEffect(() => {
+    // Pre-load gallery images when page loads
+    const galleryImageUrls = [
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%201.jpg",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%202.jpg",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%203.jpg",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%204.jpg",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%205.jpg",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%206.jpg",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%207.jpg",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%208.jpg",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Clinical%201.jpg",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Clinical%202.jpg",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Team%201.JPG",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Team%202.JPG",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Team%203.JPG",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Conference%201.jpg",
+        "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Conference%202.jpg"
+    ];
+    
+    // Pre-load all images silently in background
+    galleryImageUrls.forEach(url => {
+        const img = new Image();
+        img.src = url;
+    });
+    
+    console.log('Gallery images pre-loaded');
+}, []);
+
+// Add this useEffect to close mobile menu AND dropdowns when clicking outside
+useEffect(() => {
+    const handleClickOutside = (event) => {
+        // Close mobile menu
+        if (isMobileMenuOpen && 
+            !event.target.closest('.nav-container') && 
+            !event.target.closest('.mobile-menu-toggle')) {
+            setIsMobileMenuOpen(false);
+        }
+        
+        // Close dropdowns when clicking outside
+        if (!event.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    };
+    
+    // Add event listener for escape key
+    const handleEscapeKey = (event) => {
+        if (isMobileMenuOpen && event.key === 'Escape') {
+            setIsMobileMenuOpen(false);
+        }
+        // Close dropdowns on escape
+        if (event.key === 'Escape') {
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('keydown', handleEscapeKey);
+
+    return () => {
+        document.removeEventListener('click', handleClickOutside);
+        document.removeEventListener('keydown', handleEscapeKey);
+    };
+}, [isMobileMenuOpen]);
+
+useEffect(() => {
+    // Ensure the correct theme class is applied on initial render
+    if (darkMode) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+}, []);
+         
+const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const [showBackToTop, setShowBackToTop] = useState(false);
+const [showThemeOptions, setShowThemeOptions] = useState(false);
+
+const handleThemeChange = (theme) => {
+    if (theme === 'light') {
+        setDarkMode(false);
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme-preference', 'light');
+    } else if (theme === 'dark') {
+        setDarkMode(true);
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme-preference', 'dark');
+    } else if (theme === 'device') {
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setDarkMode(prefersDark);
+        if (prefersDark) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+        localStorage.removeItem('theme-preference');
+    }
+    setShowThemeOptions(false);
+};
+
             // Add this useEffect to close mobile menu when clicking outside
 useEffect(() => {
     const handleClickOutside = (event) => {
@@ -2255,6 +5323,7 @@ useEffect(() => {
             setIsMobileMenuOpen(false);
         }
     };
+    
 
     // Add event listener for escape key
     const handleEscapeKey = (event) => {
@@ -2361,49 +5430,251 @@ useEffect(() => {
     return () => window.removeEventListener('scroll', checkScrollPosition);
 }, []);
 
+// Update this useEffect in your component
+useEffect(() => {
+    if (activeSection === 'blog') {
+        // Check if we already have posts loaded
+        if (blogPosts.length === 0) {
+            loadBlogPosts();
+        }
+    }
+}, [activeSection]);
 
-            // Blog loading functions
-            useEffect(() => {
-                if (activeSection === 'blog') {
-                    loadBlogPosts();
-                }
-            }, [activeSection]);
-
+// Add this useEffect to pre-load blog posts on initial page load
+useEffect(() => {
+    // Pre-load blog posts when page loads
+    const timer = setTimeout(() => {
+        if (blogPosts.length === 0) {
+            loadBlogPosts();
+        }
+    }, 1000);
+    
+    return () => clearTimeout(timer);
+}, []);
+         
 const loadBlogPosts = async () => {
     setLoadingBlog(true);
     setBlogError(false);
     
     try {
+        // Use a more reliable approach with multiple fallbacks
+        console.log('Loading blog posts...');
+        
+        // Try multiple proxy URLs with cache busting
+        const timestamp = new Date().getTime();
         const rssFeedUrl = 'https://mudasir-ibrahim.blogspot.com/feeds/posts/default?alt=json&max-results=100';
-        const proxyUrl = 'https://api.allorigins.win/get?url=';
-        const fullUrl = proxyUrl + encodeURIComponent(rssFeedUrl);
+        const encodedUrl = encodeURIComponent(rssFeedUrl);
         
-        const response = await fetch(fullUrl);
-        if (!response.ok) throw new Error('Network response was not ok');
+        // List of proxy services to try
+        const proxyUrls = [
+            `https://api.allorigins.win/get?url=${encodedUrl}&timestamp=${timestamp}`,
+            `https://corsproxy.io/?${encodedUrl}&_=${timestamp}`,
+            `https://api.codetabs.com/v1/proxy?quest=${encodedUrl}&t=${timestamp}`,
+            `https://thingproxy.freeboard.io/fetch/${rssFeedUrl}?t=${timestamp}`
+        ];
         
-        const data = await response.json();
-        const feedData = JSON.parse(data.contents);
-        const posts = feedData.feed.entry || [];
+        let success = false;
+        let data = null;
         
-        if (posts.length === 0) {
-            setBlogError(true);
-        } else {
-            const sortedPosts = posts.sort((a, b) => {
-                const dateA = new Date(a.published?.$t || 0);
-                const dateB = new Date(b.published?.$t || 0);
-                return dateB - dateA;
-            });
-            
-            setBlogPosts(sortedPosts);
-            setFilteredPosts(sortedPosts); // Initialize filtered posts
-            setVisiblePosts(10);
-            setSelectedMonth(null); // Reset filter
+        // Try each proxy until one works
+        for (let i = 0; i < proxyUrls.length; i++) {
+            try {
+                console.log(`Trying proxy ${i+1}: ${proxyUrls[i]}`);
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 5000);
+                
+                const response = await fetch(proxyUrls[i], {
+                    signal: controller.signal,
+                    headers: {
+                        'Cache-Control': 'no-cache, no-store, must-revalidate',
+                        'Pragma': 'no-cache'
+                    }
+                });
+                
+                clearTimeout(timeoutId);
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    
+                    // Handle different proxy response formats
+                    if (proxyUrls[i].includes('allorigins.win')) {
+                        data = JSON.parse(result.contents);
+                    } else if (proxyUrls[i].includes('corsproxy.io') || proxyUrls[i].includes('codetabs.com') || proxyUrls[i].includes('freeboard.io')) {
+                        data = result;
+                    }
+                    
+                    if (data && data.feed && data.feed.entry) {
+                        success = true;
+                        console.log(`Success with proxy ${i+1}`);
+                        break;
+                    }
+                }
+            } catch (proxyError) {
+                console.log(`Proxy ${i+1} failed:`, proxyError.message);
+                continue;
+            }
         }
+        
+        if (!success || !data) {
+            // Final fallback: try direct JSONP approach
+            console.log('Trying JSONP fallback...');
+            await new Promise((resolve) => {
+                const callbackName = `bloggerCallback_${Date.now()}`;
+                const jsonpUrl = `https://mudasir-ibrahim.blogspot.com/feeds/posts/default?alt=json-in-script&callback=${callbackName}&max-results=50`;
+                
+                window[callbackName] = (jsonpData) => {
+                    data = jsonpData;
+                    delete window[callbackName];
+                    resolve();
+                };
+                
+                const script = document.createElement('script');
+                script.src = jsonpUrl;
+                script.onerror = () => {
+                    delete window[callbackName];
+                    resolve();
+                };
+                
+                document.head.appendChild(script);
+                setTimeout(() => {
+                    if (script.parentNode) {
+                        document.head.removeChild(script);
+                    }
+                    resolve();
+                }, 8000);
+            });
+        }
+        
+        // Process the data if we got it
+        if (data && data.feed && data.feed.entry) {
+            const posts = data.feed.entry;
+            
+            if (posts.length === 0) {
+                setBlogError(true);
+                console.log('No posts found in feed');
+            } else {
+                // Sort posts by date (newest first)
+                const sortedPosts = posts.sort((a, b) => {
+                    const dateA = new Date(a.published?.$t || a.updated?.$t || 0);
+                    const dateB = new Date(b.published?.$t || b.updated?.$t || 0);
+                    return dateB - dateA;
+                });
+                
+                console.log(`Loaded ${sortedPosts.length} posts`);
+                
+                // Update state with posts
+                setBlogPosts(sortedPosts);
+                setFilteredPosts(sortedPosts);
+                setVisiblePosts(10);
+                setSelectedMonth(null);
+                setBlogError(false);
+                
+                // Store in localStorage for faster loading next time
+                try {
+                    localStorage.setItem('bloggerCache', JSON.stringify({
+                        posts: sortedPosts,
+                        timestamp: Date.now()
+                    }));
+                } catch (e) {
+                    console.log('Could not cache posts:', e);
+                }
+            }
+        } else {
+            // Try loading from cache
+            try {
+                const cached = localStorage.getItem('bloggerCache');
+                if (cached) {
+                    const cacheData = JSON.parse(cached);
+                    // Use cache if less than 1 hour old
+                    if (Date.now() - cacheData.timestamp < 3600000) {
+                        setBlogPosts(cacheData.posts);
+                        setFilteredPosts(cacheData.posts);
+                        setVisiblePosts(10);
+                        console.log('Loaded from cache');
+                        setBlogError(false);
+                    } else {
+                        setBlogError(true);
+                    }
+                } else {
+                    setBlogError(true);
+                }
+            } catch (e) {
+                setBlogError(true);
+            }
+        }
+        
     } catch (error) {
-        console.error('Error fetching blog posts:', error);
+        console.error('Error loading blog posts:', error);
         setBlogError(true);
+        
+        // Try to load from cache as last resort
+        try {
+            const cached = localStorage.getItem('bloggerCache');
+            if (cached) {
+                const cacheData = JSON.parse(cached);
+                setBlogPosts(cacheData.posts);
+                setFilteredPosts(cacheData.posts);
+                setVisiblePosts(10);
+                setBlogError(false);
+            }
+        } catch (e) {
+            // Cache failed too
+        }
     } finally {
         setLoadingBlog(false);
+    }
+};
+
+// Function to manually refresh blog posts
+const refreshBlogPosts = () => {
+    // Clear cache
+    try {
+        localStorage.removeItem('bloggerCache');
+    } catch (e) {
+        // Ignore
+    }
+    
+    // Reload posts
+    loadBlogPosts();
+};
+
+// Add this fallback function
+const loadBlogPostsWithFallback = async () => {
+    try {
+        console.log('Trying fallback method...');
+        
+        // Alternative proxy service
+        const rssFeedUrl = 'https://mudasir-ibrahim.blogspot.com/feeds/posts/default?alt=json&max-results=100';
+        const corsProxy = 'https://corsproxy.io/?';
+        const fallbackUrl = corsProxy + encodeURIComponent(rssFeedUrl);
+        
+        const response = await fetch(fallbackUrl, {
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate'
+            }
+        });
+        
+        if (response.ok) {
+            const feedData = await response.json();
+            const posts = feedData.feed.entry || [];
+            
+            if (posts.length > 0) {
+                const sortedPosts = posts.sort((a, b) => {
+                    const dateA = new Date(a.published?.$t || 0);
+                    const dateB = new Date(b.published?.$t || 0);
+                    return dateB - dateA;
+                });
+                
+                setBlogPosts(sortedPosts);
+                setFilteredPosts(sortedPosts);
+                setVisiblePosts(10);
+                setSelectedMonth(null);
+                setBlogError(false);
+            }
+        }
+    } catch (fallbackError) {
+        console.error('Fallback also failed:', fallbackError);
+        setBlogError(true);
     }
 };
 
@@ -2455,185 +5726,250 @@ const loadBlogPosts = async () => {
                 setVisiblePosts(prev => prev + 50);
             };
 
-         const renderAbout = () => (
+   const renderAbout = () => (
     <div className="section">
-        <div className="profile-section">
-            <div className="profile-image-container">
-                <img 
-                    src="https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg" 
-                    alt="Mudasir Mohammed Ibrahim" 
-                    className="profile-image"
-                />
-            </div>
-            
-            <h1 className="profile-name">Mudasir Mohammed Ibrahim</h1>
-            
-           <div className="profile-social-icons">
-            <a href="https://orcid.org/0000-0002-9049-8222" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="ORCID">
-                <i className="fab fa-orcid"></i>
-            </a>
-            <a href="https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="Google Scholar">
-                <i className="fas fa-graduation-cap"></i>
-            </a>
-            <a href="https://github.com/mudassiribrahim30" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="GitHub">
-                <i className="fab fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="LinkedIn">
-                <i className="fab fa-linkedin"></i>
-            </a>
-            <a href="https://1drv.ms/f/c/3ce355b70d76f4f7/EvOg3kpoGi1JlFokbzBzEIgBDYXASGIRoLVHrXceFZDrJg?e=tF8arF" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="Download CV">
-                <i className="fas fa-file-download"></i>
-            </a>
-        </div>
-        
-            <p className="profile-intro">
-I am a registered nurse, and I love research and data analytics. Aside from conducting research and performing data analysis, I am passionate about creating technology that makes a difference. I develop R Shiny web applications that simplify complex data analysis in R for healthcare professionals, students, and researchers. Thank you for visiting, and I hope you enjoy exploring and benefiting from my R Shiny apps.
-            </p>
-        </div>
+<div className="content-wrapper">
+    <div className="profile-section">
+        <img
+            src="https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg"
+            alt="Mudasir Mohammed Ibrahim"
+            className="profile-image"
+        />
 
-              {/* EDUCATION SECTION */}
-        <div className="expertise-section">
-            <h2>Education</h2>
-            
-            <div className="education-item">
-                <div className="edu-title">Bachelor of Science in Nursing</div>
-                <div className="edu-institution">University of Cape Coast</div>
-                <div className="edu-period">2022 - 2024</div>
-            </div>
-            
-            <div className="education-item">
-                <div className="edu-title">Diploma in General Nursing</div>
-                <div className="edu-institution">Nurses' and Midwives' Training College, Tamale</div>
-                <div className="edu-period">2017 - 2020</div>
-            </div>
-            
-            <div className="education-item">
-                <div className="edu-title">Business (Cost Accounting)</div>
-                <div className="edu-institution">Northern School of Business (NOBISCO), Tamale</div>
-                <div className="edu-period">2013 - 2016</div>
-            </div>
-        </div>
-        
-       {/* Employment History */}
-        <div className="expertise-section">
-            <h2>Employment History</h2>
-            
-            <div className="professional-item">
-                <div className="professional-title">Staff Nurse</div>
-                <div className="professional-org">Tamale Teaching Hospital</div>
-                <div className="professional-period">2025 - Present</div>
-            </div>
-            
-            <div className="professional-item">
-                <div className="professional-title">Rotation Nurse</div>
-                <div className="professional-org">Tamale Teaching Hospital</div>
-                <div className="professional-period">2021 - 2022</div>
-            </div>
-        </div>
+        <div className="contact-info">
+            <h2 className="section-title">Mr. Mudasir M. Ibrahim</h2>
 
-        {/* PROFESSIONAL ASSOCIATIONS SECTION */}
-        <div className="expertise-section">
-            <h2>Professional Associations</h2>
-            
-            <div className="professional-item">
-                <div className="professional-title">Registered General Nurse (RGN)</div>
-                <div className="professional-org">Nursing and Midwifery Council of Ghana (NMC)</div>
-                <div className="professional-status">Licensed</div>
-                <div className="professional-period">Registered and licensed to practice nursing in Ghana</div>
+            <div className="contact-item">
+                <i className="fas fa-map-marker-alt contact-icon"></i>
+                <span>Tamale, Northern Region, Ghana</span>
             </div>
-            
-            <div className="professional-item">
-                <div className="professional-title">Active Member</div>
-                <div className="professional-org">Ghana Registered Nurses and Midwives Association (GRNMA)</div>
-                <div className="professional-status">Active</div>
-                <div className="professional-period">Professional membership since 2025</div>
-            </div>
-        </div>
-        
-        {/* Awards and Recognition SECTION */}
 
-<div className="expertise-section">
-    <h2>Awards and Recognition</h2>
-    
-    <div className="professional-item">
-        <div className="professional-title">Academic Reviewer Recognition</div>
-        <div className="professional-org">Multiple Scientific Journals</div>
-        <div className="professional-period">2025-Present</div>
-        <a 
-            href="https://1drv.ms/f/c/3ce355b70d76f4f7/Ejkh6TgFPhtNkgsfwRv6_OgBpu9S58AyaqHR_AMPJsR4Rg?e=jU8KMP" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="certificate-link"
-        >
-            <i className="fas fa-certificate"></i>
-            View Certificates
-        </a>
-    </div>
+            <div className="contact-item">
+                <i className="fas fa-building contact-icon"></i>
+                <span>Department of Internal Medicine (M3), Tamale Teaching Hospital</span>
+            </div>
+            <div className="profile-social-icons" style={{marginTop: '25px', justifyContent: 'flex-start'}}>
+    <a href="https://orcid.org/0000-0002-9049-8222" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="ORCID">
+        <i className="fab fa-orcid"></i>
+    </a>
+    <a href="https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="Google Scholar">
+        <i className="fas fa-graduation-cap"></i>
+    </a>
+    <a href="https://github.com/mudassiribrahim30" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="GitHub">
+        <i className="fab fa-github"></i>
+    </a>
+    <a href="https://linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="LinkedIn">
+        <i className="fab fa-linkedin"></i>
+    </a>
+    <a href="https://1drv.ms/f/c/3ce355b70d76f4f7/EvOg3kpoGi1JlFokbzBzEIgBDYXASGIRoLVHrXceFZDrJg?e=tF8arF" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="Download CV">
+        <i className="fas fa-file-download"></i>
+    </a>
 </div>
-
-        {/* Skills Section */}
-        <div className="expertise-section">
-            <h2>Skills</h2>
+</div>
+            </div>
             
-            <div className="expertise-category">
-                <h3>Technical Skills</h3>
-                <div className="skills-list" style={{marginTop: '1em'}}>
-                    {["SPSS Statistics", "Stata", "SPSS AMOS", "SmartPLS", "Jamovi", "JASP", "Minitab", 
-                      "R Programming", "SAS JMP", "ATLAS.ti", "NVivo", "QDA Miner", "Zotero", "Mendeley"].map((skill, idx) => (
-                        <div key={idx} className="skill-tag">{skill}</div>
-                    ))}
+            <div className="bio-section">
+                <div className="bio-text">
+                    <p>Hello and welcome! Here, you'll find my research in health, interactive R Shiny web tools I've created to simplify statistical analyses in R, and resources that reflect my dual passion for healthcare delivery and research innovation. Thank you for visiting. Please feel free to browse my work or email me with any questions about my R Shiny tools or anything.</p>
+                    
+                    <p>I am a Registered General Nurse at the <a href="https://tth.gov.gh" target="_blank" rel="noopener noreferrer">Tamale Teaching Hospital (TTH)</a> with a strong passion for healthcare research and biostatistics. My work focuses on bridging clinical practice with rigorous research methodology and advanced statistical analysis to improve patient outcomes and healthcare delivery in Ghana.</p>
+                    
+                    <p>I have published numerous research papers in areas including nursing workforce issues, patient safety, cancer epidemiology, and maternal-child health. My work has been recognized through various academic reviewer certificates and contributions to the scientific community.</p>
                 </div>
-            </div>
-
-            <div className="expertise-category">
-                <h3>Clinical Skills</h3>
-                <div className="skills-list" style={{marginTop: '1em'}}>
-                    {["Patient Care", "Medication Administration", "Emergency Response", 
-                      "Clinical Assessment", "Evidence-Based Practice"].map((skill, idx) => (
-                        <div key={idx} className="skill-tag">{skill}</div>
-                    ))}
-                </div>
-            </div>
-
-            <div className="expertise-category">
-                <h3>Research Interests</h3>
-                <div className="skills-list" style={{marginTop: '1em'}}>
-                    {["Cancer Epidemiology", "Maternal and Child Health", "Public Health", 
-                      "Workplace Issues"].map((interest, idx) => (
-                        <div key={idx} className="skill-tag">{interest}</div>
-                    ))}
-                </div>
-            </div>
-        </div>
-
-        {/* Hobbies Section */}
-        <div className="expertise-section">
-            <h2>Hobbies and Personal Interests</h2>
-            
-            <div className="expertise-category">
-                <p style={{marginTop: '1em', color: 'var(--position-color)', lineHeight: '1.6'}}>
-                    Conducting data analysis, developing R Shiny web applications, academic writing, watching movies, listening to songs of the 80s and 90s.
-                </p>
-            </div>
-        </div>
-        
-                {/* Conferences Attended Section */}
-        <div className="expertise-section">
-            <h2>Conferences Attended</h2>
-            
-            <div className="professional-item">
-                <div className="professional-title">Nurses' and Midwives' Training College-Tamale Scientific Session 2024</div>
-                <div className="professional-org">Tamale, Ghana</div>
-                <div className="professional-period">2024</div>
-                <div className="professional-theme">Theme: Bridging the gap between theory and practice: translating research into nursing practice</div>
-            </div>
-            
-            <div className="professional-item">
-                <div className="professional-title">Tamale Teaching Hospital Scientific Research Conference</div>
-                <div className="professional-org">Tamale Teaching Hospital</div>
-                <div className="professional-period">2022</div>
                 
-                <div className="professional-theme">Theme: Harnessing the Intellectual Prowess of Researchers for Quality Healthcare Delivery at Tamale Teaching Hospital</div>
+                <h2 className="section-title">Employment History</h2>
+                <ul className="experience-list">
+                    <li className="experience-item">
+                        <div className="item-title">Staff Nurse</div>
+                        <div className="item-subtitle">Tamale Teaching Hospital (TTH)</div>
+                        <div className="item-period">2025 - Present</div>
+                        <div className="item-description">Providing comprehensive nursing care, implementing evidence-based practices, and contributing to quality healthcare delivery.</div>
+                    </li>
+                    <li className="experience-item">
+                        <div className="item-title">Rotation Nurse</div>
+                        <div className="item-subtitle">Tamale Teaching Hospital (TTH)</div>
+                        <div className="item-period">2021 - 2022</div>
+                        <div className="item-description">Gained clinical experience across multiple departments including medical-surgical, pediatric, and emergency nursing units.</div>
+                    </li>
+                </ul>
+                
+                <h2 className="section-title">Education</h2>
+                <ul className="education-list">
+                    <li className="education-item">
+                        <div className="item-title">Bachelor of Science in Nursing</div>
+                        <div className="item-subtitle">University of Cape Coast (UCC) - Distance Education (NMTC, Tamale Campus)</div>
+                        <div className="item-period">2022 - 2024</div>
+                    </li>
+                    <li className="education-item">
+                        <div className="item-title">Diploma in General Nursing</div>
+                        <div className="item-subtitle">Nurses' and Midwives' Training College, Tamale (NMTC, Tamale)</div>
+                        <div className="item-period">2017 - 2020</div>
+                    </li>
+                    <li className="education-item">
+                        <div className="item-title">Business (Cost Accounting)</div>
+                        <div className="item-subtitle">Northern School of Business (NOBISCO), Tamale</div>
+                        <div className="item-period">2013 - 2016</div>
+                    </li>
+                </ul>
+                
+                <h2 className="section-title">Affiliations</h2>
+                <ul className="education-list">
+                    <li className="education-item">
+                        <div className="item-title">Registered General Nurse (RGN)</div>
+                        <div className="item-subtitle">Nursing and Midwifery Council of Ghana (NMC-GH)</div>
+                        <div className="item-period">2020 - Present</div>
+                        <div className="item-description">Licensed to practice nursing in Ghana</div>
+                    </li>
+                    <li className="education-item">
+                        <div className="item-title">Active Member</div>
+                        <div className="item-subtitle">Ghana Registered Nurses and Midwives Association (GRNMA)</div>
+                        <div className="item-period">2025 - Present</div>
+                        <div className="item-description">Professional membership</div>
+                    </li>
+                    <li className="education-item">
+                        <div className="item-title">Active Member</div>
+                        <div className="item-subtitle">BridgeCare Institute for Health Research, Ghana (BIHR-GH)</div>
+                        <div className="item-period">2026 - Present</div>
+                        <div className="item-description">Secretary</div>
+                    </li>
+                </ul>
+                
+                <h2 className="section-title">Current Advisors</h2>
+                <ul className="education-list">
+                    <li className="education-item">
+                        <div className="item-title">(1) Abubakari Wuni</div>
+                        <div className="item-subtitle">Academic & Research Advisor</div>
+                        <div className="item-description">
+                            <a href="https://www.researchgate.net/profile/Abubakari-Wuni" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style={{color: 'var(--nav-hover)', textDecoration: 'none'}}>
+                                View Profile
+                            </a>
+                        </div>
+                    </li>
+                    <li className="education-item">
+                        <div className="item-title">(2) Iddrisu Mohammed Sisala</div>
+                        <div className="item-subtitle">Academic & Research Advisor</div>
+                        <div className="item-description">
+                            <a href="https://www.researchgate.net/profile/Iddrisu-Sisala" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               style={{color: 'var(--nav-hover)', textDecoration: 'none'}}>
+                                View Profile
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <h2 className="section-title">Awards and Recognition</h2>
+                <ul className="education-list">
+                    <li className="education-item">
+                        <div className="item-title">Academic Reviewer Recognition</div>
+                        <div className="item-subtitle">Multiple Scientific Journals</div>
+                        <div className="item-period">2025 - Present</div>
+                        <div className="item-description">
+                            <a href="https://1drv.ms/f/c/3ce355b70d76f4f7/Ejkh6TgFPhtNkgsfwRv6_OgBpu9S58AyaqHR_AMPJsR4Rg?e=jU8KMP" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               className="certificate-link"
+                               style={{
+                                   display: 'inline-flex',
+                                   alignItems: 'center',
+                                   gap: '8px',
+                                   color: 'white',
+                                   textDecoration: 'none',
+                                   fontWeight: '600',
+                                   padding: '10px 20px',
+                                   backgroundColor: '#3498db',
+                                   border: 'none',
+                                   borderRadius: '5px',
+                                   transition: 'all 0.3s ease',
+                                   marginTop: '10px',
+                                   cursor: 'pointer',
+                                   fontSize: '0.95rem'
+                               }}>
+                                <i className="fas fa-certificate"></i>
+                                View Certificates
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <h2 className="section-title">Conferences Attended</h2>
+                <ul className="experience-list">
+                    <li className="experience-item">
+                        <div className="item-title">Nurses' and Midwives' Training College-Tamale Scientific Session 2024</div>
+                        <div className="item-subtitle">NMTC Tamale, Ghana</div>
+                        <div className="item-period">2024</div>
+                        <div className="item-description">Theme: Research in Nursing Colleges: A Must for Status Change!</div>
+                    </li>
+                    <li className="experience-item">
+                        <div className="item-title">Tamale Teaching Hospital Scientific Research Conference</div>
+                        <div className="item-subtitle">Tamale Teaching Hospital (TTH), Tamale</div>
+                        <div className="item-period">2022</div>
+                        <div className="item-description">Theme: Harnessing the Intellectual Prowess of Researchers for Quality Healthcare Delivery at Tamale Teaching Hospital</div>
+                    </li>
+                </ul>
+                
+                <h2 className="section-title">Skills</h2>
+                <div className="skills-section">
+                    <div className="skill-category">
+                        <h3 style={{fontSize: '18px', margin: '15px 0 10px', color: 'var(--text-color)'}}>Technical Skills</h3>
+                        <div className="skills-list" style={{display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px'}}>
+                            {["SPSS Statistics", "Stata", "SPSS AMOS", "SmartPLS", "Jamovi", "JASP", "Minitab", 
+                              "R Programming", "SAS JMP", "ATLAS.ti", "NVivo", "QDA Miner", "Zotero", "Mendeley"].map((skill, idx) => (
+                                <div key={idx} className="skill-tag" style={{
+                                    backgroundColor: 'var(--skill-bg)',
+                                    padding: '5px 12px',
+                                    borderRadius: '20px',
+                                    fontSize: '0.9rem',
+                                    color: 'var(--text-color)',
+                                    border: '1px solid var(--border-color)'
+                                }}>{skill}</div>
+                            ))}
+                        </div>
+                    </div>
+                    
+                    <div className="skill-category">
+                        <h3 style={{fontSize: '18px', margin: '15px 0 10px', color: 'var(--text-color)'}}>Clinical Skills</h3>
+                        <div className="skills-list" style={{display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px'}}>
+                            {["Patient Care", "Medication Administration", "Emergency Response", 
+                              "Clinical Assessment", "Evidence-Based Practice"].map((skill, idx) => (
+                                <div key={idx} className="skill-tag" style={{
+                                    backgroundColor: 'var(--skill-bg)',
+                                    padding: '5px 12px',
+                                    borderRadius: '20px',
+                                    fontSize: '0.9rem',
+                                    color: 'var(--text-color)',
+                                    border: '1px solid var(--border-color)'
+                                }}>{skill}</div>
+                            ))}
+                        </div>
+                    </div>
+                    
+                    <div className="skill-category">
+                        <h3 style={{fontSize: '18px', margin: '15px 0 10px', color: 'var(--text-color)'}}>Research Interests</h3>
+                        <div className="skills-list" style={{display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px'}}>
+                            {["Cancer Epidemiology", "Maternal and Child Health", "Public Health", 
+                              "Workplace Issues"].map((interest, idx) => (
+                                <div key={idx} className="skill-tag" style={{
+                                    backgroundColor: 'var(--skill-bg)',
+                                    padding: '5px 12px',
+                                    borderRadius: '20px',
+                                    fontSize: '0.9rem',
+                                    color: 'var(--text-color)',
+                                    border: '1px solid var(--border-color)'
+                                }}>{interest}</div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                
+                <h2 className="section-title">Hobbies and Personal Interests</h2>
+                <div className="bio-text">
+                    <p>Conducting research, performing statistical analysis, developing R Shiny web statistical tools, academic/scientific writing, watching movies/kdramas, and listening to songs of the 80s and 90s.</p>
+                </div>
             </div>
         </div>
         
@@ -2734,60 +6070,171 @@ I am a registered nurse, and I love research and data analytics. Aside from cond
                 </p>
             </div>
         )}
-       
-           </div>
-);
-
-            const renderPublications = () => (
-    <div className="section">
-        <h2>Publications</h2>
-        
-        <h3>Journal articles</h3>
-        
-        <h4>Recent</h4>
-        
-                <div className="publication-year-header">2026</div>
-        <ul className="publication-list">
-            <li><strong>Ibrahim, M. M. </strong>, Monne, R., Tawiah, B. C., Adam, H., Abukari, M. S., Salifu, R., Sisala, I. M., & Wuni, A. (2026). Validation and Reliability Study of a Scale to Measure Academic Help-seeking Behaviors Among Nursing Students in Ghana.<em> Journal of Education and Research in Nursing</em>, 23(1), 1-10. doi: <a href="https://doi.org/10.14744/jern.2025.70745" target="_blank" rel="noopener noreferrer" className="doi-link">10.14744/jern.2025.70745</a></li>
-        </ul>
-        
-        <div className="publication-year-header">2025</div>
-        <ul className="publication-list">
-            <li>Wuni, A., <strong>Ibrahim, M. M.</strong>, Tonlaar, P. S., Sisala, I. M., Awal, I., Nyarko, B. A., Abdulai, A., Mohammed, S., & Salisu, W. J. (2025). Patterns and temporal trends in childhood cancer incidence in northern Ghana: evidence from medical records, 2016 to 2023. <em>BMC Pediatrics</em>, 25(745). doi: <a href="https://doi.org/10.1186/s12887-025-06141-2" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12887-025-06141-2</a></li>
-            <li><strong>Ibrahim, M. M.</strong>, Abdul-Rahaman, F., Sayibu, M. S., Alhassan, D. N., Awudu, R. T., Mohammed, I. S., Wuni, A., & Abdulai, A. (2025). Assessing the impact of nurses' patient safety competencies on key performance indicators (KPIs) for patient safety outcomes at Tamale Teaching Hospital: The mediating role of leadership and barriers to competency development. <em>BMC Health Services Research</em>, 25(1176), 1-13. doi: <a href="https://doi.org/10.1186/s12913-025-13384-3" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12913-025-13384-3</a></li>
-            <li>Wuni, A., Mohammed, I. S., Salisu, W. J., Abdul-Rahman, R., Seidu, A., Abdul Rahaman, A., Abdulai, A., Zakaria, Y., Buasilenu, H., Nyarko, B. A., & <strong>Ibrahim, M. M.</strong> (2025). Fever in Children under 5 years: Mothers' Knowledge and Home Management Practices in Northern Region of Ghana: A Multi-facility Study. <em>Sage Open Pediatrics</em>, 12, 1-17. doi: <a href="https://doi.org/10.1177/30502225251364932" target="_blank" rel="noopener noreferrer" className="doi-link">10.1177/30502225251364932</a></li>
-            <li>Monne, R., <strong>Ibrahim, M. M.</strong>, Tawiah, B. C., Adam, H., Abukari, M. S., Salifu, R., & Wuni, A. (2025). Assessing Academic Help-Seeking Behavior of Nursing and Midwifery Students in NMTC Tamale, Ghana. <em>Journal of Education and Research in Nursing</em>, 22(1), 39-46. doi: <a href="https://doi.org/10.14744/jern.2025.98150" target="_blank" rel="noopener noreferrer" className="doi-link">10.14744/jern.2025.98150</a></li>
-            <li>Abdulai, A., Mohammed, I. S., Ibrahim, I., Kyiu, C., Fatimata, Y., <strong>Ibrahim, M. M.</strong>, & Wuni, A. (2025). Knowledge, attitudes, and barriers to cervical cancer screening uptake among female healthcare professionals at a Tertiary healthcare facility in the Tamale Metropolis. <em>Women's Health</em>, 21. doi: <a href="https://doi.org/10.1177/17455057251401319" target="_blank" rel="noopener noreferrer" className="doi-link">10.1177/17455057251401319</a></li>
-            <li>Iddrisu, M., Sisala, I. M., <strong>Ibrahim, M. M.</strong>, & Wuni, A. (2025). Predictive Analysis of the Relationship Between Nurses' Attitudes Toward Patient Safety and Missed Nursing Care. <em>BMC Nursing</em>. doi: <a href="https://doi.org/10.1186/s12912-025-04224-0" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12912-025-04224-0</a></li>
-            <li>Mohammed, I. S., Wuni, A., Nyarko, B. A., <strong>Ibrahim, M. M.</strong>, & Chanayireh, L. (2025). Work engagement: the key driver in transforming organizational commitment into enhanced work performance among midwives in Ghana - a structural equation modelling approach. <em>BMC Health Services Research</em>, 25(1), 840. doi: <a href="https://doi.org/10.1186/s12913-025-13062-4" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12913-025-13062-4</a></li>
-            <li>Wuni, A., <strong>Ibrahim, M. M.</strong>, & Diebieri, M. et al. (2025). Perceptions and satisfaction with the quality of clinical training placements among nursing and midwifery students in Northern Ghana. <em>BMC Nursing</em>, 24, 245. doi: <a href="https://doi.org/10.1186/s12912-025-02899-z" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12912-025-02899-z</a></li>
-            <li>Wuni, A., Musah, A., Sisala, I. M., Abdulai, A. M., Chanayireh, L., Nyarko, B. A., Buasilenu, H., <strong>Ibrahim, M. M.</strong>, Musah, S., Azure, D., & Abdulai, N. (2025). "We Are Our Own Worst Enemies": Workplace Bullying Among Nurses and Its Implications on Healthcare Workers and Job Performance: A Multi-Facility Study in the Tamale Metropolis. <em>Nursing Open</em>, 12(7), e70282. doi: <a href="https://doi.org/10.1002/nop2.70282" target="_blank" rel="noopener noreferrer" className="doi-link">10.1002/nop2.70282</a></li>
-            <li>Abdul-Malik, A., Bonmenga, T., Ziblim, L., Galo, V., Abu Iddrisu, O., Iddrisu, R., & <strong>Ibrahim, M. M.</strong> (2025). Parental support on adolescent contraception uptake - a cross-sectional study in Tamale metropolis Ghana. <em>The Evidence</em>, 3(1). doi: <a href="https://doi.org/10.61505/evidence.2025.3.1.133" target="_blank" rel="noopener noreferrer" className="doi-link">10.61505/evidence.2025.3.1.133</a></li>
-        </ul>
-
-        <div className="publication-year-header">2024</div>
-        <ul className="publication-list">
-                    <li><strong>Ibrahim, M. M.</strong>, Wuni, A., Salisu, W. J., Abdulai, A. M., Owusua, T., Nyarko, B. A., & Mohammed, I. S. (2024). Determinants and Mitigating Factors of Brain Drain among Ghanaian Nurses: Insights from Nurse Managers in Northern Ghana—A Qualitative Inquiry. <em>Journal of Nursing Management</em>, 2024(1), 8862991. doi: <a href="https://doi.org/10.1155/2024/8862991" target="_blank" rel="noopener noreferrer" className="doi-link">10.1155/2024/8862991</a></li>
-            <li>Sisala Mohammed, I., Abdulai, M. H., <strong>Ibrahim, M. M.</strong>, Buasilenu, H., Baako, I. A., Nyarko, B. A., & Buunaaisie, C. (2024). Prevalence of Workplace-Related Musculoskeletal Disorders Among Nurses and Midwives in a Tertiary Healthcare Facility: A Descriptive Cross-Sectional Survey. <em>Nursing Open</em>, 11(11), e70098. doi: <a href="https://doi.org/10.1002/nop2.70098" target="_blank" rel="noopener noreferrer" className="doi-link">10.1002/nop2.70098</a></li>
-            <li>Wuni, A., Iddrisu, M., Angliengmene, A. A., Salia, S. M., Chanayireh, L., Mohammed, I. S., <strong>Ibrahim, M. M.</strong>, & Doat, A. R. (2024). Knowledge and management practices of infant teething symptoms among mothers in a tertiary facility in Ghana. <em>The Pan African Medical Journal</em>, 47. doi: <a href="https://doi.org/10.11604/pamj.2024.47.65.40792" target="_blank" rel="noopener noreferrer" className="doi-link">10.11604/pamj.2024.47.65.40792</a></li>
-            <li>Monne, R., Iddrisu, M., Kyilleh, J. M., <strong>Ibrahim, M. M.</strong>, Nashiru, A. R., Wuni, A., & Abdulai, A. M. (2024). Male midwifery practice and acceptability: attitudes, beliefs, and associated factors among expectant mothers in Savelugu Municipal Hospital, Northern Region of Ghana. <em>The Pan African Medical Journal</em>, 47, 199. doi: <a href="https://doi.org/10.11604/pamj.2024.47.199.42482" target="_blank" rel="noopener noreferrer" className="doi-link">10.11604/pamj.2024.47.199.42482</a></li>
-            <li>Yakubu, H., <strong>Ibrahim, M. M.</strong>, Dogbe, P., Issah, N., Abosi, K., Osman, A., & Abdulai, A. M. (2024). Knowledge of Maternal Mortality and Its Determinants Among Pregnant Women at Tamale Teaching Hospital in Northern Ghana: A Descriptive Cross-Sectional Study. <em>Women, Midwives and Midwifery</em>, 4(3), 26-40. doi: <a href="https://doi.org/10.36749/wmm.4.3.26-40.2024" target="_blank" rel="noopener noreferrer" className="doi-link">doi.org/10.36749/wmm.4.3.26-40.2024</a></li>
-            <li>Abdul Malik, A., Osman, A. I., Abdul Hakeem, I., Abdul-Khahar, O., Saidatu, A. A., <strong>Ibrahim, M. M.</strong>, & Fasasi, M. (2024). Barriers and facilitators to the uptake of contraceptives among adolescents and young adults in Ghana. <em>The Evidence</em>, 2(2). doi: <a href="https://doi.org/10.61505/evidence.2024.2.2.29" target="_blank" rel="noopener noreferrer" className="doi-link">10.61505/evidence.2024.2.2.29</a></li>
-        </ul>
-
-        <div className="publication-year-header">2023</div>
-        <ul className="publication-list">
-            <li>Wuni, A., Abena Nyarko, B., <strong>Ibrahim, M. M.</strong>, Abdulai Baako, I., Mohammed, I. S., & Buunaaisie, C. (2023). Prevalence, Management, and Impact of Dysmenorrhea on the Lives of Nurse and Midwife Trainees in Northern Ghana. <em>Obstetrics and Gynecology International</em>, 2023(1), 8823525. doi: <a href="https://doi.org/10.1155/2023/8823525" target="_blank" rel="noopener noreferrer" className="doi-link">10.1155/2023/8823525</a></li>
-        </ul>
-
-        <div className="publication-year-header">2020</div>
-        <ul className="publication-list">
-            <li>Wuni, A., Salia, S. M., <strong>Ibrahim, M. M.</strong>, Iddriss, I., Abena Nyarko, B., Nabila Seini, S., & Mohammed, J. (2020). Evaluating Knowledge, Practices, and Barriers of Paediatric Pain Management among Nurses in a Tertiary Health Facility in the Northern Region of Ghana: A Descriptive Cross-Sectional Study. <em>Pain Research and Management</em>, 2020(1), 8846599. doi: <a href="https://doi.org/10.1155/2020/8846599" target="_blank" rel="noopener noreferrer" className="doi-link">10.1155/2020/8846599</a></li>
-        </ul>
     </div>
 );
 
-            const renderShinyApps = () => {
+        const PublicationsComponent = () => {
+    const [selectedYear, setSelectedYear] = useState(null);
+    
+    // Publication data organized by year
+    const publicationsByYear = {
+        "2026": [
+            {id: 1, content: `<strong>Ibrahim, M. M. </strong>, Monne, R., Tawiah, B. C., Adam, H., Abukari, M. S., Salifu, R., Sisala, I. M., & Wuni, A. (2026). Validation and Reliability Study of a Scale to Measure Academic Help-seeking Behaviors Among Nursing Students in Ghana.<em> Journal of Education and Research in Nursing</em>, 23(1), 1-10. doi: <a href="https://doi.org/10.14744/jern.2025.70745" target="_blank" rel="noopener noreferrer" className="doi-link">10.14744/jern.2025.70745</a>`}
+        ],
+        "2025": [
+            {id: 2, content: `Wuni, A., <strong>Ibrahim, M. M.</strong>, Tonlaar, P. S., Sisala, I. M., Awal, I., Nyarko, B. A., Abdulai, A., Mohammed, S., & Salisu, W. J. (2025). Patterns and temporal trends in childhood cancer incidence in northern Ghana: evidence from medical records, 2016 to 2023. <em>BMC Pediatrics</em>, 25(745). doi: <a href="https://doi.org/10.1186/s12887-025-06141-2" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12887-025-06141-2</a>`},
+            {id: 3, content: `<strong>Ibrahim, M. M.</strong>, Abdul-Rahaman, F., Sayibu, M. S., Alhassan, D. N., Awudu, R. T., Mohammed, I. S., Wuni, A., & Abdulai, A. (2025). Assessing the impact of nurses' patient safety competencies on key performance indicators (KPIs) for patient safety outcomes at Tamale Teaching Hospital: The mediating role of leadership and barriers to competency development. <em>BMC Health Services Research</em>, 25(1176), 1-13. doi: <a href="https://doi.org/10.1186/s12913-025-13384-3" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12913-025-13384-3</a>`},
+            {id: 4, content: `Wuni, A., Mohammed, I. S., Salisu, W. J., Abdul-Rahman, R., Seidu, A., Abdul Rahaman, A., Abdulai, A., Zakaria, Y., Buasilenu, H., Nyarko, B. A., & <strong>Ibrahim, M. M.</strong> (2025). Fever in Children Under 5 years: Caregivers’ Knowledge and Home Management Practices in the Northern Region of Ghana – A Multi-Facility Study. <em>Sage Open Pediatrics</em>, 12, 1-17. doi: <a href="https://doi.org/10.1177/30502225251364932" target="_blank" rel="noopener noreferrer" className="doi-link">10.1177/30502225251364932</a>`},
+            {id: 5, content: `Monne, R., <strong>Ibrahim, M. M.</strong>, Tawiah, B. C., Adam, H., Abukari, M. S., Salifu, R., & Wuni, A. (2025). Evaluating Academic Help-Seeking Behavior of Nursing and Midwifery Students in a Nursing Training College. <em>Journal of Education and Research in Nursing</em>, 22(1), 39-46. doi: <a href="https://doi.org/10.14744/jern.2025.98150" target="_blank" rel="noopener noreferrer" className="doi-link">10.14744/jern.2025.98150</a>`},
+            {id: 6, content: `Abdulai, A., Mohammed, I. S., Ibrahim, I., Kyiu, C., Fatimata, Y., <strong>Ibrahim, M. M.</strong>, & Wuni, A. (2025). Knowledge, attitudes, and barriers to cervical cancer screening utilization among female healthcare professionals in the Tamale Metropolis. <em>Women's Health</em>, 21. doi: <a href="https://doi.org/10.1177/17455057251401319" target="_blank" rel="noopener noreferrer" className="doi-link">10.1177/17455057251401319</a>`},
+            {id: 7, content: `Iddrisu, M., Sisala, I. M., <strong>Ibrahim, M. M.</strong>, & Wuni, A. (2025). Predictive analysis of the relationship between nurses’ attitudes toward patient safety and missed nursing care. <em>BMC Nursing</em>. doi: <a href="https://doi.org/10.1186/s12912-025-04224-0" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12912-025-04224-0</a>`},
+            {id: 8, content: `Mohammed, I. S., Wuni, A., Nyarko, B. A., <strong>Ibrahim, M. M.</strong>, & Chanayireh, L. (2025). Work engagement: the key driver in transforming organizational commitment into enhanced work performance among midwives in Ghana - a structural equation modelling approach. <em>BMC Health Services Research</em>, 25(1), 840. doi: <a href="https://doi.org/10.1186/s12913-025-13062-4" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12913-025-13062-4</a>`},
+            {id: 9, content: `Wuni, A., <strong>Ibrahim, M. M.</strong>, & Diebieri, M. et al. (2025). Perceptions and satisfaction with the quality of clinical training placements among nursing and midwifery students in Northern Ghana. <em>BMC Nursing</em>, 24, 245. doi: <a href="https://doi.org/10.1186/s12912-025-02899-z" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12912-025-02899-z</a>`},
+            {id: 10, content: `Wuni, A., Musah, A., Sisala, I. M., Abdulai, A. M., Chanayireh, L., Nyarko, B. A., Buasilenu, H., <strong>Ibrahim, M. M.</strong>, Musah, S., Azure, D., & Abdulai, N. (2025). “We Are Our Own Worst Enemies”: Workplace Bullying Among Nurses and Its Implications on Healthcare Workers and Job Performance: A Multi-Facility Study in the Tamale Metropolis. <em>Nursing Open</em>, 12(7), e70282. doi: <a href="https://doi.org/10.1002/nop2.70282" target="_blank" rel="noopener noreferrer" className="doi-link">10.1002/nop2.70282</a>`},
+            {id: 11, content: `Abdul-Malik, A., Bonmenga, T., Ziblim, L., Galo, V., Abu Iddrisu, O., Iddrisu, R., & <strong>Ibrahim, M. M.</strong> (2025). Parental support on adolescent contraception uptake - a cross-sectional study in Tamale metropolis Ghana. <em>The Evidence</em>, 3(1). doi: <a href="https://doi.org/10.61505/evidence.2025.3.1.133" target="_blank" rel="noopener noreferrer" className="doi-link">10.61505/evidence.2025.3.1.133</a>`}
+        ],
+        "2024": [
+            {id: 12, content: `<strong>Ibrahim, M. M.</strong>, Wuni, A., Salisu, W. J., Abdulai, A. M., Owusua, T., Nyarko, B. A., & Mohammed, I. S. (2024). Determinants and Mitigating Factors of Brain Drain among Ghanaian Nurses: Insights from Nurse Managers in Northern Ghana—A Qualitative Inquiry. <em>Journal of Nursing Management</em>, 2024(1), 8862991. doi: <a href="https://doi.org/10.1155/2024/8862991" target="_blank" rel="noopener noreferrer" className="doi-link">10.1155/2024/8862991</a>`},
+            {id: 13, content: `Sisala Mohammed, I., Abdulai, M. H., <strong>Ibrahim, M. M.</strong>, Buasilenu, H., Baako, I. A., Nyarko, B. A., & Buunaaisie, C. (2024). Prevalence of Workplace-Related Musculoskeletal Disorders Among Nurses and Midwives in a Tertiary Healthcare Facility: A Descriptive Cross-Sectional Survey. <em>Nursing Open</em>, 11(11), e70098. doi: <a href="https://doi.org/10.1002/nop2.70098" target="_blank" rel="noopener noreferrer" className="doi-link">10.1002/nop2.70098</a>`},
+            {id: 14, content: `Wuni, A., Iddrisu, M., Angliengmene, A. A., Salia, S. M., Chanayireh, L., Mohammed, I. S., <strong>Ibrahim, M. M.</strong>, & Doat, A. R. (2024). Knowledge and management practices of infant teething symptoms among mothers in a tertiary facility in Ghana. <em>The Pan African Medical Journal</em>, 47. doi: <a href="https://doi.org/10.11604/pamj.2024.47.65.40792" target="_blank" rel="noopener noreferrer" className="doi-link">10.11604/pamj.2024.47.65.40792</a>`},
+            {id: 15, content: `Monne, R., Iddrisu, M., Kyilleh, J. M., <strong>Ibrahim, M. M.</strong>, Nashiru, A. R., Wuni, A., & Abdulai, A. M. (2024). Male midwifery practice and acceptability: attitudes, beliefs, and associated factors among expectant mothers in Savelugu Municipal Hospital, Northern Region of Ghana. <em>The Pan African Medical Journal</em>, 47, 199. doi: <a href="https://doi.org/10.11604/pamj.2024.47.199.42482" target="_blank" rel="noopener noreferrer" className="doi-link">10.11604/pamj.2024.47.199.42482</a>`},
+            {id: 16, content: `Yakubu, H., <strong>Ibrahim, M. M.</strong>, Dogbe, P., Issah, N., Abosi, K., Osman, A., & Abdulai, A. M. (2024). Knowledge of Maternal Mortality and Its Determinants Among Pregnant Women at Tamale Teaching Hospital in Northern Ghana: A Descriptive Cross-Sectional Study. <em>Women, Midwives and Midwifery</em>, 4(3), 26-40. doi: <a href="https://doi.org/10.36749/wmm.4.3.26-40.2024" target="_blank" rel="noopener noreferrer" className="doi-link">doi.org/10.36749/wmm.4.3.26-40.2024</a>`},
+            {id: 17, content: `Abdul Malik, A., Osman, A. I., Abdul Hakeem, I., Abdul-Khahar, O., Saidatu, A. A., <strong>Ibrahim, M. M.</strong>, & Fasasi, M. (2024). Barriers and facilitators to the uptake of contraceptives among adolescents and young adults in Ghana. <em>The Evidence</em>, 2(2). doi: <a href="https://doi.org/10.61505/evidence.2024.2.2.29" target="_blank" rel="noopener noreferrer" className="doi-link">10.61505/evidence.2024.2.2.29</a>`}
+        ],
+        "2023": [
+            {id: 18, content: `Wuni, A., Abena Nyarko, B., <strong>Ibrahim, M. M.</strong>, Abdulai Baako, I., Mohammed, I. S., & Buunaaisie, C. (2023). Prevalence, Management, and Impact of Dysmenorrhea on the Lives of Nurse and Midwife Trainees in Northern Ghana. <em>Obstetrics and Gynecology International</em>, 2023(1), 8823525. doi: <a href="https://doi.org/10.1155/2023/8823525" target="_blank" rel="noopener noreferrer" className="doi-link">10.1155/2023/8823525</a>`}
+        ],
+        "2020": [
+            {id: 19, content: `Wuni, A., Salia, S. M., <strong>Ibrahim, M. M.</strong>, Iddriss, I., Abena Nyarko, B., Nabila Seini, S., & Mohammed, J. (2020). Evaluating Knowledge, Practices, and Barriers of Paediatric Pain Management among Nurses in a Tertiary Health Facility in the Northern Region of Ghana: A Descriptive Cross-Sectional Study. <em>Pain Research and Management</em>, 2020(1), 8846599. doi: <a href="https://doi.org/10.1155/2020/8846599" target="_blank" rel="noopener noreferrer" className="doi-link">10.1155/2020/8846599</a>`}
+        ]
+    };
+    
+    // Years to show in the year map (sorted descending)
+    const years = Object.keys(publicationsByYear).sort((a, b) => b - a);
+    
+    // Handle clicking on a year
+    const handleYearClick = (year) => {
+        setSelectedYear(year);
+        const element = document.getElementById(`year-${year}`);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+    
+    // Handle scroll to detect which year is in view
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY + 100;
+            
+            years.forEach(year => {
+                const element = document.getElementById(`year-${year}`);
+                if (element) {
+                    const elementTop = element.offsetTop;
+                    const elementBottom = elementTop + element.offsetHeight;
+                    
+                    if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+                        if (selectedYear !== year) {
+                            setSelectedYear(year);
+                        }
+                    }
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [selectedYear, years]);
+
+    // Set initial selected year
+    useEffect(() => {
+        if (years.length > 0 && !selectedYear) {
+            setSelectedYear(years[0]);
+        }
+    }, [years, selectedYear]);
+
+    return (
+        <div className="section">
+            <h2>Publications</h2>
+            <h3>Journal articles</h3>
+            <h4>Recent</h4>
+            
+            <div className="publications-container">
+                {/* Year Map Sidebar */}
+                <div className="year-map-sidebar">
+                    <div className="year-map-container">
+                        <h4 className="year-map-title">
+                            <i className="fas fa-calendar-alt"></i>
+                            Year Map
+                        </h4>
+                        
+                        <div className="year-list">
+                            {years.map(year => (
+                                <button
+                                    key={year}
+                                    onClick={() => handleYearClick(year)}
+                                    className={`year-button ${selectedYear === year ? 'active' : ''}`}
+                                >
+                                    <span>{year}</span>
+                                    <span className="year-count">
+                                        {publicationsByYear[year].length}
+                                    </span>
+                                </button>
+                            ))}
+                        </div>
+                        
+                        <div className="year-summary">
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px' }}>
+                                <span>Total Publications:</span>
+                                <span style={{ fontWeight: '600' }}>
+                                    {Object.values(publicationsByYear).reduce((total, yearPub) => total + yearPub.length, 0)}
+                                </span>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                <span>Years:</span>
+                                <span style={{ fontWeight: '600' }}>{years.length}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                {/* Publications Content */}
+                <div className="publications-content">
+                    {years.map(year => (
+                        <div 
+                            key={year}
+                            id={`year-${year}`}
+                            className="publication-year-section"
+                        >
+                            <div className="publication-year-header">
+                                {year}
+                                <span style={{
+                                    fontSize: '0.9rem',
+                                    marginLeft: '10px',
+                                    color: 'var(--position-color)',
+                                    fontWeight: 'normal'
+                                }}>
+                                    ({publicationsByYear[year].length} publication{publicationsByYear[year].length !== 1 ? 's' : ''})
+                                </span>
+                            </div>
+                            
+                            <ul className="publication-list">
+                                {publicationsByYear[year].map(publication => (
+                                    <li key={publication.id} dangerouslySetInnerHTML={{ __html: publication.content }} />
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+
+                </div>
+            </div>
+        </div>
+    );
+};
+        
+        const renderShinyApps = () => {
     const shinyApps = [
         {
             id: 1,
@@ -2856,7 +6303,7 @@ I am a registered nurse, and I love research and data analytics. Aside from cond
         {
             id: 9,
             name: "SysSampler",
-            description: "Systematic sampling tool for research studies with various sampling methods",
+            description: "Systematic sampling tool for research studies with custom random start",
             runUrl: "https://mudassiribrahim2025b.shinyapps.io/SysSampler/",
             codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/SysSampler",
             imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Sys%20Sampler.png"
@@ -2872,7 +6319,7 @@ I am a registered nurse, and I love research and data analytics. Aside from cond
         {
             id: 11,
             name: "TNMTC DataLab",
-            description: "Comprehensive data analysis software for healthcare research",
+            description: "Comprehensive data analysis software",
             runUrl: "https://newappstesting.shinyapps.io/NMTCDataLab/",
             codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/NMTC%20APP.R",
             imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/TNMTC.png"
@@ -2880,7 +6327,7 @@ I am a registered nurse, and I love research and data analytics. Aside from cond
         {
             id: 12,
             name: "PharmaCalc Pro",
-            description: "Pharmaceutical calculations for dosage and medication management",
+            description: "Pharmaceutical calculations for dosage",
             runUrl: "https://mudassiribrahim2025b.shinyapps.io/PharmaCalcPro/",
             codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/PharmaCalcPro.R",
             imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Pharma.png"
@@ -3025,16 +6472,74 @@ I am a registered nurse, and I love research and data analytics. Aside from cond
         return classes[category];
     };
 
+    // Add this function to refresh views
+    const handleRefreshViews = () => {
+        fetchAppViews();
+    };
+
     return (
         <div className="section">
-            <h2>R Shiny Applications</h2>
+            <h2>Software</h2>
             
             <div className="shiny-intro">
                 <p className="shiny-description">
-                    A collection of interactive R Shiny web applications that I have created to simplify complex statistical analyses in R.
+                    Below is a collection of interactive R Shiny web tools that I have created to make analyses easier in R. All of my tools are open-source and are also stored on GitHub.
                 </p>
             </div>
 
+            {/* ADD THIS VIEWS COUNTER SECTION */}
+            <div className="views-counter-container">
+                <div className="views-counter-card">
+                    <div className="views-counter-header">
+                        <div className="views-icon">
+                            <i className="fas fa-chart-line"></i>
+                        </div>
+                        <div className="total-views-container">
+                            <div className="total-views-label">Total Application Views</div>
+                            {loadingViews ? (
+                                <div className="views-loading">
+                                    <i className="fas fa-spinner fa-spin"></i>
+                                    <div style={{marginTop: '10px', fontSize: '0.9rem'}}>Loading views...</div>
+                                </div>
+                            ) : (
+                                <>
+                                    <div className="total-views-number">{totalViews.toLocaleString()}</div>
+                                </>
+                            )}
+                        </div>
+                    </div>
+                    
+                    <div className="views-source">
+                        <span>Views sourced from</span>
+                        <a 
+                            href="https://shinyappstore.com/search/user/1732" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="shiny-app-store-link"
+                        >
+                            <i className="fas fa-external-link-alt"></i>
+                            Shiny App Store
+                        </a>
+                    </div>
+                    
+                    {!loadingViews && Object.keys(appViews).length > 0 && (
+                        <div className="individual-views-container">
+                            <div className="individual-views-title">Individual App Views (1-20)</div>
+                            <div className="views-grid">
+                                {Object.entries(appViews)
+                                    .sort(([, viewsA], [, viewsB]) => viewsB - viewsA)
+                                    .map(([appName, views]) => (
+                                        <div key={appName} className="view-item">
+                                            <div className="app-name" title={appName}>{appName}</div>
+                                            <div className="app-view-count">{views.toLocaleString()}</div>
+                                        </div>
+                                    ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+            
             <div className="apps-stats">
                 <div className="stat-card">
                     <div className="stat-number">20</div>
@@ -3051,6 +6556,29 @@ I am a registered nurse, and I love research and data analytics. Aside from cond
                 <div className="stat-card">
                     <div className="stat-number">Free</div>
                     <div className="stat-label">For Research</div>
+                </div>
+            </div>
+            
+            <div className="testimonial-container">
+                <div className="testimonial-content">
+                    <div className="testimonial-header">
+                        <i className="fas fa-comment-dots testimonial-icon"></i>
+                        <h3 className="testimonial-title">Share Your Experience</h3>
+                    </div>
+                    
+                    <p className="testimonial-description">
+                        Used any of my R Shiny apps? Share your thoughts, suggestions, or testimonial.
+                    </p>
+                    
+                    <a 
+                        href="https://forms.gle/PZJtxtf9E3ZMnBYB9" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="testimonial-button"
+                    >
+                        <i className="fas fa-pen"></i>
+                        Submit Feedback
+                    </a>
                 </div>
             </div>
 
@@ -3212,9 +6740,79 @@ I am a registered nurse, and I love research and data analytics. Aside from cond
     const postsToDisplay = filteredPosts.length > 0 ? filteredPosts : blogPosts;
     const hasMorePosts = visiblePosts < postsToDisplay.length;
 
-    return (
+   return (
         <div className="section">
             <h2>Blog Posts</h2>
+            
+            {/* Blog Introduction */}
+            <div className="blog-introduction" style={{
+                backgroundColor: 'var(--card-bg)',
+                border: '1px solid var(--border-color)',
+                borderRadius: '8px',
+                padding: '25px',
+                marginBottom: '30px',
+                position: 'relative',
+                overflow: 'hidden'
+            }}>
+                <div style={{
+                    position: 'absolute',
+                    top: '10px',
+                    right: '10px',
+                    fontSize: '2.5rem',
+                    color: 'var(--nav-hover)',
+                    opacity: 0.1
+                }}>
+                    <i className="fas fa-blog"></i>
+                </div>
+                
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '20px',
+                    marginBottom: '15px'
+                }}>
+                    <div style={{
+                        backgroundColor: 'var(--nav-bg)',
+                        color: 'var(--nav-text)',
+                        width: '50px',
+                        height: '50px',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '1.5rem'
+                    }}>
+                        <i className="fas fa-pen-nib"></i>
+                    </div>
+                    <h3 style={{
+                        margin: 0,
+                        color: 'var(--header-color)',
+                        fontSize: '1.5rem'
+                    }}>
+                        Welcome to My Blog
+                    </h3>
+                </div>
+                
+                <p style={{
+                    fontSize: '1.1rem',
+                    lineHeight: '1.7',
+                    color: 'var(--text-color)',
+                    marginBottom: '15px',
+                    fontFamily: "'Montserrat', sans-serif"
+                }}>
+                    <i className="fas fa-quote-left" style={{
+                        color: 'var(--nav-hover)',
+                        marginRight: '10px',
+                        opacity: 0.7
+                    }}></i>
+                    I share insights and updates on healthcare research, my R Shiny tools, and applied statistical methods.
+                    <i className="fas fa-quote-right" style={{
+                        color: 'var(--nav-hover)',
+                        marginLeft: '10px',
+                        opacity: 0.7
+                    }}></i>
+                </p>
+            </div>
             
             {loadingBlog ? (
                 <div className="blog-loading">
@@ -3378,6 +6976,503 @@ I am a registered nurse, and I love research and data analytics. Aside from cond
     );
 };
 
+const renderTeaching = () => (
+<div className="section">
+    <div className="teaching-container">
+        <div className="teaching-header">
+            <div className="teaching-icon-wrapper">
+                <i className="fas fa-chalkboard-teacher teaching-icon"></i>
+            </div>
+            <h2 className="teaching-title">Teaching</h2>
+        </div>
+        
+        <div className="coming-soon-badge">
+            <i className="fas fa-clock"></i>
+            <span>No Active Courses</span>
+        </div>
+        
+        <div className="teaching-content">
+            <div className="teaching-contact-info">
+                <div className="contact-icon">
+                    <i className="fas fa-envelope-open-text"></i>
+                </div>
+                <div className="contact-details">
+                    <p className="contact-text">
+                        For teaching opportunities in <strong>research methodology or biostatistics</strong>, please contact me via the link below.
+                    </p>
+                    <a 
+                        href="#" 
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setShowContactForm(true);
+                            setActiveSection('about');
+                            setTimeout(() => {
+                                const formElement = document.getElementById('contact-form');
+                                if (formElement) {
+                                    formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }
+                            }, 100);
+                        }}
+                        className="contact-link"
+                    >
+                        <i className="fas fa-external-link-alt"></i>
+                        Open Contact Form
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+);
+
+const GalleryComponent = () => {
+    // Gallery data with conference category moved
+    const [galleryItems, setGalleryItems] = useState([
+        {
+            id: 1,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%201.jpg",
+            date: "2024-12-12",
+            category: "academic"
+        },
+        {
+            id: 2,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%202.jpg",
+            date: "2024-12-12",
+            category: "academic"
+        },
+        {
+            id: 3,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%203.jpg",
+            date: "2024-12-12",
+            category: "academic"
+        },
+        {
+            id: 4,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%204.jpg",
+            date: "2024-12-12",
+            category: "academic"
+        },
+        {
+            id: 5,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%205.jpg",
+            date: "2024-12-12",
+            category: "academic"
+        },
+        {
+            id: 6,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%206.jpg",
+            date: "2024-12-12",
+            category: "academic"
+        },
+        {
+            id: 7,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%207.jpg",
+            date: "2024-12-12",
+            category: "academic"
+        },
+        {
+            id: 8,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Academic%208.jpg",
+            date: "2024-12-12",
+            category: "academic"
+        },
+        {
+            id: 9,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Clinical%201.jpg",
+            date: "2025-06-19",
+            category: "clinical"
+        },
+        {
+            id: 10,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Clinical%202.jpg",
+            date: "2025-06-20",
+            category: "clinical"
+        },
+        {
+            id: 11,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Team%201.JPG",
+            date: "2023-07-20",
+            category: "team"
+        },
+        {
+            id: 12,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Team%202.JPG",
+            date: "2023-07-20",
+            category: "team"
+        },
+        {
+            id: 13,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Team%203.JPG",
+            date: "2023-07-20",
+            category: "team"
+        },
+        {
+            id: 14,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Conference%201.jpg",
+            date: "2022-12-06",
+            category: "conference"
+        },
+        {
+            id: 15,
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Conference%202.jpg",
+            date: "2022-12-06",
+            category: "conference"
+        }
+    ]);
+    
+    // State to track which images are long
+    const [longImages, setLongImages] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState('all');
+    const [currentPage, setCurrentPage] = useState(1);
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const itemsPerPage = 8;
+
+    // Function to check if an image is long/tall
+    const checkImageAspectRatio = (url) => {
+        return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => {
+                const aspectRatio = img.height / img.width;
+                // Consider an image "long" if height is more than 1.5 times width
+                resolve(aspectRatio > 1.5);
+            };
+            img.onerror = () => resolve(false);
+            img.src = url;
+        });
+    };
+    
+    // Detect long images when component mounts
+    useEffect(() => {
+        const detectLongImages = async () => {
+            setIsLoading(true);
+            const longImageIds = [];
+            for (const item of galleryItems) {
+                try {
+                    const isLong = await checkImageAspectRatio(item.imageUrl);
+                    if (isLong) {
+                        longImageIds.push(item.id);
+                    }
+                } catch (error) {
+                    console.log(`Error checking image ${item.id}:`, error);
+                }
+            }
+            setLongImages(longImageIds);
+            setIsLoading(false);
+        };
+        
+        detectLongImages();
+    }, [galleryItems]);
+    
+    // Function to check if a specific item is a long image
+    const isLongImage = (itemId) => {
+        return longImages.includes(itemId);
+    };
+
+    // Category descriptions 
+const categoryDescriptions = {
+    'all': 'All photos from academic, clinical, team, and conference activities.',
+    'academic': 'My bachelor’s degree graduation ceremony at the University of Cape Coast.',
+    'clinical': 'Photos from my clinical practice at Tamale Teaching Hospital.',
+    'team': 'Research group meeting at KFC (Tamale-Yendi Road branch, opposite the Tamale House of Chiefs).',
+    'conference': 'Presenting at a conference held at Tamale Teaching Hospital.'
+};
+
+    // Filter gallery items based on category
+    const filteredItems = galleryItems.filter(item => {
+        return selectedCategory === 'all' || item.category === selectedCategory;
+    });
+    
+    // Pagination
+    const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const paginatedItems = filteredItems.slice(startIndex, startIndex + itemsPerPage);
+    
+    // Categories for filtering - ADDED CONFERENCE CATEGORY
+    const categories = [
+        { id: 'all', name: 'All Photos', count: galleryItems.length },
+        { id: 'academic', name: 'Academic', count: galleryItems.filter(item => item.category === 'academic').length },
+        { id: 'clinical', name: 'Clinical', count: galleryItems.filter(item => item.category === 'clinical').length },
+        { id: 'team', name: 'Team', count: galleryItems.filter(item => item.category === 'team').length },
+        { id: 'conference', name: 'Conference', count: galleryItems.filter(item => item.category === 'conference').length }
+    ];
+    
+    // Handle image click
+    const handleImageClick = (item) => {
+        setSelectedImage(item);
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    };
+    
+    // Handle modal close
+    const handleCloseModal = () => {
+        setSelectedImage(null);
+        document.body.style.overflow = 'auto';
+    };
+    
+    // Handle next/prev image in modal
+    const handleNextImage = () => {
+        const currentIndex = filteredItems.findIndex(item => item.id === selectedImage.id);
+        const nextIndex = (currentIndex + 1) % filteredItems.length;
+        setSelectedImage(filteredItems[nextIndex]);
+    };
+    
+    const handlePrevImage = () => {
+        const currentIndex = filteredItems.findIndex(item => item.id === selectedImage.id);
+        const prevIndex = (currentIndex - 1 + filteredItems.length) % filteredItems.length;
+        setSelectedImage(filteredItems[prevIndex]);
+    };
+    
+    // Handle keyboard navigation in modal
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (!selectedImage) return;
+            
+            if (e.key === 'Escape') {
+                handleCloseModal();
+            } else if (e.key === 'ArrowRight') {
+                handleNextImage();
+            } else if (e.key === 'ArrowLeft') {
+                handlePrevImage();
+            }
+        };
+        
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [selectedImage]);
+    
+    // Format date
+    const formatDate = (dateString) => {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(dateString).toLocaleDateString('en-US', options);
+    };
+    
+    // Handle image loading errors
+    const handleImageError = (e) => {
+        e.target.src = `https://via.placeholder.com/400x300/cccccc/666666?text=Image+Not+Available`;
+        e.target.style.objectFit = 'contain';
+        e.target.style.padding = '20px';
+    };
+    
+    return (
+        <div className="section">
+            <h2>Gallery</h2>
+            <p className="profile-intro" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 30px' }}>
+                Browse my gallery. Use the category filters below to view specific types of images.
+            </p>
+            
+            {/* Gallery Controls - REMOVED SEARCH */}
+            <div className="gallery-controls" style={{ justifyContent: 'center', padding: '15px 20px' }}>
+                <div className="gallery-filters">
+                    {categories.map(category => (
+                        <button
+                            key={category.id}
+                            className={`filter-btn ${selectedCategory === category.id ? 'active' : ''}`}
+                            onClick={() => {
+                                setSelectedCategory(category.id);
+                                setCurrentPage(1);
+                            }}
+                            style={{ 
+                                minWidth: '100px',
+                                textAlign: 'center',
+                                whiteSpace: 'nowrap'
+                            }}
+                        >
+                            {category.name} <span style={{ fontSize: '0.8em', opacity: 0.8 }}>({category.count})</span>
+                        </button>
+                    ))}
+                </div>
+                
+                <div className="gallery-stats">
+                    <span>Showing {paginatedItems.length} of {filteredItems.length} photos</span>
+                </div>
+            </div>
+            
+            {/* Category Description */}
+            {selectedCategory && (
+                <div style={{
+                    backgroundColor: 'var(--card-bg)',
+                    border: '1px solid var(--border-color)',
+                    borderRadius: '8px',
+                    padding: '15px',
+                    marginBottom: '20px',
+                    textAlign: 'center',
+                    fontSize: '0.95rem',
+                    color: 'var(--text-color)',
+                    maxWidth: '800px',
+                    marginLeft: 'auto',
+                    marginRight: 'auto'
+                }}>
+                    <i className="fas fa-info-circle" style={{ marginRight: '8px', color: 'var(--nav-hover)' }}></i>
+                    {categoryDescriptions[selectedCategory]}
+                </div>
+            )}
+            
+            {/* Gallery Grid */}
+            {isLoading ? (
+                <div className="gallery-loading">
+                    <i className="fas fa-spinner fa-spin"></i>
+                    <p>Loading images...</p>
+                </div>
+            ) : paginatedItems.length > 0 ? (
+                <>
+                    <div className="gallery-grid">
+                        {paginatedItems.map(item => (
+                            <div key={item.id} 
+                                 className={`gallery-item ${isLongImage(item.id) ? 'long-image' : ''}`} 
+                                 onClick={() => handleImageClick(item)}
+                                 title={isLongImage(item.id) ? "Long image - shows top portion" : ""}>
+                                <div className="gallery-image-container">
+                                    <img
+                                        src={item.imageUrl}
+                                        alt={`Gallery image ${item.id}`}
+                                        className="gallery-image"
+                                        onError={handleImageError}
+                                        loading="lazy"
+                                    />
+                                    <div className="category-badge">
+                                        {item.category}
+                                    </div>
+                                    {isLongImage(item.id) && (
+                                        <div style={{
+                                            position: 'absolute',
+                                            top: '40px',
+                                            left: '15px',
+                                            backgroundColor: 'rgba(52, 152, 219, 0.9)',
+                                            color: 'white',
+                                            padding: '3px 8px',
+                                            borderRadius: '10px',
+                                            fontSize: '0.7rem',
+                                            zIndex: 5
+                                        }}>
+                                            <i className="fas fa-arrow-down" style={{marginRight: '3px'}}></i>
+                                            Tall Image
+                                        </div>
+                                    )}
+                                    <div className="gallery-overlay">
+                                        <i className="fas fa-search-plus"></i>
+                                    </div>
+                                </div>
+                                <div className="gallery-content">
+                                    <div className="gallery-date">
+                                        <i className="far fa-calendar"></i>
+                                        {formatDate(item.date)}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    
+                    {/* Pagination */}
+                    {totalPages > 1 && (
+                        <div className="gallery-pagination">
+                            <button
+                                className="page-btn"
+                                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                                disabled={currentPage === 1}
+                            >
+                                <i className="fas fa-chevron-left"></i>
+                            </button>
+                            
+                            {[...Array(totalPages)].map((_, index) => (
+                                <button
+                                    key={index + 1}
+                                    className={`page-btn ${currentPage === index + 1 ? 'active' : ''}`}
+                                    onClick={() => setCurrentPage(index + 1)}
+                                >
+                                    {index + 1}
+                                </button>
+                            ))}
+                            
+                            <button
+                                className="page-btn"
+                                onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                                disabled={currentPage === totalPages}
+                            >
+                                <i className="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    )}
+                </>
+            ) : (
+                <div className="gallery-empty">
+                    <i className="fas fa-images"></i>
+                    <h3>No images found</h3>
+                    <p>
+                        No images found in the "{categories.find(c => c.id === selectedCategory)?.name}" category.
+                    </p>
+                    <button 
+                        className="gallery-btn"
+                        onClick={() => {
+                            setSelectedCategory('all');
+                        }}
+                        style={{ marginTop: '20px' }}
+                    >
+                        <i className="fas fa-eye"></i>
+                        Show All Images
+                    </button>
+                </div>
+            )}
+            
+            {/* Modal for image view */}
+            {selectedImage && (
+                <div className="gallery-modal active">
+                    <div className="modal-content">
+                        <button className="modal-close" onClick={handleCloseModal}>
+                            <i className="fas fa-times"></i>
+                        </button>
+                        
+                        <div className="image-counter">
+                            {filteredItems.findIndex(item => item.id === selectedImage.id) + 1} / {filteredItems.length}
+                        </div>
+                        
+                        <button className="modal-nav modal-prev" onClick={handlePrevImage}>
+                            <i className="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <img 
+                            src={selectedImage.imageUrl} 
+                            alt={`Gallery image ${selectedImage.id}`}
+                            className="modal-image"
+                            onError={(e) => {
+                                e.target.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f5f5f5'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='20' text-anchor='middle' fill='%23666'%3EImage not available%3C/text%3E%3C/svg%3E`;
+                                e.target.style.objectFit = 'contain';
+                            }}
+                        />
+                        
+                        <button className="modal-nav modal-next" onClick={handleNextImage}>
+                            <i className="fas fa-chevron-right"></i>
+                        </button>
+                        
+                        <div className="modal-info">
+                            <div className="gallery-date" style={{ justifyContent: 'center' }}>
+                                <i className="far fa-calendar"></i>
+                                {formatDate(selectedImage.date)}
+                                <span style={{ marginLeft: '10px', fontSize: '0.8rem', opacity: 0.7 }}>
+                                    ({selectedImage.category})
+                                </span>
+                                {isLongImage(selectedImage.id) && (
+                                    <span style={{ 
+                                        marginLeft: '10px', 
+                                        fontSize: '0.8rem', 
+                                        color: '#3498db',
+                                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                                        padding: '2px 8px',
+                                        borderRadius: '10px'
+                                    }}>
+                                        <i className="fas fa-arrow-down" style={{marginRight: '3px'}}></i>
+                                        Tall Image
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+
             return (
                 <div style={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
        
@@ -3387,6 +7482,7 @@ I am a registered nurse, and I love research and data analytics. Aside from cond
             e.preventDefault(); 
             setActiveSection('about'); 
             setIsMobileMenuOpen(false); 
+            scrollToTop();
         }}>
             Mudasir Mohammed Ibrahim
         </a>
@@ -3403,60 +7499,138 @@ I am a registered nurse, and I love research and data analytics. Aside from cond
         {/* Navigation container - will be hidden on mobile when menu is closed */}
         <div className={`nav-container ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
             <div className="tabs-container">
-                <ul className="nav-list">
-                    <li className="nav-item">
-                        <a 
-                            href="#about" 
-                            onClick={(e) => { 
-                                e.preventDefault(); 
-                                setActiveSection('about'); 
-                                setIsMobileMenuOpen(false);
-                            }}
-                            className={activeSection === 'about' ? 'active' : ''}
-                        >
-                            About
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a 
-                            href="#publications" 
-                            onClick={(e) => { 
-                                e.preventDefault(); 
-                                setActiveSection('publications'); 
-                                setIsMobileMenuOpen(false);
-                            }}
-                            className={activeSection === 'publications' ? 'active' : ''}
-                        >
-                            Publications
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a 
-                            href="#shiny" 
-                            onClick={(e) => { 
-                                e.preventDefault(); 
-                                setActiveSection('shiny'); 
-                                setIsMobileMenuOpen(false);
-                            }}
-                            className={activeSection === 'shiny' ? 'active' : ''}
-                        >
-                            R Shiny Apps
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a 
-                            href="#blog" 
-                            onClick={(e) => { 
-                                e.preventDefault(); 
-                                setActiveSection('blog'); 
-                                setIsMobileMenuOpen(false);
-                            }}
-                            className={activeSection === 'blog' ? 'active' : ''}
-                        >
-                            Blog
-                        </a>
-                    </li>
-                </ul>
+<ul className="nav-list">
+    <li className="nav-item">
+        <a 
+            href="#about" 
+            onClick={(e) => { 
+                e.preventDefault(); 
+                setActiveSection('about'); 
+                setIsMobileMenuOpen(false);
+            }}
+            className={activeSection === 'about' ? 'active' : ''}
+        >
+            About Me
+        </a>
+    </li>
+    <li className="nav-item">
+        <a 
+            href="#publications" 
+            onClick={(e) => { 
+                e.preventDefault(); 
+                setActiveSection('publications'); 
+                setIsMobileMenuOpen(false);
+            }}
+            className={activeSection === 'publications' ? 'active' : ''}
+        >
+            Publications
+        </a>
+    </li>
+    <li className="nav-item">
+        <a 
+            href="#shiny" 
+            onClick={(e) => { 
+                e.preventDefault(); 
+                setActiveSection('shiny'); 
+                setIsMobileMenuOpen(false);
+            }}
+            className={activeSection === 'shiny' ? 'active' : ''}
+        >
+            Software
+        </a>
+    </li>
+    <li className="nav-item">
+        <a 
+            href="#blog" 
+            onClick={(e) => { 
+                e.preventDefault(); 
+                setActiveSection('blog'); 
+                setIsMobileMenuOpen(false);
+            }}
+            className={activeSection === 'blog' ? 'active' : ''}
+        >
+            Blog
+        </a>
+    </li>
+    <li className="nav-item">
+        <a 
+            href="#teaching" 
+            onClick={(e) => { 
+                e.preventDefault(); 
+                setActiveSection('teaching'); 
+                setIsMobileMenuOpen(false);
+            }}
+            className={activeSection === 'teaching' ? 'active' : ''}
+        >
+            Teaching
+        </a>
+    </li>
+  {/* ADD THIS NEW MORE TAB WITH DROPDOWN */}
+<li className="nav-item dropdown">
+    <a 
+        href="#more" 
+        onClick={(e) => { 
+            e.preventDefault(); 
+            // Toggle dropdown for both desktop and mobile
+            const dropdown = e.target.closest('.dropdown');
+            if (window.innerWidth <= 1024) {
+                // For mobile/tablet: Just toggle the dropdown open/closed
+                dropdown.classList.toggle('active');
+            } else {
+                // For desktop: Toggle dropdown
+                dropdown.classList.toggle('active');
+            }
+        }}
+        className={`dropdown-toggle ${activeSection === 'gallery' || activeSection === 'testimonials' ? 'active' : ''}`}
+    >
+        More <i className="fas fa-chevron-down"></i>
+    </a>
+    <div className="dropdown-menu">
+        <a 
+            href="#gallery" 
+            onClick={(e) => { 
+                e.preventDefault(); 
+                setActiveSection('gallery'); 
+                setIsMobileMenuOpen(false);
+                // Close dropdown
+                const dropdown = e.target.closest('.dropdown');
+                if (dropdown) dropdown.classList.remove('active');
+            }}
+            className="dropdown-item"
+        >
+            <i className="fas fa-images" style={{width: '16px', textAlign: 'center'}}></i>
+            Gallery
+        </a>
+        {/* Testimonials link - goes to the testimonial section in Software page */}
+        <a 
+            href="#testimonials" 
+            onClick={(e) => { 
+                e.preventDefault(); 
+                setActiveSection('shiny');
+                setIsMobileMenuOpen(false);
+                // Close dropdown
+                const dropdown = e.target.closest('.dropdown');
+                if (dropdown) dropdown.classList.remove('active');
+                
+                // Scroll to testimonial section after a short delay
+                setTimeout(() => {
+                    const testimonialElement = document.querySelector('.testimonial-button-container');
+                    if (testimonialElement) {
+                        testimonialElement.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    }
+                }, 100);
+            }}
+            className="dropdown-item"
+        >
+            <i className="fas fa-star" style={{width: '16px', textAlign: 'center'}}></i>
+            Testimonials
+        </a>
+    </div>
+</li>
+  </ul>
             </div>
             
             <div className="header-right">
@@ -3478,22 +7652,96 @@ I am a registered nurse, and I love research and data analytics. Aside from cond
                     </a>
                 </div>
 
-                <button className="dark-mode-toggle" onClick={toggleDarkMode} title="Toggle Dark Mode">
-                    <i className={`fas fa-${darkMode ? 'sun' : 'moon'}`}></i>
-                </button>
+<div className="theme-toggle-container" style={{ position: 'relative', display: 'flex', alignItems: 'center', height: '70px' }}>
+    <button 
+        className="dark-mode-toggle" 
+        onClick={() => setShowThemeOptions(!showThemeOptions)} 
+        title="Theme Options"
+        style={{ position: 'relative' }}
+    >
+        <i className="fas fa-sun"></i>
+    </button>
+    
+    {showThemeOptions && (
+        <div className="theme-options-dropdown" style={{
+            position: 'absolute',
+            top: '70px',
+            right: '0',
+            backgroundColor: 'var(--card-bg)',
+            border: '1px solid var(--border-color)',
+            borderRadius: '8px',
+            padding: '10px',
+            zIndex: 1001,
+            minWidth: '180px',
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+            animation: 'fadeIn 0.2s ease'
+        }}>
+            <div className="theme-option" style={{
+                padding: '8px 12px',
+                cursor: 'pointer',
+                borderRadius: '4px',
+                marginBottom: '5px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                backgroundColor: !darkMode ? 'rgba(52, 152, 219, 0.1)' : 'transparent',
+                border: !darkMode ? '1px solid rgba(52, 152, 219, 0.3)' : '1px solid transparent'
+            }} onClick={() => handleThemeChange('light')}>
+                <i className="fas fa-sun" style={{ color: !darkMode ? '#f39c12' : 'var(--text-color)' }}></i>
+                <span>Light</span>
+                {!darkMode && <i className="fas fa-check" style={{ marginLeft: 'auto', color: '#3498db' }}></i>}
+            </div>
+            
+            <div className="theme-option" style={{
+                padding: '8px 12px',
+                cursor: 'pointer',
+                borderRadius: '4px',
+                marginBottom: '5px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                backgroundColor: darkMode && localStorage.getItem('theme-preference') === 'dark' ? 'rgba(52, 152, 219, 0.1)' : 'transparent',
+                border: darkMode && localStorage.getItem('theme-preference') === 'dark' ? '1px solid rgba(52, 152, 219, 0.3)' : '1px solid transparent'
+            }} onClick={() => handleThemeChange('dark')}>
+                <i className="fas fa-moon" style={{ color: darkMode && localStorage.getItem('theme-preference') === 'dark' ? '#f39c12' : 'var(--text-color)' }}></i>
+                <span>Dark</span>
+                {darkMode && localStorage.getItem('theme-preference') === 'dark' && <i className="fas fa-check" style={{ marginLeft: 'auto', color: '#3498db' }}></i>}
+            </div>
+            
+            <div className="theme-option" style={{
+                padding: '8px 12px',
+                cursor: 'pointer',
+                borderRadius: '4px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                backgroundColor: !localStorage.getItem('theme-preference') ? 'rgba(52, 152, 219, 0.1)' : 'transparent',
+                border: !localStorage.getItem('theme-preference') ? '1px solid rgba(52, 152, 219, 0.3)' : '1px solid transparent'
+            }} onClick={() => handleThemeChange('device')}>
+                <i className="fas fa-desktop" style={{ color: !localStorage.getItem('theme-preference') ? '#f39c12' : 'var(--text-color)' }}></i>
+                <span>Device Default</span>
+                {!localStorage.getItem('theme-preference') && <i className="fas fa-check" style={{ marginLeft: 'auto', color: '#3498db' }}></i>}
+            </div>
+        </div>
+    )}
+</div>
+
             </div>
         </div>
     </div>
 </div>
        
-                    <div className="content-container">
-                        <div className="position"></div>
+<div className="content-container">
+    <div className="position"></div>
+    {activeSection === 'about' && renderAbout()}
+    {activeSection === 'publications' && <PublicationsComponent />}
+    {activeSection === 'shiny' && renderShinyApps()}
+    {activeSection === 'blog' && renderBlog()}
+    {activeSection === 'teaching' && renderTeaching()}
+{activeSection === 'gallery' && <GalleryComponent />}
 
-                        {activeSection === 'about' && renderAbout()}
-                        {activeSection === 'publications' && renderPublications()}
-                        {activeSection === 'shiny' && renderShinyApps()}
-                        {activeSection === 'blog' && renderBlog()}
-                    </div>
+
+</div>
                     
                     {/* Back to Top Button */}
         <div 
@@ -3504,85 +7752,334 @@ I am a registered nurse, and I love research and data analytics. Aside from cond
             <i className="fas fa-chevron-up"></i>
         </div>
         
-        <div className="footer">
-        </div>
-<div className="footer">
-    <div className="footer-content">
-        <div className="copyright">
-            © {new Date().getFullYear()} Mudasir Mohammed Ibrahim. All rights reserved
-        </div>
-        <div className="contact-link" style={{
-            marginTop: '10px',
-            fontSize: '0.9rem',
-            color: '#666'
+{/* Footer - Matches Header Colors */}
+<footer style={{
+    backgroundColor: 'var(--nav-bg)',
+    padding: '50px 20px 30px',
+    marginTop: '80px',
+    borderTop: '1px solid var(--nav-border)'
+}}>
+    <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        textAlign: 'center'
+    }}>
+        {/* Logo/Name - NAME REMOVED */}
+        <div style={{
+            fontSize: '1.8rem',
+            fontWeight: '700',
+            color: 'var(--nav-text)',
+            marginBottom: '30px',
+            letterSpacing: '-0.5px'
         }}>
-            Need to reach me? <a 
-                href="#contact-form"
-                style={{
-                    color: '#3498db',
-                    textDecoration: 'none',
-                    fontWeight: '600',
-                    transition: 'all 0.2s ease'
-                }}
-                onClick={(e) => {
-                    e.preventDefault();
-                    setShowContactForm(true);
-                    setActiveSection('about');
-                    setTimeout(() => {
-                        const formElement = document.getElementById('contact-form');
-                        if (formElement) {
-                            formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }, 100);
-                }}
-                onMouseOver={(e) => {
-                    e.target.style.color = '#2980b9';
-                    e.target.style.textDecoration = 'underline';
-                }}
-                onMouseOut={(e) => {
-                    e.target.style.color = '#3498db';
-                    e.target.style.textDecoration = 'none';
-                }}
-            >Click here</a>
+            {/* Name removed as requested */}
         </div>
-        {/* Design attribution - subtle */}
-        <div className="design-attribution" style={{
-            marginTop: '8px',
-            fontSize: '0.7rem',
-            opacity: 0.5,
-            color: '#666',
-            fontStyle: 'italic'
+        
+        {/* Navigation Links - UPDATED WITH GALLERY AND TESTIMONIALS */}
+        <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '25px',
+            marginBottom: '40px'
         }}>
-            Website design inspired by{' '}
-            <a 
-                href="https://profandyfield.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                style={{
-                    color: '#666',
-                    textDecoration: 'none',
-                    borderBottom: '1px dotted #999',
-                    transition: 'color 0.2s ease'
-                }}
-                onMouseOver={(e) => {
-                    e.target.style.color = '#3498db';
-                    e.target.style.borderBottomColor = '#3498db';
-                }}
-                onMouseOut={(e) => {
-                    e.target.style.color = '#666';
-                    e.target.style.borderBottomColor = '#999';
-                }}
-            >
-                Prof Andy Field
+            <a href="#" 
+               onClick={(e) => { 
+                   e.preventDefault(); 
+                   setActiveSection('about');
+                   window.scrollTo({ top: 0, behavior: 'smooth' });
+               }}
+               style={{
+                   color: 'var(--nav-text)',
+                   textDecoration: 'none',
+                   fontSize: '0.95rem',
+                   fontWeight: '500',
+                   transition: 'color 0.3s ease'
+               }}
+               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
+               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
+                About Me
+            </a>
+            <a href="#" 
+               onClick={(e) => { 
+                   e.preventDefault(); 
+                   setActiveSection('publications');
+                   window.scrollTo({ top: 0, behavior: 'smooth' });
+               }}
+               style={{
+                   color: 'var(--nav-text)',
+                   textDecoration: 'none',
+                   fontSize: '0.95rem',
+                   fontWeight: '500',
+                   transition: 'color 0.3s ease'
+               }}
+               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
+               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
+                Publications
+            </a>
+            <a href="#" 
+               onClick={(e) => { 
+                   e.preventDefault(); 
+                   setActiveSection('shiny');
+                   window.scrollTo({ top: 0, behavior: 'smooth' });
+               }}
+               style={{
+                   color: 'var(--nav-text)',
+                   textDecoration: 'none',
+                   fontSize: '0.95rem',
+                   fontWeight: '500',
+                   transition: 'color 0.3s ease'
+               }}
+               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
+               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
+                Software
+            </a>
+            <a href="#" 
+               onClick={(e) => { 
+                   e.preventDefault(); 
+                   setActiveSection('blog');
+                   window.scrollTo({ top: 0, behavior: 'smooth' });
+               }}
+               style={{
+                   color: 'var(--nav-text)',
+                   textDecoration: 'none',
+                   fontSize: '0.95rem',
+                   fontWeight: '500',
+                   transition: 'color 0.3s ease'
+               }}
+               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
+               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
+                Blog
+            </a>
+            <a href="#" 
+               onClick={(e) => { 
+                   e.preventDefault(); 
+                   setActiveSection('teaching');
+                   window.scrollTo({ top: 0, behavior: 'smooth' });
+               }}
+               style={{
+                   color: 'var(--nav-text)',
+                   textDecoration: 'none',
+                   fontSize: '0.95rem',
+                   fontWeight: '500',
+                   transition: 'color 0.3s ease'
+               }}
+               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
+               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
+                Teaching
+            </a>
+            {/* ADDED GALLERY LINK */}
+            <a href="#" 
+               onClick={(e) => { 
+                   e.preventDefault(); 
+                   setActiveSection('gallery');
+                   window.scrollTo({ top: 0, behavior: 'smooth' });
+               }}
+               style={{
+                   color: 'var(--nav-text)',
+                   textDecoration: 'none',
+                   fontSize: '0.95rem',
+                   fontWeight: '500',
+                   transition: 'color 0.3s ease'
+               }}
+               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
+               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
+                Gallery
+            </a>
+            {/* ADDED TESTIMONIALS LINK */}
+            <a href="#" 
+               onClick={(e) => {
+                   e.preventDefault();
+                   // Scroll to testimonial section in Software page
+                   setActiveSection('shiny');
+                   setTimeout(() => {
+                       const testimonialElement = document.querySelector('.testimonial-button-container');
+                       if (testimonialElement) {
+                           testimonialElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                       }
+                   }, 100);
+               }}
+               style={{
+                   color: 'var(--nav-text)',
+                   textDecoration: 'none',
+                   fontSize: '0.95rem',
+                   fontWeight: '500',
+                   transition: 'color 0.3s ease'
+               }}
+               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
+               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
+                Testimonials
+            </a>
+            <a href="#" 
+               onClick={(e) => {
+                   e.preventDefault();
+                   setShowContactForm(true);
+                   setActiveSection('about');
+                   setTimeout(() => {
+                       const formElement = document.getElementById('contact-form');
+                       if (formElement) {
+                           formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                       }
+                   }, 100);
+               }}
+               style={{
+                   color: 'var(--nav-text)',
+                   textDecoration: 'none',
+                   fontSize: '0.95rem',
+                   fontWeight: '500',
+                   transition: 'color 0.3s ease'
+               }}
+               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
+               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
+                Contact
             </a>
         </div>
-    </div>
+        
+ {/* Social Media Icons */}
+<div style={{
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '25px',
+    marginBottom: '40px'
+}}>
+    <a href="https://orcid.org/0000-0002-9049-8222" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="ORCID"
+       className="footer-social-icon"
+       style={{
+           color: 'var(--nav-text)',
+           fontSize: '1.4rem',
+           transition: 'all 0.3s ease'
+       }}>
+        <i className="fab fa-orcid"></i>
+    </a>
+    <a href="https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="Google Scholar"
+       className="footer-social-icon"
+       style={{
+           color: 'var(--nav-text)',
+           fontSize: '1.4rem',
+           transition: 'all 0.3s ease'
+       }}>
+        <i className="fas fa-graduation-cap"></i>
+    </a>
+    <a href="https://github.com/mudassiribrahim30" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="GitHub"
+       className="footer-social-icon"
+       style={{
+           color: 'var(--nav-text)',
+           fontSize: '1.4rem',
+           transition: 'all 0.3s ease'
+       }}>
+        <i className="fab fa-github"></i>
+    </a>
+    <a href="https://linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="LinkedIn"
+       className="footer-social-icon"
+       style={{
+           color: 'var(--nav-text)',
+           fontSize: '1.4rem',
+           transition: 'all 0.3s ease'
+       }}>
+        <i className="fab fa-linkedin"></i>
+    </a>
+    <a href="https://www.youtube.com/@mudasirmohammedibrahim1026" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="YouTube"
+       className="footer-social-icon"
+       style={{
+           color: 'var(--nav-text)',
+           fontSize: '1.4rem',
+           transition: 'all 0.3s ease'
+       }}>
+        <i className="fab fa-youtube"></i>
+    </a>
 </div>
+ 
+        {/* Copyright */}
+        <div style={{
+            color: 'var(--nav-text)',
+            fontSize: '0.9rem',
+            paddingTop: '20px',
+            borderTop: '1px solid var(--nav-border)',
+            opacity: 0.8,
+            lineHeight: '1.5'
+        }}>
+            <div style={{marginBottom: '5px'}}>
+                Copyright © {new Date().getFullYear()} by Mudasir Mohammed Ibrahim 
+            </div>
+            
+        <div style={{
+    fontSize: '0.8rem',
+    opacity: 0.6,
+    fontStyle: 'italic' /* ADD THIS LINE */
+}}>
+    <span style={{textDecoration: 'none'}}>Website UI inspired by </span>
+    <a 
+        href="https://profandyfield.com/" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        style={{
+            color: 'var(--nav-text)',
+            textDecoration: 'none',
+            marginLeft: '4px',
+            transition: 'color 0.2s ease',
+            fontStyle: 'italic' 
+        }}
+        onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
+        onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}
+    >
+        Prof Andy Field
+    </a>
+</div>
+                </div>
+        
+        {/* Optional: Back to Top */}
+        <div style={{ marginTop: '20px' }}>
+            <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                style={{
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    border: `1px solid var(--nav-border)`,
+                    color: 'var(--nav-text)',
+                    padding: '8px 20px',
+                    borderRadius: '20px',
+                    fontSize: '0.85rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                }}
+                onMouseOver={(e) => {
+                    e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                    e.target.style.color = 'var(--nav-hover)';
+                    e.target.style.borderColor = 'var(--nav-hover)';
+                }}
+                onMouseOut={(e) => {
+                    e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                    e.target.style.color = 'var(--nav-text)';
+                    e.target.style.borderColor = 'var(--nav-border)';
+                }}
+            >
+                <i className="fas fa-arrow-up" style={{ marginRight: '5px' }}></i>
+                Back to Top
+            </button>
+        </div>
+    </div>
+</footer>
 
 </div>
 
             );
         };
+        
+        
 
         ReactDOM.render(<AcademicPortfolio />, document.getElementById('root'));
     </script>
