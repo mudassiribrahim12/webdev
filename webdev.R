@@ -278,7 +278,6 @@ li {
     border-color: var(--nav-hover);
 }
 
-/* ========== UPDATED GALLERY STYLES FOR LONG IMAGES ========== */
 
 /* Gallery Image Container - FIXED for better image handling */
 .gallery-image-container {
@@ -3350,7 +3349,7 @@ body.dark-mode .certificate-link:hover {
     }
 }
         
-      /* ========== GALLERY SECTION STYLES - UPDATED & FIXED ========== */
+/* GALLERY SECTION STYLES - UPDATED & FIXED */
 
 /* Gallery Container */
 .gallery-container {
@@ -3390,7 +3389,7 @@ body.dark-mode .certificate-link:hover {
 /* Gallery Image Container - FIXED for perfect fit */
 .gallery-image-container {
     width: 100%;
-    height: 250px; /* Fixed height for consistent display */
+    height: 250px; 
     overflow: hidden;
     position: relative;
     background-color: var(--light-bg);
@@ -5314,6 +5313,61 @@ useEffect(() => {
     }
 }, [activeSection]);
 
+// Add this useEffect for header scroll behavior
+useEffect(() => {
+    let lastScrollTop = 0;
+    const header = document.querySelector('.full-width-header');
+    const headerHeight = header ? header.offsetHeight : 70;
+    
+    if (!header) return;
+    
+    const handleScroll = () => {
+        // Don't hide header if mobile menu is open
+        if (isMobileMenuOpen) {
+            header.style.transform = 'translateY(0)';
+            return;
+        }
+        
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Only hide when scrolling down
+        if (scrollTop > lastScrollTop && scrollTop > 50) {
+            header.style.transform = 'translateY(-100%)';
+            header.style.transition = 'transform 0.3s ease';
+        }
+        
+        // Only show when at the VERY TOP (within 5px of top)
+        if (scrollTop <= 5) {
+            header.style.transform = 'translateY(0)';
+            header.style.transition = 'transform 0.3s ease';
+        }
+        
+        lastScrollTop = scrollTop;
+    };
+
+    // Throttle for performance
+    let ticking = false;
+    const throttledHandleScroll = () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    };
+
+    window.addEventListener('scroll', throttledHandleScroll);
+    
+    // Initial check
+    handleScroll();
+    
+    // Clean up
+    return () => {
+        window.removeEventListener('scroll', throttledHandleScroll);
+    };
+}, [isMobileMenuOpen]);
+
 // Add this useEffect inside your main AcademicPortfolio component, right after your other useEffects
 useEffect(() => {
     // Pre-load gallery images when page loads
@@ -5842,12 +5896,7 @@ const loadBlogPostsWithFallback = async () => {
         />
 
         <div className="contact-info">
-            <h2 className="section-title">Mr. Mudasir M. Ibrahim</h2>
-
-            <div className="contact-item">
-                <i className="fas fa-map-marker-alt contact-icon"></i>
-                <span>Tamale, Northern Region, Ghana</span>
-            </div>
+            <h2 className="section-title">Mudasir Mohammed Ibrahim</h2>
 
             <div className="contact-item">
                 <i className="fas fa-building contact-icon"></i>
@@ -5866,20 +5915,18 @@ const loadBlogPostsWithFallback = async () => {
     <a href="https://linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="LinkedIn">
         <i className="fab fa-linkedin"></i>
     </a>
-    <a href="https://1drv.ms/f/c/3ce355b70d76f4f7/EvOg3kpoGi1JlFokbzBzEIgBDYXASGIRoLVHrXceFZDrJg?e=tF8arF" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="Download CV">
-        <i className="fas fa-file-download"></i>
-    </a>
 </div>
 </div>
             </div>
             
             <div className="bio-section">
                 <div className="bio-text">
-                    <p>Hello and welcome! Here, you'll find my research in health, interactive R Shiny web tools I've created to simplify statistical analyses in R, and resources that reflect my dual passion for healthcare delivery and research innovation. Thank you for visiting. Please feel free to browse my work or email me with any questions about my R Shiny tools or anything.</p>
+                    <p>Hello and welcome! I’m Mohammed Mudasir Ibrahim, professionally, that’s Mudasir Mohammed Ibrahim, but “Mudasir Ibrahim” works just fine. Here, you’ll find my research in health and a collection of interactive R Shiny tools I’ve built to make statistical analyses in R less painful and more fun. Feel free to browse, explore, or email me if you have questions about my apps, anything, or just want to nerd out over data.</p>
                     
-                    <p>I am a Registered General Nurse at the <a href="https://tth.gov.gh" target="_blank" rel="noopener noreferrer">Tamale Teaching Hospital (TTH)</a> with a strong passion for healthcare research and biostatistics. My work focuses on bridging clinical practice with rigorous research methodology and advanced statistical analysis to improve patient outcomes and healthcare delivery in Ghana.</p>
+                      <p>I am the original author of <a href="https://newappstesting.shinyapps.io/Data2SPSS/" target="_blank" rel="noopener noreferrer">Data2SPSS</a>, <a href="https://mudassiribrahim2025.shinyapps.io/CalcuStats/" target="_blank" rel="noopener noreferrer">CalcuStats</a>, <a href="https://newappstesting.shinyapps.io/CATrendAnalyzer/" target="_blank" rel="noopener noreferrer">CATrend Analyzer</a>, and <a href="https://mudassiribrahim2025.shinyapps.io/Robustregression/" target="_blank" rel="noopener noreferrer">Robust Regressor</a>, among others (all available in the Software tab). I built these using Shiny because I’ve seen firsthand how messy healthcare datasets can be and wanted practical, open-access tools that save time, reduce errors, and maybe even make statistics a little less intimidating. If one of my apps has brightened your day or your workflow, you can <a href="https://buymeacoffee.com/mudasiribrahim30" target="_blank" rel="noopener noreferrer">buy me a coffee</a> (It fuels more coding, not just caffeine addiction. Lol).</p>
                     
-                    <p>I have published numerous research papers in areas including nursing workforce issues, patient safety, cancer epidemiology, and maternal-child health. My work has been recognized through various academic reviewer certificates and contributions to the scientific community.</p>
+<p>By day, I’m a Registered General Nurse at <a href="https://tth.gov.gh" target="_blank" rel="noopener noreferrer">Tamale Teaching Hospital (TTH)</a>. I’ve published research on nursing education, workforce issues, patient safety, cancer epidemiology, and maternal-child health. Along the way, I’ve earned academic reviewer certificates and contributed to the broader scientific community. I enjoy turning real-world clinical challenges into actionable research and usable tools.</p>
+
                 </div>
                 
                 <h2 className="section-title">Employment History</h2>
@@ -5894,7 +5941,7 @@ const loadBlogPostsWithFallback = async () => {
                         <div className="item-title">Rotation Nurse</div>
                         <div className="item-subtitle">Tamale Teaching Hospital (TTH)</div>
                         <div className="item-period">2021 - 2022</div>
-                        <div className="item-description">Gained clinical experience across multiple departments including medical-surgical, pediatric, and emergency nursing units.</div>
+                        <div className="item-description">Gained clinical experience across multiple departments including medical-surgical, pediatric, oncology, public health, and emergency nursing units.</div>
                     </li>
                 </ul>
                 
@@ -5912,7 +5959,7 @@ const loadBlogPostsWithFallback = async () => {
                     </li>
                     <li className="education-item">
                         <div className="item-title">Business (Cost Accounting)</div>
-                        <div className="item-subtitle">Northern School of Business (NOBISCO), Tamale</div>
+                        <div className="item-subtitle">Northern School of Business (NOBISCO) - High School</div>
                         <div className="item-period">2013 - 2016</div>
                     </li>
                 </ul>
@@ -5920,19 +5967,16 @@ const loadBlogPostsWithFallback = async () => {
                 <h2 className="section-title">Affiliations</h2>
                 <ul className="education-list">
                     <li className="education-item">
-                        <div className="item-title">Registered General Nurse (RGN)</div>
                         <div className="item-subtitle">Nursing and Midwifery Council of Ghana (NMC-GH)</div>
                         <div className="item-period">2020 - Present</div>
                         <div className="item-description">Licensed to practice nursing in Ghana</div>
                     </li>
                     <li className="education-item">
-                        <div className="item-title">Active Member</div>
                         <div className="item-subtitle">Ghana Registered Nurses and Midwives Association (GRNMA)</div>
                         <div className="item-period">2025 - Present</div>
                         <div className="item-description">Professional membership</div>
                     </li>
                     <li className="education-item">
-                        <div className="item-title">Active Member</div>
                         <div className="item-subtitle">BridgeCare Institute for Health Research, Ghana (BIHR-GH)</div>
                         <div className="item-period">2026 - Present</div>
                         <div className="item-description">Secretary</div>
@@ -5943,7 +5987,6 @@ const loadBlogPostsWithFallback = async () => {
                 <ul className="education-list">
                     <li className="education-item">
                         <div className="item-title">(1) Abubakari Wuni</div>
-                        <div className="item-subtitle">Academic & Research Advisor</div>
                         <div className="item-description">
                             <a href="https://www.researchgate.net/profile/Abubakari-Wuni" 
                                target="_blank" 
@@ -5955,7 +5998,6 @@ const loadBlogPostsWithFallback = async () => {
                     </li>
                     <li className="education-item">
                         <div className="item-title">(2) Iddrisu Mohammed Sisala</div>
-                        <div className="item-subtitle">Academic & Research Advisor</div>
                         <div className="item-description">
                             <a href="https://www.researchgate.net/profile/Iddrisu-Sisala" 
                                target="_blank" 
@@ -6005,71 +6047,46 @@ const loadBlogPostsWithFallback = async () => {
                 <ul className="experience-list">
                     <li className="experience-item">
                         <div className="item-title">Nurses' and Midwives' Training College-Tamale Scientific Session 2024</div>
-                        <div className="item-subtitle">NMTC Tamale, Ghana</div>
+                        <div className="item-subtitle">NMTC, Tamale</div>
                         <div className="item-period">2024</div>
                         <div className="item-description">Theme: Research in Nursing Colleges: A Must for Status Change!</div>
                     </li>
                     <li className="experience-item">
                         <div className="item-title">Tamale Teaching Hospital Scientific Research Conference</div>
-                        <div className="item-subtitle">Tamale Teaching Hospital (TTH), Tamale</div>
+                        <div className="item-subtitle">Tamale Teaching Hospital (TTH)</div>
                         <div className="item-period">2022</div>
                         <div className="item-description">Theme: Harnessing the Intellectual Prowess of Researchers for Quality Healthcare Delivery at Tamale Teaching Hospital</div>
                     </li>
                 </ul>
                 
-                <h2 className="section-title">Skills</h2>
-                <div className="skills-section">
-                    <div className="skill-category">
-                        <h3 style={{fontSize: '18px', margin: '15px 0 10px', color: 'var(--text-color)'}}>Technical Skills</h3>
-                        <div className="skills-list" style={{display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px'}}>
-                            {["SPSS Statistics", "Stata", "SPSS AMOS", "SmartPLS", "Jamovi", "JASP", "Minitab", 
-                              "R Programming", "SAS JMP", "ATLAS.ti", "NVivo", "QDA Miner", "Zotero", "Mendeley"].map((skill, idx) => (
-                                <div key={idx} className="skill-tag" style={{
-                                    backgroundColor: 'var(--skill-bg)',
-                                    padding: '5px 12px',
-                                    borderRadius: '20px',
-                                    fontSize: '0.9rem',
-                                    color: 'var(--text-color)',
-                                    border: '1px solid var(--border-color)'
-                                }}>{skill}</div>
-                            ))}
-                        </div>
-                    </div>
-                    
-                    <div className="skill-category">
-                        <h3 style={{fontSize: '18px', margin: '15px 0 10px', color: 'var(--text-color)'}}>Clinical Skills</h3>
-                        <div className="skills-list" style={{display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px'}}>
-                            {["Patient Care", "Medication Administration", "Emergency Response", 
-                              "Clinical Assessment", "Evidence-Based Practice"].map((skill, idx) => (
-                                <div key={idx} className="skill-tag" style={{
-                                    backgroundColor: 'var(--skill-bg)',
-                                    padding: '5px 12px',
-                                    borderRadius: '20px',
-                                    fontSize: '0.9rem',
-                                    color: 'var(--text-color)',
-                                    border: '1px solid var(--border-color)'
-                                }}>{skill}</div>
-                            ))}
-                        </div>
-                    </div>
-                    
-                    <div className="skill-category">
-                        <h3 style={{fontSize: '18px', margin: '15px 0 10px', color: 'var(--text-color)'}}>Research Interests</h3>
-                        <div className="skills-list" style={{display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px'}}>
-                            {["Cancer Epidemiology", "Maternal and Child Health", "Public Health", 
-                              "Workplace Issues"].map((interest, idx) => (
-                                <div key={idx} className="skill-tag" style={{
-                                    backgroundColor: 'var(--skill-bg)',
-                                    padding: '5px 12px',
-                                    borderRadius: '20px',
-                                    fontSize: '0.9rem',
-                                    color: 'var(--text-color)',
-                                    border: '1px solid var(--border-color)'
-                                }}>{interest}</div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+ <h2 className="section-title">Skills</h2>
+<div className="skills-section">
+    <div className="skills-simple-box">
+        {/* Technical Skills */}
+        <div className="skill-box">
+            <h3>Technical Skills</h3>
+            <p style={{color: 'var(--text-color)', lineHeight: '1.6', marginBottom: '15px', fontSize: '1rem'}}>
+                SPSS Statistics, Stata, SPSS AMOS, SmartPLS, Jamovi, JASP, Minitab, R Programming, SAS JMP, ATLAS.ti, NVivo, QDA Miner, Zotero, Mendeley
+            </p>
+        </div>
+        
+        {/* Clinical Skills */}
+        <div className="skill-box">
+            <h3>Clinical Skills</h3>
+            <p style={{color: 'var(--text-color)', lineHeight: '1.6', marginBottom: '15px', fontSize: '1rem'}}>
+                Patient Care, Medication Administration, Emergency Response, Clinical Assessment, Evidence-Based Practice
+            </p>
+        </div>
+        
+        {/* Research Interests */}
+        <div className="skill-box">
+            <h3>Research Interests</h3>
+            <p style={{color: 'var(--text-color)', lineHeight: '1.6', marginBottom: '15px', fontSize: '1rem'}}>
+                Cancer Epidemiology, Maternal and Child Health, Public Health, Workplace Issues
+            </p>
+        </div>
+    </div>
+</div>
                 
                 <h2 className="section-title">Hobbies and Personal Interests</h2>
                 <div className="bio-text">
@@ -6184,7 +6201,7 @@ const loadBlogPostsWithFallback = async () => {
     // Publication data organized by year
     const publicationsByYear = {
         "2026": [
-            {id: 1, content: `<strong>Ibrahim, M. M. </strong>, Monne, R., Tawiah, B. C., Adam, H., Abukari, M. S., Salifu, R., Sisala, I. M., & Wuni, A. (2026). Validation and Reliability Study of a Scale to Measure Academic Help-seeking Behaviors Among Nursing Students in Ghana.<em> Journal of Education and Research in Nursing</em>, 23(1), 1-10. doi: <a href="https://doi.org/10.14744/jern.2025.70745" target="_blank" rel="noopener noreferrer" className="doi-link">10.14744/jern.2025.70745</a>`}
+            {id: 1, content: `<strong>Ibrahim, M. M. </strong>, Monne, R., Tawiah, B. C., Adam, H., Abukari, M. S., Salifu, R., Sisala, I. M., & Wuni, A. (2026). Validity and Reliability Study of a Scale to Measure Academic Help-seeking Behaviors Among Nursing Students in Ghana.<em> Journal of Education and Research in Nursing</em>, 23(1), 1-10. doi: <a href="https://doi.org/10.14744/jern.2025.70745" target="_blank" rel="noopener noreferrer" className="doi-link">10.14744/jern.2025.70745</a>`}
         ],
         "2025": [
             {id: 2, content: `Wuni, A., <strong>Ibrahim, M. M.</strong>, Tonlaar, P. S., Sisala, I. M., Awal, I., Nyarko, B. A., Abdulai, A., Mohammed, S., & Salisu, W. J. (2025). Patterns and temporal trends in childhood cancer incidence in northern Ghana: evidence from medical records, 2016 to 2023. <em>BMC Pediatrics</em>, 25(745). doi: <a href="https://doi.org/10.1186/s12887-025-06141-2" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12887-025-06141-2</a>`},
@@ -6334,440 +6351,6 @@ const loadBlogPostsWithFallback = async () => {
                     ))}
 
                 </div>
-            </div>
-        </div>
-    );
-};
-        
-        const renderShinyApps = () => {
-    const shinyApps = [
-        {
-            id: 1,
-            name: "CalcuStats",
-            description: "Tool for sample size calculation, power analysis, and descriptive statistics",
-            runUrl: "https://mudassiribrahim2025.shinyapps.io/CalcuStats/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/CalcuStats.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/CalcuStats.png"
-        },
-        {
-            id: 2,
-            name: "CATrend Analyzer",
-            description: "Cochran-Armitage test for trend tool",
-            runUrl: "https://newappstesting.shinyapps.io/CATrendAnalyzer/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/CATrendAnalyzer.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/CAtrend.png"
-        },
-        {
-            id: 3,
-            name: "ROC Curve Builder",
-            description: "ROC curve analysis and diagnostic test evaluation",
-            runUrl: "https://mudassiribrahim30.shinyapps.io/ROC_CURVE/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/ROC%20Curve%20Builder.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/ROC.png"
-        },
-        {
-            id: 4,
-            name: "Data2SPSS",
-            description: "Convert datasets in CSV, Excel, Rdata, Stata, or SAS format into SPSS (.sav) files",
-            runUrl: "https://newappstesting.shinyapps.io/Data2SPSS/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/Data2SPSS",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Data2SPSS.png"
-        },
-        {
-            id: 5,
-            name: "MedModr",
-            description: "Mediation and moderation analysis tool for research studies",
-            runUrl: "https://mudassiribrahim30.shinyapps.io/MedModr/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/MedModr.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/MedModr.png"
-        },
-        {
-            id: 6,
-            name: "EpiDem Suite",
-            description: "Epidemiological data analysis suite for public health research",
-            runUrl: "https://mudassiribrahim2025.shinyapps.io/EpiDemSuite/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/EpiDem%20Suite.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/EpiDem.png"
-        },
-        {
-            id: 7,
-            name: "ggPubPlot",
-            description: "Publication-ready ggplot2 visualizations with customization",
-            runUrl: "https://mudassiribrahim2025.shinyapps.io/ggPubPlot/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/ggPubPlot.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/ggLogo.png"
-        },
-        {
-            id: 8,
-            name: "APA Table Generator",
-            description: "Generate APA formatted tables for research papers and publications",
-            runUrl: "https://newappstesting.shinyapps.io/APATableGenerator/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/APA%20Table%20Generator%20Pro.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/APA%20logo.png"
-        },
-        {
-            id: 9,
-            name: "SysSampler",
-            description: "Systematic sampling tool for research studies with custom random start",
-            runUrl: "https://mudassiribrahim2025b.shinyapps.io/SysSampler/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/SysSampler",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Sys%20Sampler.png"
-        },
-        {
-            id: 10,
-            name: "CMH Analyzer",
-            description: "Cochran-Mantel-Haenszel analysis tool for stratified data",
-            runUrl: "https://newappstesting.shinyapps.io/CMHAnalyzer/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/CMHAnalyzer.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/CMH.png"
-        },
-        {
-            id: 11,
-            name: "TNMTC DataLab",
-            description: "Comprehensive data analysis software",
-            runUrl: "https://newappstesting.shinyapps.io/NMTCDataLab/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/NMTC%20APP.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/TNMTC.png"
-        },
-        {
-            id: 12,
-            name: "PharmaCalc Pro",
-            description: "Pharmaceutical calculations for dosage",
-            runUrl: "https://mudassiribrahim2025b.shinyapps.io/PharmaCalcPro/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/PharmaCalcPro.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Pharma.png"
-        },
-        {
-            id: 13,
-            name: "RegEffect Xplorer",
-            description: "Explore regression effects visually with interactive plots",
-            runUrl: "https://mudassiribrahim2025b.shinyapps.io/RegEffectXplorer/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/RegEffectXplorer.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/RegEf.png"
-        },
-        {
-            id: 14,
-            name: "Data TransformR",
-            description: "Data transformation and preprocessing tool for analytics",
-            runUrl: "https://mudassiribrahim2025b.shinyapps.io/DataTransformR/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/DataTransformR.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/DataTrans.png"
-        },
-        {
-            id: 15,
-            name: "CleanMyData",
-            description: "Data screening and cleaning tool with visualization",
-            runUrl: "https://mudassiribrahim2025b.shinyapps.io/CleanMyData/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/CleanMyData.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/CleanMyData.png"
-        },
-        {
-            id: 16,
-            name: "KMPlot Genie",
-            description: "Kaplan-Meier survival plot generator for clinical studies",
-            runUrl: "https://mudassiribrahim30.shinyapps.io/KMPlotGenie/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/KMPlotGenie.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/KMPlot.png"
-        },
-        {
-            id: 17,
-            name: "QuickStatsGen",
-            description: "Custom Data Generator for Statistical Practice and Education",
-            runUrl: "https://mudassiribrahim2025.shinyapps.io/QuickStatsGen/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/QuickStatsGen.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/QuickStats.png"
-        },
-        {
-            id: 18,
-            name: "Robust Regressor",
-            description: "Robust regression analysis for outlier-resistant modeling",
-            runUrl: "https://mudassiribrahim2025.shinyapps.io/Robustregression/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/Robust%20%20Regressor.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Robust.png"
-        },
-        {
-            id: 19,
-            name: "TagSelect",
-            description: "Participant selection tool for research studies",
-            runUrl: "https://mudassiribrahim30.shinyapps.io/Tagselect/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/TagSelect.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/TagSelect.png"
-        },
-        {
-            id: 20,
-            name: "FAnalyzr",
-            description: "Factor analysis and dimensionality reduction tool",
-            runUrl: "https://mudassiribrahim30.shinyapps.io/fanalyzr/",
-            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/FAnalyzr.R",
-            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/FA.png"
-        }
-    ];
-
-    // Function to get appropriate icon for each app
-    const getAppIcon = (appName) => {
-        const icons = {
-            "CalcuStats": "fa-calculator",
-            "CATrend Analyzer": "fa-chart-line",
-            "ROC Curve Builder": "fa-project-diagram",
-            "Data2SPSS": "fa-file-export",
-            "MedModr": "fa-project-diagram",
-            "EpiDem Suite": "fa-chart-area",
-            "ggPubPlot": "fa-chart-bar",
-            "APA Table Generator": "fa-table",
-            "SysSampler": "fa-random",
-            "CMH Analyzer": "fa-chart-pie",
-            "TNMTC DataLab": "fa-flask",
-            "PharmaCalc Pro": "fa-pills",
-            "RegEffect Xplorer": "fa-search-chart",
-            "Data TransformR": "fa-exchange-alt",
-            "CleanMyData": "fa-broom",
-            "KMPlot Genie": "fa-heartbeat",
-            "QuickStatsGen": "fa-bolt",
-            "Robust Regressor": "fa-shield-alt",
-            "TagSelect": "fa-users",
-            "FAnalyzr": "fa-cube"
-        };
-        return icons[appName] || "fa-chart-line";
-    };
-
-    // Function to get category based on app name/description
-    const getAppCategory = (appName, description) => {
-        if (description.includes("statistic") || description.includes("sample size") || appName.includes("Stats")) {
-            return "statistics";
-        } else if (description.includes("analysis") || description.includes("analytics") || appName.includes("Analyzer")) {
-            return "analysis";
-        } else if (description.includes("plot") || description.includes("visualization") || appName.includes("Plot")) {
-            return "visualization";
-        } else if (description.includes("data") || description.includes("transform") || description.includes("clean")) {
-            return "data";
-        } else if (description.includes("research") || description.includes("publication") || appName.includes("APA")) {
-            return "research";
-        } else if (description.includes("health") || description.includes("clinical") || appName.includes("Pharma")) {
-            return "healthcare";
-        } else {
-            return "general";
-        }
-    };
-
-    // Function to get category label
-    const getCategoryLabel = (category) => {
-        const labels = {
-            "statistics": "Statistics",
-            "analysis": "Data Analysis",
-            "visualization": "Visualization",
-            "data": "Data Processing",
-            "research": "Research Tools",
-            "healthcare": "Healthcare",
-            "general": "General"
-        };
-        return labels[category];
-    };
-
-    // Function to get category color class
-    const getCategoryClass = (category) => {
-        const classes = {
-            "statistics": "statistics",
-            "analysis": "analysis",
-            "visualization": "visualization",
-            "data": "data",
-            "research": "research",
-            "healthcare": "healthcare",
-            "general": "general"
-        };
-        return classes[category];
-    };
-
-    // Add this function to refresh views
-    const handleRefreshViews = () => {
-        fetchAppViews();
-    };
-
-    return (
-        <div className="section">
-            <h2>Software</h2>
-            
-            <div className="shiny-intro">
-                <p className="shiny-description">
-                    Below is a collection of interactive R Shiny web tools that I have created to make analyses easier in R. All of my tools are open-source and are also stored on GitHub.
-                </p>
-            </div>
-
-            {/* ADD THIS VIEWS COUNTER SECTION */}
-            <div className="views-counter-container">
-                <div className="views-counter-card">
-                    <div className="views-counter-header">
-                        <div className="views-icon">
-                            <i className="fas fa-chart-line"></i>
-                        </div>
-                        <div className="total-views-container">
-                            <div className="total-views-label">Total Application Views</div>
-                            {loadingViews ? (
-                                <div className="views-loading">
-                                    <i className="fas fa-spinner fa-spin"></i>
-                                    <div style={{marginTop: '10px', fontSize: '0.9rem'}}>Loading views...</div>
-                                </div>
-                            ) : (
-                                <>
-                                    <div className="total-views-number">{totalViews.toLocaleString()}</div>
-                                </>
-                            )}
-                        </div>
-                    </div>
-                    
-                    <div className="views-source">
-                        <span>Views sourced from</span>
-                        <a 
-                            href="https://shinyappstore.com/search/user/1732" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="shiny-app-store-link"
-                        >
-                            <i className="fas fa-external-link-alt"></i>
-                            Shiny App Store
-                        </a>
-                    </div>
-                    
-                    {!loadingViews && Object.keys(appViews).length > 0 && (
-                        <div className="individual-views-container">
-                            <div className="individual-views-title">Individual App Views (1-20)</div>
-                            <div className="views-grid">
-                                {Object.entries(appViews)
-                                    .sort(([, viewsA], [, viewsB]) => viewsB - viewsA)
-                                    .map(([appName, views]) => (
-                                        <div key={appName} className="view-item">
-                                            <div className="app-name" title={appName}>{appName}</div>
-                                            <div className="app-view-count">{views.toLocaleString()}</div>
-                                        </div>
-                                    ))}
-                            </div>
-                        </div>
-                    )}
-                </div>
-            </div>
-            
-            <div className="apps-stats">
-                <div className="stat-card">
-                    <div className="stat-number">20</div>
-                    <div className="stat-label">Applications</div>
-                </div>
-                <div className="stat-card">
-                    <div className="stat-number">100%</div>
-                    <div className="stat-label">Open Source</div>
-                </div>
-                <div className="stat-card">
-                    <div className="stat-number">6</div>
-                    <div className="stat-label">Categories</div>
-                </div>
-                <div className="stat-card">
-                    <div className="stat-number">Free</div>
-                    <div className="stat-label">For Research</div>
-                </div>
-            </div>
-            
-            <div className="testimonial-container">
-                <div className="testimonial-content">
-                    <div className="testimonial-header">
-                        <i className="fas fa-comment-dots testimonial-icon"></i>
-                        <h3 className="testimonial-title">Share Your Experience</h3>
-                    </div>
-                    
-                    <p className="testimonial-description">
-                        Used any of my R Shiny apps? Share your thoughts, suggestions, or testimonial.
-                    </p>
-                    
-                    <a 
-                        href="https://forms.gle/PZJtxtf9E3ZMnBYB9" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="testimonial-button"
-                    >
-                        <i className="fas fa-pen"></i>
-                        Submit Feedback
-                    </a>
-                </div>
-            </div>
-
-            <div className="shiny-featured">
-                <h3>Featured Application</h3>
-                <div className="featured-app">
-                    <div className="featured-content">
-                        <div className="featured-image">
-                            <img 
-                                src="https://raw.githubusercontent.com/mudassiribrahim12/me/main/Data2SPSS.png" 
-                                alt="Data2SPSS featured app"
-                            />
-                        </div>
-                        <div className="featured-details">
-                            <h4>Data2SPSS</h4>
-                            <p>
-                                Powerful data conversion tool that transforms datasets from CSV, Excel, Rdata, 
-                                Stata, or SAS formats into SPSS (.sav) files. Essential for researchers who 
-                                need to work with SPSS.
-                            </p>
-                            <div className="featured-highlights">
-                                <span><i className="fas fa-check"></i> Multi-format support</span>
-                                <span><i className="fas fa-check"></i> Preserves variable labels</span>
-                                <span><i className="fas fa-check"></i> Value labels conversion</span>
-                                <span><i className="fas fa-check"></i> Batch processing</span>
-                            </div>
-                            <a href="https://newappstesting.shinyapps.io/Data2SPSS/" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               className="featured-link">
-                                <i className="fas fa-rocket"></i> Launch Data2SPSS
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="shiny-apps-grid">
-                {shinyApps.map(app => {
-                    const category = getAppCategory(app.name, app.description);
-                    
-                    return (
-                        <div key={app.id} className="shiny-app-card">
-                            <div className="app-image-container">
-                                <img 
-                                    src={app.imageUrl} 
-                                    alt={`${app.name} screenshot`}
-                                    className="app-image"
-                                    onError={(e) => {
-                                        e.target.style.display = 'none';
-                                        e.target.parentElement.innerHTML = `
-                                            <div class="app-icon">
-                                                <i class="fas ${getAppIcon(app.name)}"></i>
-                                            </div>
-                                        `;
-                                    }}
-                                />
-                            </div>
-                            <div className="app-content">
-                                <h3 className="app-title">{app.name}</h3>
-                                <div className="app-category">
-                                    <span className={`category-tag ${getCategoryClass(category)}`}>
-                                        {getCategoryLabel(category)}
-                                    </span>
-                                </div>
-                                <p className="app-description">{app.description}</p>
-                                <div className="app-links">
-                                    <a href={app.runUrl} 
-                                       target="_blank" 
-                                       rel="noopener noreferrer" 
-                                       className="app-link">
-                                        <i className="fas fa-rocket"></i> Launch App
-                                    </a>
-                                    <a href={app.codeUrl} 
-                                       target="_blank" 
-                                       rel="noopener noreferrer" 
-                                       className="app-link github">
-                                        <i className="fab fa-github"></i> View Code
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    );
-                })}
             </div>
         </div>
     );
@@ -7129,6 +6712,540 @@ const renderTeaching = () => (
     </div>
 </div>
 );
+
+const ShinyAppsComponent = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+    
+    // All 20 apps data with view counts
+    const shinyApps = [
+        {
+            id: 1,
+            name: "CalcuStats",
+            description: "Tool for sample size calculation, power analysis, and descriptive statistics",
+            runUrl: "https://mudassiribrahim2025.shinyapps.io/CalcuStats/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/CalcuStats.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/CalcuStats.png",
+            views: 16660
+        },
+        {
+            id: 2,
+            name: "CATrend Analyzer",
+            description: "Cochran-Armitage test for trend tool",
+            runUrl: "https://newappstesting.shinyapps.io/CATrendAnalyzer/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/CATrendAnalyzer.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/CAtrend.png",
+            views: 7582
+        },
+        {
+            id: 3,
+            name: "ROC Curve Builder",
+            description: "ROC curve analysis and diagnostic test evaluation",
+            runUrl: "https://mudassiribrahim30.shinyapps.io/ROC_CURVE/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/ROC%20Curve%20Builder.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/ROC.png",
+            views: 15996
+        },
+        {
+            id: 4,
+            name: "Data2SPSS",
+            description: "Convert datasets in CSV, Excel, Rdata, Stata, or SAS format into SPSS (.sav) files",
+            runUrl: "https://newappstesting.shinyapps.io/Data2SPSS/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/Data2SPSS",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Data2SPSS.png",
+            views: 12834
+        },
+        {
+            id: 5,
+            name: "MedModr",
+            description: "Mediation and moderation analysis tool for research studies",
+            runUrl: "https://mudassiribrahim30.shinyapps.io/MedModr/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/MedModr.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/MedModr.png",
+            views: 16042
+        },
+        {
+            id: 6,
+            name: "EpiDem Suite",
+            description: "Epidemiological data analysis suite for public health research",
+            runUrl: "https://mudassiribrahim2025.shinyapps.io/EpiDemSuite/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/EpiDem%20Suite.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/EpiDem.png",
+            views: 17080
+        },
+        {
+            id: 7,
+            name: "ggPubPlot",
+            description: "Publication-ready ggplot2 visualizations with customization",
+            runUrl: "https://mudassiribrahim2025.shinyapps.io/ggPubPlot/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/ggPubPlot.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/ggLogo.png",
+            views: 14541
+        },
+        {
+            id: 8,
+            name: "APA Table Generator",
+            description: "Generate APA formatted tables for research papers and publications",
+            runUrl: "https://newappstesting.shinyapps.io/APATableGenerator/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/APA%20Table%20Generator%20Pro.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/APA%20logo.png",
+            views: 3317
+        },
+        {
+            id: 9,
+            name: "SysSampler",
+            description: "Systematic sampling tool for research studies with custom random start",
+            runUrl: "https://mudassiribrahim2025b.shinyapps.io/SysSampler/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/SysSampler",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Sys%20Sampler.png",
+            views: 3594
+        },
+        {
+            id: 10,
+            name: "CMH Analyzer",
+            description: "Cochran-Mantel-Haenszel analysis tool for stratified data",
+            runUrl: "https://newappstesting.shinyapps.io/CMHAnalyzer/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/CMHAnalyzer.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/CMH.png",
+            views: 6843
+        },
+        {
+            id: 11,
+            name: "TNMTC DataLab",
+            description: "Comprehensive data analysis software",
+            runUrl: "https://newappstesting.shinyapps.io/NMTCDataLab/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/NMTC%20APP.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/TNMTC.png",
+            views: 14391
+        },
+        {
+            id: 12,
+            name: "PharmaCalc Pro",
+            description: "Pharmaceutical calculations for dosage",
+            runUrl: "https://mudassiribrahim2025b.shinyapps.io/PharmaCalcPro/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/PharmaCalcPro.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Pharma.png",
+            views: 15481
+        },
+        {
+            id: 13,
+            name: "RegEffect Xplorer",
+            description: "Explore regression effects visually with interactive plots",
+            runUrl: "https://mudassiribrahim2025b.shinyapps.io/RegEffectXplorer/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/RegEffectXplorer.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/RegEf.png",
+            views: 15369
+        },
+        {
+            id: 14,
+            name: "Data TransformR",
+            description: "Data transformation and preprocessing tool for analytics",
+            runUrl: "https://mudassiribrahim2025b.shinyapps.io/DataTransformR/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/DataTransformR.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/DataTrans.png",
+            views: 16847
+        },
+        {
+            id: 15,
+            name: "CleanMyData",
+            description: "Data screening and cleaning tool with visualization",
+            runUrl: "https://mudassiribrahim2025b.shinyapps.io/CleanMyData/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/CleanMyData.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/CleanMyData.png",
+            views: 14654
+        },
+        {
+            id: 16,
+            name: "KMPlot Genie",
+            description: "Kaplan-Meier survival plot generator for clinical studies",
+            runUrl: "https://mudassiribrahim30.shinyapps.io/KMPlotGenie/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/KMPlotGenie.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/KMPlot.png",
+            views: 16863
+        },
+        {
+            id: 17,
+            name: "QuickStatsGen",
+            description: "Custom Data Generator for Statistical Practice and Education",
+            runUrl: "https://mudassiribrahim2025.shinyapps.io/QuickStatsGen/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/QuickStatsGen.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/QuickStats.png",
+            views: 15091
+        },
+        {
+            id: 18,
+            name: "Robust Regressor",
+            description: "Robust regression analysis for outlier-resistant modeling",
+            runUrl: "https://mudassiribrahim2025.shinyapps.io/Robustregression/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/Robust%20%20Regressor.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/Robust.png",
+            views: 15560
+        },
+        {
+            id: 19,
+            name: "TagSelect",
+            description: "Participant selection tool for research studies",
+            runUrl: "https://mudassiribrahim30.shinyapps.io/Tagselect/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/TagSelect.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/TagSelect.png",
+            views: 16706
+        },
+        {
+            id: 20,
+            name: "FAnalyzr",
+            description: "Factor analysis and dimensionality reduction tool",
+            runUrl: "https://mudassiribrahim30.shinyapps.io/fanalyzr/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/FAnalyzr.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/FA.png",
+            views: 16867
+        }
+    ];
+    
+    // Calculate total views automatically
+    const totalViews = shinyApps.reduce((sum, app) => sum + app.views, 0);
+    
+    // Get top viewed apps for display
+    const topViewedApps = [...shinyApps]
+        .sort((a, b) => b.views - a.views)
+        .slice(0, 8); // Get top 8 apps
+    
+    // Filter apps based on search
+    const filteredApps = searchTerm.trim() === '' 
+        ? shinyApps 
+        : shinyApps.filter(app => 
+            app.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            app.description.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
+    return (
+        <div className="section">
+            <h2>Software</h2>
+            
+            <div className="shiny-intro">
+                <p className="shiny-description">
+                    Below is a collection of interactive R Shiny web tools that I have created to make analyses easier in R. All of my tools are open-source and are also stored on GitHub.
+                </p>
+            </div>
+
+            {/* Stats sections - Now includes total views */}
+            <div className="apps-stats">
+                <div className="stat-card">
+                    <div className="stat-number">20</div>
+                    <div className="stat-label">Applications</div>
+                </div>
+                <div className="stat-card">
+                    <div className="stat-number">{totalViews.toLocaleString()}</div>
+                    <div className="stat-label">Total Views</div>
+                </div>
+                <div className="stat-card">
+                    <div className="stat-number">100%</div>
+                    <div className="stat-label">Open Source</div>
+                </div>
+                <div className="stat-card">
+                    <div className="stat-number">Free</div>
+                    <div className="stat-label">For Research</div>
+                </div>
+            </div>
+            
+            <div className="shiny-featured">
+                <h3>Featured Application</h3>
+                <div className="featured-app">
+                    <div className="featured-content">
+                        <div className="featured-image">
+                            <img 
+                                src="https://raw.githubusercontent.com/mudassiribrahim12/me/main/Data2SPSS.png" 
+                                alt="Data2SPSS featured app"
+                            />
+                        </div>
+                        <div className="featured-details">
+                            <h4>Data2SPSS</h4>
+                            <p>
+                                Powerful data conversion tool that transforms datasets from CSV, Excel, Rdata, 
+                                Stata, or SAS formats into SPSS (.sav) files. Essential for researchers who 
+                                need to work with SPSS.
+                            </p>
+                            <div className="featured-highlights">
+                                <span><i className="fas fa-check"></i> Multi-format support</span>
+                                <span><i className="fas fa-check"></i> Preserves variable labels</span>
+                                <span><i className="fas fa-check"></i> Value labels conversion</span>
+                                <span><i className="fas fa-check"></i> Batch processing</span>
+                            </div>
+                            <a href="https://newappstesting.shinyapps.io/Data2SPSS/" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               className="featured-link">
+                                <i className="fas fa-rocket"></i> Launch Data2SPSS
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* SEARCH BAR */}
+            <div className="gallery-controls" style={{ 
+                marginBottom: '30px',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                alignItems: 'center'
+            }}>
+                <div className="gallery-search" style={{ position: 'relative', width: '100%', maxWidth: '600px' }}>
+                    <input
+                        type="text"
+                        placeholder="Search apps by name or description (e.g., 'CalcuStats', 'data', 'analysis', 'plot')..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        style={{
+                            width: '100%',
+                            padding: '15px 20px',
+                            fontSize: '1rem'
+                        }}
+                    />
+                    
+                    {searchTerm && (
+                        <button
+                            onClick={() => setSearchTerm('')}
+                            style={{
+                                position: 'absolute',
+                                right: '15px',
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                background: 'none',
+                                border: 'none',
+                                color: 'var(--position-color)',
+                                cursor: 'pointer',
+                                fontSize: '1.2rem'
+                            }}
+                        >
+                            ×
+                        </button>
+                    )}
+                </div>
+                
+                {searchTerm && (
+                    <div className="gallery-stats" style={{ 
+                        textAlign: 'center', 
+                        width: '100%', 
+                        marginTop: '15px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        gap: '15px',
+                        flexWrap: 'wrap'
+                    }}>
+                        <span>
+                            Found {filteredApps.length} app{filteredApps.length !== 1 ? 's' : ''} 
+                            {searchTerm && ` for "${searchTerm}"`}
+                        </span>
+                        <button 
+                            onClick={() => setSearchTerm('')}
+                            style={{
+                                background: 'none',
+                                border: '1px solid var(--border-color)',
+                                color: 'var(--text-color)',
+                                padding: '6px 18px',
+                                borderRadius: '20px',
+                                cursor: 'pointer',
+                                fontSize: '0.9rem',
+                                transition: 'all 0.3s ease'
+                            }}
+                        >
+                            <i className="fas fa-times" style={{ marginRight: '5px' }}></i>
+                            Clear Search
+                        </button>
+                    </div>
+                )}
+            </div>
+
+            {/* APPS GRID - Now shows view counts on each card */}
+            <div className="shiny-apps-grid">
+                {filteredApps.length > 0 ? (
+                    filteredApps.map(app => (
+                        <div key={app.id} className="shiny-app-card">
+                            <div className="app-image-container">
+                                <img 
+                                    src={app.imageUrl} 
+                                    alt={`${app.name} screenshot`}
+                                    className="app-image"
+                                />
+                                <div style={{
+                                    position: 'absolute',
+                                    top: '10px',
+                                    right: '10px',
+                                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                                    color: 'white',
+                                    padding: '3px 8px',
+                                    borderRadius: '12px',
+                                    fontSize: '0.8rem',
+                                    fontWeight: '600',
+                                    zIndex: 2
+                                }}>
+                                    <i className="fas fa-eye" style={{ marginRight: '4px' }}></i>
+                                    {app.views.toLocaleString()}
+                                </div>
+                            </div>
+                            <div className="app-content">
+                                <h3 className="app-title">{app.name}</h3>
+                                <p className="app-description">{app.description}</p>
+                                <div className="app-links">
+                                    <a href={app.runUrl} 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       className="app-link">
+                                        <i className="fas fa-rocket"></i> Launch App
+                                    </a>
+                                    <a href={app.codeUrl} 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       className="app-link github">
+                                        <i className="fab fa-github"></i> View Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                ) : (
+                    <div className="gallery-empty" style={{ 
+                        gridColumn: '1 / -1',
+                        marginTop: '40px'
+                    }}>
+                        <i className="fas fa-search" style={{ fontSize: '3rem', marginBottom: '20px' }}></i>
+                        <h3>No matching apps found</h3>
+                        <p>No applications match your search for "<strong>{searchTerm}</strong>". Try searching with different keywords.</p>
+                        <div style={{ marginTop: '25px', display: 'flex', gap: '15px', justifyContent: 'center' }}>
+                            <button 
+                                className="gallery-btn"
+                                onClick={() => setSearchTerm('')}
+                            >
+                                <i className="fas fa-eye"></i>
+                                Show All Apps
+                            </button>
+                            <button 
+                                className="gallery-btn"
+                                onClick={() => setSearchTerm('statistics')}
+                                style={{ backgroundColor: 'var(--light-bg)', color: 'var(--text-color)' }}
+                            >
+                                <i className="fas fa-chart-bar"></i>
+                                Try "statistics"
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* SECTION AFTER ALL APPS - Views Counter and Testimonials */}
+            <div style={{ 
+                marginTop: '60px',
+                paddingTop: '40px',
+                borderTop: '2px solid var(--border-color)'
+            }}>
+                <h3 style={{ 
+                    textAlign: 'center', 
+                    marginBottom: '40px',
+                    color: 'var(--header-color)',
+                    fontSize: '1.8rem',
+                    fontWeight: '600'
+                }}>
+                    <i className="fas fa-chart-line" style={{ marginRight: '15px', color: '#4CAF50' }}></i>
+                    App Statistics & Feedback
+                </h3>
+
+                {/* Views Counter - Now calculates total automatically */}
+                <div className="views-counter-container">
+                    <div className="views-counter-card">
+                        <div className="views-counter-header">
+                            <div className="views-icon">
+                                <i className="fas fa-chart-line"></i>
+                            </div>
+                            <div className="total-views-container">
+                                <div className="total-views-label">Total Application Views (All 20 Apps)</div>
+                                <div className="total-views-number">{totalViews.toLocaleString()}</div>
+                                <div className="total-views-update">
+                                    <i className="fas fa-sync-alt" style={{ marginRight: '5px' }}></i>
+                                    Automatically calculated from individual app views
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="views-source">
+                            <span>Views sourced from</span>
+                            <a 
+                                href="https://shinyappstore.com/search/user/1732" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="shiny-app-store-link"
+                            >
+                                <i className="fas fa-external-link-alt"></i>
+                                Shiny App Store
+                            </a>
+                        </div>
+
+                        {/* Individual App Views Grid - Now uses actual data */}
+                        <div className="individual-views-container">
+                            <div className="individual-views-title">
+                                <i className="fas fa-trophy" style={{ marginRight: '10px', color: '#FFD700' }}></i>
+                                Top 8 Most Viewed Applications
+                            </div>
+                            <div className="views-grid">
+                                {topViewedApps.map((app, index) => (
+                                    <div key={app.id} className="view-item">
+                                        <div className="app-name">{app.name}</div>
+                                        <div className="app-view-count">{app.views.toLocaleString()}</div>
+                                        <div style={{
+                                            fontSize: '0.7rem',
+                                            color: 'var(--position-color)',
+                                            marginTop: '3px'
+                                        }}>
+                                            #{index + 1}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            <div style={{
+                                textAlign: 'center',
+                                fontSize: '0.85rem',
+                                color: 'var(--position-color)',
+                                marginTop: '10px'
+                            }}>
+                                <i className="fas fa-info-circle" style={{ marginRight: '5px' }}></i>
+                                View counts shown on each app card above
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Testimonials Section */}
+                <div className="testimonial-container" style={{ 
+                    marginTop: '40px',
+                    marginBottom: '20px'
+                }}>
+                    <div className="testimonial-content">
+                        <div className="testimonial-header">
+                            <i className="fas fa-comment-dots testimonial-icon"></i>
+                            <h3 className="testimonial-title">Share Your Experience</h3>
+                        </div>
+                        
+                        <p className="testimonial-description">
+                            Used any of my R Shiny apps? I'd love to hear your feedback, suggestions, or testimonials about your experience with these tools.
+                        </p>
+                        
+                        <a 
+                            href="https://forms.gle/PZJtxtf9E3ZMnBYB9" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="testimonial-button"
+                        >
+                            <i className="fas fa-pen"></i>
+                            Submit Feedback
+                        </a>
+                        
+                        <p className="testimonial-subtext" style={{ marginTop: '15px', fontSize: '0.85rem', opacity: 0.7 }}>
+                            Your feedback helps improve these tools for everyone
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
 
 const GalleryComponent = () => {
     // Gallery data with conference category moved
@@ -7670,7 +7787,7 @@ const categoryDescriptions = {
             Teaching
         </a>
     </li>
-  {/* ADD THIS NEW MORE TAB WITH DROPDOWN */}
+ 
 <li className="nav-item dropdown">
     <a 
         href="#more" 
@@ -7840,7 +7957,7 @@ const categoryDescriptions = {
     <div className="position"></div>
     {activeSection === 'about' && renderAbout()}
     {activeSection === 'publications' && <PublicationsComponent />}
-    {activeSection === 'shiny' && renderShinyApps()}
+{activeSection === 'shiny' && <ShinyAppsComponent />}
     {activeSection === 'blog' && renderBlog()}
     {activeSection === 'teaching' && renderTeaching()}
 {activeSection === 'gallery' && <GalleryComponent />}
@@ -7857,325 +7974,367 @@ const categoryDescriptions = {
             <i className="fas fa-chevron-up"></i>
         </div>
         
-{/* Footer - Matches Header Colors */}
+{/* Footer - Modern Design with Vertical Tabs */}
 <footer style={{
     backgroundColor: 'var(--nav-bg)',
-    padding: '50px 20px 30px',
+    padding: '60px 40px 40px',
     marginTop: '80px',
     borderTop: '1px solid var(--nav-border)'
 }}>
     <div style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        textAlign: 'center'
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '60px',
+        alignItems: 'flex-start'
     }}>
-        {/* Logo/Name - NAME REMOVED */}
-        <div style={{
-            fontSize: '1.8rem',
-            fontWeight: '700',
-            color: 'var(--nav-text)',
-            marginBottom: '30px',
-            letterSpacing: '-0.5px'
-        }}>
-            {/* Name removed as requested */}
+        
+        {/* LEFT COLUMN: Logo and Description */}
+        <div style={{ flex: '1', minWidth: '250px' }}>
+            <div style={{
+                fontSize: '1.5rem',
+                fontWeight: '700',
+                color: 'var(--nav-text)',
+                marginBottom: '20px',
+                letterSpacing: '-0.5px'
+            }}>
+                Mudasir Mohammed Ibrahim
+            </div>
+            <p style={{
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '0.95rem',
+                lineHeight: '1.6',
+                marginBottom: '25px'
+            }}>
+                Registered Nurse and Health Researcher
+            </p>
+            
+            {/* Social Media Icons - Compact */}
+            <div style={{
+                display: 'flex',
+                gap: '15px',
+                marginTop: '25px'
+            }}>
+                {[
+                    { icon: 'fab fa-orcid', url: 'https://orcid.org/0000-0002-9049-8222', title: 'ORCID' },
+                    { icon: 'fas fa-graduation-cap', url: 'https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en', title: 'Google Scholar' },
+                    { icon: 'fab fa-github', url: 'https://github.com/mudassiribrahim30', title: 'GitHub' },
+                    { icon: 'fab fa-linkedin', url: 'https://linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0', title: 'LinkedIn' },
+                    { icon: 'fab fa-youtube', url: 'https://www.youtube.com/@mudasirmohammedibrahim1026', title: 'YouTube' }
+                ].map((social, index) => (
+                    <a key={index}
+                       href={social.url}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       title={social.title}
+                       style={{
+                           color: 'var(--nav-text)',
+                           fontSize: '1.2rem',
+                           width: '40px',
+                           height: '40px',
+                           display: 'flex',
+                           alignItems: 'center',
+                           justifyContent: 'center',
+                           borderRadius: '50%',
+                           backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                           transition: 'all 0.3s ease',
+                           textDecoration: 'none'
+                       }}
+                       onMouseOver={(e) => {
+                           e.target.style.backgroundColor = 'var(--nav-hover)';
+                           e.target.style.transform = 'translateY(-3px)';
+                       }}
+                       onMouseOut={(e) => {
+                           e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                           e.target.style.transform = 'translateY(0)';
+                       }}>
+                        <i className={social.icon}></i>
+                    </a>
+                ))}
+            </div>
         </div>
         
-        {/* Navigation Links - UPDATED WITH GALLERY AND TESTIMONIALS */}
-        <div style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-            gap: '25px',
-            marginBottom: '40px'
-        }}>
-            <a href="#" 
-               onClick={(e) => { 
-                   e.preventDefault(); 
-                   setActiveSection('about');
-                   window.scrollTo({ top: 0, behavior: 'smooth' });
-               }}
-               style={{
-                   color: 'var(--nav-text)',
-                   textDecoration: 'none',
-                   fontSize: '0.95rem',
-                   fontWeight: '500',
-                   transition: 'color 0.3s ease'
-               }}
-               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
-               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
-                About Me
-            </a>
-            <a href="#" 
-               onClick={(e) => { 
-                   e.preventDefault(); 
-                   setActiveSection('publications');
-                   window.scrollTo({ top: 0, behavior: 'smooth' });
-               }}
-               style={{
-                   color: 'var(--nav-text)',
-                   textDecoration: 'none',
-                   fontSize: '0.95rem',
-                   fontWeight: '500',
-                   transition: 'color 0.3s ease'
-               }}
-               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
-               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
-                Publications
-            </a>
-            <a href="#" 
-               onClick={(e) => { 
-                   e.preventDefault(); 
-                   setActiveSection('shiny');
-                   window.scrollTo({ top: 0, behavior: 'smooth' });
-               }}
-               style={{
-                   color: 'var(--nav-text)',
-                   textDecoration: 'none',
-                   fontSize: '0.95rem',
-                   fontWeight: '500',
-                   transition: 'color 0.3s ease'
-               }}
-               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
-               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
-                Software
-            </a>
-            <a href="#" 
-               onClick={(e) => { 
-                   e.preventDefault(); 
-                   setActiveSection('blog');
-                   window.scrollTo({ top: 0, behavior: 'smooth' });
-               }}
-               style={{
-                   color: 'var(--nav-text)',
-                   textDecoration: 'none',
-                   fontSize: '0.95rem',
-                   fontWeight: '500',
-                   transition: 'color 0.3s ease'
-               }}
-               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
-               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
-                Blog
-            </a>
-            <a href="#" 
-               onClick={(e) => { 
-                   e.preventDefault(); 
-                   setActiveSection('teaching');
-                   window.scrollTo({ top: 0, behavior: 'smooth' });
-               }}
-               style={{
-                   color: 'var(--nav-text)',
-                   textDecoration: 'none',
-                   fontSize: '0.95rem',
-                   fontWeight: '500',
-                   transition: 'color 0.3s ease'
-               }}
-               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
-               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
-                Teaching
-            </a>
-            {/* ADDED GALLERY LINK */}
-            <a href="#" 
-               onClick={(e) => { 
-                   e.preventDefault(); 
-                   setActiveSection('gallery');
-                   window.scrollTo({ top: 0, behavior: 'smooth' });
-               }}
-               style={{
-                   color: 'var(--nav-text)',
-                   textDecoration: 'none',
-                   fontSize: '0.95rem',
-                   fontWeight: '500',
-                   transition: 'color 0.3s ease'
-               }}
-               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
-               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
-                Gallery
-            </a>
-            {/* ADDED TESTIMONIALS LINK */}
-            <a href="#" 
-               onClick={(e) => {
-                   e.preventDefault();
-                   // Scroll to testimonial section in Software page
-                   setActiveSection('shiny');
-                   setTimeout(() => {
-                       const testimonialElement = document.querySelector('.testimonial-button-container');
-                       if (testimonialElement) {
-                           testimonialElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                       }
-                   }, 100);
-               }}
-               style={{
-                   color: 'var(--nav-text)',
-                   textDecoration: 'none',
-                   fontSize: '0.95rem',
-                   fontWeight: '500',
-                   transition: 'color 0.3s ease'
-               }}
-               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
-               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
-                Testimonials
-            </a>
-            <a href="#" 
-               onClick={(e) => {
-                   e.preventDefault();
-                   setShowContactForm(true);
-                   setActiveSection('about');
-                   setTimeout(() => {
-                       const formElement = document.getElementById('contact-form');
-                       if (formElement) {
-                           formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                       }
-                   }, 100);
-               }}
-               style={{
-                   color: 'var(--nav-text)',
-                   textDecoration: 'none',
-                   fontSize: '0.95rem',
-                   fontWeight: '500',
-                   transition: 'color 0.3s ease'
-               }}
-               onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
-               onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}>
-                Contact
-            </a>
+        {/* MIDDLE COLUMN: Vertical Tabs */}
+        <div style={{ flex: '1', minWidth: '200px' }}>
+            <h3 style={{
+                color: 'var(--nav-text)',
+                fontSize: '1.1rem',
+                fontWeight: '600',
+                marginBottom: '25px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px'
+            }}>
+                Quick Navigation
+            </h3>
+            
+            <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '12px'
+            }}>
+                {[
+                    { name: 'About Me', section: 'about' },
+                    { name: 'Publications', section: 'publications' },
+                    { name: 'Software', section: 'shiny' },
+                    { name: 'Blog', section: 'blog' },
+                    { name: 'Teaching', section: 'teaching' },
+                    { name: 'Gallery', section: 'gallery' },
+                    { name: 'Testimonials', section: 'shiny', scrollTo: 'testimonials' }
+                ].map((tab, index) => (
+                    <a key={index}
+                       href="#"
+                       onClick={(e) => {
+                           e.preventDefault();
+                           setActiveSection(tab.section);
+                           
+                           if (tab.scrollTo === 'testimonials') {
+                               setTimeout(() => {
+                                   const testimonialElement = document.querySelector('.testimonial-button-container');
+                                   if (testimonialElement) {
+                                       testimonialElement.scrollIntoView({ 
+                                           behavior: 'smooth', 
+                                           block: 'start' 
+                                       });
+                                   }
+                               }, 100);
+                           } else {
+                               window.scrollTo({ top: 0, behavior: 'smooth' });
+                           }
+                       }}
+                       style={{
+                           color: activeSection === tab.section ? 'var(--nav-hover)' : 'var(--nav-text)',
+                           textDecoration: 'none',
+                           fontSize: '0.95rem',
+                           fontWeight: activeSection === tab.section ? '600' : '400',
+                           padding: '10px 0',
+                           borderLeft: activeSection === tab.section ? '3px solid var(--nav-hover)' : '3px solid transparent',
+                           paddingLeft: '15px',
+                           transition: 'all 0.3s ease',
+                           display: 'flex',
+                           alignItems: 'center',
+                           gap: '10px'
+                       }}
+                       onMouseOver={(e) => {
+                           if (activeSection !== tab.section) {
+                               e.target.style.color = 'var(--nav-hover)';
+                               e.target.style.paddingLeft = '18px';
+                           }
+                       }}
+                       onMouseOut={(e) => {
+                           if (activeSection !== tab.section) {
+                               e.target.style.color = 'var(--nav-text)';
+                               e.target.style.paddingLeft = '15px';
+                           }
+                       }}>
+                        {tab.name === 'Testimonials' && <i className="fas fa-star" style={{ fontSize: '0.8rem' }}></i>}
+                        {tab.name === 'Gallery' && <i className="fas fa-images" style={{ fontSize: '0.8rem' }}></i>}
+                        {tab.name === 'Software' && <i className="fas fa-code" style={{ fontSize: '0.8rem' }}></i>}
+                        {tab.name === 'Publications' && <i className="fas fa-file-alt" style={{ fontSize: '0.8rem' }}></i>}
+                        {tab.name === 'Teaching' && <i className="fas fa-chalkboard-teacher" style={{ fontSize: '0.8rem' }}></i>}
+                        {tab.name === 'Blog' && <i className="fas fa-blog" style={{ fontSize: '0.8rem' }}></i>}
+                        {tab.name}
+                    </a>
+                ))}
+            </div>
         </div>
         
- {/* Social Media Icons */}
-<div style={{
-    display: 'flex',
-    justifyContent: 'center',
-    gap: '25px',
-    marginBottom: '40px'
-}}>
-    <a href="https://orcid.org/0000-0002-9049-8222" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       title="ORCID"
-       className="footer-social-icon"
-       style={{
-           color: 'var(--nav-text)',
-           fontSize: '1.4rem',
-           transition: 'all 0.3s ease'
-       }}>
-        <i className="fab fa-orcid"></i>
-    </a>
-    <a href="https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       title="Google Scholar"
-       className="footer-social-icon"
-       style={{
-           color: 'var(--nav-text)',
-           fontSize: '1.4rem',
-           transition: 'all 0.3s ease'
-       }}>
-        <i className="fas fa-graduation-cap"></i>
-    </a>
-    <a href="https://github.com/mudassiribrahim30" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       title="GitHub"
-       className="footer-social-icon"
-       style={{
-           color: 'var(--nav-text)',
-           fontSize: '1.4rem',
-           transition: 'all 0.3s ease'
-       }}>
-        <i className="fab fa-github"></i>
-    </a>
-    <a href="https://linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       title="LinkedIn"
-       className="footer-social-icon"
-       style={{
-           color: 'var(--nav-text)',
-           fontSize: '1.4rem',
-           transition: 'all 0.3s ease'
-       }}>
-        <i className="fab fa-linkedin"></i>
-    </a>
-    <a href="https://www.youtube.com/@mudasirmohammedibrahim1026" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       title="YouTube"
-       className="footer-social-icon"
-       style={{
-           color: 'var(--nav-text)',
-           fontSize: '1.4rem',
-           transition: 'all 0.3s ease'
-       }}>
-        <i className="fab fa-youtube"></i>
-    </a>
+{/* RIGHT COLUMN: Contact and Additional Links */}
+<div style={{ flex: '1', minWidth: '250px' }}>
+    <h3 style={{
+        color: 'var(--nav-text)',
+        fontSize: '1.1rem',
+        fontWeight: '600',
+        marginBottom: '25px',
+        textTransform: 'uppercase',
+        letterSpacing: '1px'
+    }}>
+        Contact & Links
+    </h3>
+    
+    <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '15px'
+    }}>
+        <a href="#"
+           onClick={(e) => {
+               e.preventDefault();
+               setShowContactForm(true);
+               setActiveSection('about');
+               setTimeout(() => {
+                   const formElement = document.getElementById('contact-form');
+                   if (formElement) {
+                       formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                   }
+               }, 100);
+           }}
+           style={{
+               color: 'var(--nav-text)',
+               textDecoration: 'none',
+               fontSize: '0.95rem',
+               padding: '12px 20px',
+               backgroundColor: 'rgba(255, 255, 255, 0.1)',
+               borderRadius: '8px',
+               transition: 'all 0.3s ease',
+               display: 'flex',
+               alignItems: 'center',
+               gap: '10px'
+           }}
+           onMouseOver={(e) => {
+               e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+               e.target.style.color = 'var(--nav-hover)';
+           }}
+           onMouseOut={(e) => {
+               e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+               e.target.style.color = 'var(--nav-text)';
+           }}>
+            <i className="fas fa-envelope"></i>
+            Contact Form
+        </a>
+        
+        <a href="https://1drv.ms/f/c/3ce355b70d76f4f7/EvOg3kpoGi1JlFokbzBzEIgBDYXASGIRoLVHrXceFZDrJg?e=tF8arF"
+           target="_blank"
+           rel="noopener noreferrer"
+           style={{
+               color: 'var(--nav-text)',
+               textDecoration: 'none',
+               fontSize: '0.95rem',
+               padding: '12px 20px',
+               backgroundColor: 'rgba(255, 255, 255, 0.1)',
+               borderRadius: '8px',
+               transition: 'all 0.3s ease',
+               display: 'flex',
+               alignItems: 'center',
+               gap: '10px'
+           }}
+           onMouseOver={(e) => {
+               e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+               e.target.style.color = 'var(--nav-hover)';
+           }}
+           onMouseOut={(e) => {
+               e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+               e.target.style.color = 'var(--nav-text)';
+           }}>
+            <i className="fas fa-file-download"></i>
+            Download CV
+        </a>
+        
+        <div style={{
+            padding: '15px',
+            backgroundColor: 'rgba(0, 0, 0, 0.2)',
+            borderRadius: '8px',
+            marginTop: '10px'
+        }}>
+            <div style={{
+                color: 'var(--nav-text)',
+                fontSize: '0.85rem',
+                opacity: 0.8,
+                lineHeight: '1.5'
+            }}>
+                <div style={{ marginBottom: '5px' }}>
+                    <i className="fas fa-map-marker-alt" style={{ marginRight: '8px' }}></i>
+                    <a 
+                        href="https://www.google.com/maps/place/Tamale,+Northern+Region,+Ghana"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                            color: 'var(--nav-text)',
+                            textDecoration: 'none',
+                            transition: 'color 0.3s ease'
+                        }}
+                        onMouseOver={(e) => {
+                            e.target.style.color = 'var(--nav-hover)';
+                            e.target.style.textDecoration = 'underline';
+                        }}
+                        onMouseOut={(e) => {
+                            e.target.style.color = 'var(--nav-text)';
+                            e.target.style.textDecoration = 'none';
+                        }}
+                    >
+                        Tamale, Northern Region, Ghana
+                    </a>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
- 
+</div>
+    
+    {/* Bottom Section: Copyright and Back to Top */}
+    <div style={{
+        maxWidth: '1200px',
+        margin: '50px auto 0',
+        paddingTop: '30px',
+        borderTop: '1px solid var(--nav-border)',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: '20px'
+    }}>
         {/* Copyright */}
         <div style={{
-            color: 'var(--nav-text)',
+            color: 'rgba(255, 255, 255, 0.7)',
             fontSize: '0.9rem',
-            paddingTop: '20px',
-            borderTop: '1px solid var(--nav-border)',
-            opacity: 0.8,
             lineHeight: '1.5'
         }}>
-            <div style={{marginBottom: '5px'}}>
-                Copyright © 2025-{new Date().getFullYear()} by Mudasir Mohammed Ibrahim 
+            <div style={{ marginBottom: '5px' }}>
+                Copyright © 2025-{new Date().getFullYear()} Mudasir Mohammed Ibrahim. All Rights Reserved.
             </div>
-            
-        <div style={{
-    fontSize: '0.8rem',
-    opacity: 0.6,
-    fontStyle: 'italic'
-}}>
-    <span style={{textDecoration: 'none'}}>Website UI inspired by</span>
-    <a 
-        href="https://profandyfield.com/" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        style={{
-            color: 'var(--nav-text)',
-            textDecoration: 'none',
-            marginLeft: '4px',
-            transition: 'color 0.2s ease',
-            fontStyle: 'italic' 
-        }}
-        onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
-        onMouseOut={(e) => e.target.style.color = 'var(--nav-text)'}
-    >
-        Prof Andy Field
-    </a>
-</div>
-                </div>
+            <div style={{
+                fontSize: '0.8rem',
+                opacity: 0.6,
+                fontStyle: 'italic'
+            }}>
+                <span style={{ textDecoration: 'none' }}>Website UI inspired by</span>
+                <a href="https://profandyfield.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   style={{
+                       color: 'rgba(255, 255, 255, 0.7)',
+                       textDecoration: 'none',
+                       marginLeft: '4px',
+                       transition: 'color 0.2s ease',
+                       fontStyle: 'italic'
+                   }}
+                   onMouseOver={(e) => e.target.style.color = 'var(--nav-hover)'}
+                   onMouseOut={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.7)'}>
+                    Prof Andy Field
+                </a>
+            </div>
+        </div>
         
-        {/* Optional: Back to Top */}
-        <div style={{ marginTop: '20px' }}>
-            <button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        {/* Back to Top Button */}
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 style={{
                     background: 'rgba(255, 255, 255, 0.1)',
-                    border: `1px solid var(--nav-border)`,
+                    border: '1px solid var(--nav-border)',
                     color: 'var(--nav-text)',
-                    padding: '8px 20px',
-                    borderRadius: '20px',
-                    fontSize: '0.85rem',
+                    padding: '10px 25px',
+                    borderRadius: '25px',
+                    fontSize: '0.9rem',
                     cursor: 'pointer',
-                    transition: 'all 0.3s ease'
+                    transition: 'all 0.3s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px'
                 }}
                 onMouseOver={(e) => {
-                    e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
-                    e.target.style.color = 'var(--nav-hover)';
+                    e.target.style.backgroundColor = 'var(--nav-hover)';
                     e.target.style.borderColor = 'var(--nav-hover)';
+                    e.target.style.transform = 'translateY(-2px)';
                 }}
                 onMouseOut={(e) => {
                     e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-                    e.target.style.color = 'var(--nav-text)';
                     e.target.style.borderColor = 'var(--nav-border)';
-                }}
-            >
-                <i className="fas fa-arrow-up" style={{ marginRight: '5px' }}></i>
-                Back to Top
-            </button>
-        </div>
+                    e.target.style.transform = 'translateY(0)';
+                }}>
+            <i className="fas fa-arrow-up"></i>
+            Back to Top
+        </button>
     </div>
 </footer>
 
