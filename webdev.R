@@ -5,57 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <title>Mudasir Mohammed Ibrahim - Home</title>
     
-    <!-- Primary Meta Tags -->
+    
     <meta name="title" content="Mudasir Mohammed Ibrahim">
-    <meta name="description" content="Official Portfolio Website of Mudasir Mohammed Ibrahim – Registered Nurse and Health Researcher in Tamale, Ghana">
+    <meta name="description" content="I am a Registered Nurse and health researcher with research interests in nursing education, cancer epidemiology, and public health.">
     <meta name="theme-color" content="#1a56db">
     
-    <!-- Add these meta tags for cache control -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     
-<!-- Logo for Google Search Results -->
 <link rel="icon" href="https://raw.githubusercontent.com/mudassiribrahim12/me/main/favicon-32x32.png" type="image/png">
 <link itemprop="image" href="https://raw.githubusercontent.com/mudassiribrahim12/me/main/favicon-32x32.png">
 <meta property="og:logo" content="https://raw.githubusercontent.com/mudassiribrahim12/me/main/favicon-32x32.png">
 <meta name="twitter:logo" content="https://raw.githubusercontent.com/mudassiribrahim12/me/main/favicon-32x32.png">
 
-<!-- Favicon for browsers -->
 <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/mudassiribrahim12/me/main/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/mudassiribrahim12/me/main/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/mudassiribrahim12/me/main/favicon-16x16.png">
 <link rel="manifest" href="https://raw.githubusercontent.com/mudassiribrahim12/me/main/site.webmanifest">
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mudasiribrahim.com/">
-    <meta property="og:title" content="Mudasir Mohammed Ibrahim - Official Website">
-    <meta property="og:description" content="Official Portfolio Website of Mudasir Mohammed Ibrahim – Registered Nurse and Health Researcher in Tamale, Ghana">
-    <meta property="og:image" content="https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg">
+    <meta property="og:title" content="Mudasir Mohammed Ibrahim">
+    <meta property="og:description" content="I am a Registered Nurse and health researcher with research interests in nursing education, cancer epidemiology, and public health.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/mudassiribrahim12/me/main/mysecondprofile.jpg">
     
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://mudasiribrahim.com/">
-    <meta property="twitter:title" content="Mudasir Mohammed Ibrahim - Official Website">
-    <meta property="twitter:description" content="Official Portfolio Website of Mudasir Mohammed Ibrahim – Registered Nurse and Health Researcher in Tamale, Ghana">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg">
+    <meta property="twitter:title" content="Mudasir Mohammed Ibrahim">
+    <meta property="twitter:description" content="I am a Registered Nurse and health researcher with research interests in nursing education, cancer epidemiology, and public health.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/mudassiribrahim12/me/main/mysecondprofile.jpg">
     
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://mudasiribrahim.com/">
     
-    <!-- Additional SEO Meta Tags -->
     <meta name="author" content="Mudasir Mohammed Ibrahim">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     
-    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/mudassiribrahim12/me/main/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/mudassiribrahim12/me/main/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/mudassiribrahim12/me/main/favicon-16x16.png">
     <link rel="manifest" href="https://raw.githubusercontent.com/mudassiribrahim12/me/main/site.webmanifest">
     
-    <!-- Organization/Person Schema for Google -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -63,10 +54,21 @@
         "@id": "https://mudasiribrahim.com/#person",
         "name": "Mudasir Mohammed Ibrahim",
         "url": "https://mudasiribrahim.com/",
-        "image": "https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg",
-        "logo": "https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg",
-        "description": "Registered Nurse and Health Researcher in Tamale, Ghana",
-        "jobTitle": "Registered Nurse",
+        "image": "https://raw.githubusercontent.com/mudassiribrahim12/me/main/mysecondprofile.jpg",
+        "logo": "https://raw.githubusercontent.com/mudassiribrahim12/me/main/mysecondprofile.jpg",
+        "description": "I am a Registered Nurse and health researcher with research interests in nursing education, cancer epidemiology, and public health.",
+        "jobTitle": "Health Researcher and Registered Nurse",
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Health Researcher",
+            "description": "I am a Registered Nurse and health researcher with research interests in nursing education, cancer epidemiology, and public health."
+        },
+        "knowsAbout": [
+            "Healthcare Research",
+            "Statistical Analysis",
+            "R Shiny Applications"
+            
+        ],
         "worksFor": {
             "@type": "Organization",
             "name": "Tamale Teaching Hospital",
@@ -88,15 +90,14 @@
     }
     </script>
     
-    <!-- Website Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "@id": "https://mudasiribrahim.com/#website",
         "url": "https://mudasiribrahim.com/",
-        "name": "Mudasir Mohammed Ibrahim - Official Website",
-        "description": "Official Portfolio Website of Mudasir Mohammed Ibrahim – Registered Nurse in Tamale, Ghana",
+        "name": "Mudasir Mohammed Ibrahim",
+        "description": "I am a Registered Nurse and health researcher with research interests in nursing education, cancer epidemiology, and public health.",
         "publisher": {
             "@id": "https://mudasiribrahim.com/#person"
         },
@@ -104,14 +105,13 @@
     }
     </script>
     
-    <!-- LocalBusiness Schema (helps with location) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "@id": "https://mudasiribrahim.com/#business",
         "name": "Mudasir Mohammed Ibrahim",
-        "image": "https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg",
+        "image": "https://raw.githubusercontent.com/mudassiribrahim12/me/main/mysecondprofile.jpg",
         "url": "https://mudasiribrahim.com/",
         "telephone": "",
         "address": {
@@ -141,10 +141,8 @@
     }
     </script>
     
-<!-- Important for Google to recognize your site -->
 <meta name="google-site-verification" content="PGq_oDNzKGPvdcDK-DzNc2VYrCckkJxWLyiqq7OdHq0"/>
     
-    <!-- External Scripts and Styles -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -239,6 +237,25 @@ li {
     line-height: 1.6;
     color: var(--text-color);
     font-weight: 400;
+}
+
+/* Fix for profile image double frame */
+.profile-image-container {
+    border: 4px solid var(--border-color) !important;
+    box-shadow: none !important;
+}
+
+.profile-image-container > div {
+    border-radius: 4px; /* Slightly smaller to fit inside the container */
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-image {
+    display: block;
+    border: none !important;
+    outline: none !important;
 }
 
 /* ========== GALLERY SECTION STYLES ========== */
@@ -1482,7 +1499,8 @@ body.dark-mode .profile-social-icon[title="GitHub"]:hover {
         /* Footer Styles - WHITE BACKGROUND */
         .footer {
             width: 100%;
-            background-color: white; /* WHITE background */
+           background-color: #000000 !important; 
+    color: white !important;
             border-top: 1px solid var(--border-color);
             padding: 20px 0;
             margin-top: auto;
@@ -2897,6 +2915,67 @@ body.dark-mode .design-attribution a {
 body.dark-mode .design-attribution a:hover {
     color: #4dabf7;
     border-bottom-color: #4dabf7;
+}
+
+/* Interactive Profile Image Styles */
+.profile-image-container {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 4px solid var(--border-color);
+    background-color: var(--light-bg);
+    transition: all 0.3s ease;
+}
+
+.profile-image-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+/* Default image */
+.profile-image.default {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Hover image */
+.profile-image.hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+    object-fit: cover;
+}
+
+/* Show hover image on hover */
+.profile-image-container:hover .profile-image.default {
+    opacity: 0;
+}
+
+.profile-image-container:hover .profile-image.hover {
+    opacity: 1;
+}
+
+/* Add a subtle zoom effect on hover */
+.profile-image-container:hover .profile-image.hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
         /* About Section Specific Styles */
@@ -5262,6 +5341,7 @@ const fetchAppViews = async () => {
         // Simulated view data - in production, you'd fetch from your API or Shiny App Store
         // This is a mockup showing how it would work
         const mockViews = {
+            "FactorGuard": 0,
             "CalcuStats": 16660,
             "CATrend Analyzer": 7582,
             "ROC Curve Builder": 15996,
@@ -5888,44 +5968,243 @@ const loadBlogPostsWithFallback = async () => {
    const renderAbout = () => (
     <div className="section">
 <div className="content-wrapper">
-    <div className="profile-section">
-        <img
-            src="https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg"
-            alt="Mudasir Mohammed Ibrahim"
-            className="profile-image"
-        />
-
-        <div className="contact-info">
-            <h2 className="section-title">Mudasir Mohammed Ibrahim</h2>
-
-            <div className="contact-item">
-                <i className="fas fa-building contact-icon"></i>
-                <span>Department of Internal Medicine (M3), Tamale Teaching Hospital</span>
-            </div>
-            <div className="profile-social-icons" style={{marginTop: '25px', justifyContent: 'flex-start'}}>
-    <a href="https://orcid.org/0000-0002-9049-8222" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="ORCID">
-        <i className="fab fa-orcid"></i>
-    </a>
-    <a href="https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="Google Scholar">
-        <i className="fas fa-graduation-cap"></i>
-    </a>
-    <a href="https://github.com/mudassiribrahim30" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="GitHub">
-        <i className="fab fa-github"></i>
-    </a>
-    <a href="https://linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="LinkedIn">
-        <i className="fab fa-linkedin"></i>
-    </a>
-</div>
-</div>
+  <div className="profile-section">
+<div className="profile-section">
+    {/* Interactive Profile Image */}
+    <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+        <div className="profile-image-container" 
+             style={{ 
+                 position: 'relative', 
+                 width: '250px', 
+                 height: '300px',
+                 margin: '0 auto 20px',
+                 borderRadius: '8px',
+                 overflow: 'hidden',
+                 cursor: 'pointer',
+                 border: '4px solid var(--border-color)',
+                 backgroundColor: 'var(--light-bg)'
+             }}
+             onMouseEnter={() => {
+                 // This ensures proper hover state
+                 const container = document.querySelector('.profile-image-container');
+                 if (container) {
+                     const defaultImg = container.querySelector('.profile-image.default');
+                     const hoverImg = container.querySelector('.profile-image.hover');
+                     
+                     if (defaultImg) defaultImg.style.opacity = '0';
+                     if (hoverImg) hoverImg.style.opacity = '1';
+                 }
+             }}
+             onMouseLeave={() => {
+                 const container = document.querySelector('.profile-image-container');
+                 if (container) {
+                     const defaultImg = container.querySelector('.profile-image.default');
+                     const hoverImg = container.querySelector('.profile-image.hover');
+                     
+                     if (defaultImg) defaultImg.style.opacity = '1';
+                     if (hoverImg) hoverImg.style.opacity = '0';
+                 }
+             }}>
+            
+            {/* Single container for both images */}
+            <div style={{
+                position: 'relative',
+                width: '100%',
+                height: '100%',
+                overflow: 'hidden'
+            }}>
+                {/* Default Image */}
+                <img
+                    src="https://raw.githubusercontent.com/mudassiribrahim12/me/main/mysecondprofile.jpg"
+                    alt="Mudasir Mohammed Ibrahim - Default"
+                    className="profile-image default"
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        zIndex: 1,
+                        opacity: 1,
+                        transition: 'opacity 0.3s ease'
+                    }}
+                />
+                
+                {/* Hover Image */}
+                <img
+                    src="https://raw.githubusercontent.com/mudassiribrahim12/me/main/my%20picture.jpg"
+                    alt="Mudasir Mohammed Ibrahim - Hover"
+                    className="profile-image hover"
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        opacity: 0, // Start hidden
+                        transition: 'opacity 0.3s ease',
+                        zIndex: 2
+                    }}
+                />
             </div>
             
+            {/* Hover tooltip */}
+            <div style={{
+                position: 'absolute',
+                bottom: '10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                color: 'white',
+                padding: '5px 15px',
+                borderRadius: '15px',
+                fontSize: '0.8rem',
+                opacity: 0,
+                transition: 'opacity 0.3s ease',
+                pointerEvents: 'none',
+                whiteSpace: 'nowrap',
+                zIndex: 3
+            }}
+            className="hover-tooltip">
+                Hover to see different photo
+            </div>
+        </div>
+        
+        {/* Main name */}
+        <div className="profile-name" style={{ 
+            fontSize: '1.6rem', 
+            fontWeight: '700', 
+            color: 'var(--header-color)', 
+            marginBottom: '5px',
+            fontFamily: "'Montserrat', sans-serif"
+        }}>
+            Mudasir Mohammed Ibrahim
+        </div>
+        
+        {/* Alternative name in smaller letters */}
+        <div style={{
+            fontSize: '1rem',
+            color: 'var(--position-color)',
+            fontWeight: 400,
+            fontStyle: 'italic',
+            fontFamily: "'Open Sans', sans-serif",
+            marginBottom: '10px'
+        }}>
+            Mohammed Mudasir Ibrahim
+        </div>
+        
+            {/* Contact info section */}
+    <div className="contact-info">
+        {/* Rest of your contact info code remains the same */}
+        <div className="contact-item">
+            <i className="fas fa-building contact-icon"></i>
+            <span>Department of Internal Medicine (M3), Tamale Teaching Hospital</span>
+        </div>
+        <div className="profile-social-icons" style={{marginTop: '25px', justifyContent: 'flex-start'}}>
+            <a href="https://orcid.org/0000-0002-9049-8222" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="ORCID">
+                <i className="fab fa-orcid"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="Google Scholar">
+                <i className="fas fa-graduation-cap"></i>
+            </a>
+            <a href="https://github.com/mudassiribrahim30" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="GitHub">
+                <i className="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0" target="_blank" rel="noopener noreferrer" className="profile-social-icon" title="LinkedIn">
+                <i className="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+        
+        {/* Contact Button - Professional Style */}
+        <div style={{
+            marginTop: '25px',
+            marginBottom: '30px',
+            padding: '15px 20px',
+            backgroundColor: 'var(--card-bg)',
+            border: '1px solid var(--border-color)',
+            borderRadius: '8px',
+            maxWidth: '400px',
+            marginLeft: 'auto',
+            marginRight: 'auto'
+        }}>
+            <p style={{
+                fontSize: '0.9rem',
+                color: 'var(--text-color)',
+                marginBottom: '15px',
+                textAlign: 'center',
+                lineHeight: '1.5'
+            }}>
+                For any research collaboration, job opportunity, or consultation:
+            </p>
+            
+            <button 
+                onClick={() => {
+                    setShowContactForm(true);
+                    // If not already on About page, switch to it
+                    if (activeSection !== 'about') {
+                        setActiveSection('about');
+                    }
+                    // Scroll to form after a short delay
+                    setTimeout(() => {
+                        const formElement = document.getElementById('contact-form');
+                        if (formElement) {
+                            formElement.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'start' 
+                            });
+                        }
+                    }, 100);
+                }}
+                style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '10px',
+                    backgroundColor: '#3498db',
+                    color: 'white',
+                    padding: '10px 25px',
+                    border: 'none',
+                    borderRadius: '25px',
+                    fontSize: '0.95rem',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    width: '100%',
+                    margin: '0 auto'
+                }}
+                onMouseOver={(e) => {
+                    e.target.style.backgroundColor = '#2980b9';
+                    e.target.style.transform = 'translateY(-2px)';
+                }}
+                onMouseOut={(e) => {
+                    e.target.style.backgroundColor = '#3498db';
+                    e.target.style.transform = 'translateY(0)';
+                }}
+            >
+                <i className="fas fa-envelope" style={{ fontSize: '0.9rem' }}></i>
+                Contact Me
+            </button>
+        </div>
+    </div>
+
+  
             <div className="bio-section">
                 <div className="bio-text">
-                    <p>Hello and welcome! I’m Mohammed Mudasir Ibrahim, professionally, that’s Mudasir Mohammed Ibrahim, but “Mudasir Ibrahim” works just fine. Here, you’ll find my research in health and a collection of interactive Shiny web tools I’ve built to make statistical analyses in R less painful and more fun. Feel free to browse, explore, or email me if you have questions about my apps, anything, or just want to nerd out over data.</p>
+                    <p>Hello and welcome! I’m Mohammed Mudasir Ibrahim—professionally, Mudasir Mohammed Ibrahim, but “Mudasir Ibrahim” works just fine. Here, you’ll find my research in health and a collection of interactive Shiny web tools I’ve built to make statistical analyses in R less painful and more fun. Feel free to browse, explore, or email me if you have questions about my apps, research, or anything else, or if you just want to nerd out over data.</p>
                     
-                      <p>I am the original author of <a href="https://newappstesting.shinyapps.io/Data2SPSS/" target="_blank" rel="noopener noreferrer">Data2SPSS</a>, <a href="https://mudassiribrahim2025.shinyapps.io/CalcuStats/" target="_blank" rel="noopener noreferrer">CalcuStats</a>, <a href="https://newappstesting.shinyapps.io/CATrendAnalyzer/" target="_blank" rel="noopener noreferrer">CATrend Analyzer</a>, and <a href="https://mudassiribrahim2025.shinyapps.io/Robustregression/" target="_blank" rel="noopener noreferrer">Robust Regressor</a>, among others (all available in the Software tab). I built these using Shiny because I’ve seen firsthand how messy healthcare datasets can be and wanted practical, open-access tools that save time, reduce errors, and maybe even make statistics a little less intimidating. If one of my apps has brightened your day or your workflow, you can <a href="https://buymeacoffee.com/mudasiribrahim30" target="_blank" rel="noopener noreferrer">buy me a coffee</a> (It fuels more coding, not just caffeine addiction. Lol).</p>
+                                          
+                      <p>By day, I’m a Registered Nurse at <a href="https://tth.gov.gh" target="_blank" rel="noopener noreferrer">Tamale Teaching Hospital (TTH)</a>. I’ve published numerous research on nursing education, workforce issues, patient safety, cancer epidemiology, and maternal and child health. Along the way, I’ve earned academic reviewer certificates and contributed to the broader scientific community. I enjoy turning real-world clinical challenges into actionable research and practical tools.</p>
                     
-<p>By day, I’m a Registered General Nurse at <a href="https://tth.gov.gh" target="_blank" rel="noopener noreferrer">Tamale Teaching Hospital (TTH)</a>. I’ve published research on nursing education, workforce issues, patient safety, cancer epidemiology, and maternal-child health. Along the way, I’ve earned academic reviewer certificates and contributed to the broader scientific community. I enjoy turning real-world clinical challenges into actionable research and usable tools.</p>
+<p>One highlight of my work is leading the development of the <a href="https://jer-nursing.org/jvi.aspx?pdir=jern&plng=eng&un=JERN-70745&look4=" target="_blank" rel="noopener noreferrer">Academic Help Seeking Behavior Questionnaire for Nursing Students (AHSBQ-NS)</a>. This instrument was adapted from the Computer Science Help-Seeking Scales (CSHS) by <a href="https://psycnet.apa.org/doi/10.1177/0013164403258447" target="_blank" rel="noopener noreferrer">Pajares et al. (2004)</a> to address a clear gap in Ghanaian nursing education research, providing a context-appropriate way to assess how nursing students seek academic support.
+</p>
+                    
+                      <p>I'm also the original author of <a href="https://newappstesting.shinyapps.io/Data2SPSS/" target="_blank" rel="noopener noreferrer">Data2SPSS</a>, <a href="https://mudassiribrahim2025.shinyapps.io/CalcuStats/" target="_blank" rel="noopener noreferrer">CalcuStats</a>, <a href="https://newappstesting.shinyapps.io/CATrendAnalyzer/" target="_blank" rel="noopener noreferrer">CATrend Analyzer</a>, and <a href="https://mudassiribrahim2025.shinyapps.io/Robustregression/" target="_blank" rel="noopener noreferrer">Robust Regressor</a>, 
+                      and several other tools (all available under the Software tab). I built these applications using Shiny after noticing the lack of accessible tools and the complexity of existing statistical procedures. My goal is simple: to provide open-access, user-friendly tools that save time, reduce errors, and make statistics less intimidating for researchers using R, regardless of their coding experience. If one of my apps has improved your workflow or brightened your day, you’re welcome to <a href="https://buymeacoffee.com/mudasiribrahim30" target="_blank" rel="noopener noreferrer">buy me a coffee</a> ☕—it fuels more coding (not just caffeine addiction… lol).</p>
 
                 </div>
                 
@@ -5949,7 +6228,7 @@ const loadBlogPostsWithFallback = async () => {
                 <ul className="education-list">
                     <li className="education-item">
                         <div className="item-title">Bachelor of Science in Nursing</div>
-                        <div className="item-subtitle">University of Cape Coast (UCC) (Distance; NMTC, Tamale Campus)</div>
+                        <div className="item-subtitle">University of Cape Coast (UCC)</div>
                         <div className="item-period">2022 - 2024</div>
                     </li>
                     <li className="education-item">
@@ -5982,38 +6261,49 @@ const loadBlogPostsWithFallback = async () => {
                         <div className="item-description">Secretary</div>
                     </li>
                 </ul>
-                
-                <h2 className="section-title">Current Advisors</h2>
-                <ul className="education-list">
-                    <li className="education-item">
-                        <div className="item-title">(1) Abubakari Wuni</div>
-                        <div className="item-description">
-                            <a href="https://www.researchgate.net/profile/Abubakari-Wuni" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               style={{color: 'var(--nav-hover)', textDecoration: 'none'}}>
-                                View Profile
-                            </a>
-                        </div>
-                    </li>
-                    <li className="education-item">
-                        <div className="item-title">(2) Iddrisu Mohammed Sisala</div>
-                        <div className="item-description">
-                            <a href="https://www.researchgate.net/profile/Iddrisu-Sisala" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               style={{color: 'var(--nav-hover)', textDecoration: 'none'}}>
-                                View Profile
-                            </a>
-                        </div>
-                    </li>
-                </ul>
+
+<h2 className="section-title">Current Advisors</h2>
+<div className="education-list" style={{lineHeight: '1.3', marginBottom: '2.5rem'}}>
+    <div style={{fontSize: '1rem', color: 'var(--text-color)', marginBottom: '10px'}}>Abubakari Wuni [<a href="https://www.researchgate.net/profile/Abubakari-Wuni" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           style={{color: 'var(--nav-hover)', textDecoration: 'none'}}>webpage</a>]</div>
+    <div style={{fontSize: '1rem', color: 'var(--text-color)', marginBottom: '10px'}}>Iddrisu Mohammed Sisala [<a href="https://www.researchgate.net/profile/Iddrisu-Sisala" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           style={{color: 'var(--nav-hover)', textDecoration: 'none'}}>webpage</a>]</div>
+</div>
+
+<h3 style={{fontSize: '1.45rem', fontWeight: '600', color: 'var(--header-color)', margin: '20px 0 15px', borderBottom: '2px solid var(--border-color)', paddingBottom: '8px'}}>Current Mentees (Research & Biostats)</h3>
+<div className="education-list" style={{lineHeight: '1.3', fontSize: '1rem'}}>
+    <div style={{fontSize: '1rem', color: 'var(--text-color)', marginBottom: '10px'}}>Abdul Latif Abdul Rahaman [<a 
+            href="https://www.researchgate.net/profile/Abdul-Rahaman-7"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Abdul Latif Abdul Rahaman's ResearchGate profile"
+            style={{color: 'var(--nav-hover)', textDecoration: 'none'}}
+        >webpage</a>]</div>
+    <div style={{fontSize: '1rem', color: 'var(--text-color)', marginBottom: '10px'}}>Edna Die [<a 
+            href="https://www.linkedin.com/in/edna-die-51a0471bb/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Edna Die's LinkedIn profile"
+            style={{color: 'var(--nav-hover)', textDecoration: 'none'}}
+        >webpage</a>]</div>
+    <div style={{fontSize: '1rem', color: 'var(--text-color)', marginBottom: '10px'}}>Abdul-Malik Seidu [<a 
+            href="https://www.researchgate.net/profile/Abdul-Malik-Seidu-2"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View Abdul-Malik Seidu's ResearchGate profile"
+            style={{color: 'var(--nav-hover)', textDecoration: 'none'}}
+        >webpage</a>]</div>
+</div>
                 
                 <h2 className="section-title">Awards and Recognition</h2>
                 <ul className="education-list">
                     <li className="education-item">
                         <div className="item-title">Academic Reviewer Recognition</div>
-                        <div className="item-subtitle">Multiple Scientific Journals</div>
+                        <div className="item-subtitle">Multiple scientific journals (Springer Nature, Elsevier, and SAGE)</div>
                         <div className="item-period">2025 - Present</div>
                         <div className="item-description">
                             <a href="https://1drv.ms/f/c/3ce355b70d76f4f7/Ejkh6TgFPhtNkgsfwRv6_OgBpu9S58AyaqHR_AMPJsR4Rg?e=jU8KMP" 
@@ -6201,35 +6491,36 @@ const loadBlogPostsWithFallback = async () => {
     // Publication data organized by year
     const publicationsByYear = {
         "2026": [
-            {id: 1, content: `<strong>Ibrahim, M. M. </strong>, Monne, R., Tawiah, B. C., Adam, H., Abukari, M. S., Salifu, R., Sisala, I. M., & Wuni, A. (2026). Validity and Reliability Study of a Scale to Measure Academic Help-seeking Behaviors Among Nursing Students in Ghana.<em> Journal of Education and Research in Nursing</em>, 23(1), 1-10. doi: <a href="https://doi.org/10.14744/jern.2025.70745" target="_blank" rel="noopener noreferrer" className="doi-link">10.14744/jern.2025.70745</a>`},
-                        {id: 2, content: `Iddrisu, M., Sisala, I. M., <strong>Ibrahim, M. M.</strong>, & Wuni, A. (2026). Predictive analysis of the relationship between nurses’ attitudes toward patient safety and missed nursing care. <em>BMC Nursing</em>, 25(61), 1-12. doi: <a href="https://doi.org/10.1186/s12912-025-04224-0" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12912-025-04224-0</a>`},
+                      {id: 1, content: `Sisala, I. M., <strong>Ibrahim, M. M. </strong>, Abdul Rahaman, A., Mustapha, F. A., Mohammed, A., & Wuni, A. (2026). Oxygen therapy: Knowledge, attitude, practices, and barriers among nurses and midwives at Tamale Teaching Hospital.<em> International Journal of Africa Nursing Sciences</em>, 24:100998. doi: <a href="https://doi.org/10.1016/j.ijans.2026.100998" target="_blank" rel="noopener noreferrer" className="doi-link">10.1016/j.ijans.2026.100998</a>`},
+            {id: 2, content: `<strong>Ibrahim, M. M. </strong>, Monne, R., Tawiah, B. C., Adam, H., Abukari, M. S., Salifu, R., Sisala, I. M., & Wuni, A. (2026). Validity and Reliability Study of a Scale to Measure Academic Help-seeking Behaviors Among Nursing Students in Ghana.<em> Journal of Education and Research in Nursing</em>, 23(1), 1-10. doi: <a href="https://dx.doi.org/10.14744/jern.2025.70745" target="_blank" rel="noopener noreferrer" className="doi-link">10.14744/jern.2025.70745</a>`},
+                        {id: 3, content: `Iddrisu, M., Sisala, I. M., <strong>Ibrahim, M. M.</strong>, & Wuni, A. (2026). Predictive analysis of the relationship between nurses’ attitudes toward patient safety and missed nursing care. <em>BMC Nursing</em>, 25(61), 1-12. doi: <a href="https://doi.org/10.1186/s12912-025-04224-0" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12912-025-04224-0</a>`},
         ],
         
         "2025": [
-            {id: 3, content: `Wuni, A., <strong>Ibrahim, M. M.</strong>, Tonlaar, P. S., Sisala, I. M., Awal, I., Nyarko, B. A., Abdulai, A., Mohammed, S., & Salisu, W. J. (2025). Patterns and temporal trends in childhood cancer incidence in northern Ghana: evidence from medical records, 2016 to 2023. <em>BMC Pediatrics</em>, 25(745). doi: <a href="https://doi.org/10.1186/s12887-025-06141-2" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12887-025-06141-2</a>`},
-            {id: 4, content: `<strong>Ibrahim, M. M.</strong>, Abdul-Rahaman, F., Sayibu, M. S., Alhassan, D. N., Awudu, R. T., Mohammed, I. S., Wuni, A., & Abdulai, A. (2025). Assessing the impact of nurses' patient safety competencies on key performance indicators (KPIs) for patient safety outcomes at Tamale Teaching Hospital: The mediating role of leadership and barriers to competency development. <em>BMC Health Services Research</em>, 25(1176), 1-13. doi: <a href="https://doi.org/10.1186/s12913-025-13384-3" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12913-025-13384-3</a>`},
-            {id: 5, content: `Wuni, A., Mohammed, I. S., Salisu, W. J., Abdul-Rahman, R., Seidu, A., Abdul Rahaman, A., Abdulai, A., Zakaria, Y., Buasilenu, H., Nyarko, B. A., & <strong>Ibrahim, M. M.</strong> (2025). Fever in Children Under 5 years: Caregivers’ Knowledge and Home Management Practices in the Northern Region of Ghana – A Multi-Facility Study. <em>Sage Open Pediatrics</em>, 12, 1-17. doi: <a href="https://doi.org/10.1177/30502225251364932" target="_blank" rel="noopener noreferrer" className="doi-link">10.1177/30502225251364932</a>`},
-            {id: 6, content: `Monne, R., <strong>Ibrahim, M. M.</strong>, Tawiah, B. C., Adam, H., Abukari, M. S., Salifu, R., & Wuni, A. (2025). Evaluating Academic Help-Seeking Behavior of Nursing and Midwifery Students in a Nursing Training College. <em>Journal of Education and Research in Nursing</em>, 22(1), 39-46. doi: <a href="https://doi.org/10.14744/jern.2025.98150" target="_blank" rel="noopener noreferrer" className="doi-link">10.14744/jern.2025.98150</a>`},
-            {id: 7, content: `Abdulai, A., Mohammed, I. S., Ibrahim, I., Kyiu, C., Fatimata, Y., <strong>Ibrahim, M. M.</strong>, & Wuni, A. (2025). Knowledge, attitudes, and barriers to cervical cancer screening utilization among female healthcare professionals in the Tamale Metropolis. <em>Women's Health</em>, 21. doi: <a href="https://doi.org/10.1177/17455057251401319" target="_blank" rel="noopener noreferrer" className="doi-link">10.1177/17455057251401319</a>`},
+            {id: 4, content: `Wuni, A., <strong>Ibrahim, M. M.</strong>, Tonlaar, P. S., Sisala, I. M., Awal, I., Nyarko, B. A., Abdulai, A., Mohammed, S., & Salisu, W. J. (2025). Patterns and temporal trends in childhood cancer incidence in northern Ghana: evidence from medical records, 2016 to 2023. <em>BMC Pediatrics</em>, 25(745). doi: <a href="https://doi.org/10.1186/s12887-025-06141-2" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12887-025-06141-2</a>`},
+            {id: 5, content: `<strong>Ibrahim, M. M.</strong>, Abdul-Rahaman, F., Sayibu, M. S., Alhassan, D. N., Awudu, R. T., Mohammed, I. S., Wuni, A., & Abdulai, A. (2025). Assessing the impact of nurses' patient safety competencies on key performance indicators (KPIs) for patient safety outcomes at Tamale Teaching Hospital: The mediating role of leadership and barriers to competency development. <em>BMC Health Services Research</em>, 25(1176), 1-13. doi: <a href="https://doi.org/10.1186/s12913-025-13384-3" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12913-025-13384-3</a>`},
+            {id: 6, content: `Wuni, A., Mohammed, I. S., Salisu, W. J., Abdul-Rahman, R., Seidu, A., Abdul Rahaman, A., Abdulai, A., Zakaria, Y., Buasilenu, H., Nyarko, B. A., & <strong>Ibrahim, M. M.</strong> (2025). Fever in Children Under 5 years: Caregivers’ Knowledge and Home Management Practices in the Northern Region of Ghana – A Multi-Facility Study. <em>Sage Open Pediatrics</em>, 12, 1-17. doi: <a href="https://doi.org/10.1177/30502225251364932" target="_blank" rel="noopener noreferrer" className="doi-link">10.1177/30502225251364932</a>`},
+            {id: 7, content: `Monne, R., <strong>Ibrahim, M. M.</strong>, Tawiah, B. C., Adam, H., Abukari, M. S., Salifu, R., & Wuni, A. (2025). Evaluating Academic Help-Seeking Behavior of Nursing and Midwifery Students in a Nursing Training College. <em>Journal of Education and Research in Nursing</em>, 22(1), 39-46. doi: <a href="https://doi.org/10.14744/jern.2025.98150" target="_blank" rel="noopener noreferrer" className="doi-link">10.14744/jern.2025.98150</a>`},
+            {id: 8, content: `Abdulai, A., Mohammed, I. S., Ibrahim, I., Kyiu, C., Fatimata, Y., <strong>Ibrahim, M. M.</strong>, & Wuni, A. (2025). Knowledge, attitudes, and barriers to cervical cancer screening utilization among female healthcare professionals in the Tamale Metropolis. <em>Women's Health</em>, 21. doi: <a href="https://doi.org/10.1177/17455057251401319" target="_blank" rel="noopener noreferrer" className="doi-link">10.1177/17455057251401319</a>`},
 
-            {id: 8, content: `Mohammed, I. S., Wuni, A., Nyarko, B. A., <strong>Ibrahim, M. M.</strong>, & Chanayireh, L. (2025). Work engagement: the key driver in transforming organizational commitment into enhanced work performance among midwives in Ghana - a structural equation modelling approach. <em>BMC Health Services Research</em>, 25(1), 840. doi: <a href="https://doi.org/10.1186/s12913-025-13062-4" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12913-025-13062-4</a>`},
-            {id: 9, content: `Wuni, A., <strong>Ibrahim, M. M.</strong>, & Diebieri, M. et al. (2025). Perceptions and satisfaction with the quality of clinical training placements among nursing and midwifery students in Northern Ghana. <em>BMC Nursing</em>, 24, 245. doi: <a href="https://doi.org/10.1186/s12912-025-02899-z" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12912-025-02899-z</a>`},
-            {id: 10, content: `Wuni, A., Musah, A., Sisala, I. M., Abdulai, A. M., Chanayireh, L., Nyarko, B. A., Buasilenu, H., <strong>Ibrahim, M. M.</strong>, Musah, S., Azure, D., & Abdulai, N. (2025). “We Are Our Own Worst Enemies”: Workplace Bullying Among Nurses and Its Implications on Healthcare Workers and Job Performance: A Multi-Facility Study in the Tamale Metropolis. <em>Nursing Open</em>, 12(7), e70282. doi: <a href="https://doi.org/10.1002/nop2.70282" target="_blank" rel="noopener noreferrer" className="doi-link">10.1002/nop2.70282</a>`},
-            {id: 11, content: `Abdul-Malik, A., Bonmenga, T., Ziblim, L., Galo, V., Abu Iddrisu, O., Iddrisu, R., & <strong>Ibrahim, M. M.</strong> (2025). Parental support on adolescent contraception uptake - a cross-sectional study in Tamale metropolis Ghana. <em>The Evidence</em>, 3(1). doi: <a href="https://doi.org/10.61505/evidence.2025.3.1.133" target="_blank" rel="noopener noreferrer" className="doi-link">10.61505/evidence.2025.3.1.133</a>`}
+            {id: 9, content: `Mohammed, I. S., Wuni, A., Nyarko, B. A., <strong>Ibrahim, M. M.</strong>, & Chanayireh, L. (2025). Work engagement: the key driver in transforming organizational commitment into enhanced work performance among midwives in Ghana - a structural equation modelling approach. <em>BMC Health Services Research</em>, 25(1), 840. doi: <a href="https://doi.org/10.1186/s12913-025-13062-4" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12913-025-13062-4</a>`},
+            {id: 10, content: `Wuni, A., <strong>Ibrahim, M. M.</strong>, Diebieri, M., Nyarko, B. A., Salifu, M. A., Abdul-Karim, H. A., Atiku, G. P. K., Wepeba, T. W., Salisu, W. J., Suara, S. B., & Mohammed, I. S. (2025). Perceptions and satisfaction with the quality of clinical training placements among nursing and midwifery students in Northern Ghana. <em>BMC Nursing</em>, 24, 245. doi: <a href="https://doi.org/10.1186/s12912-025-02899-z" target="_blank" rel="noopener noreferrer" className="doi-link">10.1186/s12912-025-02899-z</a>`},
+            {id: 11, content: `Wuni, A., Musah, A., Sisala, I. M., Abdulai, A. M., Chanayireh, L., Nyarko, B. A., Buasilenu, H., <strong>Ibrahim, M. M.</strong>, Musah, S., Azure, D., & Abdulai, N. (2025). “We Are Our Own Worst Enemies”: Workplace Bullying Among Nurses and Its Implications on Healthcare Workers and Job Performance: A Multi-Facility Study in the Tamale Metropolis. <em>Nursing Open</em>, 12(7), e70282. doi: <a href="https://doi.org/10.1002/nop2.70282" target="_blank" rel="noopener noreferrer" className="doi-link">10.1002/nop2.70282</a>`},
+            {id: 12, content: `Abdul-Malik, A., Bonmenga, T., Ziblim, L., Galo, V., Abu Iddrisu, O., Iddrisu, R., & <strong>Ibrahim, M. M.</strong> (2025). Parental support on adolescent contraception uptake - a cross-sectional study in Tamale metropolis Ghana. <em>The Evidence</em>, 3(1). doi: <a href="https://doi.org/10.61505/evidence.2025.3.1.133" target="_blank" rel="noopener noreferrer" className="doi-link">10.61505/evidence.2025.3.1.133</a>`}
         ],
         "2024": [
-            {id: 12, content: `<strong>Ibrahim, M. M.</strong>, Wuni, A., Salisu, W. J., Abdulai, A. M., Owusua, T., Nyarko, B. A., & Mohammed, I. S. (2024). Determinants and Mitigating Factors of Brain Drain among Ghanaian Nurses: Insights from Nurse Managers in Northern Ghana—A Qualitative Inquiry. <em>Journal of Nursing Management</em>, 2024(1), 8862991. doi: <a href="https://doi.org/10.1155/2024/8862991" target="_blank" rel="noopener noreferrer" className="doi-link">10.1155/2024/8862991</a>`},
-            {id: 13, content: `Sisala Mohammed, I., Abdulai, M. H., <strong>Ibrahim, M. M.</strong>, Buasilenu, H., Baako, I. A., Nyarko, B. A., & Buunaaisie, C. (2024). Prevalence of Workplace-Related Musculoskeletal Disorders Among Nurses and Midwives in a Tertiary Healthcare Facility: A Descriptive Cross-Sectional Survey. <em>Nursing Open</em>, 11(11), e70098. doi: <a href="https://doi.org/10.1002/nop2.70098" target="_blank" rel="noopener noreferrer" className="doi-link">10.1002/nop2.70098</a>`},
-            {id: 14, content: `Wuni, A., Iddrisu, M., Angliengmene, A. A., Salia, S. M., Chanayireh, L., Mohammed, I. S., <strong>Ibrahim, M. M.</strong>, & Doat, A. R. (2024). Knowledge and management practices of infant teething symptoms among mothers in a tertiary facility in Ghana. <em>The Pan African Medical Journal</em>, 47. doi: <a href="https://doi.org/10.11604/pamj.2024.47.65.40792" target="_blank" rel="noopener noreferrer" className="doi-link">10.11604/pamj.2024.47.65.40792</a>`},
-            {id: 15, content: `Monne, R., Iddrisu, M., Kyilleh, J. M., <strong>Ibrahim, M. M.</strong>, Nashiru, A. R., Wuni, A., & Abdulai, A. M. (2024). Male midwifery practice and acceptability: attitudes, beliefs, and associated factors among expectant mothers in Savelugu Municipal Hospital, Northern Region of Ghana. <em>The Pan African Medical Journal</em>, 47, 199. doi: <a href="https://doi.org/10.11604/pamj.2024.47.199.42482" target="_blank" rel="noopener noreferrer" className="doi-link">10.11604/pamj.2024.47.199.42482</a>`},
-            {id: 16, content: `Yakubu, H., <strong>Ibrahim, M. M.</strong>, Dogbe, P., Issah, N., Abosi, K., Osman, A., & Abdulai, A. M. (2024). Knowledge of Maternal Mortality and Its Determinants Among Pregnant Women at Tamale Teaching Hospital in Northern Ghana: A Descriptive Cross-Sectional Study. <em>Women, Midwives and Midwifery</em>, 4(3), 26-40. doi: <a href="https://doi.org/10.36749/wmm.4.3.26-40.2024" target="_blank" rel="noopener noreferrer" className="doi-link">doi.org/10.36749/wmm.4.3.26-40.2024</a>`},
-            {id: 17, content: `Abdul Malik, A., Osman, A. I., Abdul Hakeem, I., Abdul-Khahar, O., Saidatu, A. A., <strong>Ibrahim, M. M.</strong>, & Fasasi, M. (2024). Barriers and facilitators to the uptake of contraceptives among adolescents and young adults in Ghana. <em>The Evidence</em>, 2(2). doi: <a href="https://doi.org/10.61505/evidence.2024.2.2.29" target="_blank" rel="noopener noreferrer" className="doi-link">10.61505/evidence.2024.2.2.29</a>`}
+            {id: 13, content: `<strong>Ibrahim, M. M.</strong>, Wuni, A., Salisu, W. J., Abdulai, A. M., Owusua, T., Nyarko, B. A., & Mohammed, I. S. (2024). Determinants and Mitigating Factors of Brain Drain among Ghanaian Nurses: Insights from Nurse Managers in Northern Ghana—A Qualitative Inquiry. <em>Journal of Nursing Management</em>, 2024(1), 8862991. doi: <a href="https://doi.org/10.1155/2024/8862991" target="_blank" rel="noopener noreferrer" className="doi-link">10.1155/2024/8862991</a>`},
+            {id: 14, content: `Sisala Mohammed, I., Abdulai, M. H., <strong>Ibrahim, M. M.</strong>, Buasilenu, H., Baako, I. A., Nyarko, B. A., & Buunaaisie, C. (2024). Prevalence of Workplace-Related Musculoskeletal Disorders Among Nurses and Midwives in a Tertiary Healthcare Facility: A Descriptive Cross-Sectional Survey. <em>Nursing Open</em>, 11(11), e70098. doi: <a href="https://doi.org/10.1002/nop2.70098" target="_blank" rel="noopener noreferrer" className="doi-link">10.1002/nop2.70098</a>`},
+            {id: 15, content: `Wuni, A., Iddrisu, M., Angliengmene, A. A., Salia, S. M., Chanayireh, L., Mohammed, I. S., <strong>Ibrahim, M. M.</strong>, & Doat, A. R. (2024). Knowledge and management practices of infant teething symptoms among mothers in a tertiary facility in Ghana. <em>The Pan African Medical Journal</em>, 47. doi: <a href="https://doi.org/10.11604/pamj.2024.47.65.40792" target="_blank" rel="noopener noreferrer" className="doi-link">10.11604/pamj.2024.47.65.40792</a>`},
+            {id: 16, content: `Monne, R., Iddrisu, M., Kyilleh, J. M., <strong>Ibrahim, M. M.</strong>, Nashiru, A. R., Wuni, A., & Abdulai, A. M. (2024). Male midwifery practice and acceptability: attitudes, beliefs, and associated factors among expectant mothers in Savelugu Municipal Hospital, Northern Region of Ghana. <em>The Pan African Medical Journal</em>, 47, 199. doi: <a href="https://doi.org/10.11604/pamj.2024.47.199.42482" target="_blank" rel="noopener noreferrer" className="doi-link">10.11604/pamj.2024.47.199.42482</a>`},
+            {id: 17, content: `Yakubu, H., <strong>Ibrahim, M. M.</strong>, Dogbe, P., Issah, N., Abosi, K., Osman, A., & Abdulai, A. M. (2024). Knowledge of Maternal Mortality and Its Determinants Among Pregnant Women at Tamale Teaching Hospital in Northern Ghana: A Descriptive Cross-Sectional Study. <em>Women, Midwives and Midwifery</em>, 4(3), 26-40. doi: <a href="https://doi.org/10.36749/wmm.4.3.26-40.2024" target="_blank" rel="noopener noreferrer" className="doi-link">doi.org/10.36749/wmm.4.3.26-40.2024</a>`},
+            {id: 18, content: `Abdul Malik, A., Osman, A. I., Abdul Hakeem, I., Abdul-Khahar, O., Saidatu, A. A., <strong>Ibrahim, M. M.</strong>, & Fasasi, M. (2024). Barriers and facilitators to the uptake of contraceptives among adolescents and young adults in Ghana. <em>The Evidence</em>, 2(2). doi: <a href="https://doi.org/10.61505/evidence.2024.2.2.29" target="_blank" rel="noopener noreferrer" className="doi-link">10.61505/evidence.2024.2.2.29</a>`}
         ],
         "2023": [
-            {id: 18, content: `Wuni, A., Abena Nyarko, B., <strong>Ibrahim, M. M.</strong>, Abdulai Baako, I., Mohammed, I. S., & Buunaaisie, C. (2023). Prevalence, Management, and Impact of Dysmenorrhea on the Lives of Nurse and Midwife Trainees in Northern Ghana. <em>Obstetrics and Gynecology International</em>, 2023(1), 8823525. doi: <a href="https://doi.org/10.1155/2023/8823525" target="_blank" rel="noopener noreferrer" className="doi-link">10.1155/2023/8823525</a>`}
+            {id: 19, content: `Wuni, A., Abena Nyarko, B., <strong>Ibrahim, M. M.</strong>, Abdulai Baako, I., Mohammed, I. S., & Buunaaisie, C. (2023). Prevalence, Management, and Impact of Dysmenorrhea on the Lives of Nurse and Midwife Trainees in Northern Ghana. <em>Obstetrics and Gynecology International</em>, 2023(1), 8823525. doi: <a href="https://doi.org/10.1155/2023/8823525" target="_blank" rel="noopener noreferrer" className="doi-link">10.1155/2023/8823525</a>`}
         ],
         "2020": [
-            {id: 19, content: `Wuni, A., Salia, S. M., <strong>Ibrahim, M. M.</strong>, Iddriss, I., Abena Nyarko, B., Nabila Seini, S., & Mohammed, J. (2020). Evaluating Knowledge, Practices, and Barriers of Paediatric Pain Management among Nurses in a Tertiary Health Facility in the Northern Region of Ghana: A Descriptive Cross-Sectional Study. <em>Pain Research and Management</em>, 2020(1), 8846599. doi: <a href="https://doi.org/10.1155/2020/8846599" target="_blank" rel="noopener noreferrer" className="doi-link">10.1155/2020/8846599</a>`}
+            {id: 20, content: `Wuni, A., Salia, S. M., <strong>Ibrahim, M. M.</strong>, Iddriss, I., Abena Nyarko, B., Nabila Seini, S., & Mohammed, J. (2020). Evaluating Knowledge, Practices, and Barriers of Paediatric Pain Management among Nurses in a Tertiary Health Facility in the Northern Region of Ghana: A Descriptive Cross-Sectional Study. <em>Pain Research and Management</em>, 2020(1), 8846599. doi: <a href="https://doi.org/10.1155/2020/8846599" target="_blank" rel="noopener noreferrer" className="doi-link">10.1155/2020/8846599</a>`}
         ]
     };
     
@@ -6718,10 +7009,19 @@ const renderTeaching = () => (
 const ShinyAppsComponent = () => {
     const [searchTerm, setSearchTerm] = useState('');
     
-    // All 20 apps data with view counts
+    // All 21 apps data with view counts
     const shinyApps = [
-        {
+               {
             id: 1,
+            name: "FactorGuard",
+            description: "A factor-retention decision tool for EFA",
+            runUrl: "https://mudassiribrahim2026.shinyapps.io/FactorGuard/",
+            codeUrl: "https://github.com/mudassiribrahim30/R-Shiny-Apps/blob/main/FactorGuard.R",
+            imageUrl: "https://raw.githubusercontent.com/mudassiribrahim12/me/main/FactorGuard.png",
+            views: 0
+        },
+        {
+            id: 2,
             name: "CalcuStats",
             description: "Tool for sample size calculation, power analysis, and descriptive statistics",
             runUrl: "https://mudassiribrahim2025.shinyapps.io/CalcuStats/",
@@ -6730,7 +7030,7 @@ const ShinyAppsComponent = () => {
             views: 16660
         },
         {
-            id: 2,
+            id: 3,
             name: "CATrend Analyzer",
             description: "Cochran-Armitage test for trend tool",
             runUrl: "https://newappstesting.shinyapps.io/CATrendAnalyzer/",
@@ -6739,7 +7039,7 @@ const ShinyAppsComponent = () => {
             views: 7582
         },
         {
-            id: 3,
+            id: 4,
             name: "ROC Curve Builder",
             description: "ROC curve analysis and diagnostic test evaluation",
             runUrl: "https://mudassiribrahim30.shinyapps.io/ROC_CURVE/",
@@ -6748,7 +7048,7 @@ const ShinyAppsComponent = () => {
             views: 15996
         },
         {
-            id: 4,
+            id: 5,
             name: "Data2SPSS",
             description: "Convert datasets in CSV, Excel, Rdata, Stata, or SAS format into SPSS (.sav) files",
             runUrl: "https://newappstesting.shinyapps.io/Data2SPSS/",
@@ -6757,7 +7057,7 @@ const ShinyAppsComponent = () => {
             views: 12834
         },
         {
-            id: 5,
+            id: 6,
             name: "MedModr",
             description: "Mediation and moderation analysis tool for research studies",
             runUrl: "https://mudassiribrahim30.shinyapps.io/MedModr/",
@@ -6766,7 +7066,7 @@ const ShinyAppsComponent = () => {
             views: 16042
         },
         {
-            id: 6,
+            id: 7,
             name: "EpiDem Suite",
             description: "Epidemiological data analysis suite for public health research",
             runUrl: "https://mudassiribrahim2025.shinyapps.io/EpiDemSuite/",
@@ -6775,7 +7075,7 @@ const ShinyAppsComponent = () => {
             views: 17080
         },
         {
-            id: 7,
+            id: 8,
             name: "ggPubPlot",
             description: "Publication-ready ggplot2 visualizations with customization",
             runUrl: "https://mudassiribrahim2025.shinyapps.io/ggPubPlot/",
@@ -6784,7 +7084,7 @@ const ShinyAppsComponent = () => {
             views: 14541
         },
         {
-            id: 8,
+            id: 9,
             name: "APA Table Generator",
             description: "Generate APA formatted tables for research papers and publications",
             runUrl: "https://newappstesting.shinyapps.io/APATableGenerator/",
@@ -6793,7 +7093,7 @@ const ShinyAppsComponent = () => {
             views: 3317
         },
         {
-            id: 9,
+            id: 10,
             name: "SysSampler",
             description: "Systematic sampling tool for research studies with custom random start",
             runUrl: "https://mudassiribrahim2025b.shinyapps.io/SysSampler/",
@@ -6802,7 +7102,7 @@ const ShinyAppsComponent = () => {
             views: 3594
         },
         {
-            id: 10,
+            id: 11,
             name: "CMH Analyzer",
             description: "Cochran-Mantel-Haenszel analysis tool for stratified data",
             runUrl: "https://newappstesting.shinyapps.io/CMHAnalyzer/",
@@ -6811,7 +7111,7 @@ const ShinyAppsComponent = () => {
             views: 6843
         },
         {
-            id: 11,
+            id: 12,
             name: "TNMTC DataLab",
             description: "Comprehensive data analysis software",
             runUrl: "https://newappstesting.shinyapps.io/NMTCDataLab/",
@@ -6820,7 +7120,7 @@ const ShinyAppsComponent = () => {
             views: 14391
         },
         {
-            id: 12,
+            id: 13,
             name: "PharmaCalc Pro",
             description: "Pharmaceutical calculations for dosage",
             runUrl: "https://mudassiribrahim2025b.shinyapps.io/PharmaCalcPro/",
@@ -6829,7 +7129,7 @@ const ShinyAppsComponent = () => {
             views: 15481
         },
         {
-            id: 13,
+            id: 14,
             name: "RegEffect Xplorer",
             description: "Explore regression effects visually with interactive plots",
             runUrl: "https://mudassiribrahim2025b.shinyapps.io/RegEffectXplorer/",
@@ -6838,7 +7138,7 @@ const ShinyAppsComponent = () => {
             views: 15369
         },
         {
-            id: 14,
+            id: 15,
             name: "Data TransformR",
             description: "Data transformation and preprocessing tool for analytics",
             runUrl: "https://mudassiribrahim2025b.shinyapps.io/DataTransformR/",
@@ -6847,7 +7147,7 @@ const ShinyAppsComponent = () => {
             views: 16847
         },
         {
-            id: 15,
+            id: 16,
             name: "CleanMyData",
             description: "Data screening and cleaning tool with visualization",
             runUrl: "https://mudassiribrahim2025b.shinyapps.io/CleanMyData/",
@@ -6856,7 +7156,7 @@ const ShinyAppsComponent = () => {
             views: 14654
         },
         {
-            id: 16,
+            id: 17,
             name: "KMPlot Genie",
             description: "Kaplan-Meier survival plot generator for clinical studies",
             runUrl: "https://mudassiribrahim30.shinyapps.io/KMPlotGenie/",
@@ -6865,7 +7165,7 @@ const ShinyAppsComponent = () => {
             views: 16863
         },
         {
-            id: 17,
+            id: 18,
             name: "QuickStatsGen",
             description: "Custom Data Generator for Statistical Practice and Education",
             runUrl: "https://mudassiribrahim2025.shinyapps.io/QuickStatsGen/",
@@ -6874,7 +7174,7 @@ const ShinyAppsComponent = () => {
             views: 15091
         },
         {
-            id: 18,
+            id: 19,
             name: "Robust Regressor",
             description: "Robust regression analysis for outlier-resistant modeling",
             runUrl: "https://mudassiribrahim2025.shinyapps.io/Robustregression/",
@@ -6883,7 +7183,7 @@ const ShinyAppsComponent = () => {
             views: 15560
         },
         {
-            id: 19,
+            id: 20,
             name: "TagSelect",
             description: "Participant selection tool for research studies",
             runUrl: "https://mudassiribrahim30.shinyapps.io/Tagselect/",
@@ -6892,7 +7192,7 @@ const ShinyAppsComponent = () => {
             views: 16706
         },
         {
-            id: 20,
+            id: 21,
             name: "FAnalyzr",
             description: "Factor analysis and dimensionality reduction tool",
             runUrl: "https://mudassiribrahim30.shinyapps.io/fanalyzr/",
@@ -6931,7 +7231,7 @@ const ShinyAppsComponent = () => {
             {/* Stats sections - Now includes total views */}
             <div className="apps-stats">
                 <div className="stat-card">
-                    <div className="stat-number">20</div>
+                    <div className="stat-number">21</div>
                     <div className="stat-label">Applications</div>
                 </div>
                 <div className="stat-card">
@@ -7158,7 +7458,7 @@ const ShinyAppsComponent = () => {
                                 <i className="fas fa-chart-line"></i>
                             </div>
                             <div className="total-views-container">
-                                <div className="total-views-label">Total Application Views (All 20 Apps)</div>
+                                <div className="total-views-label">Total Application Views (All 21 Apps)</div>
                                 <div className="total-views-number">{totalViews.toLocaleString()}</div>
                                 <div className="total-views-update">
                                     <i className="fas fa-sync-alt" style={{ marginRight: '5px' }}></i>
@@ -7350,6 +7650,7 @@ const GalleryComponent = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedImage, setSelectedImage] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const itemsPerPage = 8;
 
     // Function to check if an image is long/tall
@@ -8016,48 +8317,7 @@ const categoryDescriptions = {
                 }}>
                     Registered Nurse and Health Researcher
                 </p>
-                <div style={{
-                    display: 'flex',
-                    gap: '15px',
-                    marginTop: '20px'
-                }}>
-                    {[
-                        { icon: 'fab fa-orcid', url: 'https://orcid.org/0000-0002-9049-8222', title: 'ORCID' },
-                        { icon: 'fas fa-graduation-cap', url: 'https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en', title: 'Google Scholar' },
-                        { icon: 'fab fa-github', url: 'https://github.com/mudassiribrahim30', title: 'GitHub' },
-                        { icon: 'fab fa-linkedin', url: 'https://linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0', title: 'LinkedIn' },
-                        { icon: 'fab fa-youtube', url: 'https://www.youtube.com/@mudasirmohammedibrahim1026', title: 'YouTube' }
-                    ].map((social, index) => (
-                        <a key={index}
-                           href={social.url}
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           title={social.title}
-                           style={{
-                               color: 'var(--nav-text)',
-                               fontSize: '1.2rem',
-                               width: '40px',
-                               height: '40px',
-                               display: 'flex',
-                               alignItems: 'center',
-                               justifyContent: 'center',
-                               borderRadius: '50%',
-                               backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                               transition: 'all 0.3s ease',
-                               textDecoration: 'none'
-                           }}
-                           onMouseOver={(e) => {
-                               e.target.style.backgroundColor = 'var(--nav-hover)';
-                               e.target.style.transform = 'translateY(-3px)';
-                           }}
-                           onMouseOut={(e) => {
-                               e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-                               e.target.style.transform = 'translateY(0)';
-                           }}>
-                            <i className={social.icon}></i>
-                        </a>
-                    ))}
-                </div>
+                {/* Social icons removed from here - moved to white footer */}
             </div>
 
             {/* Column 2: Navigation */}
@@ -8092,7 +8352,7 @@ const categoryDescriptions = {
                                    window.scrollTo({ top: 0, behavior: 'smooth' });
                                }}
                                style={{
-                                   color: activeSection === tab.section ? 'var(--nav-hover)' : '#ccc',
+                                   color: activeSection === tab.section ? '#4dabf7' : '#ccc',
                                    textDecoration: 'none',
                                    fontSize: '0.95rem',
                                    fontWeight: activeSection === tab.section ? '600' : '400',
@@ -8104,7 +8364,7 @@ const categoryDescriptions = {
                                }}
                                onMouseOver={(e) => {
                                    if (activeSection !== tab.section) {
-                                       e.target.style.color = 'var(--nav-hover)';
+                                       e.target.style.color = '#4dabf7';
                                    }
                                }}
                                onMouseOut={(e) => {
@@ -8119,179 +8379,95 @@ const categoryDescriptions = {
                 </ul>
             </div>
 
-            {/* Column 3: Contact & Links */}
-            <div>
-                <h3 style={{
-                    fontSize: '18px',
-                    marginBottom: '20px',
-                    color: 'white',
-                    fontWeight: '600',
-                    fontFamily: "'Open Sans', sans-serif"
-                }}>
-                    Contact & Links
-                </h3>
-                <div style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '15px'
-                }}>
-                    <a href="#"
-                       onClick={(e) => {
-                           e.preventDefault();
-                           setShowContactForm(true);
-                           setActiveSection('about');
-                           setTimeout(() => {
-                               const formElement = document.getElementById('contact-form');
-                               if (formElement) {
-                                   formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                               }
-                           }, 100);
-                       }}
-                       style={{
-                           color: 'var(--nav-text)',
-                           textDecoration: 'none',
-                           fontSize: '0.95rem',
-                           padding: '10px 15px',
-                           backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                           borderRadius: '6px',
-                           transition: 'all 0.3s ease',
-                           display: 'flex',
-                           alignItems: 'center',
-                           gap: '10px',
-                           fontFamily: "'Open Sans', sans-serif"
-                       }}
-                       onMouseOver={(e) => {
-                           e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
-                           e.target.style.color = 'var(--nav-hover)';
-                       }}
-                       onMouseOut={(e) => {
-                           e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-                           e.target.style.color = 'var(--nav-text)';
-                       }}>
-                        <i className="fas fa-envelope" style={{ fontSize: '0.9rem' }}></i>
-                        Contact Form
-                    </a>
-                    
-                    <a href="https://1drv.ms/f/c/3ce355b70d76f4f7/EvOg3kpoGi1JlFokbzBzEIgBDYXASGIRoLVHrXceFZDrJg?e=tF8arF"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       style={{
-                           color: 'var(--nav-text)',
-                           textDecoration: 'none',
-                           fontSize: '0.95rem',
-                           padding: '10px 15px',
-                           backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                           borderRadius: '6px',
-                           transition: 'all 0.3s ease',
-                           display: 'flex',
-                           alignItems: 'center',
-                           gap: '10px',
-                           fontFamily: "'Open Sans', sans-serif"
-                       }}
-                       onMouseOver={(e) => {
-                           e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
-                           e.target.style.color = 'var(--nav-hover)';
-                       }}
-                       onMouseOut={(e) => {
-                           e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-                           e.target.style.color = 'var(--nav-text)';
-                       }}>
-                        <i className="fas fa-file-download" style={{ fontSize: '0.9rem' }}></i>
-                        Download CV
-                    </a>
-                </div>
-                
-                <div style={{
-                    padding: '15px',
-                    backgroundColor: 'rgba(0, 0, 0, 0.2)',
-                    borderRadius: '8px',
-                    marginTop: '20px'
-                }}>
-                    <div style={{
-                        color: 'var(--nav-text)',
-                        fontSize: '0.85rem',
-                        opacity: 0.8,
-                        lineHeight: '1.5',
-                        fontFamily: "'Open Sans', sans-serif"
-                    }}>
-                        <div style={{ marginBottom: '5px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <i className="fas fa-map-marker-alt"></i>
-                            <a 
-                                href="https://www.google.com/maps/place/Tamale,+Northern+Region,+Ghana"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    color: 'var(--nav-text)',
-                                    textDecoration: 'none',
-                                    transition: 'color 0.3s ease'
-                                }}
-                                onMouseOver={(e) => {
-                                    e.target.style.color = 'var(--nav-hover)';
-                                    e.target.style.textDecoration = 'underline';
-                                }}
-                                onMouseOut={(e) => {
-                                    e.target.style.color = 'var(--nav-text)';
-                                    e.target.style.textDecoration = 'none';
-                                }}
-                            >
-                                Tamale, Northern Region, Ghana
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Column 4: Testimonials & Feedback */}
-            <div>
-                <h3 style={{
-                    fontSize: '18px',
-                    marginBottom: '20px',
-                    color: 'white',
-                    fontWeight: '600',
-                    fontFamily: "'Open Sans', sans-serif"
-                }}>
-                    Share Feedback
-                </h3>
-                <p style={{
-                    color: 'rgba(255, 255, 255, 0.7)',
-                    fontSize: '0.9rem',
-                    lineHeight: '1.6',
-                    marginBottom: '20px',
-                    fontFamily: "'Open Sans', sans-serif"
-                }}>
-                    Used any of my R Shiny apps? I'd love to hear your feedback or suggestions.
-                </p>
-                <a 
-                    href="https://forms.gle/PZJtxtf9E3ZMnBYB9" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        background: 'linear-gradient(135deg, #4CAF50, #2E7D32)',
-                        color: 'white',
-                        padding: '10px 20px',
-                        borderRadius: '25px',
-                        textDecoration: 'none',
-                        fontWeight: '600',
-                        fontSize: '0.9rem',
-                        transition: 'all 0.3s ease',
-                        fontFamily: "'Open Sans', sans-serif"
-                    }}
-                    onMouseOver={(e) => {
-                        e.target.style.transform = 'translateY(-2px)';
-                        e.target.style.boxShadow = '0 4px 12px rgba(76, 175, 80, 0.3)';
-                    }}
-                    onMouseOut={(e) => {
-                        e.target.style.transform = 'translateY(0)';
-                        e.target.style.boxShadow = 'none';
-                    }}>
-                    <i className="fas fa-pen"></i>
-                    Submit Feedback
-                </a>
-            </div>
-        </div>
+   {/* Column 3: Feedback */}
+<div>
+    <h3 style={{
+        fontSize: '18px',
+        marginBottom: '20px',
+        color: 'white',
+        fontWeight: '600',
+        fontFamily: "'Open Sans', sans-serif"
+    }}>
+        Share Feedback
+    </h3>
+    <p style={{
+        color: 'rgba(255, 255, 255, 0.7)',
+        fontSize: '0.9rem',
+        lineHeight: '1.6',
+        marginBottom: '20px',
+        fontFamily: "'Open Sans', sans-serif"
+    }}>
+        Used any of my R Shiny apps? I'd love to hear your feedback or suggestions.
+    </p>
+    <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+        <a 
+            href="https://forms.gle/PZJtxtf9E3ZMnBYB9" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: 'linear-gradient(135deg, #4CAF50, #2E7D32)',
+                color: 'white',
+                padding: '10px 20px',
+                borderRadius: '25px',
+                textDecoration: 'none',
+                fontWeight: '600',
+                fontSize: '0.9rem',
+                transition: 'all 0.3s ease',
+                fontFamily: "'Open Sans', sans-serif"
+            }}
+            onMouseOver={(e) => {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 4px 12px rgba(76, 175, 80, 0.3)';
+            }}
+            onMouseOut={(e) => {
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+            }}>
+            <i className="fas fa-pen"></i>
+            Submit Feedback
+        </a>
+        
+        {/* NEW: Location Link */}
+        <a 
+            href="https://www.google.com/maps/place/Tamale,+Northern+Region,+Ghana"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                background: 'rgba(255, 255, 255, 0.1)',
+                color: 'white',
+                padding: '10px 20px',
+                borderRadius: '25px',
+                textDecoration: 'none',
+                fontWeight: '600',
+                fontSize: '0.9rem',
+                transition: 'all 0.3s ease',
+                fontFamily: "'Open Sans', sans-serif",
+                border: '1px solid rgba(255, 255, 255, 0.2)'
+            }}
+            onMouseOver={(e) => {
+                e.target.style.background = 'rgba(255, 255, 255, 0.15)';
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 4px 12px rgba(255, 255, 255, 0.1)';
+                e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+            }}
+            onMouseOut={(e) => {
+                e.target.style.background = 'rgba(255, 255, 255, 0.1)';
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+                e.target.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+            }}>
+            <i className="fas fa-map-marker-alt"></i>
+            View My Location
+        </a>
+    </div>
+</div>
+</div>
 
         {/* Divider */}
         <div style={{
@@ -8308,24 +8484,33 @@ const categoryDescriptions = {
             flexWrap: 'wrap',
             gap: '20px'
         }}>
-            {/* Copyright */}
-            <div style={{
-                color: '#fff',
-                fontSize: '0.9rem',
-                fontFamily: "'Open Sans', sans-serif"
-            }}>
+        
+        {/* Copyright */}
+<div style={{
+    color: '#ffffff !important',  // Force white color
+    fontSize: '0.9rem',
+    fontFamily: "'Open Sans', sans-serif",
+    textAlign: 'left',  // Explicitly set alignment
+    padding: '10px 0',  // Add some padding
+    opacity: '1 !important',  // Ensure full opacity
+    visibility: 'visible !important'  // Ensure visibility
+}}>
 <p style={{
     marginBottom: '5px',
-    color: '#ffffff'
+    color: '#ffffff',
+    opacity: '1',
+    fontWeight: '500',
+    fontSize: '0.9rem'
 }}>
     Copyright © 2025-{new Date().getFullYear()} Mudasir Mohammed Ibrahim. All Rights Reserved.
 </p>
-                <div style={{
-                    fontSize: '0.8rem',
-                    color: '#888',
-                    fontStyle: 'italic'
-                }}>
-                    <span style={{ textDecoration: 'none' }}>Website UI inspired by </span>
+    <div style={{
+        fontSize: '0.8rem',
+        color: 'rgba(255, 255, 255, 0.85) !important',  // Brighter white
+        fontStyle: 'italic',
+        opacity: '1'
+    }}>
+  <span style={{ textDecoration: 'none' }}>Website UI inspired by </span>
                     <a href="https://profandyfield.com/"
                        target="_blank"
                        rel="noopener noreferrer"
@@ -8339,16 +8524,11 @@ const categoryDescriptions = {
                        onMouseOut={(e) => e.target.style.color = '#aaa'}>
                         Prof Andy Field
                     </a>
-                </div>
-            </div>
+    </div>
+</div>
 
             {/* Back to Top Button */}
-            <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '20px'
-            }}>
-                
+            <div>
                 <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         style={{
                             background: 'rgba(255, 255, 255, 0.1)',
@@ -8378,6 +8558,186 @@ const categoryDescriptions = {
         </div>
     </div>
 </footer>
+
+{/* NEW: White Footer Section for Social Media & Contact Links */}
+<div style={{
+    backgroundColor: '#ffffff',
+    color: '#333333',
+    padding: '30px 0',
+    borderTop: '1px solid #e0e0e0'
+}}>
+    <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 20px'
+    }}>
+        <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '30px'
+        }}>
+            
+            {/* Left: Social Media Icons */}
+            <div>
+                <h4 style={{
+                    fontSize: '16px',
+                    marginBottom: '15px',
+                    color: '#333333',
+                    fontWeight: '600',
+                    fontFamily: "'Open Sans', sans-serif"
+                }}>
+                    <i className="fas fa-share-alt" style={{ marginRight: '10px', color: '#666' }}></i>
+                    Connect With Me
+                </h4>
+                <div style={{
+                    display: 'flex',
+                    gap: '15px',
+                    flexWrap: 'wrap'
+                }}>
+                    {[
+                        { icon: 'fab fa-orcid', url: 'https://orcid.org/0000-0002-9049-8222', title: 'ORCID', color: '#a6ce39' },
+                        { icon: 'fas fa-graduation-cap', url: 'https://scholar.google.com/citations?user=xEFzAvgAAAAJ&hl=en', title: 'Google Scholar', color: '#4285f4' },
+                        { icon: 'fab fa-github', url: 'https://github.com/mudassiribrahim30', title: 'GitHub', color: '#333333' },
+                        { icon: 'fab fa-linkedin', url: 'https://linkedin.com/in/mudasir-mohammed-ibrahim-16b5141b0', title: 'LinkedIn', color: '#0077b5' },
+                        { icon: 'fab fa-youtube', url: 'https://www.youtube.com/@mudasirmohammedibrahim1026', title: 'YouTube', color: '#ff0000' }
+                    ].map((social, index) => (
+                        <a key={index}
+                           href={social.url}
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           title={social.title}
+                           style={{
+                               color: social.color,
+                               fontSize: '1.3rem',
+                               width: '45px',
+                               height: '45px',
+                               display: 'flex',
+                               alignItems: 'center',
+                               justifyContent: 'center',
+                               borderRadius: '50%',
+                               backgroundColor: '#f8f9fa',
+                               transition: 'all 0.3s ease',
+                               textDecoration: 'none',
+                               border: '2px solid #f0f0f0'
+                           }}
+                           onMouseOver={(e) => {
+                               e.target.style.backgroundColor = social.color;
+                               e.target.style.color = '#ffffff';
+                               e.target.style.transform = 'translateY(-3px)';
+                               e.target.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                               e.target.style.borderColor = social.color;
+                           }}
+                           onMouseOut={(e) => {
+                               e.target.style.backgroundColor = '#f8f9fa';
+                               e.target.style.color = social.color;
+                               e.target.style.transform = 'translateY(0)';
+                               e.target.style.boxShadow = 'none';
+                               e.target.style.borderColor = '#f0f0f0';
+                           }}>
+                            <i className={social.icon}></i>
+                        </a>
+                    ))}
+                </div>
+            </div>
+
+            {/* Right: Contact & Links */}
+            <div>
+                <h4 style={{
+                    fontSize: '16px',
+                    marginBottom: '15px',
+                    color: '#333333',
+                    fontWeight: '600',
+                    fontFamily: "'Open Sans', sans-serif"
+                }}>
+                    <i className="fas fa-link" style={{ marginRight: '10px', color: '#666' }}></i>
+                    Quick Links
+                </h4>
+                <div style={{
+                    display: 'flex',
+                    gap: '15px',
+                    flexWrap: 'wrap'
+                }}>
+                    <a href="#"
+                       onClick={(e) => {
+                           e.preventDefault();
+                           setShowContactForm(true);
+                           setActiveSection('about');
+                           setTimeout(() => {
+                               const formElement = document.getElementById('contact-form');
+                               if (formElement) {
+                                   formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                               }
+                           }, 100);
+                       }}
+                       style={{
+                           color: '#333333',
+                           textDecoration: 'none',
+                           fontSize: '0.9rem',
+                           padding: '8px 16px',
+                           backgroundColor: '#f8f9fa',
+                           borderRadius: '25px',
+                           transition: 'all 0.3s ease',
+                           display: 'flex',
+                           alignItems: 'center',
+                           gap: '8px',
+                           fontFamily: "'Open Sans', sans-serif",
+                           border: '1px solid #e0e0e0'
+                       }}
+                       onMouseOver={(e) => {
+                           e.target.style.backgroundColor = '#e9ecef';
+                           e.target.style.color = '#000000';
+                           e.target.style.borderColor = '#3498db';
+                           e.target.style.transform = 'translateY(-2px)';
+                       }}
+                       onMouseOut={(e) => {
+                           e.target.style.backgroundColor = '#f8f9fa';
+                           e.target.style.color = '#333333';
+                           e.target.style.borderColor = '#e0e0e0';
+                           e.target.style.transform = 'translateY(0)';
+                       }}>
+                        <i className="fas fa-envelope" style={{ fontSize: '0.8rem' }}></i>
+                        Contact Form
+                    </a>
+                    
+                    <a href="https://1drv.ms/f/c/3ce355b70d76f4f7/EvOg3kpoGi1JlFokbzBzEIgBDYXASGIRoLVHrXceFZDrJg?e=tF8arF"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       style={{
+                           color: '#333333',
+                           textDecoration: 'none',
+                           fontSize: '0.9rem',
+                           padding: '8px 16px',
+                           backgroundColor: '#f8f9fa',
+                           borderRadius: '25px',
+                           transition: 'all 0.3s ease',
+                           display: 'flex',
+                           alignItems: 'center',
+                           gap: '8px',
+                           fontFamily: "'Open Sans', sans-serif",
+                           border: '1px solid #e0e0e0'
+                       }}
+                       onMouseOver={(e) => {
+                           e.target.style.backgroundColor = '#e9ecef';
+                           e.target.style.color = '#000000';
+                           e.target.style.borderColor = '#3498db';
+                           e.target.style.transform = 'translateY(-2px)';
+                       }}
+                       onMouseOut={(e) => {
+                           e.target.style.backgroundColor = '#f8f9fa';
+                           e.target.style.color = '#333333';
+                           e.target.style.borderColor = '#e0e0e0';
+                           e.target.style.transform = 'translateY(0)';
+                       }}>
+                        <i className="fas fa-file-download" style={{ fontSize: '0.8rem' }}></i>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </div>
 
