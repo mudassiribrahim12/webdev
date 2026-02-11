@@ -9,7 +9,7 @@
     <!-- Google Fonts for clean typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* CSS Variables for Light/Dark Themes */
+        /* CSS Variables for Light/Dark Themes — consistent premium look */
         :root {
             --bg-color: #fdfdfd;
             --text-color: #000000;
@@ -24,15 +24,16 @@
             --shadow-color: rgba(0,0,0,0.05);
             --icon-hover: #005daa;
             
-            /* Brand Colors for Icons */
             --orcid-green: #A6CE39;
             --linkedin-blue: #0077B5;
             --googlescholar-blue: #4285F4;
             --researchgate-blue: #00CCBB;
             --facebook-blue: #1877F2;
+            --instagram-pink: #E4405F;
             --email-red: #D44638;
+            
+            --doi-blue: #0066cc;
         }
-
         [data-theme="dark"] {
             --bg-color: #121212;
             --text-color: #ffffff;
@@ -46,892 +47,312 @@
             --footer-bg: #1a1a1a;
             --shadow-color: rgba(0,0,0,0.5);
             --icon-hover: #99ccff;
-            
-            /* Brand Colors - Dark mode stays same for recognizability */
             --orcid-green: #A6CE39;
             --linkedin-blue: #0077B5;
             --googlescholar-blue: #4285F4;
             --researchgate-blue: #00CCBB;
             --facebook-blue: #1877F2;
+            --instagram-pink: #E4405F;
             --email-red: #D44638;
+            --doi-blue: #66b0ff;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        html { scroll-behavior: smooth; }
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.65;
+            line-height: 1.6;
             padding-top: 100px;
             transition: background-color 0.3s ease, color 0.2s ease;
-            font-weight: 500;
+            font-weight: 400;
+            font-size: 15px;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        p, li, span, div {
-            font-weight: 500;
-        }
-
-        h1, h2, h3, h4 {
-            font-weight: 700;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        a { color: inherit; text-decoration: none; }
+        p, li, span, div { font-weight: 400; }
+        h1, h2, h3, h4 { font-weight: 700; }
 
         /* ===== HEADER & NAVIGATION ===== */
         .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            position: fixed; top: 0; left: 0; width: 100%;
             background-color: var(--header-bg);
             border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            padding: 0;
+            z-index: 1000; padding: 0;
             box-shadow: 0 2px 20px var(--shadow-color);
             transition: background-color 0.3s ease, border-color 0.2s ease;
         }
-
         .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 40px; max-width: 1200px; margin: 0 auto;
         }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
+        .header-left { display: flex; align-items: center; gap: 20px; }
         .header-name {
             font-size: 24px;
             font-weight: 800;
             color: var(--text-color);
         }
-
-        /* Hamburger Menu Button - Always visible on mobile/tablet */
-        .hamburger-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            color: var(--text-color);
-            cursor: pointer;
-            padding: 5px;
-            transition: color 0.2s;
+        .header-name a {
+            color: inherit;
+            text-decoration: none;
         }
-
-        .hamburger-btn:hover {
-            color: var(--active-color);
-        }
-
-        /* Main Navigation - Desktop by default */
-        .main-nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2px;
-        }
-
+        .hamburger-btn { display: none; background: none; border: none; font-size: 1.8rem; color: var(--text-color); cursor: pointer; padding: 5px; transition: color 0.2s; }
+        .hamburger-btn:hover { color: var(--active-color); }
+        .main-nav ul { display: flex; list-style: none; gap: 2px; }
         .main-nav a {
-            display: block;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-color);
-            border-radius: 4px;
-            transition: all 0.2s ease;
-            position: relative;
+            display: block; padding: 10px 20px; font-size: 15px; font-weight: 600;
+            color: var(--text-color); border-radius: 4px; transition: all 0.2s ease; position: relative;
         }
-
-        .main-nav a:hover {
-            color: var(--active-color);
-            background-color: var(--nav-hover-bg);
-        }
-
-        .main-nav a.active {
-            color: var(--active-color);
-            background-color: var(--nav-hover-bg);
-            font-weight: 700;
-        }
-
+        .main-nav a:hover { color: var(--active-color); background-color: var(--nav-hover-bg); }
+        .main-nav a.active { color: var(--active-color); background-color: var(--nav-hover-bg); font-weight: 700; }
         .main-nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 20px;
-            right: 20px;
-            height: 2px;
-            background-color: var(--active-color);
-            border-radius: 1px;
+            content: ''; position: absolute; bottom: -1px; left: 20px; right: 20px;
+            height: 2px; background-color: var(--active-color); border-radius: 1px;
         }
-
-        /* Right Header Icons: Theme Toggle Only (CV removed) */
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
+        .header-right { display: flex; align-items: center; gap: 15px; }
         .theme-toggle {
-            background: none;
-            border: none;
-            font-size: 1.4rem;
-            color: var(--text-color);
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 50%;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
+            background: none; border: none; font-size: 1.3rem; color: var(--text-color);
+            cursor: pointer; padding: 8px; border-radius: 50%; width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;
             background-color: var(--nav-hover-bg);
         }
+        .theme-toggle:hover { color: #ffaa00; background-color: var(--border-color); transform: scale(1.1); }
 
-        .theme-toggle:hover {
-            color: #ffaa00;
-            background-color: var(--border-color);
-            transform: scale(1.1);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        /* ===== HERO / PROFILE SECTION (ABOUT TAB) ===== */
-        .hero-section {
-            padding-top: 20px;
-        }
-
-        .profile-header {
-            display: flex;
-            gap: 50px;
-            align-items: flex-start;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 8px;
-            object-fit: cover;
-            box-shadow: 0 10px 30px var(--shadow-color);
-        }
-
-        .profile-text h1 {
-            font-size: 2.8rem;
-            color: var(--text-color);
-            margin-bottom: 10px;
-            line-height: 1.1;
-            font-weight: 800;
-        }
-
-        .profile-subtitle {
-            font-size: 1.3rem;
-            color: var(--text-color);
-            opacity: 0.9;
-            margin-bottom: 25px;
-            font-weight: 600;
-        }
-
-        .profile-description {
-            font-size: 1.1rem;
-            color: var(--text-color);
-            opacity: 0.95;
-            max-width: 800px;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-
-        /* Academic Social Icons with UNIQUE BRAND COLORS */
-        .academic-icons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 25px 0 20px;
-        }
-
+        /* ===== HERO / PROFILE SECTION ===== */
+        .hero-section { padding-top: 20px; }
+        .profile-header { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 40px; flex-wrap: wrap; }
+        .profile-img { width: 180px; height: 180px; border-radius: 8px; object-fit: cover; box-shadow: 0 10px 30px var(--shadow-color); }
+        .profile-text h1 { font-size: 2.5rem; color: var(--text-color); margin-bottom: 10px; line-height: 1.1; font-weight: 800; }
+        .profile-subtitle { font-size: 1.2rem; color: var(--text-color); opacity: 0.9; margin-bottom: 20px; font-weight: 600; }
+        .profile-description { font-size: 0.95rem; color: var(--text-color); opacity: 0.95; max-width: 800px; margin-bottom: 25px; font-weight: 400; }
+        .academic-icons { display: flex; flex-wrap: wrap; gap: 16px; margin: 20px 0 20px; }
         .academic-icon-link {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background-color: var(--nav-hover-bg);
-            border-radius: 40px;
-            color: var(--text-color);
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: all 0.25s ease;
-            border: 1px solid var(--border-color);
+            display: flex; align-items: center; gap: 8px; padding: 8px 18px;
+            background-color: var(--nav-hover-bg); border-radius: 40px; color: var(--text-color);
+            font-size: 0.9rem; font-weight: 600; transition: all 0.25s ease; border: 1px solid var(--border-color);
         }
-
-        .academic-icon-link i {
-            font-size: 1.3rem;
-            transition: transform 0.2s ease;
-        }
-
-        /* Brand-specific icon colors */
-        .academic-icon-link .fa-orcid {
-            color: var(--orcid-green);
-        }
-        .academic-icon-link .fa-linkedin {
-            color: var(--linkedin-blue);
-        }
-        .academic-icon-link .fa-graduation-cap {
-            color: var(--googlescholar-blue);
-        }
-        .academic-icon-link .fa-researchgate {
-            color: var(--researchgate-blue);
-        }
-
-        /* Hover effects for academic icons */
-        .academic-icon-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-            border-color: transparent;
-        }
-
-        .academic-icon-link:hover .fa-orcid {
-            color: white;
-        }
-        .academic-icon-link:hover .fa-linkedin {
-            color: white;
-        }
-        .academic-icon-link:hover .fa-graduation-cap {
-            color: white;
-        }
-        .academic-icon-link:hover .fa-researchgate {
-            color: white;
-        }
-
-        /* Brand-specific hover backgrounds */
-        .academic-icon-link:hover .fa-orcid {
-            background: transparent;
-        }
-        .academic-icon-link[href*="orcid"]:hover {
-            background-color: var(--orcid-green);
-            border-color: var(--orcid-green);
-            color: white;
-        }
-        .academic-icon-link[href*="linkedin"]:hover {
-            background-color: var(--linkedin-blue);
-            border-color: var(--linkedin-blue);
-            color: white;
-        }
-        .academic-icon-link[href*="scholar"]:hover {
-            background-color: var(--googlescholar-blue);
-            border-color: var(--googlescholar-blue);
-            color: white;
-        }
-        .academic-icon-link[href*="researchgate"]:hover {
-            background-color: var(--researchgate-blue);
-            border-color: var(--researchgate-blue);
-            color: white;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-color);
-            opacity: 0.95;
-            font-weight: 600;
-        }
-
-        .contact-item i {
-            color: var(--active-color);
-            font-size: 1.2rem;
-        }
-
-        /* Contact Me Button Style */
+        .academic-icon-link i { font-size: 1.2rem; transition: transform 0.2s ease; }
+        .academic-icon-link .fa-orcid { color: var(--orcid-green); }
+        .academic-icon-link .fa-linkedin { color: var(--linkedin-blue); }
+        .academic-icon-link .fa-graduation-cap { color: var(--googlescholar-blue); }
+        .academic-icon-link .fa-researchgate { color: var(--researchgate-blue); }
+        .academic-icon-link:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); border-color: transparent; }
+        .academic-icon-link:hover i { color: white; }
+        .academic-icon-link[href*="orcid"]:hover { background-color: var(--orcid-green); border-color: var(--orcid-green); color: white; }
+        .academic-icon-link[href*="linkedin"]:hover { background-color: var(--linkedin-blue); border-color: var(--linkedin-blue); color: white; }
+        .academic-icon-link[href*="scholar"]:hover { background-color: var(--googlescholar-blue); border-color: var(--googlescholar-blue); color: white; }
+        .academic-icon-link[href*="researchgate"]:hover { background-color: var(--researchgate-blue); border-color: var(--researchgate-blue); color: white; }
+        .contact-info { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px; }
+        .contact-item { display: flex; align-items: center; gap: 8px; color: var(--text-color); opacity: 0.95; font-weight: 500; font-size: 0.95rem; }
+        .contact-item i { color: var(--active-color); font-size: 1.1rem; }
         .contact-me-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 28px;
-            background-color: var(--active-color);
-            color: white;
-            border-radius: 40px;
-            font-weight: 700;
-            transition: all 0.25s ease;
-            border: none;
-            cursor: pointer;
-            margin-top: 15px;
-            font-size: 1rem;
-            box-shadow: 0 4px 10px rgba(0,93,170,0.2);
+            display: inline-flex; align-items: center; gap: 10px; padding: 10px 24px;
+            background-color: var(--active-color); color: white; border-radius: 40px; font-weight: 700;
+            transition: all 0.25s ease; border: none; cursor: pointer; margin-top: 10px;
+            font-size: 0.95rem; box-shadow: 0 4px 10px rgba(0,93,170,0.2);
         }
-
-        .contact-me-btn i {
-            font-size: 1.2rem;
-            color: white;
-        }
-
-        .contact-me-btn:hover {
-            background-color: #004488;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,93,170,0.35);
-        }
+        .contact-me-btn i { font-size: 1.1rem; color: white; }
+        .contact-me-btn:hover { background-color: #004488; transform: translateY(-3px); }
 
         /* ===== TAB CONTENT ===== */
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
+        .tab-content { display: none; animation: fadeIn 0.5s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0.8; } to { opacity: 1; } }
+        .content-section { padding: 50px 0 70px; }
+        .section-title { font-size: 1.9rem; font-weight: 800; color: var(--text-color); margin-bottom: 25px; padding-bottom: 12px; border-bottom: 2px solid var(--border-color); }
 
-        .tab-content.active {
-            display: block;
-        }
+        /* ===== TIMELINE ===== */
+        .timeline { position: relative; max-width: 900px; }
+        .timeline-item { position: relative; padding-left: 28px; margin-bottom: 30px; border-left: 2px solid var(--timeline-border); }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before { content: ''; position: absolute; left: -8px; top: 0; width: 14px; height: 14px; border-radius: 50%; background-color: var(--active-color); }
+        .timeline-date { display: block; font-weight: 700; color: var(--active-color); margin-bottom: 6px; font-size: 0.9rem; }
+        .timeline-content h4 { font-size: 1.2rem; margin-bottom: 5px; color: var(--text-color); font-weight: 700; }
+        .timeline-content p { color: var(--text-color); opacity: 0.9; font-weight: 400; font-size: 0.95rem; }
 
-        @keyframes fadeIn {
-            from { opacity: 0.8; }
-            to { opacity: 1; }
+        /* ===== PUBLICATIONS – EXACT REQUEST: YEAR (count) + APA-like list ===== */
+        .publications-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 20px;
         }
-
-        .content-section {
-            padding: 60px 0 80px;
-        }
-
-        .section-title {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--text-color);
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        /* ===== TIMELINE STYLES (Education & Experience) ===== */
-        .timeline {
-            position: relative;
-            max-width: 900px;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 35px;
-            border-left: 2px solid var(--timeline-border);
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 0;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
+        .global-pub-badge {
             background-color: var(--active-color);
-        }
-
-        .timeline-date {
-            display: block;
+            color: white;
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-size: 1.1rem;
             font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0,93,170,0.2);
+        }
+        .global-pub-badge i { font-size: 1.2rem; }
+        .year-group {
+            margin-bottom: 40px;
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            padding: 20px 25px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+        .year-header {
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed var(--border-color);
+        }
+        .year-header h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
             color: var(--active-color);
-            margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
-
-        .timeline-content h4 {
-            font-size: 1.25rem;
-            margin-bottom: 5px;
-            color: var(--text-color);
+        .year-count {
+            background-color: var(--nav-hover-bg);
+            padding: 6px 16px;
+            border-radius: 50px;
             font-weight: 700;
-        }
-
-        .timeline-content p {
+            font-size: 0.9rem;
             color: var(--text-color);
-            opacity: 0.9;
-            font-weight: 500;
+            border: 1px solid var(--border-color);
         }
-
-        /* ===== PUBLICATIONS ===== */
         .publication-list {
             list-style: none;
         }
-
         .publication-item {
-            padding: 25px 0;
+            padding: 16px 0;
             border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-color);
         }
-
         .publication-item:last-child {
             border-bottom: none;
         }
-
-        .pub-title {
+        .pub-apa-style {
+            font-weight: 400;
+            word-break: break-word;
+        }
+        /* Bold Wuni, A. in references */
+        .pub-apa-style strong {
             font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--active-color);
-            line-height: 1.5;
-        }
-
-        .pub-authors {
             color: var(--text-color);
-            opacity: 0.95;
-            margin-bottom: 10px;
-            font-size: 1rem;
-            font-weight: 500;
         }
-
-        .pub-details {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            font-size: 0.95rem;
-            color: var(--text-color);
-            opacity: 0.85;
-            align-items: center;
-            font-weight: 500;
-        }
-
-        .pub-journal {
-            font-style: italic;
+        /* DOI link: blue, clickable, no duplicate */
+        .doi-link {
+            display: inline-block;
+            margin-left: 6px;
+            color: var(--doi-blue);
             font-weight: 600;
+            text-decoration: underline;
+            text-decoration-color: var(--doi-blue);
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
         }
-
-        .pub-links a {
-            color: var(--active-color);
-            text-decoration: none;
-            margin-right: 15px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 600;
-            padding: 5px 12px;
-            border-radius: 20px;
-            background-color: var(--nav-hover-bg);
-            transition: all 0.2s ease;
-        }
-
-        .pub-links a:hover {
-            background-color: var(--active-color);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 12px rgba(0,93,170,0.25);
-        }
-
-        .pub-links a:hover i {
-            color: white;
-        }
-
-        .pub-links i {
-            transition: color 0.2s ease;
+        .doi-link:hover {
+            opacity: 0.8;
+            text-decoration-thickness: 2px;
         }
 
         /* ===== MISCELLANEA ===== */
-        .misc-section {
-            margin-bottom: 40px;
-        }
+        .misc-section { margin-bottom: 35px; }
+        .misc-section h3 { font-size: 1.3rem; color: var(--text-color); margin-bottom: 15px; padding-bottom: 6px; border-bottom: 1px dashed var(--border-color); font-weight: 700; }
+        .misc-list { list-style: none; }
+        .misc-list li { padding: 10px 0; border-bottom: 1px solid var(--border-color); color: var(--text-color); opacity: 0.95; font-weight: 400; font-size: 0.95rem; }
 
-        .misc-section h3 {
-            font-size: 1.5rem;
-            color: var(--text-color);
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 1px dashed var(--border-color);
-            font-weight: 700;
-        }
-
-        .misc-list {
-            list-style: none;
-        }
-
-        .misc-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-color);
-            opacity: 0.95;
-            font-weight: 500;
-        }
-
-        .misc-list li:last-child {
-            border-bottom: none;
-        }
-
-        /* ===== BACK TO TOP BUTTON ===== */
+        /* ===== BACK TO TOP ===== */
         .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--active-color);
-            color: white;
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            box-shadow: 0 6px 20px rgba(0,93,170,0.3);
-            cursor: pointer;
-            border: none;
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            font-weight: bold;
+            position: fixed; bottom: 30px; right: 30px; background-color: var(--active-color);
+            color: white; width: 50px; height: 50px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; font-size: 1.3rem;
+            box-shadow: 0 6px 20px rgba(0,93,170,0.3); cursor: pointer; border: none;
+            z-index: 999; opacity: 0; visibility: hidden; transition: all 0.3s ease;
         }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.3);
-        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background-color: var(--text-color); color: var(--bg-color); transform: translateY(-6px); }
 
         /* ===== FOOTER ===== */
-        .site-footer {
-            margin-top: 80px;
-            padding: 40px 0;
-            border-top: 1px solid var(--border-color);
-            background-color: var(--footer-bg);
-            transition: background-color 0.3s ease;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .footer-left p {
-            color: var(--text-color);
-            opacity: 0.9;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .footer-right {
-            display: flex;
-            gap: 18px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
+        .site-footer { margin-top: 60px; padding: 35px 0; border-top: 1px solid var(--border-color); background-color: var(--footer-bg); transition: background-color 0.3s ease; }
+        .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 25px; }
+        .footer-left p { color: var(--text-color); opacity: 0.9; font-size: 0.9rem; font-weight: 400; }
+        .footer-right { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
         .footer-icon {
-            color: var(--text-color);
-            font-size: 1.4rem;
-            transition: all 0.25s ease;
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background-color: var(--nav-hover-bg);
-            border: 1px solid var(--border-color);
+            color: var(--text-color); font-size: 1.3rem; transition: all 0.25s ease;
+            width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; background-color: var(--nav-hover-bg); border: 1px solid var(--border-color);
         }
-
-        /* Brand colors for footer icons */
-        .footer-icon .fa-facebook-f {
-            color: var(--facebook-blue);
-        }
-        .footer-icon .fa-linkedin-in {
-            color: var(--linkedin-blue);
-        }
-        .footer-icon .fa-envelope {
-            color: var(--email-red);
-        }
-        .footer-icon .fa-orcid {
-            color: var(--orcid-green);
-        }
-        .footer-icon .fa-graduation-cap {
-            color: var(--googlescholar-blue);
-        }
-        .footer-icon .fa-researchgate {
-            color: var(--researchgate-blue);
-        }
-
-        /* Footer icon hover effects - brand colors as background */
-        .footer-icon:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-            border-color: transparent;
-            color: white;
-        }
-
-        .footer-icon:hover .fa-facebook-f,
-        .footer-icon:hover .fa-linkedin-in,
-        .footer-icon:hover .fa-envelope,
-        .footer-icon:hover .fa-orcid,
-        .footer-icon:hover .fa-graduation-cap,
-        .footer-icon:hover .fa-researchgate {
-            color: white;
-        }
-
-        .footer-icon[href*="facebook"]:hover {
-            background-color: var(--facebook-blue);
-        }
-        .footer-icon[href*="linkedin"]:hover {
-            background-color: var(--linkedin-blue);
-        }
-        .footer-icon[href*="mailto"]:hover {
-            background-color: var(--email-red);
-        }
-        .footer-icon[href*="orcid"]:hover {
-            background-color: var(--orcid-green);
-        }
-        .footer-icon[href*="scholar"]:hover {
-            background-color: var(--googlescholar-blue);
-        }
-        .footer-icon[href*="researchgate"]:hover {
-            background-color: var(--researchgate-blue);
-        }
-
-        /* CV Download Button in Footer */
+        .footer-icon .fa-facebook-f { color: var(--facebook-blue); }
+        .footer-icon .fa-linkedin-in { color: var(--linkedin-blue); }
+        .footer-icon .fa-instagram { color: var(--instagram-pink); }
+        .footer-icon .fa-envelope { color: var(--email-red); }
+        .footer-icon .fa-orcid { color: var(--orcid-green); }
+        .footer-icon .fa-graduation-cap { color: var(--googlescholar-blue); }
+        .footer-icon .fa-researchgate { color: var(--researchgate-blue); }
+        .footer-icon:hover { transform: translateY(-4px) scale(1.1); box-shadow: 0 8px 18px rgba(0,0,0,0.15); border-color: transparent; color: white; }
+        .footer-icon:hover i { color: white; }
+        .footer-icon[href*="facebook"]:hover { background-color: var(--facebook-blue); }
+        .footer-icon[href*="linkedin"]:hover { background-color: var(--linkedin-blue); }
+        .footer-icon[href*="instagram"]:hover { background-color: var(--instagram-pink); }
+        .footer-icon[href*="mailto"]:hover { background-color: var(--email-red); }
+        .footer-icon[href*="orcid"]:hover { background-color: var(--orcid-green); }
+        .footer-icon[href*="scholar"]:hover { background-color: var(--googlescholar-blue); }
+        .footer-icon[href*="researchgate"]:hover { background-color: var(--researchgate-blue); }
         .footer-cv-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            background-color: var(--active-color);
-            color: white;
-            border-radius: 40px;
-            font-weight: 700;
-            transition: all 0.25s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 15px;
-            box-shadow: 0 4px 12px rgba(0,93,170,0.25);
+            display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px;
+            background-color: var(--active-color); color: white; border-radius: 40px; font-weight: 600;
+            transition: all 0.25s ease; border: none; cursor: pointer; font-size: 0.9rem;
+            margin-top: 10px; box-shadow: 0 4px 12px rgba(0,93,170,0.25);
         }
+        .footer-cv-btn i { font-size: 1.1rem; color: white; }
+        .footer-cv-btn:hover { background-color: #004488; transform: translateY(-3px); }
 
-        .footer-cv-btn i {
-            font-size: 1.2rem;
-            color: white;
-        }
-
-        .footer-cv-btn:hover {
-            background-color: #004488;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 22px rgba(0,93,170,0.4);
-        }
-
-        /* ===== RESPONSIVE DESIGN (Mobile & Tablet) ===== */
-        @media (max-width: 992px) {
-            .container, .footer-container, .header-container {
-                padding: 20px 30px;
-            }
-            .profile-header {
-                gap: 30px;
-            }
-            .profile-text h1 {
-                font-size: 2.4rem;
-            }
-        }
-
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) { .container, .footer-container, .header-container { padding: 20px 30px; } .profile-header { gap: 30px; } .profile-text h1 { font-size: 2.2rem; } }
         @media (max-width: 768px) {
-            body {
-                padding-top: 80px;
-                font-weight: 500;
-            }
-            
-            .header-container {
-                padding: 15px 20px;
-            }
-            
-            /* Show hamburger on left */
-            .hamburger-btn {
-                display: block;
-                order: -1;
-            }
-            
-            .header-left {
-                width: 100%;
-                justify-content: space-between;
-            }
-            
-            .header-name {
-                font-size: 1.5rem;
-                margin-left: 0;
-                font-weight: 800;
-            }
-            
-            /* Mobile Navigation - Hidden by default */
-            .main-nav {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: var(--header-bg);
-                padding: 20px;
-                box-shadow: 0 10px 20px var(--shadow-color);
-                display: none;
-                border-bottom: 1px solid var(--border-color);
-                z-index: 999;
-            }
-            
-            .main-nav.active {
-                display: block;
-            }
-            
-            .main-nav ul {
-                flex-direction: column;
-                gap: 5px;
-            }
-            
-            .main-nav a {
-                padding: 15px;
-                border-radius: 8px;
-                font-weight: 600;
-            }
-            
-            .main-nav a.active::after {
-                display: none;
-            }
-            
-            .header-right {
-                gap: 10px;
-            }
-            
-            .theme-toggle {
-                width: 44px;
-                height: 44px;
-                font-size: 1.3rem;
-            }
-            
-            .container {
-                padding: 0 20px;
-            }
-            
-            .profile-header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            
-            .profile-img {
-                width: 160px;
-                height: 160px;
-            }
-            
-            .profile-text h1 {
-                font-size: 2.2rem;
-            }
-            
-            .profile-subtitle {
-                font-size: 1.2rem;
-                font-weight: 600;
-            }
-            
-            .academic-icons {
-                justify-content: center;
-            }
-            
-            .contact-info {
-                justify-content: center;
-            }
-            
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-                justify-content: center;
-            }
-            
-            .footer-right {
-                justify-content: center;
-            }
-            
-            .footer-cv-btn {
-                margin-left: 0;
-                margin-top: 15px;
-            }
+            body { padding-top: 80px; font-size: 14px; }
+            .header-container { padding: 15px 20px; }
+            .hamburger-btn { display: block; order: -1; }
+            .header-left { width: 100%; justify-content: space-between; }
+            .header-name { font-size: 1.4rem; }
+            .main-nav { position: fixed; top: 80px; left: 0; width: 100%; background-color: var(--header-bg); padding: 20px; box-shadow: 0 10px 20px var(--shadow-color); display: none; border-bottom: 1px solid var(--border-color); z-index: 999; }
+            .main-nav.active { display: block; }
+            .main-nav ul { flex-direction: column; gap: 5px; }
+            .main-nav a { padding: 14px; border-radius: 8px; }
+            .main-nav a.active::after { display: none; }
+            .container { padding: 0 20px; }
+            .profile-header { flex-direction: column; align-items: center; text-align: center; }
+            .profile-img { width: 150px; height: 150px; }
+            .profile-text h1 { font-size: 2rem; }
+            .academic-icons { justify-content: center; }
+            .contact-info { justify-content: center; }
+            .footer-container { flex-direction: column; text-align: center; }
+            .footer-right { justify-content: center; }
         }
-
         @media (max-width: 480px) {
-            .header-name {
-                font-size: 1.3rem;
-            }
-            
-            .profile-text h1 {
-                font-size: 1.9rem;
-            }
-            
-            .profile-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .academic-icon-link {
-                padding: 8px 16px;
-                font-size: 0.9rem;
-                font-weight: 600;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-                font-weight: 800;
-            }
-            
-            .footer-cv-btn {
-                padding: 10px 20px;
-                font-size: 0.95rem;
-            }
-            
-            .footer-icon {
-                width: 44px;
-                height: 44px;
-                font-size: 1.3rem;
-            }
+            .header-name { font-size: 1.3rem; }
+            .profile-text h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body data-theme="light">
-    <!-- HEADER WITH TABS - HAMBURGER LEFT, TOGGLE RIGHT -->
+    <!-- HEADER: click on "Abubakari Wuni" reloads page -->
     <header class="site-header">
         <div class="header-container">
             <div class="header-left">
-                <!-- Hamburger Menu Button (Left Side) -->
                 <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="header-name">
-                    <a href="#about" class="nav-link" data-tab="about">Abubakari Wuni</a>
+                    <a href="#" id="homeReloadLink" aria-label="Reload page">Abubakari Wuni</a>
                 </div>
             </div>
-            
-            <!-- Navigation Menu -->
             <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="#about" class="nav-link active" data-tab="about">About</a></li>
@@ -941,8 +362,6 @@
                     <li><a href="#misc" class="nav-link" data-tab="misc">Miscellanea</a></li>
                 </ul>
             </nav>
-            
-            <!-- Right Side: Theme Toggle Only -->
             <div class="header-right">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
@@ -951,317 +370,198 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT AREA -->
+    <!-- MAIN CONTENT -->
     <main class="container">
-        <!-- ABOUT SECTION (Default) -->
+        <!-- ABOUT section -->
         <section id="about" class="tab-content content-section active">
             <div class="hero-section">
                 <div class="profile-header">
-                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-                         alt="Abubakari Wuni" class="profile-img">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Abubakari Wuni" class="profile-img">
                     <div class="profile-text">
                         <h1>Abubakari Wuni</h1>
                         <p class="profile-subtitle">PhD Candidate & Graduate Research Assistant<br>College of Nursing, University of Kentucky</p>
-                        
-                        <!-- Academic Social Icons with UNIQUE BRAND COLORS -->
                         <div class="academic-icons">
-                            <a href="https://orcid.org/0000-0001-9329-8368" target="_blank" rel="noopener noreferrer" class="academic-icon-link">
-                                <i class="fab fa-orcid"></i> ORCID
-                            </a>
-                            <a href="https://www.linkedin.com/in/abubakari-wuni" target="_blank" rel="noopener noreferrer" class="academic-icon-link">
-                                <i class="fab fa-linkedin"></i> LinkedIn
-                            </a>
-                            <a href="https://scholar.google.com/citations?user=abubakariwuni" target="_blank" rel="noopener noreferrer" class="academic-icon-link">
-                                <i class="fas fa-graduation-cap"></i> Google Scholar
-                            </a>
-                            <a href="https://www.researchgate.net/profile/Abubakari-Wuni" target="_blank" rel="noopener noreferrer" class="academic-icon-link">
-                                <i class="fab fa-researchgate"></i> ResearchGate
-                            </a>
+                            <a href="https://orcid.org/0000-0001-9329-8368" target="_blank" rel="noopener noreferrer" class="academic-icon-link"><i class="fab fa-orcid"></i> ORCID</a>
+                            <a href="https://www.linkedin.com/in/abubakari-wuni" target="_blank" rel="noopener noreferrer" class="academic-icon-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://scholar.google.com/citations?user=abubakariwuni" target="_blank" rel="noopener noreferrer" class="academic-icon-link"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                            <a href="https://www.researchgate.net/profile/Abubakari-Wuni" target="_blank" rel="noopener noreferrer" class="academic-icon-link"><i class="fab fa-researchgate"></i> ResearchGate</a>
                         </div>
-                        
-                        <p class="profile-description">
-                            I am a dedicated nursing researcher and educator currently pursuing a PhD in Nursing at the University of Kentucky. 
-                            With extensive clinical experience across Ghana, the UK, and the US, my research focuses on patient safety, 
-                            healthcare disparities, nursing education, and improving healthcare outcomes in underserved populations.
-                        </p>
-                        <p class="profile-description">
-                            My work bridges clinical practice with rigorous academic research, with publications in reputable journals including 
-                            BMC Nursing, Nursing Open, PLOS ONE, and Healthcare. I am passionate about mentoring the next generation of nurses 
-                            and advancing evidence-based nursing practice.
-                        </p>
-                        
-                        <!-- CONTACT ME BUTTON - Opens email client -->
+                        <p class="profile-description">I am a dedicated nursing researcher and educator currently pursuing a PhD in Nursing at the University of Kentucky. With extensive clinical experience across Ghana, the UK, and the US, my research focuses on patient safety, healthcare disparities, nursing education, and improving healthcare outcomes in underserved populations.</p>
+                        <p class="profile-description">My work bridges clinical practice with rigorous academic research, with publications in reputable journals including BMC Nursing, Nursing Open, PLOS ONE, and Healthcare. I am passionate about mentoring the next generation of nurses and advancing evidence-based nursing practice.</p>
                         <div class="contact-info">
-                            <a href="mailto:awu229@uky.edu?subject=Inquiry%20from%20Portfolio%20Website" class="contact-me-btn">
-                                <i class="fas fa-envelope"></i> Contact Me
-                            </a>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Lexington, Kentucky, USA</span>
-                            </div>
+                            <a href="mailto:awu229@uky.edu?subject=Inquiry%20from%20Portfolio%20Website" class="contact-me-btn"><i class="fas fa-envelope"></i> Contact Me</a>
+                            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Lexington, Kentucky, USA</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- EDUCATION SECTION -->
+        <!-- EDUCATION -->
         <section id="education" class="tab-content content-section">
             <h2 class="section-title">Education & Qualifications</h2>
             <div class="timeline">
-                <div class="timeline-item">
-                    <span class="timeline-date">January 2024 - Present</span>
-                    <div class="timeline-content">
-                        <h4>PhD in Nursing</h4>
-                        <p>University of Kentucky, College of Nursing</p>
-                        <p>Lexington, Kentucky, United States</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">June 2015 - December 2016</span>
-                    <div class="timeline-content">
-                        <h4>Master of Science Advance Nursing Practice</h4>
-                        <p>University of Cape Coast</p>
-                        <p>Cape Coast, Ghana</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">September 2011 - July 2013</span>
-                    <div class="timeline-content">
-                        <h4>BSc Nursing</h4>
-                        <p>University for Development Studies</p>
-                        <p>Tamale, Ghana</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">October 2005 - December 2008</span>
-                    <div class="timeline-content">
-                        <h4>Diploma in General Nursing</h4>
-                        <p>Nurses and Midwives Training College</p>
-                        <p>Tamale, Ghana</p>
-                    </div>
-                </div>
+                <div class="timeline-item"><span class="timeline-date">January 2024 - Present</span><div class="timeline-content"><h4>PhD in Nursing</h4><p>University of Kentucky, College of Nursing</p><p>Lexington, Kentucky, United States</p></div></div>
+                <div class="timeline-item"><span class="timeline-date">June 2015 - December 2016</span><div class="timeline-content"><h4>Master of Science Advance Nursing Practice</h4><p>University of Cape Coast</p><p>Cape Coast, Ghana</p></div></div>
+                <div class="timeline-item"><span class="timeline-date">September 2011 - July 2013</span><div class="timeline-content"><h4>BSc Nursing</h4><p>University for Development Studies</p><p>Tamale, Ghana</p></div></div>
+                <div class="timeline-item"><span class="timeline-date">October 2005 - December 2008</span><div class="timeline-content"><h4>Diploma in General Nursing</h4><p>Nurses and Midwives Training College</p><p>Tamale, Ghana</p></div></div>
             </div>
         </section>
 
-        <!-- EXPERIENCE SECTION -->
+        <!-- EXPERIENCE -->
         <section id="experience" class="tab-content content-section">
             <h2 class="section-title">Professional Experience</h2>
             <div class="timeline">
-                <div class="timeline-item">
-                    <span class="timeline-date">August 2025 - Present</span>
-                    <div class="timeline-content">
-                        <h4>Graduate Teaching/Research Assistant</h4>
-                        <p>University Press of Kentucky, College of Nursing</p>
-                        <p>Lexington, Kentucky, United States</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">January 2024 - July 2025</span>
-                    <div class="timeline-content">
-                        <h4>Graduate Research Assistant</h4>
-                        <p>University of Kentucky, College of Nursing</p>
-                        <p>Lexington, Kentucky, United States</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">June 2022 - December 2023</span>
-                    <div class="timeline-content">
-                        <h4>Registered Nurse</h4>
-                        <p>Cambridge University Hospitals NHS Foundation Trust</p>
-                        <p>Cambridge, United Kingdom</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">April 2017 - May 2022</span>
-                    <div class="timeline-content">
-                        <h4>Senior Nursing Officer</h4>
-                        <p>Nurses and Midwives Training College</p>
-                        <p>Tamale, Ghana</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-date">April 2010 - March 2017</span>
-                    <div class="timeline-content">
-                        <h4>Nursing Officer (Paediatrics)</h4>
-                        <p>Tamale Teaching Hospital</p>
-                        <p>Tamale, Ghana</p>
-                    </div>
-                </div>
+                <div class="timeline-item"><span class="timeline-date">August 2025 - Present</span><div class="timeline-content"><h4>Graduate Teaching/Research Assistant</h4><p>University Press of Kentucky, College of Nursing</p><p>Lexington, Kentucky, United States</p></div></div>
+                <div class="timeline-item"><span class="timeline-date">January 2024 - July 2025</span><div class="timeline-content"><h4>Graduate Research Assistant</h4><p>University of Kentucky, College of Nursing</p><p>Lexington, Kentucky, United States</p></div></div>
+                <div class="timeline-item"><span class="timeline-date">June 2022 - December 2023</span><div class="timeline-content"><h4>Registered Nurse</h4><p>Cambridge University Hospitals NHS Foundation Trust</p><p>Cambridge, United Kingdom</p></div></div>
+                <div class="timeline-item"><span class="timeline-date">April 2017 - May 2022</span><div class="timeline-content"><h4>Senior Nursing Officer</h4><p>Nurses and Midwives Training College</p><p>Tamale, Ghana</p></div></div>
+                <div class="timeline-item"><span class="timeline-date">April 2010 - March 2017</span><div class="timeline-content"><h4>Nursing Officer (Paediatrics)</h4><p>Tamale Teaching Hospital</p><p>Tamale, Ghana</p></div></div>
             </div>
         </section>
 
-        <!-- PUBLICATIONS SECTION -->
+        <!-- █████ PUBLICATIONS – EXACT FORMAT: YEAR (count) + APA ENTRIES, Wuni bolded, single blue DOI █████ -->
         <section id="publications" class="tab-content content-section">
-            <h2 class="section-title">Selected Publications</h2>
-            <ul class="publication-list">
-                <li class="publication-item">
-                    <div class="pub-title">
-                        Oxygen therapy: Knowledge, attitude, practices, and barriers among nurses and midwives at Tamale Teaching Hospital
-                    </div>
-                    <div class="pub-authors">
-                        Iddrisu Mohammed Sisala; Mudasir Mohammed Ibrahim; Abdul Latif Abdul Rahaman; Firdaus Ayariga Mustapha; Ayisha Mohammed; <strong>Abubakari Wuni</strong>
-                    </div>
-                    <div class="pub-details">
-                        <span class="pub-journal">International Journal of Africa Nursing Sciences</span>
-                        <span class="pub-year">2026</span>
-                        <div class="pub-links">
-                            <a href="https://doi.org/10.1016/j.ijans.2026.100998" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-external-link-alt"></i> DOI
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="publication-item">
-                    <div class="pub-title">
-                        Nursing Perspectives on Alarm Fatigue: An Integrative Review
-                    </div>
-                    <div class="pub-authors">
-                        Brenda Abena Nyarko; <strong>Abubakari Wuni</strong>; Karen K. Giuliano
-                    </div>
-                    <div class="pub-details">
-                        <span class="pub-journal">Nursing & Health Sciences</span>
-                        <span class="pub-year">2025</span>
-                        <div class="pub-links">
-                            <a href="https://doi.org/10.1111/nhs.70253" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-external-link-alt"></i> DOI
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="publication-item">
-                    <div class="pub-title">
-                        Predictive analysis of the relationship between nurses' attitudes toward patient safety and missed nursing care
-                    </div>
-                    <div class="pub-authors">
-                        Mahadi Iddrisu; Iddrisu Mohammed Sisala; Mudasir Mohammed Ibrahim; <strong>Abubakari Wuni</strong>
-                    </div>
-                    <div class="pub-details">
-                        <span class="pub-journal">BMC Nursing</span>
-                        <span class="pub-year">2025</span>
-                        <div class="pub-links">
-                            <a href="https://doi.org/10.1186/s12912-025-04224-0" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-external-link-alt"></i> DOI
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="publication-item">
-                    <div class="pub-title">
-                        African American and African-Born Black Women's Perspectives and Experiences with a Cervical Health Education and HPV-Self Sampling Intervention
-                    </div>
-                    <div class="pub-authors">
-                        Shania Jones; <strong>Abubakari Wuni</strong>; Adaeze Aroh; Adebola Adegboyega
-                    </div>
-                    <div class="pub-details">
-                        <span class="pub-journal">Healthcare</span>
-                        <span class="pub-year">2025</span>
-                        <div class="pub-links">
-                            <a href="https://doi.org/10.3390/healthcare13192389" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-external-link-alt"></i> DOI
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li class="publication-item">
-                    <div class="pub-title">
-                        Patterns and temporal trends in childhood cancer incidence in northern Ghana: evidence from medical records, 2016 to 2023
-                    </div>
-                    <div class="pub-authors">
-                        <strong>Abubakari Wuni</strong>; Mudasir Mohammed Ibrahim; Peter Sambian Tonlaar; Iddrisu Mohammed Sisala; Issahaku Awal; Brenda Abena Nyarko; Abdul-Jalil Abdulai; Shamsudeen Mohammed; Waliu Jawula Salisu
-                    </div>
-                    <div class="pub-details">
-                        <span class="pub-journal">BMC Pediatrics</span>
-                        <span class="pub-year">2025</span>
-                        <div class="pub-links">
-                            <a href="https://doi.org/10.1186/s12887-025-06141-2" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-external-link-alt"></i> DOI
-                            </a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            <div class="publications-header">
+                <h2 class="section-title" style="border-bottom: none; margin-bottom: 0;">Peer‑reviewed publications</h2>
+                <span class="global-pub-badge"><i class="fas fa-file-alt"></i> <span id="globalPubCount">0</span> total articles</span>
+            </div>
+            <div id="pubYearlyGroups"></div>
+
+            <!-- FULL PUBLICATION DATA – APA strings WITHOUT doi suffix; DOI stored separately for blue link -->
+            <script id="publicationData" type="application/json">
+            [
+                {
+                    "year": 2026,
+                    "apa": "Monne, R., Ibrahim, M. M., Alhassan, A., Abdul Kadir, A. B., Christiana, A., Jambedu, A. A., Owusu, S., Christopher, A., Abdulai, A., & <strong>Wuni, A.</strong> (2026). Lifetime Prevalence, Patterns, and Associated Factors of Psychoactive Substance Abuse Among Commercial Male Tricycle Drivers in Northern Ghana: A Cross-Sectional Survey. <i>Pan African Science Journal</i>, 1(6), 1-16.",
+                    "doi": "10.47787/stzvwm55"
+                },
+                {
+                    "year": 2026,
+                    "apa": "Sisala, I. M., Ibrahim, M. M., Abdul Rahaman, A., Mustapha, F. A., Mohammed, A., & <strong>Wuni, A.</strong> (2026). Oxygen therapy: Knowledge, attitude, practices, and barriers among nurses and midwives at Tamale Teaching Hospital. <i>International Journal of Africa Nursing Sciences</i>, 24:100998.",
+                    "doi": "10.1016/j.ijans.2026.100998"
+                },
+                {
+                    "year": 2026,
+                    "apa": "Ibrahim, M. M., Monne, R., Tawiah, B. C., Adam, H., Abukari, M. S., Salifu, R., Sisala, I. M., & <strong>Wuni, A.</strong> (2026). Validity and Reliability Study of a Scale to Measure Academic Help-seeking Behaviors Among Nursing Students in Ghana. <i>Journal of Education and Research in Nursing</i>, 23(1), 1-10.",
+                    "doi": "10.14744/jern.2025.70745"
+                },
+                {
+                    "year": 2026,
+                    "apa": "Iddrisu, M., Sisala, I. M., Ibrahim, M. M., & <strong>Wuni, A.</strong> (2026). Predictive analysis of the relationship between nurses’ attitudes toward patient safety and missed nursing care. <i>BMC Nursing</i>, 25(61), 1-12.",
+                    "doi": "10.1186/s12912-025-04224-0"
+                },
+                {
+                    "year": 2025,
+                    "apa": "<strong>Wuni, A.</strong>, Ibrahim, M. M., Tonlaar, P. S., Sisala, I. M., Awal, I., Nyarko, B. A., Abdulai, A., Mohammed, S., & Salisu, W. J. (2025). Patterns and temporal trends in childhood cancer incidence in northern Ghana: evidence from medical records, 2016 to 2023. <i>BMC Pediatrics</i>, 25(745).",
+                    "doi": "10.1186/s12887-025-06141-2"
+                },
+                {
+                    "year": 2025,
+                    "apa": "Ibrahim, M. M., Abdul-Rahaman, F., Sayibu, M. S., Alhassan, D. N., Awudu, R. T., Mohammed, I. S., <strong>Wuni, A.</strong>, & Abdulai, A. (2025). Assessing the impact of nurses' patient safety competencies on key performance indicators (KPIs) for patient safety outcomes at Tamale Teaching Hospital: The mediating role of leadership and barriers to competency development. <i>BMC Health Services Research</i>, 25(1176), 1-13.",
+                    "doi": "10.1186/s12913-025-13384-3"
+                },
+                {
+                    "year": 2025,
+                    "apa": "<strong>Wuni, A.</strong>, Mohammed, I. S., Salisu, W. J., Abdul-Rahman, R., Seidu, A., Abdul Rahaman, A., Abdulai, A., Zakaria, Y., Buasilenu, H., Nyarko, B. A., & Ibrahim, M. M. (2025). Fever in Children Under 5 years: Caregivers’ Knowledge and Home Management Practices in the Northern Region of Ghana – A Multi-Facility Study. <i>Sage Open Pediatrics</i>, 12, 1-17.",
+                    "doi": "10.1177/30502225251364932"
+                },
+                {
+                    "year": 2025,
+                    "apa": "Monne, R., Ibrahim, M. M., Tawiah, B. C., Adam, H., Abukari, M. S., Salifu, R., & <strong>Wuni, A.</strong> (2025). Evaluating Academic Help-Seeking Behavior of Nursing and Midwifery Students in a Nursing Training College. <i>Journal of Education and Research in Nursing</i>, 22(1), 39-46.",
+                    "doi": "10.14744/jern.2025.98150"
+                },
+                {
+                    "year": 2025,
+                    "apa": "Abdulai, A., Mohammed, I. S., Ibrahim, I., Kyiu, C., Fatimata, Y., Ibrahim, M. M., & <strong>Wuni, A.</strong> (2025). Knowledge, attitudes, and barriers to cervical cancer screening utilization among female healthcare professionals in the Tamale Metropolis. <i>Women's Health</i>, 21.",
+                    "doi": "10.1177/17455057251401319"
+                },
+                {
+                    "year": 2025,
+                    "apa": "Mohammed, I. S., <strong>Wuni, A.</strong>, Nyarko, B. A., Ibrahim, M. M., & Chanayireh, L. (2025). Work engagement: the key driver in transforming organizational commitment into enhanced work performance among midwives in Ghana - a structural equation modelling approach. <i>BMC Health Services Research</i>, 25(1), 840.",
+                    "doi": "10.1186/s12913-025-13062-4"
+                },
+                {
+                    "year": 2025,
+                    "apa": "<strong>Wuni, A.</strong>, Ibrahim, M. M., Diebieri, M., Nyarko, B. A., Salifu, M. A., Abdul-Karim, H. A., Atiku, G. P. K., Wepeba, T. W., Salisu, W. J., Suara, S. B., & Mohammed, I. S. (2025). Perceptions and satisfaction with the quality of clinical training placements among nursing and midwifery students in Northern Ghana. <i>BMC Nursing</i>, 24, 245.",
+                    "doi": "10.1186/s12912-025-02899-z"
+                },
+                {
+                    "year": 2025,
+                    "apa": "<strong>Wuni, A.</strong>, Musah, A., Sisala, I. M., Abdulai, A. M., Chanayireh, L., Nyarko, B. A., Buasilenu, H., Ibrahim, M. M., Musah, S., Azure, D., & Abdulai, N. (2025). “We Are Our Own Worst Enemies”: Workplace Bullying Among Nurses and Its Implications on Healthcare Workers and Job Performance: A Multi-Facility Study in the Tamale Metropolis. <i>Nursing Open</i>, 12(7), e70282.",
+                    "doi": "10.1002/nop2.70282"
+                },
+                {
+                    "year": 2025,
+                    "apa": "Abdul-Malik, A., Bonmenga, T., Ziblim, L., Galo, V., Abu Iddrisu, O., Iddrisu, R., & Ibrahim, M. M. (2025). Parental support on adolescent contraception uptake - a cross-sectional study in Tamale metropolis Ghana. <i>The Evidence</i>, 3(1).",
+                    "doi": "10.61505/evidence.2025.3.1.133"
+                },
+                {
+                    "year": 2024,
+                    "apa": "Ibrahim, M. M., <strong>Wuni, A.</strong>, Salisu, W. J., Abdulai, A. M., Owusua, T., Nyarko, B. A., & Mohammed, I. S. (2024). Determinants and Mitigating Factors of Brain Drain among Ghanaian Nurses: Insights from Nurse Managers in Northern Ghana—A Qualitative Inquiry. <i>Journal of Nursing Management</i>, 2024(1), 8862991.",
+                    "doi": "10.1155/2024/8862991"
+                },
+                {
+                    "year": 2024,
+                    "apa": "Sisala Mohammed, I., Abdulai, M. H., Ibrahim, M. M., Buasilenu, H., Baako, I. A., Nyarko, B. A., & Buunaaisie, C. (2024). Prevalence of Workplace-Related Musculoskeletal Disorders Among Nurses and Midwives in a Tertiary Healthcare Facility: A Descriptive Cross-Sectional Survey. <i>Nursing Open</i>, 11(11), e70098.",
+                    "doi": "10.1002/nop2.70098"
+                },
+                {
+                    "year": 2024,
+                    "apa": "<strong>Wuni, A.</strong>, Iddrisu, M., Angliengmene, A. A., Salia, S. M., Chanayireh, L., Mohammed, I. S., Ibrahim, M. M., & Doat, A. R. (2024). Knowledge and management practices of infant teething symptoms among mothers in a tertiary facility in Ghana. <i>The Pan African Medical Journal</i>, 47.",
+                    "doi": "10.11604/pamj.2024.47.65.40792"
+                },
+                {
+                    "year": 2024,
+                    "apa": "Monne, R., Iddrisu, M., Kyilleh, J. M., Ibrahim, M. M., Nashiru, A. R., <strong>Wuni, A.</strong>, & Abdulai, A. M. (2024). Male midwifery practice and acceptability: attitudes, beliefs, and associated factors among expectant mothers in Savelugu Municipal Hospital, Northern Region of Ghana. <i>The Pan African Medical Journal</i>, 47, 199.",
+                    "doi": "10.11604/pamj.2024.47.199.42482"
+                },
+                {
+                    "year": 2024,
+                    "apa": "Yakubu, H., Ibrahim, M. M., Dogbe, P., Issah, N., Abosi, K., Osman, A., & Abdulai, A. M. (2024). Knowledge of Maternal Mortality and Its Determinants Among Pregnant Women at Tamale Teaching Hospital in Northern Ghana: A Descriptive Cross-Sectional Study. <i>Women, Midwives and Midwifery</i>, 4(3), 26-40.",
+                    "doi": "10.36749/wmm.4.3.26-40.2024"
+                },
+                {
+                    "year": 2024,
+                    "apa": "Abdul Malik, A., Osman, A. I., Abdul Hakeem, I., Abdul-Khahar, O., Saidatu, A. A., Ibrahim, M. M., & Fasasi, M. (2024). Barriers and facilitators to the uptake of contraceptives among adolescents and young adults in Ghana. <i>The Evidence</i>, 2(2).",
+                    "doi": "10.61505/evidence.2024.2.2.29"
+                },
+                {
+                    "year": 2023,
+                    "apa": "<strong>Wuni, A.</strong>, Abena Nyarko, B., Ibrahim, M. M., Abdulai Baako, I., Mohammed, I. S., & Buunaaisie, C. (2023). Prevalence, Management, and Impact of Dysmenorrhea on the Lives of Nurse and Midwife Trainees in Northern Ghana. <i>Obstetrics and Gynecology International</i>, 2023(1), 8823525.",
+                    "doi": "10.1155/2023/8823525"
+                }
+            ]
+            </script>
         </section>
 
-        <!-- MISCELLANEA SECTION -->
+        <!-- MISCELLANEA -->
         <section id="misc" class="tab-content content-section">
             <h2 class="section-title">Miscellanea</h2>
-            
-            <div class="misc-section">
-                <h3>Invited Talks & Presentations</h3>
-                <ul class="misc-list">
-                    <li>University of Kentucky Nursing Research Symposium (April 2025)</li>
-                    <li>Global Health Nursing Conference: Focus on West Africa (October 2024)</li>
-                    <li>Cambridge University Hospitals NHS Trust: Nursing Best Practices (March 2023)</li>
-                </ul>
-            </div>
-
-            <div class="misc-section">
-                <h3>Reviewer Services</h3>
-                <ul class="misc-list">
-                    <li>BMC Nursing (2025 - Present)</li>
-                    <li>Nursing Open (2024 - Present)</li>
-                    <li>PLOS ONE (2023 - Present)</li>
-                    <li>SAGE Open Nursing (2023 - Present)</li>
-                </ul>
-            </div>
-
-            <div class="misc-section">
-                <h3>Honors and Awards</h3>
-                <ul class="misc-list">
-                    <li>University of Kentucky Graduate Research Fellowship (2024 - 2026)</li>
-                    <li>Outstanding Clinical Research Award, Tamale Teaching Hospital (2021)</li>
-                    <li>Merit Award for Academic Excellence, University of Cape Coast (2016)</li>
-                </ul>
-            </div>
-
-            <div class="misc-section">
-                <h3>Professional Memberships</h3>
-                <ul class="misc-list">
-                    <li>American Nurses Association (ANA)</li>
-                    <li>Sigma Theta Tau International Nursing Honor Society</li>
-                    <li>Ghana Registered Nurses and Midwives Association</li>
-                </ul>
-            </div>
+            <div class="misc-section"><h3>Invited Talks & Presentations</h3><ul class="misc-list"><li>University of Kentucky Nursing Research Symposium (April 2025)</li><li>Global Health Nursing Conference: Focus on West Africa (October 2024)</li><li>Cambridge University Hospitals NHS Trust: Nursing Best Practices (March 2023)</li></ul></div>
+            <div class="misc-section"><h3>Reviewer Services</h3><ul class="misc-list"><li>BMC Nursing (2025 - Present)</li><li>Nursing Open (2024 - Present)</li><li>PLOS ONE (2023 - Present)</li><li>SAGE Open Nursing (2023 - Present)</li></ul></div>
+            <div class="misc-section"><h3>Honors and Awards</h3><ul class="misc-list"><li>University of Kentucky Graduate Research Fellowship (2024 - 2026)</li><li>Outstanding Clinical Research Award, Tamale Teaching Hospital (2021)</li><li>Merit Award for Academic Excellence, University of Cape Coast (2016)</li></ul></div>
+            <div class="misc-section"><h3>Professional Memberships</h3><ul class="misc-list"><li>American Nurses Association (ANA)</li><li>Sigma Theta Tau International Nursing Honor Society</li><li>Ghana Registered Nurses and Midwives Association</li></ul></div>
         </section>
     </main>
 
-    <!-- BACK TO TOP BUTTON -->
-    <button id="backToTop" class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- FOOTER with CV Download Button & Contact Icons -->
+    <!-- FOOTER: copyright auto-updates, Instagram added -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-left">
-                <p>© <span id="currentYear"></span> Abubakari Wuni. Based on ORCID public data.</p>
-                <p style="margin-top: 8px; font-size: 0.85rem; opacity: 0.8;">ORCID™ is a trademark of ORCID, Inc.</p>
-                <!-- CV Download Button in Footer Left -->
-                <a href="#" id="footerDownloadCV" class="footer-cv-btn" style="margin-top: 15px;">
-                    <i class="fas fa-file-pdf"></i> Download CV
-                </a>
+                <p>Copyright © <span id="currentYear"></span> Abubakari Wuni.</p>
+                <a href="#" id="footerDownloadCV" class="footer-cv-btn"><i class="fas fa-file-pdf"></i> Download CV</a>
             </div>
             <div class="footer-right">
-                <!-- Social Media Icons with Brand Colors and External Links -->
-                <a href="https://www.facebook.com/abubakari.wuni" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/abubakari-wuni" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="mailto:awu229@uky.edu?subject=Inquiry%20from%20Portfolio%20Website" class="footer-icon" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://orcid.org/0000-0001-9329-8368" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="ORCID">
-                    <i class="fab fa-orcid"></i>
-                </a>
-                <a href="https://scholar.google.com/citations?user=abubakariwuni" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="Google Scholar">
-                    <i class="fas fa-graduation-cap"></i>
-                </a>
-                <a href="https://www.researchgate.net/profile/Abubakari-Wuni" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="ResearchGate">
-                    <i class="fab fa-researchgate"></i>
-                </a>
+                <a href="https://www.facebook.com/abubakari.wuni" target="_blank" rel="noopener noreferrer" class="footer-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/abubakari-wuni" target="_blank" rel="noopener noreferrer" class="footer-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/abubakari.wuni" target="_blank" rel="noopener noreferrer" class="footer-icon"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:awu229@uky.edu?subject=Inquiry%20from%20Portfolio%20Website" class="footer-icon"><i class="fas fa-envelope"></i></a>
+                <a href="https://orcid.org/0000-0001-9329-8368" target="_blank" rel="noopener noreferrer" class="footer-icon"><i class="fab fa-orcid"></i></a>
+                <a href="https://scholar.google.com/citations?user=abubakariwuni" target="_blank" rel="noopener noreferrer" class="footer-icon"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://www.researchgate.net/profile/Abubakari-Wuni" target="_blank" rel="noopener noreferrer" class="footer-icon"><i class="fab fa-researchgate"></i></a>
             </div>
         </div>
     </footer>
@@ -1270,10 +570,20 @@
         (function() {
             "use strict";
 
-            // ---------- DYNAMIC COPYRIGHT YEAR ----------
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            // ----- click on logo reloads page (like opening website) -----
+            const homeLink = document.getElementById('homeReloadLink');
+            if (homeLink) {
+                homeLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.reload();
+                });
+            }
 
-            // ---------- TAB NAVIGATION ----------
+            // ----- copyright year auto-update -----
+            const yearSpan = document.getElementById('currentYear');
+            if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+            // ----- TAB NAVIGATION (unchanged) -----
             const navLinks = document.querySelectorAll('.nav-link');
             const tabContents = document.querySelectorAll('.tab-content');
             const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -1282,20 +592,13 @@
             function activateTab(tabId) {
                 navLinks.forEach(link => link.classList.remove('active'));
                 tabContents.forEach(content => content.classList.remove('active'));
-
                 const activeLink = document.querySelector(`.nav-link[data-tab="${tabId}"]`);
                 const activeContent = document.getElementById(tabId);
-
                 if (activeLink) activeLink.classList.add('active');
                 if (activeContent) activeContent.classList.add('active');
-
-                // Close mobile menu after clicking a link
-                mainNav.classList.remove('active');
-                if (hamburgerBtn) {
-                    hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
+                if (mainNav) mainNav.classList.remove('active');
+                if (hamburgerBtn) hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
             }
-
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -1304,55 +607,35 @@
                     history.pushState(null, null, `#${tabId}`);
                 });
             });
-
-            // Mobile hamburger menu toggle (Left side)
             if (hamburgerBtn) {
                 hamburgerBtn.addEventListener('click', function(e) {
                     e.stopPropagation();
                     mainNav.classList.toggle('active');
-                    this.innerHTML = mainNav.classList.contains('active') 
-                        ? '<i class="fas fa-times"></i>' 
-                        : '<i class="fas fa-bars"></i>';
+                    this.innerHTML = mainNav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
                 });
             }
-
-            // Close mobile menu when clicking outside
             document.addEventListener('click', function(event) {
-                if (mainNav && hamburgerBtn) {
-                    if (!mainNav.contains(event.target) && !hamburgerBtn.contains(event.target)) {
-                        mainNav.classList.remove('active');
-                        hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
+                if (mainNav && hamburgerBtn && !mainNav.contains(event.target) && !hamburgerBtn.contains(event.target)) {
+                    mainNav.classList.remove('active');
+                    hamburgerBtn.innerHTML = '<i class="fas fa-bars"></i>';
                 }
             });
-
-            // Initial tab from URL hash
             const initialHash = window.location.hash.substring(1);
-            const validTabs = ['about', 'education', 'experience', 'publications', 'misc'];
-            if (validTabs.includes(initialHash)) {
-                activateTab(initialHash);
-            } else {
-                activateTab('about');
-            }
-
-            // Browser back/forward
+            const validTabs = ['about','education','experience','publications','misc'];
+            if (validTabs.includes(initialHash)) activateTab(initialHash); else activateTab('about');
             window.addEventListener('popstate', function() {
                 const hash = window.location.hash.substring(1);
-                if (validTabs.includes(hash)) {
-                    activateTab(hash);
-                }
+                if (validTabs.includes(hash)) activateTab(hash);
             });
 
-            // ---------- DARK MODE TOGGLE ----------
+            // ----- DARK MODE -----
             const themeToggle = document.getElementById('themeToggle');
             const body = document.body;
             const icon = themeToggle.querySelector('i');
-
-            // Check for saved theme preference
             const savedTheme = localStorage.getItem('theme') || 'light';
             body.setAttribute('data-theme', savedTheme);
+            function updateThemeIcon(theme) { icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; }
             updateThemeIcon(savedTheme);
-
             themeToggle.addEventListener('click', function() {
                 const currentTheme = body.getAttribute('data-theme');
                 const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -1361,46 +644,56 @@
                 updateThemeIcon(newTheme);
             });
 
-            function updateThemeIcon(theme) {
-                if (icon) {
-                    if (theme === 'dark') {
-                        icon.className = 'fas fa-sun';
-                    } else {
-                        icon.className = 'fas fa-moon';
-                    }
-                }
-            }
-
-            // ---------- BACK TO TOP BUTTON ----------
+            // ----- BACK TO TOP -----
             const backToTopBtn = document.getElementById('backToTop');
-            
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTopBtn.classList.add('visible');
-                } else {
-                    backToTopBtn.classList.remove('visible');
-                }
-            });
+            window.addEventListener('scroll', function() { backToTopBtn.classList.toggle('visible', window.scrollY > 300); });
+            backToTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-            backToTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            // ---------- DOWNLOAD CV (Footer) ----------
+            // ----- DOWNLOAD CV (placeholder) -----
             const footerCVBtn = document.getElementById('footerDownloadCV');
             if (footerCVBtn) {
                 footerCVBtn.addEventListener('click', function(e) {
                     e.preventDefault();
-                    // Placeholder for CV download - replace with actual PDF link
                     alert('CV download will be available soon. Please check back later.');
-                    // To enable actual download, uncomment below:
-                    // window.open('path/to/abubakari-wuni-cv.pdf', '_blank');
                 });
             }
 
+            // ----- PUBLICATIONS RENDER: YEAR (count) + APA with bold Wuni + SINGLE blue DOI -----
+            function renderPublications() {
+                const scriptTag = document.getElementById('publicationData');
+                if (!scriptTag) return;
+                let publications = [];
+                try {
+                    publications = JSON.parse(scriptTag.textContent);
+                } catch(e) {
+                    console.error('JSON parse error');
+                    return;
+                }
+
+                document.getElementById('globalPubCount').textContent = publications.length;
+
+                const grouped = {};
+                publications.forEach(p => { if (!grouped[p.year]) grouped[p.year] = []; grouped[p.year].push(p); });
+                const years = Object.keys(grouped).map(Number).sort((a,b)=>b-a);
+
+                let html = '';
+                years.forEach(year => {
+                    const list = grouped[year];
+                    const count = list.length;
+                    html += `<div class="year-group">`;
+                    html += `<div class="year-header"><h3>${year}</h3><span class="year-count"><i class="fas fa-file-alt" style="margin-right: 6px;"></i>${count} publication${count!==1?'s':''}</span></div>`;
+                    html += `<ul class="publication-list">`;
+                    list.forEach(pub => {
+                        // DOI as separate blue link – no duplicate in text
+                        const doiLink = pub.doi ? ` <a href="https://doi.org/${pub.doi}" target="_blank" rel="noopener noreferrer" class="doi-link">doi:${pub.doi}</a>` : '';
+                        html += `<li class="publication-item"><span class="pub-apa-style">${pub.apa}</span>${doiLink}</li>`;
+                    });
+                    html += `</ul></div>`;
+                });
+                document.getElementById('pubYearlyGroups').innerHTML = html;
+            }
+
+            renderPublications();
         })();
     </script>
 </body>
